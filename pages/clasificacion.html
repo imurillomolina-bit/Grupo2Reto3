@@ -1,0 +1,25 @@
+<!-- Página de clasificación -->
+<section class="clasificacion-page">
+    <!-- Cabecera con selector de temporada -->
+    <div class="clasificacion-header" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem; text-align:center;">
+        <div>
+            <h2 class="text-center mb-2" style="margin:0;">Clasificación de la Liga</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto; color: #666;">
+                Tabla de posiciones actualizada con los resultados de todos los partidos disputados.
+            </p>
+        </div>
+        <div class="season-select" style="display:flex; align-items:center; gap:0.5rem;">
+            <label for="temporada-select" style="font-weight:600;">Temporada</label>
+            <select id="temporada-select" aria-label="Seleccionar temporada" style="padding:0.45rem 0.8rem; border:1px solid #ccc; border-radius:6px; min-width:160px;">
+                <option value="1" selected>Temporada 24-25</option>
+                <option value="2">Temporada 25-26</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Contenedor donde se cargará la clasificación dinámicamente desde XML -->
+    <div id="clasificacion-container">
+        <!-- El contenido se cargará aquí mediante JavaScript y XSLT -->
+        <div class="loading">Cargando clasificación...</div>
+    </div>
+</section>
