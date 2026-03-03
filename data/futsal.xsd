@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="idListType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((\d+)(,\d+)*)?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estadoTemporadaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="abierta"/>
+            <xs:enumeration value="sin_abrir"/>
+            <xs:enumeration value="cerrada"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estadoJornadaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NO_INICIADA"/>
+            <xs:enumeration value="EN_CURSO"/>
+            <xs:enumeration value="FINALIZADA"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estadoPartidoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pendiente"/>
+            <xs:enumeration value="jugado"/>
+            <xs:enumeration value="aplazado"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="fechaCortaType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}-\d{2}-\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="Futsal">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Jugadores">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Jugador" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:string"/>
+                                        <xs:element name="Posicion" type="xs:string"/>
+                                        <xs:element name="Numero" type="xs:positiveInteger"/>
+                                        <xs:element name="FechaNacimiento" type="fechaCortaType"/>
+                                        <xs:element name="Nacionalidad" type="xs:string"/>
+                                        <xs:element name="Imagen" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="Activo" type="xs:boolean"/>
+                                        <xs:element name="ID" type="xs:positiveInteger"/>
+                                        <xs:element name="TemporadaData" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="TemporadaID" type="xs:positiveInteger"/>
+                                                    <xs:element name="Posicion" type="xs:string"/>
+                                                    <xs:element name="EquipoID" type="xs:integer"/>
+                                                    <xs:element name="FechaNacimiento" type="fechaCortaType"/>
+                                                    <xs:element name="Numero" type="xs:positiveInteger"/>
+                                                    <xs:element name="Foto" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Equipos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Equipo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:string"/>
+                                        <xs:element name="Pabellon" type="xs:string"/>
+                                        <xs:element name="Pais" type="xs:string"/>
+                                        <xs:element name="Escudo" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="ID" type="xs:positiveInteger"/>
+                                        <xs:element name="JugadorIds" type="idListType" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Temporadas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Temporada" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:string"/>
+                                        <xs:element name="Ano" type="xs:gYear"/>
+                                        <xs:element name="Estado" type="estadoTemporadaType"/>
+                                        <xs:element name="ID" type="xs:positiveInteger"/>
+                                        <xs:element name="EquipoIds" type="idListType"/>
+                                        <xs:element name="JugadorIds" type="idListType" minOccurs="0"/>
+                                        <xs:element name="JornadaIds" type="idListType"/>
+                                        <xs:element name="FotosJugadores" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Jugador" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="EscudosEquipos" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Equipo" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Jornadas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Jornada" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:positiveInteger"/>
+                                        <xs:element name="Numero" type="xs:positiveInteger"/>
+                                        <xs:element name="TemporadaID" type="xs:positiveInteger"/>
+                                        <xs:element name="Estado" type="estadoJornadaType"/>
+                                        <xs:element name="JugadorIds" type="idListType" minOccurs="0"/>
+                                        <xs:element name="PartidoIds" type="idListType" minOccurs="0"/>
+                                        <xs:element name="EquiposJornada" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Partidos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Partido" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:positiveInteger"/>
+                                        <xs:element name="EquipoID1" type="xs:positiveInteger"/>
+                                        <xs:element name="EquipoID2" type="xs:positiveInteger"/>
+                                        <xs:element name="GolesEquipo1" type="xs:nonNegativeInteger"/>
+                                        <xs:element name="GolesEquipo2" type="xs:nonNegativeInteger"/>
+                                        <xs:element name="Fecha" type="xs:date"/>
+                                        <xs:element name="Estado" type="estadoPartidoType"/>
+                                        <xs:element name="TemporadaID" type="xs:positiveInteger"/>
+                                        <xs:element name="JornadaID" type="xs:positiveInteger"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="EquipoTemporada" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="EquipoID" type="xs:positiveInteger"/>
+                            <xs:element name="TemporadaID" type="xs:positiveInteger"/>
+                            <xs:element name="JugadorIds" type="idListType"/>
+                            <xs:element name="Posicion" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="jugadorId" type="xs:string" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

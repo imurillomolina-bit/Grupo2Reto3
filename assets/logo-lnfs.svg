@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="80" height="80">
+  <!-- Escudo azul -->
+  <path d="M 200 50 L 280 90 L 280 200 Q 200 280 200 280 Q 120 200 120 90 Z" fill="#003DA5" stroke="#FFD700" stroke-width="4"/>
+  
+  <!-- Bandas diagonales -->
+  <line x1="150" y1="80" x2="250" y2="280" stroke="#FFD700" stroke-width="8" opacity="0.7"/>
+  <line x1="100" y1="120" x2="300" y2="320" stroke="#FFD700" stroke-width="8" opacity="0.7"/>
+  <line x1="250" y1="80" x2="150" y2="280" stroke="#FFD700" stroke-width="8" opacity="0.7"/>
+  <line x1="300" y1="120" x2="100" y2="320" stroke="#FFD700" stroke-width="8" opacity="0.7"/>
+  
+  <!-- Fondo blanco para texto -->
+  <rect x="130" y="130" width="140" height="80" fill="white" rx="5"/>
+  
+  <!-- Texto LNFS -->
+  <text x="200" y="170" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#003DA5" text-anchor="middle">LNFS</text>
+  
+  <!-- Bandera española pequeña -->
+  <rect x="180" y="175" width="40" height="20" fill="#C60C30"/>
+  <rect x="190" y="175" width="20" height="20" fill="#FFC400"/>
+  
+  <!-- Estrellas decorativas -->
+  <circle cx="110" cy="100" r="8" fill="#FFD700" opacity="0.8"/>
+  <circle cx="290" cy="100" r="8" fill="#FFD700" opacity="0.8"/>
+  <circle cx="95" cy="200" r="8" fill="#FFD700" opacity="0.8"/>
+  <circle cx="305" cy="200" r="8" fill="#FFD700" opacity="0.8"/>
+  <circle cx="110" cy="300" r="8" fill="#FFD700" opacity="0.8"/>
+  <circle cx="290" cy="300" r="8" fill="#FFD700" opacity="0.8"/>
+</svg>

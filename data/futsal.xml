@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Futsal>
+  <Jugadores>
+    <Jugador>
+      <Nombre>José Antonio Fernández Raya</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>3</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Rafael García Aguilera</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>4</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Cecilio Morales Barbado</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>67</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileño</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>5</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Bruno Rocha Braga</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>6</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>6</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Raúl Gómez del Olmo</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>7</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>7</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>João Marcelo Magalhaes Frez</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>22</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>8</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Marcos Elián Ferreyra</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>25</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Argentina</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>9</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Marc Tolrá García</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>4</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>10</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Oriol Santos Martí</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>4</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>11</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Bernat Povil Cerdeira</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>2</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>12</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Victor Ramos Mora</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>10</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>13</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Marc Puigvert Esteve</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>12</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>14</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Víctor Areales Madueño</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>1</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>15</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Fabio Alvira Pérez</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>2</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>16</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Ioan Sergiu Sandru Grasu</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>6</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>17</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Emmanuel Alexis Alarcón</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Uruguay</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>18</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Julio Damián Mareco Galeano</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>34</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Paraguaya</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>19</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Mykola Mykytiuk</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>34</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Ucraniana</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>20</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Pablo María Del Moral Jiménez</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>21</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Carlos Barrón Redondo</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>13</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>22</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Dennis Vasconcelos Cavalcanti</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>23</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Luan Muller Barboza</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>45</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Armenio</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>24</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>David Pasinato Belorin</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>25</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Manuel Piqueras Dólera</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>18</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>26</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Lucas Leandro Machado</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>27</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>David Peña Romero</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileño</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>28</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Carlos Eduardo Nesello Espindo</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>1</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>29</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Eduardo da Silva Ferreira Lima</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>4</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>30</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>José Manuel Moreno Cutillas</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>5</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>31</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>João Vítor Salla Vivan</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>36</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileño</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>32</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Fernando Montardo Trindate</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>33</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Carlos José Sanz Salcedo</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>45</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Ecuatoriana</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>34</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Cristhian Mendes da Silva</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>10</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>35</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Dennis Berthod</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>14</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Italiano</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>36</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Manuel Aguayo Aguayo</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>17</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>37</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Matías Starna</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>16</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Argentina</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>38</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Xavier Cols Bertrán</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>6</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>39</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Iván Rumbo Rodríguez</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>1</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>40</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Jesús Herrero Parrón</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>1</Numero>
+      <FechaNacimiento>04-11-1986</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>1</ID>
+      <TemporadaData>
+        <TemporadaID>1</TemporadaID>
+        <Posicion>Cierre</Posicion>
+        <EquipoID>-1</EquipoID>
+        <FechaNacimiento>04-11-1986</FechaNacimiento>
+        <Numero>1</Numero>
+        <Foto>C:\Users\317176K\Documents\Github\Futsal\data\assets\players\jugador_1_temp_1.png</Foto>
+      </TemporadaData>
+    </Jugador>
+    <Jugador>
+      <Nombre>Jesús García Roldán</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>27</Numero>
+      <FechaNacimiento>27-12-2000</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>2</ID>
+      <TemporadaData>
+        <TemporadaID>1</TemporadaID>
+        <Posicion>Portero</Posicion>
+        <EquipoID>-1</EquipoID>
+        <FechaNacimiento>27-12-2000</FechaNacimiento>
+        <Numero>27</Numero>
+        <Foto>C:\Users\317176K\Documents\Informacion Futbol Sala\fotos editadas\Cecilio Morales Barbado.png</Foto>
+      </TemporadaData>
+    </Jugador>
+    <Jugador>
+      <Nombre>Jon Joseba De Olabarria Gil</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>7</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>41</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Gabriel Morgato Shiga</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>11</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>42</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Oliver Solano</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>1</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>43</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>José Antonio Guillamón Alcaraz</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>22</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>44</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Ginés Gabarrón Rodríguez</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>45</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Cicero Severino Da Silva Junior</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>46</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Francisco Tomaz Braga Nunes Cavalcante</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>23</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>47</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Jesús Izquierdo Carrillo</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>23</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>48</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Darío Gil Campoy</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>3</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>49</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Dídac Plana Oltra</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>21</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>50</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Miquel Feixas De Jesús</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>26</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>51</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Antonio Pérez Ortega</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>6</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>52</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Erick Olim de Mendoça</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>17</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Portuguesa</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>53</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Matheus Rodrigues Cézar da Silva</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>54</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Joao Victor Alves Sena</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>5</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>55</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Pol Pacheco González</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>7</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>56</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Eduardo Filipe Sousa</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>19</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Portuguesa</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>57</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Henrique Kasper Barbieri</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>23</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>58</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Ricardo Mayor Gonzálvez</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>59</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Rafael García Aguilera</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>8</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>60</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Ricardo Henrique Lemos Diniz</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>15</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>61</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Ricardo Henrique Lemos Diniz</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>6</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>62</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Marcel De Mendoça Marques</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>12</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>63</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>David Álvarez Munteis</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>24</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>64</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Antonio Navarro López</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>16</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>65</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Daniel López Juárez</Nombre>
+      <Posicion>Portero</Posicion>
+      <Numero>35</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>66</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Santiago Abilio Suárez García</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>17</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>67</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Javier Fernández Pacheco Serrano</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>87</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>68</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Antonio Escribano Gómez</Nombre>
+      <Posicion>Pívot</Posicion>
+      <Numero>89</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>69</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Deivid Pires da Silva Santos</Nombre>
+      <Posicion>Cierre</Posicion>
+      <Numero>80</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Brasileña</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>70</ID>
+    </Jugador>
+    <Jugador>
+      <Nombre>Javier Alonso Giménez</Nombre>
+      <Posicion>Ala</Posicion>
+      <Numero>14</Numero>
+      <FechaNacimiento>19-01-2026</FechaNacimiento>
+      <Nacionalidad>Española</Nacionalidad>
+      <Imagen/>
+      <Activo>true</Activo>
+      <ID>71</ID>
+    </Jugador>
+  </Jugadores>
+  <Equipos>
+    <Equipo>
+      <Nombre>Movistar Inter</Nombre>
+      <Pabellon>Jorge Garbajosa</Pabellon>
+      <Pais>España</Pais>
+      <Escudo/>
+      <ID>1</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Industrias Santa Coloma</Nombre>
+      <Pabellon>Pabellón Nuevo</Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\Industrias Santa Coloma.png</Escudo>
+      <ID>2</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Cordoba Patrimonio Humanidad</Nombre>
+      <Pabellon>Palacio Municipal de Deportes Vista Alegre</Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\Córdoba Patrimonio Humanidad.png</Escudo>
+      <ID>3</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Islas Baleares Palma Futsal</Nombre>
+      <Pabellon>Palau Municipal d´Esports de Son Moix</Pabellon>
+      <Pais>España</Pais>
+      <Escudo/>
+      <ID>4</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Jaen Paraíso Interior</Nombre>
+      <Pabellon>Olivo Arena</Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\Jaen Paraiso Interior.png</Escudo>
+      <ID>5</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>O Parrulo Ferrol</Nombre>
+      <Pabellon>Polideportivo de A Malata</Pabellon>
+      <Pais>España</Pais>
+      <Escudo/>
+      <ID>6</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Jimbee Cartagena Costa Cálida</Nombre>
+      <Pabellon>Palacio de los Deportes de Cartagena</Pabellon>
+      <Pais>España</Pais>
+      <Escudo/>
+      <ID>7</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Barça</Nombre>
+      <Pabellon>Palau Blaugrana</Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\Barça.png</Escudo>
+      <ID>8</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>ElPozo Murcia Costa Cálida</Nombre>
+      <Pabellon>Palacio de Deportes de Murcia</Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\ElPozo Murcia Costa Cálida.png</Escudo>
+      <ID>9</ID>
+      <JugadorIds/>
+    </Equipo>
+    <Equipo>
+      <Nombre>Quesos Hidalgo Manzanares FS</Nombre>
+      <Pabellon>Manzanares Arena </Pabellon>
+      <Pais>España</Pais>
+      <Escudo>assets\teams\Quesos Hidalgo Manzanares FS.png</Escudo>
+      <ID>10</ID>
+      <JugadorIds/>
+    </Equipo>
+  </Equipos>
+  <Temporadas>
+    <Temporada>
+      <Nombre>Temporada 24-25</Nombre>
+      <Ano>2025</Ano>
+      <Estado>abierta</Estado>
+      <ID>1</ID>
+      <EquipoIds>1,2,3,4,5,6</EquipoIds>
+      <JugadorIds/>
+      <JornadaIds>1,2,3,4,5,6,7,8,9,10,11</JornadaIds>
+      <FotosJugadores>
+        <Jugador id="1">assets/players/jugador_1_temp_1.png</Jugador>
+        <Jugador id="3">assets/players/jugador_3_temp_1.jpg</Jugador>
+        <Jugador id="4">assets/players/jugador_4_temp_1.jpg</Jugador>
+        <Jugador id="5">assets/players/jugador_5_temp_1.png</Jugador>
+        <Jugador id="2">assets/players/jugador_2_temp_1.png</Jugador>
+        <Jugador id="6">assets/players/jugador_6_temp_1.jpg</Jugador>
+        <Jugador id="7">assets/players/jugador_7_temp_1.jpg</Jugador>
+        <Jugador id="8">assets/players/jugador_8_temp_1.jpg</Jugador>
+        <Jugador id="9">assets/players/jugador_9_temp_1.jpg</Jugador>
+        <Jugador id="10">assets/players/jugador_10_temp_1.jpg</Jugador>
+        <Jugador id="11">assets/players/jugador_11_temp_1.jpg</Jugador>
+        <Jugador id="12">assets/players/jugador_12_temp_1.jpg</Jugador>
+        <Jugador id="13">assets/players/jugador_13_temp_1.jpg</Jugador>
+        <Jugador id="14">assets/players/jugador_14_temp_1.jpg</Jugador>
+        <Jugador id="15">assets/players/jugador_15_temp_1.jpg</Jugador>
+        <Jugador id="16">assets/players/jugador_16_temp_1.jpg</Jugador>
+        <Jugador id="17">assets/players/jugador_17_temp_1.jpg</Jugador>
+        <Jugador id="18">assets/players/jugador_18_temp_1.png</Jugador>
+        <Jugador id="19">assets/players/jugador_19_temp_1.jpg</Jugador>
+        <Jugador id="20">assets/players/jugador_20_temp_1.jpg</Jugador>
+        <Jugador id="21">assets/players/jugador_21_temp_1.jpg</Jugador>
+        <Jugador id="29">assets/players/jugador_29_temp_1.jpg</Jugador>
+        <Jugador id="30">assets/players/jugador_30_temp_1.jpg</Jugador>
+        <Jugador id="31">assets/players/jugador_31_temp_1.jpg</Jugador>
+        <Jugador id="32">assets/players/jugador_32_temp_1.jpg</Jugador>
+        <Jugador id="33">assets/players/jugador_33_temp_1.jpg</Jugador>
+        <Jugador id="34">assets/players/jugador_34_temp_1.jpg</Jugador>
+        <Jugador id="35">assets/players/jugador_35_temp_1.jpg</Jugador>
+        <Jugador id="23">assets/players/jugador_23_temp_1.png</Jugador>
+        <Jugador id="24">assets/players/jugador_24_temp_1.png</Jugador>
+        <Jugador id="25">assets/players/jugador_25_temp_1.png</Jugador>
+        <Jugador id="26">assets/players/jugador_26_temp_1.png</Jugador>
+        <Jugador id="27">assets/players/jugador_27_temp_1.png</Jugador>
+        <Jugador id="28">assets/players/jugador_28_temp_1.png</Jugador>
+        <Jugador id="22">assets/players/jugador_22_temp_1.png</Jugador>
+        <Jugador id="36">assets/players/jugador_36_temp_1.png</Jugador>
+        <Jugador id="37">assets/players/jugador_37_temp_1.png</Jugador>
+        <Jugador id="38">assets/players/jugador_38_temp_1.png</Jugador>
+        <Jugador id="39">assets/players/jugador_39_temp_1.png</Jugador>
+        <Jugador id="40">assets/players/jugador_40_temp_1.png</Jugador>
+        <Jugador id="41">assets/players/jugador_41_temp_1.png</Jugador>
+        <Jugador id="42">assets/players/jugador_42_temp_1.png</Jugador>
+      </FotosJugadores>
+      <EscudosEquipos>
+        <Equipo id="1">assets/teams/equipo_1_temp_1.png</Equipo>
+        <Equipo id="4">assets/teams/equipo_4_temp_1.png</Equipo>
+        <Equipo id="6">assets/teams/equipo_6_temp_1.png</Equipo>
+      </EscudosEquipos>
+    </Temporada>
+    <Temporada>
+      <Nombre>Temporada 25-26</Nombre>
+      <Ano>2026</Ano>
+      <Estado>sin_abrir</Estado>
+      <ID>2</ID>
+      <EquipoIds>4,6,7,8,9,10</EquipoIds>
+      <JugadorIds/>
+      <JornadaIds>12,13,14,15,16,17,18,19,20,21,22</JornadaIds>
+      <FotosJugadores>
+       
+        
+        <Jugador id="44">assets/players/jugador_44_temp_2.png</Jugador>
+        <Jugador id="45">assets/players/jugador_45_temp_2.png</Jugador>
+        <Jugador id="46">assets/players/jugador_46_temp_2.png</Jugador>
+        <Jugador id="47">assets/players/jugador_47_temp_2.png</Jugador>
+        <Jugador id="48">assets/players/jugador_48_temp_2.png</Jugador>
+        <Jugador id="49">assets/players/jugador_49_temp_2.png</Jugador>
+        <Jugador id="50">assets/players/jugador_50_temp_2.png</Jugador>
+        <Jugador id="51">assets/players/jugador_51_temp_2.png</Jugador>
+        <Jugador id="52">assets/players/jugador_52_temp_2.png</Jugador>
+        <Jugador id="53">assets/players/jugador_53_temp_2.png</Jugador>
+        <Jugador id="54">assets/players/jugador_54_temp_2.png</Jugador>
+        <Jugador id="55">assets/players/jugador_55_temp_2.png</Jugador>
+        <Jugador id="56">assets/players/jugador_56_temp_2.png</Jugador>
+        <Jugador id="57">assets/players/jugador_57_temp_2.png</Jugador>
+        <Jugador id="58">assets/players/jugador_58_temp_2.jpg</Jugador>
+        <Jugador id="59">assets/players/jugador_59_temp_2.png</Jugador>
+        <Jugador id="22">assets/players/jugador_22_temp_2.png</Jugador>
+        <Jugador id="23">assets/players/jugador_23_temp_2.png</Jugador>
+        <Jugador id="24">assets/players/jugador_24_temp_2.png</Jugador>
+        <Jugador id="25">assets/players/jugador_25_temp_2.png</Jugador>
+        <Jugador id="26">assets/players/jugador_26_temp_2.png</Jugador>
+        <Jugador id="27">assets/players/jugador_27_temp_2.png</Jugador>
+        <Jugador id="28">assets/players/jugador_28_temp_2.png</Jugador>
+        <Jugador id="36">assets/players/jugador_36_temp_2.png</Jugador>
+        <Jugador id="37">assets/players/jugador_37_temp_2.png</Jugador>
+        <Jugador id="38">assets/players/jugador_38_temp_2.png</Jugador>
+        <Jugador id="39">assets/players/jugador_39_temp_2.png</Jugador>
+        <Jugador id="40">assets/players/jugador_40_temp_2.png</Jugador>
+        <Jugador id="41">assets/players/jugador_41_temp_2.png</Jugador>
+        <Jugador id="42">assets/players/jugador_42_temp_2.png</Jugador>
+        <Jugador id="60">assets/players/jugador_60_temp_2.png</Jugador>
+        <Jugador id="61">assets/players/jugador_61_temp_2.png</Jugador>
+        <Jugador id="63">assets/players/jugador_63_temp_2.png</Jugador>
+        <Jugador id="64">assets/players/jugador_64_temp_2.png</Jugador>
+        <Jugador id="65">assets/players/jugador_65_temp_2.png</Jugador>
+        <Jugador id="66">assets/players/jugador_66_temp_2.png</Jugador>
+        <Jugador id="67">assets/players/jugador_67_temp_2.png</Jugador>
+        <Jugador id="68">assets/players/jugador_68_temp_2.png</Jugador>
+        <Jugador id="69">assets/players/jugador_69_temp_2.png</Jugador>
+        <Jugador id="70">assets/players/jugador_70_temp_2.png</Jugador>
+        <Jugador id="71">assets/players/jugador_71_temp_2.png</Jugador>
+      </FotosJugadores>
+      <EscudosEquipos>
+        <Equipo id="4">assets/teams/equipo_4_temp_2.png</Equipo>
+        <Equipo id="6">assets/teams/equipo_6_temp_2.png</Equipo>
+      </EscudosEquipos>
+    </Temporada>
+  </Temporadas>
+  <Jornadas>
+    <Jornada>
+      <ID>1</ID>
+      <Numero>1</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>1,2,3</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>2</ID>
+      <Numero>2</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>4,5,6</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>3</ID>
+      <Numero>3</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>7,8,9</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>4</ID>
+      <Numero>4</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>10,11,12</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>5</ID>
+      <Numero>5</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>13,14,15</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>6</ID>
+      <Numero>6</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>16,17,18</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>7</ID>
+      <Numero>7</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>19,20</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>8</ID>
+      <Numero>8</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>21,22</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>9</ID>
+      <Numero>9</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>23,24,25</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>10</ID>
+      <Numero>10</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>26,27,28</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>11</ID>
+      <Numero>11</Numero>
+      <TemporadaID>1</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>29,30</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>12</ID>
+      <Numero>1</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>31,32,33</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>13</ID>
+      <Numero>2</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>34,35,36</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>14</ID>
+      <Numero>3</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>37,38,39</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>15</ID>
+      <Numero>4</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>40,41,42</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>16</ID>
+      <Numero>5</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>43,44,45</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>17</ID>
+      <Numero>6</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>46,47,48</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>18</ID>
+      <Numero>7</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>49,50,51</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>19</ID>
+      <Numero>8</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>52,53</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>20</ID>
+      <Numero>9</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>54,55,56</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>21</ID>
+      <Numero>10</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>57,58</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+    <Jornada>
+      <ID>22</ID>
+      <Numero>11</Numero>
+      <TemporadaID>2</TemporadaID>
+      <Estado>NO_INICIADA</Estado>
+      <JugadorIds/>
+      <PartidoIds>59,60</PartidoIds>
+      <EquiposJornada/>
+    </Jornada>
+  </Jornadas>
+  <Partidos>
+    <Partido>
+      <ID>1</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-15</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>1</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>2</ID>
+      <EquipoID1>2</EquipoID1>
+      <EquipoID2>5</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-15</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>1</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>3</ID>
+      <EquipoID1>3</EquipoID1>
+      <EquipoID2>1</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-15</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>1</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>4</ID>
+      <EquipoID1>1</EquipoID1>
+      <EquipoID2>2</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-22</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>2</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>5</ID>
+      <EquipoID1>5</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-22</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>2</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>6</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>3</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-22</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>2</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>7</ID>
+      <EquipoID1>3</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-29</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>3</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>8</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>1</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-29</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>3</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>9</ID>
+      <EquipoID1>5</EquipoID1>
+      <EquipoID2>2</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-29</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>3</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>10</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>1</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-05</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>4</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>11</ID>
+      <EquipoID1>5</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-05</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>4</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>12</ID>
+      <EquipoID1>2</EquipoID1>
+      <EquipoID2>3</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-05</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>4</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>13</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>2</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>5</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>14</ID>
+      <EquipoID1>5</EquipoID1>
+      <EquipoID2>3</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>5</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>15</ID>
+      <EquipoID1>1</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>5</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>16</ID>
+      <EquipoID1>1</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>6</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>17</ID>
+      <EquipoID1>2</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>6</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>18</ID>
+      <EquipoID1>3</EquipoID1>
+      <EquipoID2>5</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>6</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>19</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>7</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>20</ID>
+      <EquipoID1>2</EquipoID1>
+      <EquipoID2>1</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>7</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>21</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>3</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-05</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>8</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>22</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>5</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-05</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>8</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>23</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>5</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>9</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>24</ID>
+      <EquipoID1>1</EquipoID1>
+      <EquipoID2>3</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>9</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>25</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>2</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-12</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>9</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>26</ID>
+      <EquipoID1>5</EquipoID1>
+      <EquipoID2>1</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>10</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>27</ID>
+      <EquipoID1>2</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>10</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>28</ID>
+      <EquipoID1>3</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>10</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>29</ID>
+      <EquipoID1>1</EquipoID1>
+      <EquipoID2>5</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>11</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>30</ID>
+      <EquipoID1>3</EquipoID1>
+      <EquipoID2>2</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>1</TemporadaID>
+      <JornadaID>11</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>31</ID>
+      <EquipoID1>9</EquipoID1>
+      <EquipoID2>10</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>12</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>32</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>8</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>12</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>33</ID>
+      <EquipoID1>7</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-19</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>12</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>34</ID>
+      <EquipoID1>8</EquipoID1>
+      <EquipoID2>9</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>13</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>35</ID>
+      <EquipoID1>10</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>13</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>36</ID>
+      <EquipoID1>7</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-01-26</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>13</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>37</ID>
+      <EquipoID1>7</EquipoID1>
+      <EquipoID2>9</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>14</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>38</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>8</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>14</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>39</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>10</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>14</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>40</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>9</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-09</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>15</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>41</ID>
+      <EquipoID1>7</EquipoID1>
+      <EquipoID2>10</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-09</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>15</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>42</ID>
+      <EquipoID1>8</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-09</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>15</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>43</ID>
+      <EquipoID1>9</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>16</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>44</ID>
+      <EquipoID1>8</EquipoID1>
+      <EquipoID2>10</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>16</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>45</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>7</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>16</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>46</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>10</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-23</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>17</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>47</ID>
+      <EquipoID1>9</EquipoID1>
+      <EquipoID2>8</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-23</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>17</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>48</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>7</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-02-23</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>17</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>49</ID>
+      <EquipoID1>6</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>18</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>50</ID>
+      <EquipoID1>8</EquipoID1>
+      <EquipoID2>7</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>18</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>51</ID>
+      <EquipoID1>10</EquipoID1>
+      <EquipoID2>9</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-02</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>18</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>52</ID>
+      <EquipoID1>9</EquipoID1>
+      <EquipoID2>4</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-09</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>19</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>53</ID>
+      <EquipoID1>10</EquipoID1>
+      <EquipoID2>8</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-09</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>19</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>54</ID>
+      <EquipoID1>8</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>20</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>55</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>9</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>20</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>56</ID>
+      <EquipoID1>10</EquipoID1>
+      <EquipoID2>7</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-16</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>20</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>57</ID>
+      <EquipoID1>10</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-23</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>21</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>58</ID>
+      <EquipoID1>7</EquipoID1>
+      <EquipoID2>8</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-23</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>21</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>59</ID>
+      <EquipoID1>9</EquipoID1>
+      <EquipoID2>7</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-30</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>22</JornadaID>
+    </Partido>
+    <Partido>
+      <ID>60</ID>
+      <EquipoID1>4</EquipoID1>
+      <EquipoID2>6</EquipoID2>
+      <GolesEquipo1>0</GolesEquipo1>
+      <GolesEquipo2>0</GolesEquipo2>
+      <Fecha>2026-03-30</Fecha>
+      <Estado>pendiente</Estado>
+      <TemporadaID>2</TemporadaID>
+      <JornadaID>22</JornadaID>
+    </Partido>
+  </Partidos>
+  <EquipoTemporada>
+    <EquipoID>1</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>1,2,3,4,5,6,7</JugadorIds>
+    <Posicion jugadorId="1"/>
+    <Posicion jugadorId="2"/>
+    <Posicion jugadorId="3"/>
+    <Posicion jugadorId="4"/>
+    <Posicion jugadorId="5"/>
+    <Posicion jugadorId="6"/>
+    <Posicion jugadorId="7"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>2</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>8,9,10,11,12,13,14</JugadorIds>
+    <Posicion jugadorId="8"/>
+    <Posicion jugadorId="9"/>
+    <Posicion jugadorId="10"/>
+    <Posicion jugadorId="11"/>
+    <Posicion jugadorId="12"/>
+    <Posicion jugadorId="13"/>
+    <Posicion jugadorId="14"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>3</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>15,16,17,18,19,20,21</JugadorIds>
+    <Posicion jugadorId="15"/>
+    <Posicion jugadorId="16"/>
+    <Posicion jugadorId="17"/>
+    <Posicion jugadorId="18"/>
+    <Posicion jugadorId="19"/>
+    <Posicion jugadorId="20"/>
+    <Posicion jugadorId="21"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>4</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>22,23,24,25,26,27,28</JugadorIds>
+    <Posicion jugadorId="22"/>
+    <Posicion jugadorId="23"/>
+    <Posicion jugadorId="24"/>
+    <Posicion jugadorId="25"/>
+    <Posicion jugadorId="26"/>
+    <Posicion jugadorId="27"/>
+    <Posicion jugadorId="28"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>5</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>29,30,31,32,33,34,35</JugadorIds>
+    <Posicion jugadorId="29"/>
+    <Posicion jugadorId="30"/>
+    <Posicion jugadorId="31"/>
+    <Posicion jugadorId="32"/>
+    <Posicion jugadorId="33"/>
+    <Posicion jugadorId="34"/>
+    <Posicion jugadorId="35"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>6</EquipoID>
+    <TemporadaID>1</TemporadaID>
+    <JugadorIds>36,37,38,39,40,41,42</JugadorIds>
+    <Posicion jugadorId="36"/>
+    <Posicion jugadorId="37"/>
+    <Posicion jugadorId="38"/>
+    <Posicion jugadorId="39"/>
+    <Posicion jugadorId="40"/>
+    <Posicion jugadorId="41"/>
+    <Posicion jugadorId="42"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>4</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>22,23,24,25,26,27,28</JugadorIds>
+    <Posicion jugadorId="22"/>
+    <Posicion jugadorId="23"/>
+    <Posicion jugadorId="24"/>
+    <Posicion jugadorId="25"/>
+    <Posicion jugadorId="26"/>
+    <Posicion jugadorId="27"/>
+    <Posicion jugadorId="28"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>6</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>36,37,38,39,40,41,42</JugadorIds>
+    <Posicion jugadorId="36"/>
+    <Posicion jugadorId="37"/>
+    <Posicion jugadorId="38"/>
+    <Posicion jugadorId="39"/>
+    <Posicion jugadorId="40"/>
+    <Posicion jugadorId="41"/>
+    <Posicion jugadorId="42"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>7</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>43,44,45,46,47,48,49</JugadorIds>
+    <Posicion jugadorId="43"/>
+    <Posicion jugadorId="44"/>
+    <Posicion jugadorId="45"/>
+    <Posicion jugadorId="46"/>
+    <Posicion jugadorId="47"/>
+    <Posicion jugadorId="48"/>
+    <Posicion jugadorId="49"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>8</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>50,51,52,53,54,55,56</JugadorIds>
+    <Posicion jugadorId="50"/>
+    <Posicion jugadorId="51"/>
+    <Posicion jugadorId="52"/>
+    <Posicion jugadorId="53"/>
+    <Posicion jugadorId="54"/>
+    <Posicion jugadorId="55"/>
+    <Posicion jugadorId="56"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>9</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>64,57,58,59,60,61,62,63</JugadorIds>
+    <Posicion jugadorId="64"/>
+    <Posicion jugadorId="57"/>
+    <Posicion jugadorId="58"/>
+    <Posicion jugadorId="59"/>
+    <Posicion jugadorId="60"/>
+    <Posicion jugadorId="61"/>
+    <Posicion jugadorId="62"/>
+    <Posicion jugadorId="63"/>
+  </EquipoTemporada>
+  <EquipoTemporada>
+    <EquipoID>10</EquipoID>
+    <TemporadaID>2</TemporadaID>
+    <JugadorIds>65,66,67,68,69,70,71</JugadorIds>
+    <Posicion jugadorId="65"/>
+    <Posicion jugadorId="66"/>
+    <Posicion jugadorId="67"/>
+    <Posicion jugadorId="68"/>
+    <Posicion jugadorId="69"/>
+    <Posicion jugadorId="70"/>
+    <Posicion jugadorId="71"/>
+  </EquipoTemporada>
+</Futsal>
