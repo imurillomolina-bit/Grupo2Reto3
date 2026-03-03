@@ -1543,11 +1543,9 @@ button:active {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* ==========================================================================
-   NUEVAS SECCIONES - BUSCADOR, LOGIN, NOTICIAS, NORMATIVA, GOLEADORES
-   ========================================================================== */
+/* NUEVAS SECCIONES - BUSCADOR, LOGIN, NOTICIAS, NORMATIVA, GOLEADORES */
 
-/* ===== BARRA DE BÚSQUEDA ===== */
+/* BARRA DE BÚSQUEDA */
 .search-bar {
     display: flex;
     align-items: center;
@@ -1597,7 +1595,7 @@ button:active {
     transform: scale(1.05);
 }
 
-/* ===== MODAL STYLES ===== */
+/*  MODAL STYLES  */
 .modal {
     display: none;
     position: fixed;
@@ -2628,14 +2626,18 @@ button:active {
             display: none;
         }
     }
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
+
+    /* ===== TAB CONTAINER ===== */
+    .tab-container {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: var(--card-bg);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+    }
 
 .tab-btn {
     padding: 0.8rem 1.5rem;

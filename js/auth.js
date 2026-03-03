@@ -5,7 +5,7 @@ class AuthSystem {
     constructor() {
         this.users = [
             { id: 1, username: 'admin', password: 'admin123', role: 'Administrador', fullName: 'Admin Usuario' },
-            { id: 2, username: 'editor', password: 'editor123', role: 'Editor', fullName: 'Editor Usuario' },
+            { id: 2, username: 'arbitro', password: 'arbitro123', role: 'Arbitro', fullName: 'Arbitro Usuario' },
             { id: 3, username: 'viewer', password: 'viewer123', role: 'Observador', fullName: 'Observador Usuario' }
         ];
         this.currentUser = null;
