@@ -6,7 +6,7 @@ class AuthSystem {
         this.users = [
             { id: 1, username: 'admin', password: 'admin123', role: 'Administrador', fullName: 'Admin Usuario' },
             { id: 2, username: 'arbitro', password: 'arbitro123', role: 'Arbitro', fullName: 'Arbitro Usuario' },
-            { id: 3, username: 'viewer', password: 'viewer123', role: 'Observador', fullName: 'Observador Usuario' }
+            { id: 3, username: 'manager', password: 'manager123', role: 'Manager', fullName: 'Manager Usuario' }
         ];
         this.currentUser = null;
         this.currentSeason = null;
