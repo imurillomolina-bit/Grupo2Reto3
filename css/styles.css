@@ -1610,8 +1610,16 @@ button:active {
     backdrop-filter: blur(5px);
 }
 
+.modal[style*="display: block"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
 .modal.active {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
@@ -2264,7 +2272,7 @@ button:active {
 
     /* ===== LOGIN STYLES ===== */
     .login-modal-content {
-        max-width: 500px;
+        max-width: 350px;
         width: 100%;
     }
 
@@ -2521,12 +2529,13 @@ button:active {
         background: transparent;
         color: var(--text-dark);
         cursor: pointer;
-        text-align: left;
+        text-align: center;
         font-size: 0.95rem;
         font-weight: 500;
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.8rem;
     }
 
