@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+// Carga utilidades comunes: sesion, XML, autenticacion y calculos.
 require __DIR__ . '/arranque.php';
 
+// Si el XML falla, respondemos con 500 para evitar render parcial.
 try {
     $xml = load_futsal_xml();
 } catch (Throwable $e) {
@@ -12,11 +14,14 @@ try {
     exit;
 }
 
+// Verifica inactividad y cierra sesion automaticamente si supera timeout.
 apply_session_timeout($xml);
 
+// Controlador de acciones de formulario (login, logout, etc.).
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
+    // Login normal con usuario/clave desde XML.
     if ($action === 'login') {
         $username = trim((string) ($_POST['username'] ?? ''));
         $password = trim((string) ($_POST['password'] ?? ''));
@@ -40,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Login rapido como invitado (rol restringido).
     if ($action === 'guest_login') {
         $guest = get_guest_user($xml);
         $_SESSION['user'] = [
@@ -52,11 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         set_flash('success', 'Has entrado como invitado.');
     }
 
+    // Cierre de sesion manual.
     if ($action === 'logout') {
         unset($_SESSION['user']);
         set_flash('success', 'Sesion cerrada correctamente.');
     }
 
+    // Cambio de temporada seleccionada via formulario.
     if ($action === 'select_season') {
         $seasonId = (int) ($_POST['season_id'] ?? 0);
         if ($seasonId <= 0 || get_season_by_id($xml, $seasonId) === null) {
@@ -67,14 +75,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Patron PRG (Post/Redirect/Get) para evitar reenvio del formulario.
     $redirectPage = $_GET['page'] ?? 'home';
     header('Location: index.php?page=' . urlencode((string) $redirectPage));
     exit;
 }
 
+// Carga de contexto base para pintar la pagina.
 $allSeasons = get_seasons($xml);
 $currentSeason = get_current_season($xml);
 $selectedSeason = $currentSeason;
+
+// Si el usuario eligio temporada previamente, se mantiene en sesion.
 if (isset($_SESSION['season_id'])) {
     $season = get_season_by_id($xml, (int) $_SESSION['season_id']);
     if ($season !== null) {
@@ -82,12 +94,14 @@ if (isset($_SESSION['season_id'])) {
     }
 }
 
+// Lista blanca de vistas permitidas para evitar includes arbitrarios.
 $page = (string) ($_GET['page'] ?? 'home');
 $allowedPages = ['home', 'clasificacion', 'equipos', 'equipo', 'jugadores', 'partidos', 'noticias', 'normativa', 'buscar'];
 if (!in_array($page, $allowedPages, true)) {
     $page = 'home';
 }
 
+// Reglas de acceso por rol: partidos requiere usuario no invitado.
 $user = $_SESSION['user'] ?? null;
 if ($page === 'partidos' && $user === null) {
     set_flash('error', 'Debes iniciar sesion para ver partidos.');
@@ -101,14 +115,17 @@ if ($page === 'partidos' && $user !== null && (($user['is_guest'] ?? false) === 
     exit;
 }
 
+// Flash para feedback visual de la ultima accion del usuario.
 $flash = get_flash();
 
+// Estructuras precargadas para que las vistas sean simples y rapidas.
 $teamsMap = get_teams_map($xml);
 $playersMap = get_players_map($xml);
 $seasonShields = $selectedSeason ? get_team_shield_for_season($selectedSeason) : [];
 $seasonPhotos = $selectedSeason ? get_player_photo_for_season($selectedSeason) : [];
 $teamSeasonRelations = get_team_season_relations($xml);
 
+// Marca enlace de menu activo segun pagina actual.
 function is_active_page(string $page, string $current): string
 {
     return $page === $current ? 'is-active' : '';
@@ -125,6 +142,7 @@ function is_active_page(string $page, string $current): string
 </head>
 <body>
 <header class="portal-header">
+    <!-- Cabecera dinamica: temporada activa + estado de sesion -->
     <div class="portal-header__top">
         <h1>Federacion Futsal</h1>
         <div class="portal-header__meta">
@@ -137,6 +155,7 @@ function is_active_page(string $page, string $current): string
         </div>
     </div>
 
+    <!-- Navegacion principal semantica del portal -->
     <nav class="portal-nav" aria-label="Navegacion principal">
         <a class="<?= is_active_page('home', $page) ?>" href="index.php?page=home">Inicio</a>
         <a class="<?= is_active_page('clasificacion', $page) ?>" href="index.php?page=clasificacion">Clasificacion</a>
@@ -149,6 +168,7 @@ function is_active_page(string $page, string $current): string
 </header>
 
 <main class="portal-main">
+    <!-- Zona de feedback visual (exito/error) -->
     <?php if ($flash !== null): ?>
         <section class="flash flash--<?= htmlspecialchars((string) $flash['type'], ENT_QUOTES, 'UTF-8') ?>" role="status">
             <?= htmlspecialchars((string) $flash['message'], ENT_QUOTES, 'UTF-8') ?>
@@ -156,6 +176,7 @@ function is_active_page(string $page, string $current): string
     <?php endif; ?>
 
     <aside class="portal-sidebar">
+        <!-- Bloque de autenticacion y acciones de sesion -->
         <section class="panel">
             <h2>Acceso</h2>
             <?php if ($user === null): ?>
@@ -183,6 +204,7 @@ function is_active_page(string $page, string $current): string
             <?php endif; ?>
         </section>
 
+        <!-- Buscador global de equipos y jugadores -->
         <section class="panel">
             <h2>Buscador</h2>
             <form id="search-form" method="get" action="index.php" novalidate>
@@ -196,6 +218,7 @@ function is_active_page(string $page, string $current): string
 
     <section class="portal-content">
         <?php
+        // Carga de vista dinamica en base al parametro page.
         $viewPath = __DIR__ . '/' . $page . '.php';
         if (file_exists($viewPath)) {
             require $viewPath;

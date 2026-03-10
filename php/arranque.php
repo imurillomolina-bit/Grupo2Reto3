@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
+// Inicia la sesion global una sola vez para manejar login, rol y flashes.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Ruta absoluta al XML maestro de datos de futsal.
 const FUTSAL_XML_PATH = __DIR__ . '/../data/futsal.xml';
 
+// Carga y cachea el XML para evitar parseos repetidos en la misma peticion.
 function load_futsal_xml(): SimpleXMLElement
 {
     static $xml = null;
@@ -29,12 +32,14 @@ function load_futsal_xml(): SimpleXMLElement
     return $xml;
 }
 
+// Normaliza rutas Windows/Linux para usarlas de forma segura en src/href.
 function normalize_path(string $path): string
 {
     $normalized = str_replace('\\', '/', trim($path));
     return $normalized !== '' ? $normalized : '';
 }
 
+// Convierte un CSV de IDs ("1,2,3") a un array de enteros validos.
 function csv_ids(string $csv): array
 {
     $csv = trim($csv);
@@ -54,6 +59,7 @@ function csv_ids(string $csv): array
     return $ids;
 }
 
+// Obtiene configuracion global desde XML (timeout y etiquetas de rol).
 function get_config(SimpleXMLElement $xml): array
 {
     $timeoutMin = isset($xml->Configuracion->SesionTimeoutMinutos)
@@ -77,6 +83,7 @@ function get_config(SimpleXMLElement $xml): array
     ];
 }
 
+// Expulsa usuarios por inactividad segun timeout configurado en XML.
 function apply_session_timeout(SimpleXMLElement $xml): void
 {
     $config = get_config($xml);
@@ -95,6 +102,7 @@ function apply_session_timeout(SimpleXMLElement $xml): void
     $_SESSION['last_activity'] = time();
 }
 
+// Devuelve usuarios del XML en formato array listo para autenticacion.
 function get_users(SimpleXMLElement $xml): array
 {
     $users = [];
@@ -117,6 +125,7 @@ function get_users(SimpleXMLElement $xml): array
     return $users;
 }
 
+// Comprueba credenciales de usuario (excluyendo el usuario invitado).
 function authenticate_user(SimpleXMLElement $xml, string $username, string $password): ?array
 {
     foreach (get_users($xml) as $user) {
@@ -132,6 +141,7 @@ function authenticate_user(SimpleXMLElement $xml, string $username, string $pass
     return null;
 }
 
+// Recupera el usuario invitado definido en XML o fallback por defecto.
 function get_guest_user(SimpleXMLElement $xml): array
 {
     foreach (get_users($xml) as $user) {
@@ -150,6 +160,7 @@ function get_guest_user(SimpleXMLElement $xml): array
     ];
 }
 
+// Lista temporadas ordenadas por anio descendente.
 function get_seasons(SimpleXMLElement $xml): array
 {
     $seasons = [];
@@ -177,6 +188,7 @@ function get_seasons(SimpleXMLElement $xml): array
     return $seasons;
 }
 
+// Selecciona temporada actual: primero una "abierta", si no la mas reciente.
 function get_current_season(SimpleXMLElement $xml): ?array
 {
     $seasons = get_seasons($xml);
@@ -193,6 +205,7 @@ function get_current_season(SimpleXMLElement $xml): ?array
     return $seasons[0];
 }
 
+// Busca una temporada concreta por ID.
 function get_season_by_id(SimpleXMLElement $xml, int $seasonId): ?array
 {
     foreach (get_seasons($xml) as $season) {
@@ -204,6 +217,7 @@ function get_season_by_id(SimpleXMLElement $xml, int $seasonId): ?array
     return null;
 }
 
+// Crea mapa de equipos indexado por ID para accesos O(1).
 function get_teams_map(SimpleXMLElement $xml): array
 {
     $teams = [];
@@ -230,6 +244,7 @@ function get_teams_map(SimpleXMLElement $xml): array
     return $teams;
 }
 
+// Crea mapa de jugadores indexado por ID para cruces rapidos.
 function get_players_map(SimpleXMLElement $xml): array
 {
     $players = [];
@@ -257,6 +272,7 @@ function get_players_map(SimpleXMLElement $xml): array
     return $players;
 }
 
+// Relaciona temporada/equipo con sus jugadores asociados.
 function get_team_season_relations(SimpleXMLElement $xml): array
 {
     $relations = [];
@@ -278,6 +294,7 @@ function get_team_season_relations(SimpleXMLElement $xml): array
     return $relations;
 }
 
+// Escudos por temporada: permite reemplazar el escudo base del equipo.
 function get_team_shield_for_season(array $season): array
 {
     $map = [];
@@ -298,6 +315,7 @@ function get_team_shield_for_season(array $season): array
     return $map;
 }
 
+// Fotos de jugadores por temporada: sobrescribe imagen base si existe.
 function get_player_photo_for_season(array $season): array
 {
     $map = [];
@@ -318,6 +336,7 @@ function get_player_photo_for_season(array $season): array
     return $map;
 }
 
+// Filtra y devuelve partidos pertenecientes a una temporada.
 function get_matches_for_season(SimpleXMLElement $xml, int $seasonId): array
 {
     $matches = [];
@@ -346,6 +365,7 @@ function get_matches_for_season(SimpleXMLElement $xml, int $seasonId): array
     return $matches;
 }
 
+// Calcula la tabla de clasificacion integramente en servidor (requisito rubrica).
 function compute_classification(SimpleXMLElement $xml, array $season): array
 {
     $teams = get_teams_map($xml);
@@ -371,6 +391,7 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
     }
 
     $matches = get_matches_for_season($xml, $season['id']);
+    // Solo se computan partidos cerrados; los pendientes no alteran la tabla.
     foreach ($matches as $match) {
         if ($match['status'] === 'pendiente') {
             continue;
@@ -387,6 +408,7 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
         $table[$match['team2']]['goals_for'] += $match['goals2'];
         $table[$match['team2']]['goals_against'] += $match['goals1'];
 
+        // Reparto de puntos segun resultado final.
         if ($match['goals1'] > $match['goals2']) {
             $table[$match['team1']]['wins']++;
             $table[$match['team1']]['points'] += 3;
@@ -408,6 +430,7 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
     }
     unset($row);
 
+    // Orden oficial: puntos, diferencia de goles, goles a favor, nombre.
     $rows = array_values($table);
     usort($rows, static function (array $a, array $b): int {
         $byPoints = $b['points'] <=> $a['points'];
@@ -431,11 +454,13 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
     return $rows;
 }
 
+// Mensaje temporal para feedback al usuario tras acciones POST.
 function set_flash(string $type, string $message): void
 {
     $_SESSION['flash'] = ['type' => $type, 'message' => $message];
 }
 
+// Recupera y consume el mensaje flash (solo se muestra una vez).
 function get_flash(): ?array
 {
     if (!isset($_SESSION['flash'])) {
@@ -447,6 +472,7 @@ function get_flash(): ?array
     return $flash;
 }
 
+// Traduce rol tecnico a etiqueta visible para cabecera y panel de usuario.
 function role_label(SimpleXMLElement $xml, string $role): string
 {
     $roles = get_config($xml)['roles'];

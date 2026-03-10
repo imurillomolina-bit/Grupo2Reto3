@@ -1,12 +1,15 @@
 <?php
 
+// La vista requiere temporada activa para cruzar equipo-jugadores.
 if ($selectedSeason === null) {
     echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
     return;
 }
 
+// team_id permite filtrar la parrilla por un equipo concreto.
 $teamFilter = isset($_GET['team_id']) ? (int) $_GET['team_id'] : 0;
 ?>
+<!-- Formulario simple de filtro por equipo -->
 <section class="panel">
     <h2>Jugadores - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
     <form method="get" action="index.php" class="filters-inline">
@@ -25,6 +28,7 @@ $teamFilter = isset($_GET['team_id']) ? (int) $_GET['team_id'] : 0;
     </form>
 </section>
 
+<!-- Listado de jugadores (todos o filtrados) -->
 <section class="cards-grid">
     <?php foreach ($selectedSeason['team_ids'] as $teamId): ?>
         <?php if (!isset($teamsMap[$teamId])) { continue; } ?>
@@ -33,6 +37,7 @@ $teamFilter = isset($_GET['team_id']) ? (int) $_GET['team_id'] : 0;
         <?php foreach ($playerIds as $playerId): ?>
             <?php if (!isset($playersMap[$playerId])) { continue; } ?>
             <?php
+            // Si hay foto especifica de temporada, se usa en lugar de la general.
             $player = $playersMap[$playerId];
             $photo = $seasonPhotos[$playerId] ?? $player['image'];
             ?>

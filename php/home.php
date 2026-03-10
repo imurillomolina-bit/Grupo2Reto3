@@ -1,13 +1,16 @@
 <?php
 
+// Texto de apoyo para cabecera de inicio segun temporada seleccionada.
 $seasonName = $selectedSeason['name'] ?? 'No disponible';
 ?>
+<!-- Presentacion general del portal y stack tecnico -->
 <section class="panel">
     <h2>Bienvenido al Portal Dinamico</h2>
     <p>Esta version usa <strong>PHP + XML</strong> para mostrar datos en tiempo real y gestionar sesiones por rol.</p>
     <p>Temporada seleccionada: <strong><?= htmlspecialchars($seasonName, ENT_QUOTES, 'UTF-8') ?></strong></p>
 </section>
 
+<!-- Resumen funcional y flujo recomendado para el usuario -->
 <section class="panel grid-2">
     <article>
         <h3>Que incluye esta fase</h3>

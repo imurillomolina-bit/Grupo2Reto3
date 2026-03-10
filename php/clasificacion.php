@@ -1,14 +1,18 @@
 <?php
 
+// Sin temporada no se puede construir clasificacion.
 if ($selectedSeason === null) {
     echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
     return;
 }
 
+// Calculamos tabla en servidor con datos del XML.
 $classification = compute_classification($xml, $selectedSeason);
+// Filtros opcionales enviados por query string.
 $minPoints = isset($_GET['min_points']) && is_numeric($_GET['min_points']) ? (int) $_GET['min_points'] : 0;
 $teamFilter = trim((string) ($_GET['team_filter'] ?? ''));
 ?>
+<!-- Panel de seleccion de temporada + filtros avanzados -->
 <section class="panel">
     <h2>Clasificacion - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
 
@@ -38,6 +42,7 @@ $teamFilter = trim((string) ($_GET['team_filter'] ?? ''));
     </form>
 </section>
 
+<!-- Tabla final, con enlace directo a la ficha del equipo -->
 <section class="panel">
     <table class="table">
         <thead>
@@ -57,6 +62,7 @@ $teamFilter = trim((string) ($_GET['team_filter'] ?? ''));
         <tbody>
             <?php
             $position = 0;
+            // Aplicamos filtros antes de pintar cada fila.
             foreach ($classification as $row):
                 if ($row['points'] < $minPoints) {
                     continue;
@@ -66,6 +72,7 @@ $teamFilter = trim((string) ($_GET['team_filter'] ?? ''));
                 }
                 $position++;
                 $teamId = (int) $row['team_id'];
+                // Prioriza escudo de temporada; si no existe usa el base del equipo.
                 $shield = $seasonShields[$teamId] ?? ($teamsMap[$teamId]['shield'] ?? '');
             ?>
                 <tr>

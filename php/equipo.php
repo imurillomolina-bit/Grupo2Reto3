@@ -1,20 +1,24 @@
 <?php
 
+// Validaciones iniciales de contexto minimo.
 if ($selectedSeason === null) {
     echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
     return;
 }
 
+// team_id llega por query string desde clasificacion/listado equipos.
 $teamId = isset($_GET['team_id']) ? (int) $_GET['team_id'] : 0;
 if ($teamId <= 0 || !isset($teamsMap[$teamId])) {
     echo '<section class="panel"><p>Equipo no valido.</p></section>';
     return;
 }
 
+// Datos base del equipo y sus jugadores para la temporada activa.
 $team = $teamsMap[$teamId];
 $shield = $seasonShields[$teamId] ?? $team['shield'];
 $playerIds = $teamSeasonRelations[$selectedSeason['id']][$teamId] ?? [];
 ?>
+<!-- Bloque superior: datos institucionales del equipo -->
 <section class="panel team-detail">
     <h2><?= htmlspecialchars($team['name'], ENT_QUOTES, 'UTF-8') ?></h2>
     <div class="team-detail__meta">
@@ -29,6 +33,7 @@ $playerIds = $teamSeasonRelations[$selectedSeason['id']][$teamId] ?? [];
     </div>
 </section>
 
+<!-- Bloque inferior: plantilla del equipo para la temporada -->
 <section class="panel">
     <h3>Jugadores</h3>
     <?php if ($playerIds === []): ?>
@@ -38,6 +43,7 @@ $playerIds = $teamSeasonRelations[$selectedSeason['id']][$teamId] ?? [];
             <?php foreach ($playerIds as $playerId): ?>
                 <?php if (!isset($playersMap[$playerId])) { continue; } ?>
                 <?php
+                // Foto de temporada tiene prioridad frente a la foto base del jugador.
                 $player = $playersMap[$playerId];
                 $photo = $seasonPhotos[$playerId] ?? $player['image'];
                 ?>

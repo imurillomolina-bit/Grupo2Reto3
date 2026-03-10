@@ -1,11 +1,14 @@
 <?php
 
+// Consulta normalizada y contenedor de resultados.
 $query = trim((string) ($_GET['q'] ?? ''));
 $results = [];
 
+// Se pide minimo de 2 caracteres para evitar ruido y cargas innecesarias.
 if (mb_strlen($query) >= 2) {
     $needle = mb_strtolower($query);
 
+    // Coincidencias sobre nombres de equipo.
     foreach ($teamsMap as $team) {
         if (mb_strpos(mb_strtolower($team['name']), $needle) !== false) {
             $results[] = [
@@ -16,6 +19,7 @@ if (mb_strlen($query) >= 2) {
         }
     }
 
+    // Coincidencias sobre nombres de jugador.
     foreach ($playersMap as $player) {
         if (mb_strpos(mb_strtolower($player['name']), $needle) !== false) {
             $results[] = [
@@ -27,6 +31,7 @@ if (mb_strlen($query) >= 2) {
     }
 }
 ?>
+<!-- Estado de busqueda: vacio, sin resultados o listado final -->
 <section class="panel">
     <h2>Buscador</h2>
     <?php if (mb_strlen($query) < 2): ?>

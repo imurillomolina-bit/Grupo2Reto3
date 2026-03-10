@@ -1,18 +1,22 @@
 <?php
 
+// Esta vista depende de una temporada seleccionada.
 if ($selectedSeason === null) {
     echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
     return;
 }
 ?>
+<!-- Cabecera de listado para la temporada activa -->
 <section class="panel">
     <h2>Equipos - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
 </section>
 
+<!-- Grid de tarjetas de equipos con acceso a su ficha -->
 <section class="cards-grid">
     <?php foreach ($selectedSeason['team_ids'] as $teamId): ?>
         <?php if (!isset($teamsMap[$teamId])) { continue; } ?>
         <?php
+        // Para cada equipo intentamos mostrar el escudo especifico de temporada.
         $team = $teamsMap[$teamId];
         $shield = $seasonShields[$teamId] ?? $team['shield'];
         ?>

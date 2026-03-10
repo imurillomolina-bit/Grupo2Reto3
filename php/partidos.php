@@ -1,17 +1,21 @@
 <?php
 
+// Partidos solo se muestran con temporada seleccionada.
 if ($selectedSeason === null) {
     echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
     return;
 }
 
+// Carga de calendario y resultados para la temporada activa.
 $matches = get_matches_for_season($xml, $selectedSeason['id']);
 ?>
+<!-- Cabecera informativa de permisos + contexto de temporada -->
 <section class="panel">
     <h2>Partidos - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
     <p>Vista restringida: solo usuarios autenticados no invitados.</p>
 </section>
 
+<!-- Tabla cronologica de partidos -->
 <section class="panel">
     <table class="table">
         <thead>
