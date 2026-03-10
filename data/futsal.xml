@@ -1935,4 +1935,54 @@
     <Posicion jugadorId="70"/>
     <Posicion jugadorId="71"/>
   </EquipoTemporada>
+  <Usuarios>
+    <Usuario>
+      <ID>1</ID>
+      <Username>admin</Username>
+      <Password>admin123</Password>
+      <Rol>Administrador</Rol>
+      <NombreCompleto>Admin Usuario</NombreCompleto>
+    </Usuario>
+    <Usuario>
+      <ID>2</ID>
+      <Username>arbitro</Username>
+      <Password>arbitro123</Password>
+      <Rol>Arbitro</Rol>
+      <NombreCompleto>Arbitro Usuario</NombreCompleto>
+    </Usuario>
+    <Usuario>
+      <ID>3</ID>
+      <Username>manager</Username>
+      <Password>manager123</Password>
+      <Rol>Manager</Rol>
+      <NombreCompleto>Manager Usuario</NombreCompleto>
+    </Usuario>
+    <Usuario>
+      <ID>0</ID>
+      <Username>invitado</Username>
+      <Password></Password>
+      <Rol>Invitado</Rol>
+      <NombreCompleto>Usuario Invitado</NombreCompleto>
+      <EsInvitado>true</EsInvitado>
+    </Usuario>
+  </Usuarios>
+  <Configuracion>
+    <SesionTimeoutMinutos>30</SesionTimeoutMinutos>
+    <SeccionesBuscables>
+      <Seccion titulo="Clasificación" tipo="Sección" pagina="clasificacion"/>
+      <Seccion titulo="Partidos" tipo="Sección" pagina="partidos"/>
+      <Seccion titulo="Jugadores" tipo="Sección" pagina="jugadores"/>
+      <Seccion titulo="Equipos" tipo="Sección" pagina="equipos"/>
+      <Seccion titulo="Noticias" tipo="Sección" pagina="noticias"/>
+      <Seccion titulo="Normativa" tipo="Sección" pagina="normativa"/>
+    </SeccionesBuscables>
+    <Roles>
+      <Rol nombre="Administrador" etiqueta="Administrador"/>
+      <Rol nombre="Editor" etiqueta="Editor"/>
+      <Rol nombre="Observador" etiqueta="Observador"/>
+      <Rol nombre="Arbitro" etiqueta="Árbitro"/>
+      <Rol nombre="Manager" etiqueta="Manager"/>
+      <Rol nombre="Invitado" etiqueta="Invitado"/>
+    </Roles>
+  </Configuracion>
 </Futsal>

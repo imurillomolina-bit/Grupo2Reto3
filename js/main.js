@@ -1,3 +1,224 @@
+// ==================== SISTEMA DE AUTENTICACIÓN Y SESIONES ====================
+// Gestiona Login, Sesiones, Roles de Usuario y Temporadas
+
+class AuthSystem {
+    constructor() {
+        this.users = [];
+        this.currentUser = null;
+        this.currentSeason = null;
+        this.sessionTimeout = 30 * 60 * 1000; // valor por defecto hasta que cargue el XML
+        this.guestUser = null;
+        this.roleTranslations = {};
+        this.loadSession();
+        this.loadUsersAndSeasons();
+    }
+
+    /**
+     * Autentica un usuario con usuario y contraseña
+     */
+    login(username, password) {
+        const user = this.users.find(u => u.username === username && u.password === password);
+        if (user) {
+            this.currentUser = {
+                id: user.id,
+                username: user.username,
+                role: user.role,
+                fullName: user.fullName,
+                loginTime: new Date()
+            };
+            this.saveSession();
+            return { success: true, user: this.currentUser };
+        }
+        return { success: false, message: 'Usuario o contraseña incorrectos' };
+    }
+
+    /**
+     * Inicia sesión como invitado
+     */
+    loginAsGuest() {
+        const guest = this.guestUser || { id: 0, username: 'invitado', role: 'Invitado', fullName: 'Usuario Invitado', isGuest: true };
+        this.currentUser = { ...guest, loginTime: new Date() };
+        this.saveSession();
+        return { success: true, user: this.currentUser };
+    }
+
+    /**
+     * Cierra la sesión actual
+     */
+    logout() {
+        this.currentUser = null;
+        sessionStorage.removeItem('user_session');
+        sessionStorage.removeItem('current_season');
+        return { success: true, message: 'Sesión cerrada correctamente' };
+    }
+
+    /**
+     * Obtiene el usuario actual
+     */
+    getCurrentUser() {
+        return this.currentUser;
+    }
+
+    /**
+     * Verifica si hay un usuario autenticado
+     */
+    isAuthenticated() {
+        return this.currentUser !== null;
+    }
+
+    /**
+     * Verifica si el usuario es administrador
+     */
+    isAdmin() {
+        return this.currentUser && this.currentUser.role === 'Administrador';
+    }
+
+    /**
+     * Verifica si el usuario es invitado
+     */
+    isGuest() {
+        return this.currentUser && this.currentUser.isGuest === true;
+    }
+
+    /**
+     * Guarda la sesión en sessionStorage
+     */
+    saveSession() {
+        if (this.currentUser) {
+            sessionStorage.setItem('user_session', JSON.stringify(this.currentUser));
+        }
+    }
+
+    /**
+     * Carga la sesión desde sessionStorage
+     */
+    loadSession() {
+        const session = sessionStorage.getItem('user_session');
+        if (session) {
+            try {
+                this.currentUser = JSON.parse(session);
+            } catch (e) {
+                console.error('Error al cargar sesión:', e);
+                this.currentUser = null;
+            }
+        }
+    }
+
+    /**
+     * Carga usuarios y temporadas desde el XML
+     */
+    loadUsersAndSeasons() {
+        fetch('./data/futsal.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+
+                // Cargar usuarios
+                const usuariosXml = xmlDoc.getElementsByTagName('Usuario');
+                this.users = [];
+                for (let i = 0; i < usuariosXml.length; i++) {
+                    const u = usuariosXml[i];
+                    const esInvitado = u.getElementsByTagName('EsInvitado')[0]?.textContent === 'true';
+                    const userData = {
+                        id: parseInt(u.getElementsByTagName('ID')[0]?.textContent || '0'),
+                        username: u.getElementsByTagName('Username')[0]?.textContent || '',
+                        password: u.getElementsByTagName('Password')[0]?.textContent || '',
+                        role: u.getElementsByTagName('Rol')[0]?.textContent || '',
+                        fullName: u.getElementsByTagName('NombreCompleto')[0]?.textContent || '',
+                        isGuest: esInvitado
+                    };
+                    if (esInvitado) {
+                        this.guestUser = userData;
+                    } else {
+                        this.users.push(userData);
+                    }
+                }
+
+                // Cargar configuración
+                const timeoutMin = xmlDoc.getElementsByTagName('SesionTimeoutMinutos')[0]?.textContent;
+                if (timeoutMin) {
+                    this.sessionTimeout = parseInt(timeoutMin) * 60 * 1000;
+                }
+
+                // Cargar traducciones de roles
+                const rolesXml = xmlDoc.querySelectorAll('Configuracion > Roles > Rol');
+                this.roleTranslations = {};
+                rolesXml.forEach(r => {
+                    this.roleTranslations[r.getAttribute('nombre')] = r.getAttribute('etiqueta');
+                });
+
+                // Cargar temporadas
+                const temporadas = xmlDoc.getElementsByTagName('Temporada');
+                const seasons = [];
+                for (let i = 0; i < temporadas.length; i++) {
+                    const temp = temporadas[i];
+                    const nombre = temp.getElementsByTagName('Nombre')[0]?.textContent || '';
+                    const ano = parseInt(temp.getElementsByTagName('Ano')[0]?.textContent || '0');
+                    const estado = temp.getElementsByTagName('Estado')[0]?.textContent || '';
+                    const id = parseInt(temp.getElementsByTagName('ID')[0]?.textContent || '0');
+                    seasons.push({ id, nombre, ano, estado });
+                }
+
+                // Ordena por año descendente y selecciona la más reciente
+                seasons.sort((a, b) => b.ano - a.ano);
+                this.seasons = seasons;
+
+                // Establece la temporada actual como la más reciente con estado 'abierta'
+                const openSeason = seasons.find(s => s.estado === 'abierta');
+                if (openSeason) {
+                    this.setCurrentSeason(openSeason);
+                } else if (seasons.length > 0) {
+                    this.setCurrentSeason(seasons[0]);
+                }
+            })
+            .catch(error => console.error('Error cargando datos XML:', error));
+    }
+
+    /**
+     * Establece la temporada actual
+     */
+    setCurrentSeason(season) {
+        this.currentSeason = season;
+        sessionStorage.setItem('current_season', JSON.stringify(season));
+    }
+
+    /**
+     * Obtiene la temporada actual
+     */
+    getCurrentSeason() {
+        return this.currentSeason;
+    }
+
+    /**
+     * Obtiene todas las temporadas
+     */
+    getAllSeasons() {
+        return this.seasons || [];
+    }
+
+    /**
+     * Obtiene información de la sesión formateada para mostrar
+     */
+    getSessionInfo() {
+        if (!this.currentUser) {
+            return null;
+        }
+
+        let userRole = this.currentUser.role;
+
+        return {
+            fullName: this.currentUser.fullName,
+            role: this.roleTranslations[userRole] || userRole,
+            season: this.currentSeason ? this.currentSeason.nombre : 'No disponible',
+            isGuest: this.currentUser.isGuest || false
+        };
+    }
+}
+
+// Crear instancia global
+const authSystem = new AuthSystem();
+
 // ==================== CARRUSEL DE NOTICIAS ====================
 // Controla el slider de noticias de la pagina home
 function initCarousel() {
@@ -621,37 +842,38 @@ $(document).ready(function() {
 $(document).ready(function() {
     var searchModal = $('#search-modal');
     var searchResults = $('#search-results');
-    
-    // Base de b�squeda: secciones est�ticas
-    var searchableContent = [
-        { title: 'Clasificaci�n', type: 'Secci�n', page: 'clasificacion' },
-        { title: 'Partidos', type: 'Secci�n', page: 'partidos' },
-        { title: 'Jugadores', type: 'Secci�n', page: 'jugadores' },
-        { title: 'Equipos', type: 'Secci�n', page: 'equipos' },
-        { title: 'Noticias', type: 'Secci�n', page: 'noticias' },
-        { title: 'Normativa', type: 'Secci�n', page: 'normativa' }
-    ];
 
-    // Cargar jugadores y equipos desde el XML para buscarlos
+    var searchableContent = [];
+
+    // Cargar secciones, jugadores y equipos desde el XML
     function loadSearchData() {
         $.ajax({
-            url: 'futsal_data.xml?v=' + new Date().getTime(),
+            url: 'data/futsal.xml?v=' + new Date().getTime(),
             method: 'GET',
             dataType: 'xml',
             cache: false,
             success: function(xml) {
                 var $xml = $(xml);
-                var equipos = $xml.find('Futsal > Equipos > Equipo');
-                var jugadores = $xml.find('Futsal > Jugadores > Jugador');
 
-                equipos.each(function() {
+                // Secciones definidas en el XML
+                $xml.find('SeccionesBuscables > Seccion').each(function() {
+                    searchableContent.push({
+                        title: $(this).attr('titulo'),
+                        type: $(this).attr('tipo'),
+                        page: $(this).attr('pagina')
+                    });
+                });
+
+                // Equipos
+                $xml.find('Futsal > Equipos > Equipo').each(function() {
                     var nombre = $(this).find('Nombre').first().text();
                     if (nombre) {
                         searchableContent.push({ title: nombre, type: 'Equipo', page: 'equipos' });
                     }
                 });
 
-                jugadores.each(function() {
+                // Jugadores
+                $xml.find('Futsal > Jugadores > Jugador').each(function() {
                     var nombre = $(this).find('Nombre').first().text();
                     if (nombre) {
                         searchableContent.push({ title: nombre, type: 'Jugador', page: 'jugadores' });
