@@ -376,6 +376,87 @@ function get_matches_for_season(SimpleXMLElement $xml, int $seasonId): array
     return $matches;
 }
 
+// Convierte una fecha ISO simple a timestamp para ordenar partidos.
+function match_timestamp(array $match): int
+{
+    $date = (string) ($match['date'] ?? '');
+    if ($date === '') {
+        return 0;
+    }
+
+    $parsed = strtotime($date);
+    return $parsed !== false ? $parsed : 0;
+}
+
+// Formatea la fecha de partido para mostrarla en interfaz.
+function format_match_date(string $date): string
+{
+    $parsed = strtotime($date);
+    if ($parsed === false) {
+        return $date;
+    }
+
+    return date('d/m/Y', $parsed);
+}
+
+// Devuelve los partidos pendientes mas cercanos de una temporada.
+function get_upcoming_matches(array $matches, int $limit = 4): array
+{
+    $upcoming = array_values(array_filter(
+        $matches,
+        static fn(array $match): bool => strtolower((string) ($match['status'] ?? '')) === 'pendiente'
+    ));
+
+    usort(
+        $upcoming,
+        static fn(array $a, array $b): int => match_timestamp($a) <=> match_timestamp($b)
+    );
+
+    return array_slice($upcoming, 0, max(0, $limit));
+}
+
+// Devuelve los ultimos partidos cerrados de una temporada.
+function get_completed_matches(array $matches, int $limit = 4): array
+{
+    $completed = array_values(array_filter(
+        $matches,
+        static fn(array $match): bool => strtolower((string) ($match['status'] ?? '')) !== 'pendiente'
+    ));
+
+    usort(
+        $completed,
+        static fn(array $a, array $b): int => match_timestamp($b) <=> match_timestamp($a)
+    );
+
+    return array_slice($completed, 0, max(0, $limit));
+}
+
+// Resume indicadores utiles para paneles y portada.
+function get_season_overview(SimpleXMLElement $xml, array $season): array
+{
+    $matches = get_matches_for_season($xml, (int) $season['id']);
+    $played = 0;
+    $pending = 0;
+
+    foreach ($matches as $match) {
+        if (strtolower((string) $match['status']) === 'pendiente') {
+            $pending++;
+            continue;
+        }
+
+        $played++;
+    }
+
+    return [
+        'teams' => count($season['team_ids']),
+        'rounds' => count($season['round_ids']),
+        'matches' => count($matches),
+        'played_matches' => $played,
+        'pending_matches' => $pending,
+        'status' => strtoupper(str_replace('_', ' ', (string) ($season['status'] ?? 'no definido'))),
+    ];
+}
+
 // Calcula la tabla de clasificacion integramente en servidor (requisito rubrica).
 function compute_classification(SimpleXMLElement $xml, array $season): array
 {
