@@ -4,6 +4,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 .portal-header {
@@ -11,35 +12,49 @@
     color: #fff;
     border-radius: 12px;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .portal-header__top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.75rem;
     flex-wrap: wrap;
+}
+
+.portal-header__top h1 {
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    margin: 0;
+    white-space: nowrap;
 }
 
 .portal-header__meta {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.2rem;
+    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    text-align: right;
 }
 
 .portal-nav {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .portal-nav a {
     color: #fff;
     text-decoration: none;
-    padding: 0.45rem 0.7rem;
+    padding: 0.4rem 0.65rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.15);
+    font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+    white-space: nowrap;
+    transition: background 0.2s;
 }
 
 .portal-nav a.is-active,
@@ -182,6 +197,9 @@ button {
     gap: 1rem;
 }
 
+/*Responsive*/
+
+/* Tablets (900px) */
 @media (max-width: 900px) {
     .portal-main {
         grid-template-columns: 1fr;
@@ -193,5 +211,186 @@ button {
 
     .portal-content {
         order: 1;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .portal-header {
+        border-radius: 8px;
+    }
+}
+
+/* Tablets estrechas (764px) */
+@media (max-width: 764px) {
+    .portal-header,
+    .portal-main,
+    .portal-footer {
+        padding: 0.75rem;
+    }
+
+    .portal-header__top {
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .portal-header__top h1 {
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .portal-header__meta {
+        width: 100%;
+        text-align: left;
+    }
+
+    .portal-nav {
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.3rem;
+        scrollbar-width: none;
+    }
+
+    .portal-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .portal-nav a {
+        flex-shrink: 0;
+        padding: 0.35rem 0.55rem;
+    }
+}
+
+/* Moviles (600px) */
+@media (max-width: 600px) {
+    .portal-header,
+    .portal-main,
+    .portal-footer {
+        padding: 0.6rem;
+        margin-top: 0.4rem;
+    }
+
+    .portal-header {
+        border-radius: 8px;
+    }
+
+    /* El titulo y la meta se apilan verticalmente */
+    .portal-header__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .portal-header__meta {
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    /* Nav con scroll horizontal si no caben todos los enlaces */
+    .portal-nav {
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+    }
+
+    .portal-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .portal-nav a {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.82rem;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .card {
+        padding: 0.75rem;
+    }
+
+    .filters-inline {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .team-detail__meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team-shield-large {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Scroll horizontal en tablas */
+    .panel {
+        overflow-x: auto;
+    }
+
+    .table {
+        min-width: 480px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 0.82rem;
+        padding: 0.35rem 0.3rem;
+        white-space: nowrap;
+    }
+
+    /* Formularios mas compactos */
+    input,
+    select,
+    button {
+        padding: 0.45rem;
+        font-size: 0.9rem;
+    }
+
+    .panel h2 {
+        font-size: 1.1rem;
+    }
+
+    .panel h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Moviles pequeños (400px) */
+@media (max-width: 400px) {
+    .portal-header,
+    .portal-main,
+    .portal-footer {
+        padding: 0.4rem;
+    }
+
+    .portal-nav a {
+        font-size: 0.78rem;
+        padding: 0.28rem 0.45rem;
+    }
+
+    .panel {
+        padding: 0.6rem;
+        border-radius: 8px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .team-shield-large {
+        width: 70px;
+        height: 70px;
     }
 }

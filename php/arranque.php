@@ -11,6 +11,9 @@ if (session_status() === PHP_SESSION_NONE) {
 const FUTSAL_XML_PATH = __DIR__ . '/../data/futsal.xml';
 
 // Carga y cachea el XML para evitar parseos repetidos en la misma peticion.
+// Punto central de acceso al XML principal del proyecto.
+// Aqui se carga una sola vez y el resto de vistas/funciones reutilizan
+// esta misma estructura para evitar duplicar lecturas y logica.
 function load_futsal_xml(): SimpleXMLElement
 {
     static $xml = null;
@@ -20,12 +23,16 @@ function load_futsal_xml(): SimpleXMLElement
     }
 
     if (!file_exists(FUTSAL_XML_PATH)) {
-        throw new RuntimeException('No se encontro data/futsal.xml');
+        throw new RuntimeException(
+            'No se encontro data/futsal.xml'
+        );
     }
 
     $loaded = simplexml_load_file(FUTSAL_XML_PATH);
     if ($loaded === false) {
-        throw new RuntimeException('No se pudo parsear data/futsal.xml');
+        throw new RuntimeException(
+            'No se pudo parsear data/futsal.xml'
+        );
     }
 
     $xml = $loaded;
@@ -36,7 +43,7 @@ function load_futsal_xml(): SimpleXMLElement
 function normalize_path(string $path): string
 {
     $normalized = str_replace('\\', '/', trim($path));
-    return $normalized !== '' ? $normalized : '';
+    return ($normalized !== '') ? $normalized : '';
 }
 
 // Convierte un CSV de IDs ("1,2,3") a un array de enteros validos.
@@ -94,9 +101,13 @@ function apply_session_timeout(SimpleXMLElement $xml): void
         return;
     }
 
-    if ((time() - (int) $_SESSION['last_activity']) > $timeoutSec) {
+    $elapsed = time() - (int) $_SESSION['last_activity'];
+    if ($elapsed > $timeoutSec) {
         unset($_SESSION['user']);
-        $_SESSION['flash'] = ['type' => 'error', 'message' => 'Sesion caducada por inactividad.'];
+        $_SESSION['flash'] = [
+            'type' => 'error',
+            'message' => 'Sesion caducada por inactividad.'
+        ];
     }
 
     $_SESSION['last_activity'] = time();
@@ -409,19 +420,24 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
         $table[$match['team2']]['goals_against'] += $match['goals1'];
 
         // Reparto de puntos segun resultado final.
-        if ($match['goals1'] > $match['goals2']) {
-            $table[$match['team1']]['wins']++;
-            $table[$match['team1']]['points'] += 3;
-            $table[$match['team2']]['losses']++;
-        } elseif ($match['goals1'] < $match['goals2']) {
-            $table[$match['team2']]['wins']++;
-            $table[$match['team2']]['points'] += 3;
-            $table[$match['team1']]['losses']++;
+        $goals1 = $match['goals1'];
+        $goals2 = $match['goals2'];
+        $team1 = $match['team1'];
+        $team2 = $match['team2'];
+        
+        if ($goals1 > $goals2) {
+            $table[$team1]['wins']++;
+            $table[$team1]['points'] += 3;
+            $table[$team2]['losses']++;
+        } elseif ($goals1 < $goals2) {
+            $table[$team2]['wins']++;
+            $table[$team2]['points'] += 3;
+            $table[$team1]['losses']++;
         } else {
-            $table[$match['team1']]['draws']++;
-            $table[$match['team2']]['draws']++;
-            $table[$match['team1']]['points']++;
-            $table[$match['team2']]['points']++;
+            $table[$team1]['draws']++;
+            $table[$team2]['draws']++;
+            $table[$team1]['points']++;
+            $table[$team2]['points']++;
         }
     }
 
@@ -432,7 +448,9 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
 
     // Orden oficial: puntos, diferencia de goles, goles a favor, nombre.
     $rows = array_values($table);
-    usort($rows, static function (array $a, array $b): int {
+    usort(
+        $rows,
+        static function (array $a, array $b): int {
         $byPoints = $b['points'] <=> $a['points'];
         if ($byPoints !== 0) {
             return $byPoints;
@@ -449,7 +467,8 @@ function compute_classification(SimpleXMLElement $xml, array $season): array
         }
 
         return strcmp($a['team_name'], $b['team_name']);
-    });
+        }
+    );
 
     return $rows;
 }
@@ -472,7 +491,7 @@ function get_flash(): ?array
     return $flash;
 }
 
-// Traduce rol tecnico a etiqueta visible para cabecera y panel de usuario.
+// Traduce rol tecnico a etiqueta visible para cabecera y panel.
 function role_label(SimpleXMLElement $xml, string $role): string
 {
     $roles = get_config($xml)['roles'];
