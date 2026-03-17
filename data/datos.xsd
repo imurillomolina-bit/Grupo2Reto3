@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="liga">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="temporadas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="temporada" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="equipos">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="equipo" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="nombre" type="xs:string"/>
+                                                                <xs:element name="ciudad" type="xs:string"/>
+                                                                <xs:element name="estadio" type="xs:string"/>
+                                                                <xs:element name="descripcion" type="xs:string"/>
+                                                                <xs:element name="escudo" type="xs:string"/>
+                                                                <xs:element name="jugadores">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="jugador" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="nombre" type="xs:string"/>
+                                                                                        <xs:element name="posicion" type="xs:string"/>
+                                                                                        <xs:element name="foto" type="xs:string"/>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="partidos">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="partido" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="local" type="xs:positiveInteger" use="required"/>
+                                                            <xs:attribute name="visitante" type="xs:positiveInteger" use="required"/>
+                                                            <xs:attribute name="goles_local" type="xs:nonNegativeInteger" use="required"/>
+                                                            <xs:attribute name="goles_visitante" type="xs:nonNegativeInteger" use="required"/>
+                                                            <xs:attribute name="fecha" type="xs:date" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[0-9]{4}-[0-9]{4}"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="nombre" type="xs:string" use="required"/>
+                                    <xs:attribute name="actual" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="si"/>
+                                                <xs:enumeration value="no"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nombre" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

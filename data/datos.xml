@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liga nombre="FEDERACIÓN FUTSAL">
+    <temporadas>
+        <temporada id="2024-2025" nombre="2024/2025" actual="no">
+            <equipos>
+                <equipo id="1">
+                    <nombre>Barça</nombre>
+                    <ciudad>Barcelona</ciudad>
+                    <estadio>Palau Blaugrana</estadio>
+                    <descripcion>Conjunto tecnico con mucha posesion y ritmo alto en pista rival.</descripcion>
+                    <escudo>../img/escudos/Barça.png</escudo>
+                    <jugadores>
+                        <jugador id="101"><nombre>Miguel Delope</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="102"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="113"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="114"><nombre>Samuel Gil</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="115"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="2">
+                    <nombre>Córdoba Patrimonio Humanidad</nombre>
+                    <ciudad>Córdoba</ciudad>
+                    <estadio>Vista Alegre</estadio>
+                    <descripcion>Bloque serio, ordenado y con salidas rapidas desde primera linea.</descripcion>
+                    <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
+                    <jugadores>
+                        <jugador id="103"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="116"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="117"><nombre>Unai Garcia</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="118"><nombre>Pablo Ortega</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="119"><nombre>Iñigo Sanchez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="3">
+                    <nombre>ElPozo Murcia Costa Cálida</nombre>
+                    <ciudad>Murcia</ciudad>
+                    <estadio>Palacio de los Deportes</estadio>
+                    <descripcion>Equipo intenso, agresivo en la presion y con mucho peso ofensivo.</descripcion>
+                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="104"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="120"><nombre>Borja Marin</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="121"><nombre>Ivan Prieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="122"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="123"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="4">
+                    <nombre>Industrias Santa Coloma</nombre>
+                    <ciudad>Santa Coloma</ciudad>
+                    <estadio>Pavelló Nou</estadio>
+                    <descripcion>Plantilla dinamica, valiente en ataque y con buena circulacion.</descripcion>
+                    <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
+                    <jugadores>
+                        <jugador id="105"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="124"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="125"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="126"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="127"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="5">
+                    <nombre>Islas Baleares Palma Futsal</nombre>
+                    <ciudad>Palma</ciudad>
+                    <estadio>Son Moix</estadio>
+                    <descripcion>Juego coral, salida limpia y mucha amenaza a balon parado.</descripcion>
+                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+                    <jugadores>
+                        <jugador id="106"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="128"><nombre>Cristian Flores</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="129"><nombre>Diego Mendez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="130"><nombre>Mario Vega</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="131"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="6">
+                    <nombre>Jaen Paraiso Interior</nombre>
+                    <ciudad>Jaen</ciudad>
+                    <estadio>Olivo Arena</estadio>
+                    <descripcion>Conjunto competitivo, vertical y muy exigente en defensa.</descripcion>
+                    <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
+                    <jugadores>
+                        <jugador id="107"><nombre>Jon Martinez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="132"><nombre>Javier Blanco</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="133"><nombre>Iker Navarro</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="134"><nombre>Sergio Rey</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="135"><nombre>Fernando Silva</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="7">
+                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
+                    <ciudad>Cartagena</ciudad>
+                    <estadio>Palacio de los Deportes de Cartagena</estadio>
+                    <descripcion>Equipo muy fuerte en duelos, transiciones y finalizacion.</descripcion>
+                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="108"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="136"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="137"><nombre>Nicolas Benitez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="138"><nombre>Alex Santos</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="139"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="8">
+                    <nombre>Movistar Inter</nombre>
+                    <ciudad>Madrid</ciudad>
+                    <estadio>Jorge Garbajosa</estadio>
+                    <descripcion>Referente tactico con mucha experiencia y control de los partidos.</descripcion>
+                    <escudo>../img/escudos/Movistar Inter.png</escudo>
+                    <jugadores>
+                        <jugador id="109"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="140"><nombre>Gorka Alonso</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="141"><nombre>Lucas Cortes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="142"><nombre>Ruben Pascual</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="143"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="9">
+                    <nombre>O Parrulo Ferrol</nombre>
+                    <ciudad>Ferrol</ciudad>
+                    <estadio>A Malata</estadio>
+                    <descripcion>Equipo de energia alta, fuerte en repliegue y salidas rapidas.</descripcion>
+                    <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
+                    <jugadores>
+                        <jugador id="110"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="144"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="145"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="146"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="147"><nombre>Jon Martinez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="10">
+                    <nombre>Quesos Hidalgo Manzanares FS</nombre>
+                    <ciudad>Manzanares</ciudad>
+                    <estadio>Antonio Caba</estadio>
+                    <descripcion>Conjunto ordenado, practico y con buena lectura de los ritmos.</descripcion>
+                    <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+                    <jugadores>
+                        <jugador id="111"><nombre>Carlos Gutiérrez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="112"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="148"><nombre>Nacho Lara</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="149"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="150"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+            </equipos>
+            <partidos>
+                <partido local="1" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-09-12"/>
+                <partido local="3" visitante="4" goles_local="2" goles_visitante="2" fecha="2024-09-14"/>
+                <partido local="5" visitante="6" goles_local="4" goles_visitante="2" fecha="2024-09-18"/>
+                <partido local="7" visitante="8" goles_local="1" goles_visitante="3" fecha="2024-09-20"/>
+                <partido local="9" visitante="10" goles_local="2" goles_visitante="1" fecha="2024-09-22"/>
+                <partido local="1" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-10-02"/>
+                <partido local="2" visitante="5" goles_local="1" goles_visitante="2" fecha="2024-10-05"/>
+                <partido local="4" visitante="7" goles_local="2" goles_visitante="3" fecha="2024-10-10"/>
+                <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2024-10-12"/>
+                <partido local="10" visitante="1" goles_local="0" goles_visitante="2" fecha="2024-10-20"/>
+                <partido local="9" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-22"/>
+                <partido local="7" visitante="5" goles_local="2" goles_visitante="2" fecha="2024-10-25"/>
+            </partidos>
+        </temporada>
+
+        <temporada id="2025-2026" nombre="2025/2026" actual="si">
+            <equipos>
+                <equipo id="1">
+                    <nombre>Barça</nombre>
+                    <ciudad>Barcelona</ciudad>
+                    <estadio>Palau Blaugrana</estadio>
+                    <descripcion>Conjunto dominador, con mucha calidad tecnica y control del tempo.</descripcion>
+                    <escudo>../img/escudos/Barça.png</escudo>
+                    <jugadores>
+                        <jugador id="201"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="202"><nombre>Samuel Gil</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="213"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="214"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="232"><nombre>Carlos Gutiérrez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="2">
+                    <nombre>Córdoba Patrimonio Humanidad</nombre>
+                    <ciudad>Córdoba</ciudad>
+                    <estadio>Vista Alegre</estadio>
+                    <descripcion>Equipo compacto que compite cada tramo del partido con intensidad.</descripcion>
+                    <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
+                    <jugadores>
+                        <jugador id="203"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="215"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="216"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="233"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="234"><nombre>Oscar Nieto</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="3">
+                    <nombre>ElPozo Murcia Costa Cálida</nombre>
+                    <ciudad>Murcia</ciudad>
+                    <estadio>Palacio de los Deportes</estadio>
+                    <descripcion>Plantilla muy competitiva, con presion alta y finalizacion constante.</descripcion>
+                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="204"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="217"><nombre>Cristian Flores</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="218"><nombre>Diego Mendez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="235"><nombre>Samuel Gil</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="236"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="4">
+                    <nombre>Industrias Santa Coloma</nombre>
+                    <ciudad>Santa Coloma</ciudad>
+                    <estadio>Pavelló Nou</estadio>
+                    <descripcion>Equipo atrevido, con buena lectura tactica y movilidad ofensiva.</descripcion>
+                    <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
+                    <jugadores>
+                        <jugador id="205"><nombre>Unai Garcia</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="219"><nombre>Mario Vega</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="220"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="237"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="238"><nombre>Unai Garcia</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="5">
+                    <nombre>Islas Baleares Palma Futsal</nombre>
+                    <ciudad>Palma</ciudad>
+                    <estadio>Son Moix</estadio>
+                    <descripcion>Conjunto estable, preciso y con muchas variantes de finalizacion.</descripcion>
+                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+                    <jugadores>
+                        <jugador id="206"><nombre>Pablo Ortega</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="221"><nombre>Javier Blanco</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="222"><nombre>Iker Navarro</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="239"><nombre>Borja Marin</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="240"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="6">
+                    <nombre>Jaen Paraiso Interior</nombre>
+                    <ciudad>Jaen</ciudad>
+                    <estadio>Olivo Arena</estadio>
+                    <descripcion>Equipo intenso, muy fuerte en casa y con gran trabajo colectivo.</descripcion>
+                    <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
+                    <jugadores>
+                        <jugador id="207"><nombre>Iñigo Sanchez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="223"><nombre>Sergio Rey</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="224"><nombre>Fernando Silva</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="241"><nombre>Xabi Molina</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="242"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="7">
+                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
+                    <ciudad>Cartagena</ciudad>
+                    <estadio>Palacio de los Deportes de Cartagena</estadio>
+                    <descripcion>Plantilla vertical, competitiva y con mucho peligro en transicion.</descripcion>
+                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="208"><nombre>Borja Marin</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="225"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="226"><nombre>Nicolas Benitez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="243"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="244"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="8">
+                    <nombre>Movistar Inter</nombre>
+                    <ciudad>Madrid</ciudad>
+                    <estadio>Jorge Garbajosa</estadio>
+                    <descripcion>Equipo experto, muy tactico y con gran capacidad para dominar contextos.</descripcion>
+                    <escudo>../img/escudos/Movistar Inter.png</escudo>
+                    <jugadores>
+                        <jugador id="209"><nombre>Ivan Prieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="227"><nombre>Alex Santos</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="228"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="245"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="246"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="9">
+                    <nombre>O Parrulo Ferrol</nombre>
+                    <ciudad>Ferrol</ciudad>
+                    <estadio>A Malata</estadio>
+                    <descripcion>Conjunto de mucho esfuerzo, rapido para correr y cerrar espacios.</descripcion>
+                    <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
+                    <jugadores>
+                        <jugador id="210"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="229"><nombre>Gorka Alonso</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="230"><nombre>Lucas Cortes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="247"><nombre>Cristian Flores</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="248"><nombre>Diego Mendez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="10">
+                    <nombre>Quesos Hidalgo Manzanares FS</nombre>
+                    <ciudad>Manzanares</ciudad>
+                    <estadio>Antonio Caba</estadio>
+                    <descripcion>Equipo practico, disciplinado y muy fiable en los partidos cerrados.</descripcion>
+                    <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+                    <jugadores>
+                        <jugador id="211"><nombre>Xabi Molina</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="212"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="231"><nombre>Ruben Pascual</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="249"><nombre>Mario Vega</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="250"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+            </equipos>
+            <partidos>
+                <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11"/>
+                <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-13"/>
+                <partido local="5" visitante="6" goles_local="2" goles_visitante="2" fecha="2025-09-15"/>
+                <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2025-09-18"/>
+                <partido local="9" visitante="10" goles_local="0" goles_visitante="1" fecha="2025-09-20"/>
+                <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-09-28"/>
+                <partido local="2" visitante="5" goles_local="1" goles_visitante="3" fecha="2025-09-30"/>
+                <partido local="4" visitante="7" goles_local="2" goles_visitante="2" fecha="2025-10-04"/>
+                <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2025-10-09"/>
+                <partido local="10" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-10-14"/>
+                <partido local="2" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-10-20"/>
+                <partido local="9" visitante="4" goles_local="1" goles_visitante="0" fecha="2025-10-24"/>
+            </partidos>
+        </temporada>
+
+        <temporada id="2026-2027" nombre="2026/2027" actual="no">
+            <equipos>
+                <equipo id="1">
+                    <nombre>Barça</nombre>
+                    <ciudad>Barcelona</ciudad>
+                    <estadio>Palau Blaugrana</estadio>
+                    <descripcion>Bloque dominante, muy fiable en ataque posicional y con ritmo alto en pista rival.</descripcion>
+                    <escudo>../img/escudos/Barça.png</escudo>
+                    <jugadores>
+                        <jugador id="301"><nombre>Miguel Delope</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="302"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="303"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="316"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="317"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="3">
+                    <nombre>ElPozo Murcia Costa Cálida</nombre>
+                    <ciudad>Murcia</ciudad>
+                    <estadio>Palacio de los Deportes</estadio>
+                    <descripcion>Equipo muy agresivo en presion, con transiciones rapidas y mucho peso competitivo.</descripcion>
+                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="304"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="305"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                        <jugador id="306"><nombre>Cristian Flores</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
+                        <jugador id="318"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="319"><nombre>Jon Martinez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="5">
+                    <nombre>Islas Baleares Palma Futsal</nombre>
+                    <ciudad>Palma</ciudad>
+                    <estadio>Son Moix</estadio>
+                    <descripcion>Conjunto equilibrado, muy preciso con balon y capaz de controlar diferentes ritmos.</descripcion>
+                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+                    <jugadores>
+                        <jugador id="307"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
+                        <jugador id="308"><nombre>Pablo Ortega</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
+                        <jugador id="309"><nombre>Javier Blanco</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
+                        <jugador id="320"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="321"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="7">
+                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
+                    <ciudad>Cartagena</ciudad>
+                    <estadio>Palacio de los Deportes de Cartagena</estadio>
+                    <descripcion>Plantilla vertical, potente en duelos y con mucha amenaza cuando acelera el juego.</descripcion>
+                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+                    <jugadores>
+                        <jugador id="310"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
+                        <jugador id="311"><nombre>Borja Marin</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
+                        <jugador id="312"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
+                        <jugador id="322"><nombre>Carlos Gutiérrez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="323"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+                <equipo id="8">
+                    <nombre>Movistar Inter</nombre>
+                    <ciudad>Madrid</ciudad>
+                    <estadio>Jorge Garbajosa</estadio>
+                    <descripcion>Equipo de gran oficio tactico, con muy buena gestion de partido y experiencia competitiva.</descripcion>
+                    <escudo>../img/escudos/Movistar Inter.png</escudo>
+                    <jugadores>
+                        <jugador id="313"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
+                        <jugador id="314"><nombre>Ivan Prieto</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
+                        <jugador id="315"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
+                        <jugador id="324"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
+                        <jugador id="325"><nombre>Samuel Gil</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
+                    </jugadores>
+                </equipo>
+            </equipos>
+            <partidos>
+                <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2026-09-12"/>
+                <partido local="5" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-14"/>
+                <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-09-20"/>
+                <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2026-09-24"/>
+                <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2026-09-27"/>
+                <partido local="1" visitante="5" goles_local="4" goles_visitante="2" fecha="2026-10-03"/>
+                <partido local="3" visitante="7" goles_local="1" goles_visitante="1" fecha="2026-10-08"/>
+                <partido local="5" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-10-12"/>
+                <partido local="7" visitante="1" goles_local="0" goles_visitante="1" fecha="2026-10-18"/>
+                <partido local="8" visitante="3" goles_local="3" goles_visitante="2" fecha="2026-10-22"/>
+            </partidos>
+        </temporada>
+    </temporadas>
+</liga>

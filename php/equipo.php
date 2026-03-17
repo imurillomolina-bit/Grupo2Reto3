@@ -1,81 +1,144 @@
 <?php
 
-// Validar que exista una temporada seleccionada
-if ($selectedSeason === null) {
-    echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
-    return;
+declare(strict_types=1);
+
+require_once __DIR__ . '/../includes/bootstrap.php';
+
+$pageTitle = 'Detalle de equipo | FEDERACIÓN FUTSAL';
+
+$error = null;
+$equipos = [];
+$equipo = null;
+$partidos = [];
+$temporadaNombre = 'No disponible';
+$temporadas = [];
+
+$equipoId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+try {
+    $xml = load_liga_xml();
+    $temporada = get_temporada_actual($xml);
+    $temporadaNombre = (string) $temporada['nombre'];
+    $temporadas = get_temporadas($xml);
+    $equipos = get_equipos_temporada($temporada);
+
+    if ($equipoId !== false && $equipoId !== null && $equipoId > 0) {
+        $equipo = find_equipo_by_id($temporada, (int) $equipoId);
+        if ($equipo === null) {
+            $error = 'No existe el equipo solicitado en la temporada activa.';
+        } else {
+            $partidos = get_partidos_equipo($temporada, (int) $equipoId);
+            $pageTitle = (string) $equipo->nombre . ' | FEDERACIÓN FUTSAL';
+        }
+    } elseif ($equipoId === false) {
+        $error = 'El ID del equipo es invalido.';
+    }
+} catch (Throwable $ex) {
+    $error = $ex->getMessage();
 }
 
-// Obtener ID del equipo desde query string y validar
-$teamId = (int) ($_GET['team_id'] ?? 0);
-if ($teamId <= 0 || !isset($teamsMap[$teamId])) {
-    echo '<section class="panel"><p>Equipo no valido.</p></section>';
-    return;
-}
-
-// Cargar datos del equipo
-$team = $teamsMap[$teamId];
-$shield = $seasonShields[$teamId] ?? $team['shield'];
-$playerIds = $teamSeasonRelations[$selectedSeason['id']][$teamId] ?? [];
-
-// Escapar variables para seguridad en HTML
-$teamName = htmlspecialchars($team['name'], ENT_QUOTES, 'UTF-8');
-$seasonName = htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8');
+require __DIR__ . '/../includes/header.php';
 ?>
-<!-- Mostrar información del equipo -->
-<section class="panel team-detail">
-    <h2><?= $teamName ?></h2>
-    <div class="team-detail__meta">
-        <!-- Mostrar escudo si existe -->
-        <?php if ($shield !== ''): ?>
-            <img class="team-shield-large" 
-                 src="<?= htmlspecialchars($shield, ENT_QUOTES, 'UTF-8') ?>" 
-                 alt="Escudo <?= $teamName ?>">
-        <?php endif; ?>
-        <!-- Datos institucionales -->
-        <div>
-            <p><strong>Pabellon:</strong> <?= htmlspecialchars($team['pabellon'], ENT_QUOTES, 'UTF-8') ?></p>
-            <p><strong>Pais:</strong> <?= htmlspecialchars($team['country'], ENT_QUOTES, 'UTF-8') ?></p>
-            <p><strong>Temporada:</strong> <?= $seasonName ?></p>
-        </div>
-    </div>
-</section>
 
-<!-- Mostrar plantilla de jugadores -->
-<section class="panel">
-    <h3>Jugadores</h3>
-    <!-- Si no hay jugadores, mostrar mensaje -->
-    <?php if (empty($playerIds)): ?>
-        <p>No hay jugadores asociados a este equipo para la temporada seleccionada.</p>
-    <?php else: ?>
-        <!-- Grid de tarjetas de jugadores -->
-        <div class="cards-grid">
-            <?php foreach ($playerIds as $playerId): ?>
-                <!-- Saltar si el jugador no existe en el mapa -->
-                <?php 
-                if (!isset($playersMap[$playerId])) continue;
-                
-                // Cargar datos del jugador
-                $player = $playersMap[$playerId];
-                $photo = $seasonPhotos[$playerId] ?? $player['image'];
-                $playerName = htmlspecialchars($player['name'], ENT_QUOTES, 'UTF-8');
-                ?>
-                
-                <!-- Tarjeta individual del jugador -->
-                <article class="card player-card">
-                    <!-- Foto del jugador -->
-                    <?php if ($photo !== ''): ?>
-                        <img class="player-photo" 
-                             src="<?= htmlspecialchars($photo, ENT_QUOTES, 'UTF-8') ?>" 
-                             alt="<?= $playerName ?>">
-                    <?php endif; ?>
-                    
-                    <!-- Información del jugador -->
-                    <h4><?= $playerName ?></h4>
-                    <p><strong>Dorsal:</strong> <?= (int) $player['number'] ?></p>
-                    <p><strong>Posicion:</strong> <?= htmlspecialchars($player['position'], ENT_QUOTES, 'UTF-8') ?></p>
-                </article>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
-</section>
+<!-- Main: Informacion del equipo -->
+<main class="page page-team">
+    <!-- Section: Ficha principal -->
+    <section class="panel team-panel">
+        <article class="panel-heading">
+            <h2><?php echo ($equipo === null) ? 'Equipos' : 'Detalle de equipo'; ?></h2>
+            <p>Temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+
+            <form class="season-form" action="set_temporada.php" method="post">
+                <label for="temporada_id">Cambiar temporada</label>
+                <select id="temporada_id" name="temporada_id" required>
+                    <?php foreach ($temporadas as $temporadaItem): ?>
+                        <option
+                            value="<?php echo e($temporadaItem['id']); ?>"
+                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
+                        >
+                            <?php echo e($temporadaItem['nombre']); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Cambiar</button>
+            </form>
+        </article>
+
+        <?php if ($error !== null): ?>
+            <article class="panel-error">
+                <h2>Error</h2>
+                <p><?php echo e($error); ?></p>
+                <p><a href="clasificacion.php">Volver a la clasificacion</a></p>
+            </article>
+        <?php elseif ($equipo === null): ?>
+            <article class="cards-grid team-summary-grid">
+                <?php foreach ($equipos as $equipoItem): ?>
+                    <a class="info-card team-summary-card" href="equipo.php?id=<?php echo (int) $equipoItem['id']; ?>">
+                        <img src="<?php echo e($equipoItem['escudo']); ?>" alt="Escudo de <?php echo e($equipoItem['nombre']); ?>">
+                        <div>
+                            <h3><?php echo e($equipoItem['nombre']); ?></h3>
+                            <p><?php echo e($equipoItem['descripcion']); ?></p>
+                            <span><?php echo e($equipoItem['ciudad']); ?> · <?php echo e($equipoItem['estadio']); ?> · <?php echo (int) $equipoItem['jugadores']; ?> jugadores</span>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </article>
+        <?php else: ?>
+            <article class="team-headline">
+                <img class="team-shield-large" src="<?php echo e((string) $equipo->escudo); ?>" alt="Escudo de <?php echo e((string) $equipo->nombre); ?>">
+                <div>
+                    <p class="meta">Temporada: <?php echo e($temporadaNombre); ?></p>
+                    <h2><?php echo e((string) $equipo->nombre); ?></h2>
+                    <p><?php echo e((string) $equipo->descripcion); ?></p>
+                    <p><strong>Estadio:</strong> <?php echo e((string) $equipo->estadio); ?></p>
+                    <p><strong>Ciudad:</strong> <?php echo e((string) $equipo->ciudad); ?></p>
+                </div>
+            </article>
+
+            <!-- Article: Galeria de jugadores -->
+            <article>
+                <h3>Plantilla de jugadores</h3>
+                <div class="player-grid">
+                    <?php foreach ($equipo->jugadores->jugador as $jugador): ?>
+                        <figure class="player-card">
+                            <img src="<?php echo e(build_jugador_avatar_url((string) $jugador->nombre)); ?>" alt="Foto de <?php echo e((string) $jugador->nombre); ?>">
+                            <figcaption>
+                                <strong><?php echo e((string) $jugador->nombre); ?></strong>
+                                <span><?php echo e((string) $jugador->posicion); ?></span>
+                            </figcaption>
+                        </figure>
+                    <?php endforeach; ?>
+                </div>
+            </article>
+
+            <!-- Article: Historial de partidos -->
+            <article>
+                <h3>Partidos de la temporada</h3>
+                <div class="matches-wrap">
+                    <table class="matches-table">
+                        <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Local</th>
+                            <th>Visitante</th>
+                            <th>Marcador</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($partidos as $partido): ?>
+                            <tr>
+                                <td><?php echo e($partido['fecha']); ?></td>
+                                <td><?php echo e($partido['local']); ?></td>
+                                <td><?php echo e($partido['visitante']); ?></td>
+                                <td><strong><?php echo e($partido['marcador']); ?></strong></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        <?php endif; ?>
+    </section>
+</main>
+
+<?php require __DIR__ . '/../includes/footer.php'; ?>

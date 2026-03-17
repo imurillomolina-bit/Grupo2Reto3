@@ -1,100 +1,129 @@
 <?php
 
-// Sin temporada no se puede construir clasificacion.
-if ($selectedSeason === null) {
-    echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
-    return;
+declare(strict_types=1);
+
+require_once __DIR__ . '/../includes/bootstrap.php';
+
+$pageTitle = 'Clasificacion | FEDERACIÓN FUTSAL';
+
+$error = null;
+$temporadaNombre = 'No disponible';
+$clasificacion = [];
+$temporadas = [];
+
+try {
+    $xml = load_liga_xml();
+    $temporada = get_temporada_actual($xml);
+    $temporadaNombre = (string) $temporada['nombre'];
+    $temporadas = get_temporadas($xml);
+    $clasificacion = build_clasificacion($temporada);
+} catch (Throwable $ex) {
+    $error = $ex->getMessage();
 }
 
-// Calculamos tabla en servidor con datos del XML.
-$classification = compute_classification($xml, $selectedSeason);
-// Filtros opcionales enviados por query string.
-$minPoints = isset($_GET['min_points']) && is_numeric($_GET['min_points']) ? (int) $_GET['min_points'] : 0;
-$teamFilter = trim((string) ($_GET['team_filter'] ?? ''));
+require __DIR__ . '/../includes/header.php';
 ?>
-<!-- Panel de seleccion de temporada + filtros avanzados -->
-<section class="panel">
-    <h2>Clasificacion - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
 
-    <form id="season-form" method="post" action="index.php?page=clasificacion" novalidate>
-        <input type="hidden" name="action" value="select_season">
-        <label for="season_id">Temporada</label>
-        <select id="season_id" name="season_id" required>
-            <option value="">Selecciona temporada</option>
-            <?php foreach ($allSeasons as $season): ?>
-                <option value="<?= (int) $season['id'] ?>" <?= $season['id'] === $selectedSeason['id'] ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($season['name'], ENT_QUOTES, 'UTF-8') ?> (<?= (int) $season['year'] ?>)
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <button type="submit">Aplicar temporada</button>
-    </form>
+<!-- Main: Contenido central -->
+<main class="page page-home">
+    <!-- Section: Tabla de liga -->
+    <section id="clasificacion" class="panel standings-panel">
+        <article class="panel-heading">
+            <h2>Clasificación</h2>
+            <p>Temporada seleccionada: <strong><?php echo e($temporadaNombre); ?></strong></p>
 
-    <form method="get" action="index.php" class="filters-inline">
-        <input type="hidden" name="page" value="clasificacion">
-        <label for="min_points">Puntos minimos</label>
-        <input id="min_points" name="min_points" type="number" min="0" value="<?= (int) $minPoints ?>">
+            <form class="season-form" action="set_temporada.php" method="post">
+                <label for="temporada_id">Cambiar temporada</label>
+                <select id="temporada_id" name="temporada_id" required>
+                    <?php foreach ($temporadas as $temporadaItem): ?>
+                        <option
+                            value="<?php echo e($temporadaItem['id']); ?>"
+                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
+                        >
+                            <?php echo e($temporadaItem['nombre']); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Cambiar</button>
+            </form>
+        </article>
 
-        <label for="team_filter">Nombre equipo</label>
-        <input id="team_filter" name="team_filter" type="text" value="<?= htmlspecialchars($teamFilter, ENT_QUOTES, 'UTF-8') ?>">
+        <?php if ($error !== null): ?>
+            <article class="panel-error">
+                <p><?php echo e($error); ?></p>
+            </article>
+        <?php else: ?>
+            <article class="table-wrap" aria-label="Tabla de clasificacion">
+                <table class="standings-table">
+                    <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Equipo</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th class="hide-mobile">PE</th>
+                        <th class="hide-mobile">PP</th>
+                        <th class="hide-mobile">GF</th>
+                        <th class="hide-mobile">GC</th>
+                        <th>DG</th>
+                        <th>PTS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($clasificacion as $idx => $fila): ?>
+                        <tr>
+                            <td><?php echo (int) ($idx + 1); ?></td>
+                            <td>
+                                <a class="team-link" href="equipo.php?id=<?php echo (int) $fila['id']; ?>">
+                                    <img src="<?php echo e($fila['escudo']); ?>" alt="Escudo de <?php echo e($fila['nombre']); ?>">
+                                    <span><?php echo e($fila['nombre']); ?></span>
+                                </a>
+                            </td>
+                            <td><?php echo (int) $fila['pj']; ?></td>
+                            <td><?php echo (int) $fila['pg']; ?></td>
+                            <td class="hide-mobile"><?php echo (int) $fila['pe']; ?></td>
+                            <td class="hide-mobile"><?php echo (int) $fila['pp']; ?></td>
+                            <td class="hide-mobile"><?php echo (int) $fila['gf']; ?></td>
+                            <td class="hide-mobile"><?php echo (int) $fila['gc']; ?></td>
+                            <td><?php echo (int) $fila['dg']; ?></td>
+                            <td><strong><?php echo (int) $fila['pts']; ?></strong></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </article>
+        <?php endif; ?>
+    </section>
 
-        <button type="submit">Filtrar</button>
-    </form>
-</section>
+    <section class="home-sections" aria-label="Apartados principales">
+        <a class="panel quick-link-panel" href="equipo.php">
+            <div class="panel-heading">
+                <h2>Equipo</h2>
+                <p>Ve todos los clubes participantes y entra a cada ficha completa.</p>
+            </div>
+        </a>
 
-<!-- Tabla final, con enlace directo a la ficha del equipo -->
-<section class="panel">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Equipo</th>
-                <th>Pts</th>
-                <th>J</th>
-                <th>G</th>
-                <th>E</th>
-                <th>P</th>
-                <th>GF</th>
-                <th>GC</th>
-                <th>DG</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $position = 0;
-            // Aplicamos filtros antes de pintar cada fila.
-            foreach ($classification as $row):
-                if ($row['points'] < $minPoints) {
-                    continue;
-                }
-                if ($teamFilter !== '' && stripos($row['team_name'], $teamFilter) === false) {
-                    continue;
-                }
-                $position++;
-                $teamId = (int) $row['team_id'];
-                // Prioriza escudo de temporada; si no existe usa el base del equipo.
-                $shield = $seasonShields[$teamId] ?? ($teamsMap[$teamId]['shield'] ?? '');
-            ?>
-                <tr>
-                    <td><?= $position ?></td>
-                    <td>
-                        <a href="index.php?page=equipo&team_id=<?= $teamId ?>">
-                            <?php if ($shield !== ''): ?>
-                                <img class="shield-inline" src="<?= htmlspecialchars($shield, ENT_QUOTES, 'UTF-8') ?>" alt="Escudo <?= htmlspecialchars($row['team_name'], ENT_QUOTES, 'UTF-8') ?>">
-                            <?php endif; ?>
-                            <?= htmlspecialchars($row['team_name'], ENT_QUOTES, 'UTF-8') ?>
-                        </a>
-                    </td>
-                    <td><?= (int) $row['points'] ?></td>
-                    <td><?= (int) $row['played'] ?></td>
-                    <td><?= (int) $row['wins'] ?></td>
-                    <td><?= (int) $row['draws'] ?></td>
-                    <td><?= (int) $row['losses'] ?></td>
-                    <td><?= (int) $row['goals_for'] ?></td>
-                    <td><?= (int) $row['goals_against'] ?></td>
-                    <td><?= (int) $row['goal_diff'] ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</section>
+        <a class="panel quick-link-panel" href="jugadores.php">
+            <div class="panel-heading">
+                <h2>Jugadores</h2>
+                <p>Consulta la plantilla completa de la temporada activa.</p>
+            </div>
+        </a>
+
+        <a class="panel quick-link-panel" href="normativa.php">
+            <div class="panel-heading">
+                <h2>Normativa</h2>
+                <p>Revisa las reglas basicas y el formato de la competicion.</p>
+            </div>
+        </a>
+
+        <a class="panel quick-link-panel" href="noticias.php">
+            <div class="panel-heading">
+                <h2>Noticias</h2>
+                <p>Lee los titulares generados a partir de los resultados recientes.</p>
+            </div>
+        </a>
+    </section>
+</main>
+
+<?php require __DIR__ . '/../includes/footer.php'; ?>

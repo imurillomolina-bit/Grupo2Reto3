@@ -1,55 +1,72 @@
 <?php
 
-// La vista requiere temporada activa para cruzar equipo-jugadores.
-if ($selectedSeason === null) {
-    echo '<section class="panel"><p>No hay temporadas disponibles.</p></section>';
-    return;
+declare(strict_types=1);
+
+require_once __DIR__ . '/../includes/bootstrap.php';
+
+$pageTitle = 'Jugadores | FEDERACIÓN FUTSAL';
+
+$error = null;
+$temporadaNombre = 'No disponible';
+$jugadores = [];
+$temporadas = [];
+
+try {
+    $xml = load_liga_xml();
+    $temporada = get_temporada_actual($xml);
+    $temporadaNombre = (string) $temporada['nombre'];
+    $temporadas = get_temporadas($xml);
+    $jugadores = get_jugadores_temporada($temporada);
+} catch (Throwable $ex) {
+    $error = $ex->getMessage();
 }
 
-// team_id permite filtrar la parrilla por un equipo concreto.
-$teamFilter = isset($_GET['team_id']) ? (int) $_GET['team_id'] : 0;
+require __DIR__ . '/../includes/header.php';
 ?>
-<!-- Formulario simple de filtro por equipo -->
-<section class="panel">
-    <h2>Jugadores - <?= htmlspecialchars($selectedSeason['name'], ENT_QUOTES, 'UTF-8') ?></h2>
-    <form method="get" action="index.php" class="filters-inline">
-        <input type="hidden" name="page" value="jugadores">
-        <label for="team_id">Filtrar por equipo</label>
-        <select id="team_id" name="team_id">
-            <option value="0">Todos</option>
-            <?php foreach ($selectedSeason['team_ids'] as $teamId): ?>
-                <?php if (!isset($teamsMap[$teamId])) { continue; } ?>
-                <option value="<?= (int) $teamId ?>" <?= $teamFilter === (int) $teamId ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($teamsMap[$teamId]['name'], ENT_QUOTES, 'UTF-8') ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <button type="submit">Aplicar</button>
-    </form>
-</section>
 
-<!-- Listado de jugadores (todos o filtrados) -->
-<section class="cards-grid">
-    <?php foreach ($selectedSeason['team_ids'] as $teamId): ?>
-        <?php if (!isset($teamsMap[$teamId])) { continue; } ?>
-        <?php if ($teamFilter > 0 && $teamFilter !== (int) $teamId) { continue; } ?>
-        <?php $playerIds = $teamSeasonRelations[$selectedSeason['id']][$teamId] ?? []; ?>
-        <?php foreach ($playerIds as $playerId): ?>
-            <?php if (!isset($playersMap[$playerId])) { continue; } ?>
-            <?php
-            // Si hay foto especifica de temporada, se usa en lugar de la general.
-            $player = $playersMap[$playerId];
-            $photo = $seasonPhotos[$playerId] ?? $player['image'];
-            ?>
-            <article class="card player-card">
-                <?php if ($photo !== ''): ?>
-                    <img class="player-photo" src="<?= htmlspecialchars($photo, ENT_QUOTES, 'UTF-8') ?>" alt="Foto de <?= htmlspecialchars($player['name'], ENT_QUOTES, 'UTF-8') ?>">
-                <?php endif; ?>
-                <h3><?= htmlspecialchars($player['name'], ENT_QUOTES, 'UTF-8') ?></h3>
-                <p><strong>Equipo:</strong> <?= htmlspecialchars($teamsMap[$teamId]['name'], ENT_QUOTES, 'UTF-8') ?></p>
-                <p><strong>Dorsal:</strong> <?= (int) $player['number'] ?></p>
-                <p><strong>Posicion:</strong> <?= htmlspecialchars($player['position'], ENT_QUOTES, 'UTF-8') ?></p>
+<main class="page">
+    <section class="panel content-panel">
+        <article class="panel-heading">
+            <h2>Jugadores</h2>
+            <p>Temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+
+            <form class="season-form" action="set_temporada.php" method="post">
+                <label for="temporada_id">Cambiar temporada</label>
+                <select id="temporada_id" name="temporada_id" required>
+                    <?php foreach ($temporadas as $temporadaItem): ?>
+                        <option
+                            value="<?php echo e($temporadaItem['id']); ?>"
+                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
+                        >
+                            <?php echo e($temporadaItem['nombre']); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Cambiar</button>
+            </form>
+        </article>
+
+        <?php if ($error !== null): ?>
+            <article class="panel-error">
+                <p><?php echo e($error); ?></p>
             </article>
-        <?php endforeach; ?>
-    <?php endforeach; ?>
-</section>
+        <?php else: ?>
+            <article class="cards-grid player-spotlight-grid">
+                <?php foreach ($jugadores as $jugador): ?>
+                    <figure class="player-card spotlight-card">
+                        <img src="<?php echo e($jugador['foto']); ?>" alt="Foto de <?php echo e($jugador['nombre']); ?>">
+                        <figcaption>
+                            <strong><?php echo e($jugador['nombre']); ?></strong>
+                            <span><?php echo e($jugador['posicion']); ?></span>
+                            <small>
+                                <a href="equipo.php?id=<?php echo (int) $jugador['equipo_id']; ?>"><?php echo e($jugador['equipo']); ?></a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                <?php endforeach; ?>
+            </article>
+        <?php endif; ?>
+    </section>
+</main>
+
+<?php require __DIR__ . '/../includes/footer.php'; ?>
