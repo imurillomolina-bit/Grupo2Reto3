@@ -60,7 +60,7 @@ $showLogoutLink = $showSessionChip;
             <div class="header-tools">
                 <?php if ($showSessionChip): ?>
                     <p class="session-chip">
-                        Bienvenido, <?php echo e($sessionUser); ?><?php if ($showSessionRole): ?> [<?php echo e($sessionRole); ?>]<?php endif; ?>
+                        <?php echo e($sessionUser); ?><?php if ($showSessionRole): ?> [<?php echo e($sessionRole); ?>]<?php endif; ?>
                     </p>
                 <?php endif; ?>
             </div>
@@ -78,6 +78,7 @@ $showLogoutLink = $showSessionChip;
                         <a href="<?php echo e($pagePrefix . 'inicio.php'); ?>">Inicio</a>
                         <a href="<?php echo e($clasificacionPath); ?>">Clasificación</a>
                         <a href="<?php echo e($pagePrefix . 'equipo.php'); ?>">Equipos</a>
+                        <a href="<?php echo e($pagePrefix . 'partidos.php'); ?>">Partidos</a>
                         <a href="<?php echo e($pagePrefix . 'jugadores.php'); ?>">Jugadores</a>
                         <a href="<?php echo e($pagePrefix . 'normativa.php'); ?>">Normativa</a>
                         <a href="<?php echo e($pagePrefix . 'noticias.php'); ?>">Noticias</a>

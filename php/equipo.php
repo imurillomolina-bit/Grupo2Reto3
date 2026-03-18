@@ -9,7 +9,6 @@ $pageTitle = 'Detalle de equipo | FEDERACIÓN FUTSAL';
 $error = null;
 $equipos = [];
 $equipo = null;
-$partidos = [];
 $temporadaNombre = 'No disponible';
 $temporadas = [];
 
@@ -27,7 +26,6 @@ try {
         if ($equipo === null) {
             $error = 'No existe el equipo solicitado en la temporada activa.';
         } else {
-            $partidos = get_partidos_equipo($temporada, (int) $equipoId);
             $pageTitle = (string) $equipo->nombre . ' | FEDERACIÓN FUTSAL';
         }
     } elseif ($equipoId === false) {
@@ -92,6 +90,7 @@ require __DIR__ . '/../includes/header.php';
                     <p><?php echo e((string) $equipo->descripcion); ?></p>
                     <p><strong>Estadio:</strong> <?php echo e((string) $equipo->estadio); ?></p>
                     <p><strong>Ciudad:</strong> <?php echo e((string) $equipo->ciudad); ?></p>
+                    <p><a href="partidos.php?equipo_id=<?php echo (int) $equipo['id']; ?>">Ver partidos de este equipo</a></p>
                 </div>
             </article>
 
@@ -108,33 +107,6 @@ require __DIR__ . '/../includes/header.php';
                             </figcaption>
                         </figure>
                     <?php endforeach; ?>
-                </div>
-            </article>
-
-            <!-- Article: Historial de partidos -->
-            <article>
-                <h3>Partidos de la temporada</h3>
-                <div class="matches-wrap">
-                    <table class="matches-table">
-                        <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Local</th>
-                            <th>Visitante</th>
-                            <th>Marcador</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($partidos as $partido): ?>
-                            <tr>
-                                <td><?php echo e($partido['fecha']); ?></td>
-                                <td><?php echo e($partido['local']); ?></td>
-                                <td><?php echo e($partido['visitante']); ?></td>
-                                <td><strong><?php echo e($partido['marcador']); ?></strong></td>
-                            </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                    </table>
                 </div>
             </article>
         <?php endif; ?>

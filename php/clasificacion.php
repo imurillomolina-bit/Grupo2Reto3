@@ -110,6 +110,13 @@ require __DIR__ . '/../includes/header.php';
             </div>
         </a>
 
+        <a class="panel quick-link-panel" href="partidos.php">
+            <div class="panel-heading">
+                <h2>Partidos</h2>
+                <p>Consulta todos los resultados y filtra por equipo.</p>
+            </div>
+        </a>
+
         <a class="panel quick-link-panel" href="normativa.php">
             <div class="panel-heading">
                 <h2>Normativa</h2>
