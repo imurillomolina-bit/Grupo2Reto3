@@ -387,7 +387,9 @@ a {
 }
 
 .player-spotlight-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(145px, 185px));
+    justify-content: center;
+    gap: 0.85rem;
 }
 
 .news-grid,
@@ -447,6 +449,76 @@ a {
 .spotlight-card small {
     color: var(--blue-700);
     font-weight: 700;
+}
+
+.player-spotlight-grid .spotlight-card {
+    border: 1px solid #d8e7fb;
+    border-radius: 16px;
+    background:
+        radial-gradient(circle at 12% 0%, rgba(255, 210, 50, 0.2), transparent 36%),
+        linear-gradient(180deg, #ffffff, #f3f8ff 78%);
+    box-shadow: 0 8px 16px rgba(4, 24, 51, 0.11);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.player-spotlight-grid .spotlight-card:hover {
+    transform: translateY(-4px);
+    border-color: #bcd7fb;
+    box-shadow: 0 12px 20px rgba(4, 24, 51, 0.17);
+}
+
+.player-spotlight-grid .player-image-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(165deg, #f7fbff, #e9f3ff);
+    padding: 0.5rem 0.5rem 0.22rem;
+}
+
+.player-spotlight-grid .player-image-link img {
+    width: 78px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #bdd7fb;
+    box-shadow: 0 7px 10px rgba(4, 24, 51, 0.14);
+}
+
+.player-spotlight-grid .player-card figcaption {
+    padding: 0.56rem;
+    text-align: center;
+}
+
+.player-spotlight-grid .player-card-name {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.9rem;
+    line-height: 1.05;
+}
+
+.player-spotlight-grid .player-card-position {
+    display: inline-flex;
+    justify-self: center;
+    width: fit-content;
+    border-radius: 999px;
+    padding: 0.14rem 0.5rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #5f4b06;
+    background: rgba(255, 210, 50, 0.34);
+    border: 1px solid rgba(174, 135, 4, 0.24);
+}
+
+.player-spotlight-grid .player-card figcaption small a {
+    color: #0e4d9e;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.player-spotlight-grid .player-card figcaption small a:hover {
+    text-decoration: underline;
 }
 
 .rule-card,
@@ -559,6 +631,21 @@ a {
     background: linear-gradient(180deg, #ffffff, #f2f8ff);
 }
 
+.player-image-link {
+    display: block;
+}
+
+
+.player-image-link img {
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.player-image-link:hover img,
+.player-image-link:focus-visible img {
+    transform: scale(1.03);
+    filter: saturate(1.08);
+}
+
 .player-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -570,6 +657,246 @@ a {
     padding: 0.6rem;
     display: grid;
     gap: 0.2rem;
+}
+
+.player-detail-panel {
+    margin: 1rem;
+    border: 1px solid #d4deef;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #ffffff, #f6f9ff);
+    box-shadow: 0 18px 36px rgba(9, 25, 58, 0.15);
+    padding: 1.1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.player-hero {
+    --club-grana: #8d1738;
+    --club-azul: #08357f;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.13), transparent 32%),
+        linear-gradient(130deg, var(--club-grana), var(--club-azul));
+    border-radius: 18px;
+    padding: 0.9rem 1rem;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.player-hero-photo-wrap {
+    width: 100%;
+}
+
+.player-detail-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+    background: #dfeeff;
+}
+
+.player-hero-main {
+    min-width: 0;
+    display: grid;
+    gap: 0.2rem;
+}
+
+.player-hero-team {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    font-weight: 700;
+}
+
+.player-detail-name {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+    text-wrap: balance;
+}
+
+.player-role {
+    margin: 0;
+    font-weight: 700;
+}
+
+.player-role-chip {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.22rem 0.66rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    color: #f8fbff;
+}
+
+.player-hero-crest-wrap {
+    display: grid;
+    place-items: center;
+}
+
+.player-team-crest {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.22));
+}
+
+.player-detail-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.player-season-control {
+    display: grid;
+    gap: 0.55rem;
+    background: #f3f7ff;
+    border: 1px solid #d6e4fb;
+    border-radius: 14px;
+    padding: 0.7rem 0.8rem;
+}
+
+.player-meta-chip {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 999px;
+    border: 1px solid #cfdbf5;
+    background: #ffffff;
+    color: #123f83;
+    padding: 0.24rem 0.72rem;
+    font-size: 0.92rem;
+}
+
+.player-season-form {
+    gap: 0.45rem;
+}
+
+.player-season-form label {
+    font-size: 0.9rem;
+    color: #345c93;
+}
+
+.player-season-form button {
+    border: 1px solid #b5c8e8;
+    background: #fff;
+}
+
+.player-data-title {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #122f5d;
+    font-size: 1.08rem;
+}
+
+.player-spec-grid {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.player-spec-card {
+    border: 1px solid #d9e3f3;
+    border-radius: 14px;
+    padding: 0.8rem;
+    background: linear-gradient(180deg, #ffffff, #f7faff);
+    box-shadow: 0 8px 15px rgba(10, 39, 88, 0.09);
+    display: grid;
+    gap: 0.3rem;
+}
+
+.spec-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-grid;
+    place-items: center;
+    background: linear-gradient(145deg, rgba(141, 23, 56, 0.16), rgba(8, 53, 127, 0.12));
+    color: #173b72;
+}
+
+.spec-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.spec-label,
+.spec-value {
+    margin: 0;
+}
+
+.spec-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #5d77a1;
+    font-weight: 700;
+}
+
+.spec-value {
+    font-size: 1.08rem;
+    color: #10284f;
+    font-weight: 700;
+    line-height: 1.18;
+}
+
+.player-no-data {
+    margin: 0;
+    color: #5c6f90;
+    background: #f6f9ff;
+    border: 1px dashed #c8d9f3;
+    border-radius: 12px;
+    padding: 0.65rem 0.8rem;
+}
+
+.player-back-link {
+    margin: 0.4rem 0 0;
+}
+
+.btn-outline-back {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 180px;
+    padding: 0.62rem 1rem;
+    border-radius: 999px;
+    border: 2px solid #194486;
+    color: #194486;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-outline-back:hover {
+    background: #194486;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.player-image-link:focus-visible {
+    outline: 2px solid #194486;
+    outline-offset: 2px;
+    border-radius: 12px;
 }
 
 .login-panel {
@@ -589,6 +916,45 @@ a {
 
     .team-summary-card img {
         justify-self: center;
+    }
+
+    .player-spotlight-grid {
+        grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
+    }
+
+    .player-spotlight-grid .player-image-link img {
+        width: 70px;
+    }
+
+    .player-hero {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 0.7rem;
+        padding: 0.8rem 0.65rem;
+    }
+
+    .player-detail-photo {
+        width: 104px;
+        height: 104px;
+    }
+
+    .player-team-crest {
+        width: 74px;
+        height: 74px;
+    }
+
+    .player-season-form {
+        width: 100%;
+    }
+
+    .player-season-form select,
+    .player-season-form button {
+        width: 100%;
+    }
+
+    .btn-outline-back {
+        width: 100%;
     }
 }
 
@@ -718,5 +1084,337 @@ a {
 
     .team-headline {
         grid-template-columns: 240px 1fr;
+    }
+
+    .player-detail-panel {
+        padding: 1.25rem;
+    }
+}
+
+/* Rediseño visual jugadores + ficha tecnica */
+.page-players .content-panel,
+.page-player-detail .content-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 255, 0.92));
+}
+
+.page-players .panel-heading {
+    border-bottom: 1px solid #d6e5fa;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(255, 210, 50, 0.2), transparent 38%),
+        linear-gradient(165deg, #ffffff, #edf5ff);
+}
+
+.page-players .panel-heading h2 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.page-players .player-spotlight-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
+    gap: 0.95rem;
+}
+
+.page-players .spotlight-card {
+    border: 1px solid #d6e4f8;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, #ffffff 0%, #f6faff 58%, #eef5ff 100%);
+    box-shadow: 0 10px 18px rgba(8, 34, 74, 0.12);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.page-players .spotlight-card:hover {
+    transform: translateY(-4px);
+    border-color: #b8cff0;
+    box-shadow: 0 14px 24px rgba(8, 34, 74, 0.18);
+}
+
+.page-players .player-image-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 0.5rem 0.3rem;
+    background: linear-gradient(165deg, #f7fbff, #e8f1ff);
+}
+
+.page-players .player-image-link img {
+    width: 88px;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    border: 1px solid #c7dcf8;
+    box-shadow: 0 8px 14px rgba(5, 25, 58, 0.14);
+    object-fit: cover;
+}
+
+.page-players .player-card figcaption {
+    padding: 0.62rem;
+    text-align: center;
+}
+
+.page-players .player-card-name {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.95rem;
+}
+
+.page-players .player-card-position {
+    display: inline-flex;
+    justify-self: center;
+    padding: 0.15rem 0.54rem;
+    border-radius: 999px;
+    background: rgba(255, 210, 50, 0.3);
+    border: 1px solid rgba(168, 126, 0, 0.28);
+    color: #604a03;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.page-player-detail .player-detail-panel {
+    border-radius: 22px;
+    border: 1px solid #d2def2;
+    background: linear-gradient(180deg, #ffffff, #f4f8ff);
+    box-shadow: 0 18px 34px rgba(9, 30, 69, 0.16);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.page-player-detail .player-hero {
+    --club-grana: #8b1535;
+    --club-azul: #0a3478;
+    border-radius: 18px;
+    padding: 0.95rem 1rem;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(255, 214, 89, 0.22), transparent 32%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 0,
+            rgba(255, 255, 255, 0.06) 10px,
+            transparent 10px,
+            transparent 22px
+        ),
+        linear-gradient(125deg, var(--club-grana), var(--club-azul));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.page-player-detail .player-detail-photo {
+    width: 118px;
+    height: 118px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.24);
+}
+
+.page-player-detail .player-detail-name {
+    font-size: clamp(1.4rem, 4vw, 2.3rem);
+    letter-spacing: 0.04em;
+}
+
+.page-player-detail .player-role-chip {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.page-player-detail .player-team-crest {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+}
+
+.page-player-detail .player-season-control {
+    border-radius: 14px;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #d4e3fa;
+    background: linear-gradient(180deg, #f7faff, #edf4ff);
+}
+
+.page-player-detail .player-meta-chip {
+    background: #ffffff;
+    border-color: #cadbf8;
+    color: #143f7e;
+    font-size: 0.86rem;
+}
+
+.page-player-detail .player-data-title {
+    font-size: 1.02rem;
+    letter-spacing: 0.07em;
+}
+
+.page-player-detail .player-spec-grid {
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 0.72rem;
+}
+
+.page-player-detail .player-spec-card {
+    border: 1px solid #d5e2f4;
+    border-radius: 14px;
+    padding: 0.72rem;
+    background: linear-gradient(180deg, #ffffff, #f7faff);
+    box-shadow: 0 8px 14px rgba(8, 34, 74, 0.1);
+}
+
+.page-player-detail .spec-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    color: #153f79;
+}
+
+.page-player-detail .spec-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.page-player-detail .spec-label {
+    font-size: 0.74rem;
+}
+
+.page-player-detail .spec-value {
+    font-size: 0.98rem;
+}
+
+.page-player-detail .btn-outline-back {
+    border: 2px solid #183f7e;
+    color: #183f7e;
+    padding: 0.55rem 0.95rem;
+    min-width: 170px;
+}
+
+.page-player-detail .btn-outline-back:hover {
+    background: #183f7e;
+    color: #ffffff;
+}
+
+@media (max-width: 720px) {
+    .page-player-detail .player-hero {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 0.7rem;
+        padding: 0.8rem 0.7rem;
+    }
+
+    .page-player-detail .player-detail-photo {
+        width: 98px;
+        height: 98px;
+    }
+
+    .page-player-detail .player-team-crest {
+        width: 70px;
+        height: 70px;
+    }
+
+    .page-player-detail .player-spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-player-detail .btn-outline-back {
+        width: 100%;
+    }
+}
+
+/* Ficha de jugador simplificada */
+.page-player-detail .content-panel {
+    padding-bottom: 1rem;
+}
+
+.player-basic-detail {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #d9e8fb;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(232, 242, 255, 0.96));
+}
+
+.player-basic-layout {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.player-basic-media {
+    display: flex;         
+    justify-content: center; 
+    align-items: center;
+    padding: 20px 0;      
+    width: 100%;
+}
+
+.player-basic-photo {
+   width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    object-fit: cover;
+    border-radius: 12px; 
+    border: 1px solid #c9dcf9;
+    background: #dfeeff;
+    box-shadow: 0 4px 10px rgba(4, 24, 51, 0.1);
+    display: block;      
+    max-width: 100%;
+}
+
+.player-basic-content {
+    padding-left: 0.2rem;
+}
+
+.player-basic-title {
+    margin: 0 0 0.8rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.player-basic-grid {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.player-basic-item {
+    border: 1px solid #d9e8fb;
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 0.65rem 0.75rem;
+}
+
+.player-basic-item h4,
+.player-basic-item p {
+    margin: 0;
+}
+
+.player-basic-item h4 {
+    font-size: 0.84rem;
+    color: #5e789f;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.player-basic-item p {
+    margin-top: 0.25rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.page-player-detail .btn-outline-back {
+    margin-top: 0.8rem;
+    min-width: 0;
+    border-width: 1px;
+}
+
+@media (max-width: 780px) {
+    .player-basic-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .player-basic-photo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .player-basic-content {
+        padding-left: 0;
     }
 }

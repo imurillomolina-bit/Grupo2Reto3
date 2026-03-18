@@ -24,7 +24,7 @@ try {
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<main class="page">
+<main class="page page-players">
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Jugadores</h2>
@@ -54,10 +54,12 @@ require __DIR__ . '/../includes/header.php';
             <article class="cards-grid player-spotlight-grid">
                 <?php foreach ($jugadores as $jugador): ?>
                     <figure class="player-card spotlight-card">
-                        <img src="<?php echo e($jugador['foto']); ?>" alt="Foto de <?php echo e($jugador['nombre']); ?>">
+                        <a class="player-image-link" href="jugador.php?id=<?php echo (int) $jugador['id']; ?>" aria-label="Ver ficha de <?php echo e($jugador['nombre']); ?>">
+                            <img src="<?php echo e($jugador['foto']); ?>" alt="Foto de <?php echo e($jugador['nombre']); ?>">
+                        </a>
                         <figcaption>
-                            <strong><?php echo e($jugador['nombre']); ?></strong>
-                            <span><?php echo e($jugador['posicion']); ?></span>
+                            <strong class="player-card-name"><?php echo e($jugador['nombre']); ?></strong>
+                            <span class="player-card-position"><?php echo e($jugador['posicion']); ?></span>
                             <small>
                                 <a href="equipo.php?id=<?php echo (int) $jugador['equipo_id']; ?>"><?php echo e($jugador['equipo']); ?></a>
                             </small>

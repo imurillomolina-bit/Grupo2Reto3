@@ -216,11 +216,29 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
         $nombreEquipo = (string) $equipo->nombre;
 
         foreach ($equipo->jugadores->jugador as $jugador) {
+            $nombreCompleto = trim((string) $jugador->nombre);
+            $nombrePartido = split_nombre_jugador($nombreCompleto);
+            $nombreXml = trim((string) ($jugador->nombre ?? ''));
+            $apellidosXml = trim((string) ($jugador->apellidos ?? ''));
+
+            $nombre = $nombrePartido['nombre'];
+            $apellidos = $nombrePartido['apellidos'];
+
+            if ($apellidosXml !== '') {
+                $nombre = $nombreXml !== '' ? $nombreXml : $nombrePartido['nombre'];
+                $apellidos = $apellidosXml;
+            }
+
             $jugadores[] = [
                 'id' => (int) $jugador['id'],
-                'nombre' => (string) $jugador->nombre,
+                'nombre' => $nombre,
+                'apellidos' => $apellidos,
+                'fecha_nacimiento' => trim((string) ($jugador->fecha_nacimiento ?? 'No disponible')),
+                'nacionalidad' => trim((string) ($jugador->nacionalidad ?? 'No disponible')),
+                'peso' => trim((string) ($jugador->peso ?? 'No disponible')),
+                'altura' => trim((string) ($jugador->altura ?? 'No disponible')),
                 'posicion' => (string) $jugador->posicion,
-                'foto' => build_jugador_avatar_url((string) $jugador->nombre),
+                'foto' => build_jugador_avatar_url($nombreCompleto),
                 'equipo' => $nombreEquipo,
                 'equipo_id' => (int) $equipo['id'],
             ];
@@ -228,6 +246,65 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
     }
 
     return $jugadores;
+}
+
+function split_nombre_jugador(string $nombreCompleto): array
+{
+    $partes = preg_split('/\s+/', trim($nombreCompleto)) ?: [];
+
+    if ($partes === []) {
+        return ['nombre' => 'No disponible', 'apellidos' => 'No disponible'];
+    }
+
+    if (count($partes) === 1) {
+        return ['nombre' => $partes[0], 'apellidos' => 'No disponible'];
+    }
+
+    return [
+        'nombre' => (string) array_shift($partes),
+        'apellidos' => implode(' ', $partes),
+    ];
+}
+
+function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId): ?array
+{
+    foreach ($temporada->equipos->equipo as $equipo) {
+        foreach ($equipo->jugadores->jugador as $jugador) {
+            if ((int) $jugador['id'] !== $jugadorId) {
+                continue;
+            }
+
+            $nombreCompleto = trim((string) $jugador->nombre);
+            $nombrePartido = split_nombre_jugador($nombreCompleto);
+            $nombreXml = trim((string) ($jugador->nombre ?? ''));
+            $apellidosXml = trim((string) ($jugador->apellidos ?? ''));
+
+            $nombre = $nombrePartido['nombre'];
+            $apellidos = $nombrePartido['apellidos'];
+
+            if ($apellidosXml !== '') {
+                $nombre = $nombreXml !== '' ? $nombreXml : $nombrePartido['nombre'];
+                $apellidos = $apellidosXml;
+            }
+
+            return [
+                'id' => $jugadorId,
+                'nombre' => $nombre,
+                'apellidos' => $apellidos,
+                'fecha_nacimiento' => trim((string) ($jugador->fecha_nacimiento ?? 'No disponible')),
+                'nacionalidad' => trim((string) ($jugador->nacionalidad ?? 'No disponible')),
+                'peso' => trim((string) ($jugador->peso ?? 'No disponible')),
+                'altura' => trim((string) ($jugador->altura ?? 'No disponible')),
+                'posicion' => trim((string) $jugador->posicion),
+                'foto' => build_jugador_avatar_url($nombreCompleto),
+                'equipo' => trim((string) $equipo->nombre),
+                'equipo_id' => (int) $equipo['id'],
+                'equipo_escudo' => normalize_public_path((string) $equipo->escudo),
+            ];
+        }
+    }
+
+    return null;
 }
 
 function get_partidos_recientes(SimpleXMLElement $temporada): array

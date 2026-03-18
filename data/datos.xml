@@ -1,409 +1,2472 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <liga nombre="FEDERACIÓN FUTSAL">
-    <temporadas>
-        <temporada id="2024-2025" nombre="2024/2025" actual="no">
-            <equipos>
-                <equipo id="1">
-                    <nombre>Barça</nombre>
-                    <ciudad>Barcelona</ciudad>
-                    <estadio>Palau Blaugrana</estadio>
-                    <descripcion>Conjunto tecnico con mucha posesion y ritmo alto en pista rival.</descripcion>
-                    <escudo>../img/escudos/Barça.png</escudo>
-                    <jugadores>
-                        <jugador id="101"><nombre>Miguel Delope</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="102"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="113"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="114"><nombre>Samuel Gil</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="115"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="2">
-                    <nombre>Córdoba Patrimonio Humanidad</nombre>
-                    <ciudad>Córdoba</ciudad>
-                    <estadio>Vista Alegre</estadio>
-                    <descripcion>Bloque serio, ordenado y con salidas rapidas desde primera linea.</descripcion>
-                    <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
-                    <jugadores>
-                        <jugador id="103"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="116"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="117"><nombre>Unai Garcia</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="118"><nombre>Pablo Ortega</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="119"><nombre>Iñigo Sanchez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="3">
-                    <nombre>ElPozo Murcia Costa Cálida</nombre>
-                    <ciudad>Murcia</ciudad>
-                    <estadio>Palacio de los Deportes</estadio>
-                    <descripcion>Equipo intenso, agresivo en la presion y con mucho peso ofensivo.</descripcion>
-                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="104"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="120"><nombre>Borja Marin</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="121"><nombre>Ivan Prieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="122"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="123"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="4">
-                    <nombre>Industrias Santa Coloma</nombre>
-                    <ciudad>Santa Coloma</ciudad>
-                    <estadio>Pavelló Nou</estadio>
-                    <descripcion>Plantilla dinamica, valiente en ataque y con buena circulacion.</descripcion>
-                    <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
-                    <jugadores>
-                        <jugador id="105"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="124"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="125"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="126"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="127"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="5">
-                    <nombre>Islas Baleares Palma Futsal</nombre>
-                    <ciudad>Palma</ciudad>
-                    <estadio>Son Moix</estadio>
-                    <descripcion>Juego coral, salida limpia y mucha amenaza a balon parado.</descripcion>
-                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
-                    <jugadores>
-                        <jugador id="106"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="128"><nombre>Cristian Flores</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="129"><nombre>Diego Mendez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="130"><nombre>Mario Vega</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="131"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="6">
-                    <nombre>Jaen Paraiso Interior</nombre>
-                    <ciudad>Jaen</ciudad>
-                    <estadio>Olivo Arena</estadio>
-                    <descripcion>Conjunto competitivo, vertical y muy exigente en defensa.</descripcion>
-                    <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
-                    <jugadores>
-                        <jugador id="107"><nombre>Jon Martinez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="132"><nombre>Javier Blanco</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="133"><nombre>Iker Navarro</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="134"><nombre>Sergio Rey</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="135"><nombre>Fernando Silva</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="7">
-                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
-                    <ciudad>Cartagena</ciudad>
-                    <estadio>Palacio de los Deportes de Cartagena</estadio>
-                    <descripcion>Equipo muy fuerte en duelos, transiciones y finalizacion.</descripcion>
-                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="108"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="136"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="137"><nombre>Nicolas Benitez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="138"><nombre>Alex Santos</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="139"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="8">
-                    <nombre>Movistar Inter</nombre>
-                    <ciudad>Madrid</ciudad>
-                    <estadio>Jorge Garbajosa</estadio>
-                    <descripcion>Referente tactico con mucha experiencia y control de los partidos.</descripcion>
-                    <escudo>../img/escudos/Movistar Inter.png</escudo>
-                    <jugadores>
-                        <jugador id="109"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="140"><nombre>Gorka Alonso</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="141"><nombre>Lucas Cortes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="142"><nombre>Ruben Pascual</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="143"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="9">
-                    <nombre>O Parrulo Ferrol</nombre>
-                    <ciudad>Ferrol</ciudad>
-                    <estadio>A Malata</estadio>
-                    <descripcion>Equipo de energia alta, fuerte en repliegue y salidas rapidas.</descripcion>
-                    <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
-                    <jugadores>
-                        <jugador id="110"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="144"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="145"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="146"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="147"><nombre>Jon Martinez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="10">
-                    <nombre>Quesos Hidalgo Manzanares FS</nombre>
-                    <ciudad>Manzanares</ciudad>
-                    <estadio>Antonio Caba</estadio>
-                    <descripcion>Conjunto ordenado, practico y con buena lectura de los ritmos.</descripcion>
-                    <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
-                    <jugadores>
-                        <jugador id="111"><nombre>Carlos Gutiérrez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="112"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="148"><nombre>Nacho Lara</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="149"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="150"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-            </equipos>
-            <partidos>
-                <partido local="1" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-09-12"/>
-                <partido local="3" visitante="4" goles_local="2" goles_visitante="2" fecha="2024-09-14"/>
-                <partido local="5" visitante="6" goles_local="4" goles_visitante="2" fecha="2024-09-18"/>
-                <partido local="7" visitante="8" goles_local="1" goles_visitante="3" fecha="2024-09-20"/>
-                <partido local="9" visitante="10" goles_local="2" goles_visitante="1" fecha="2024-09-22"/>
-                <partido local="1" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-10-02"/>
-                <partido local="2" visitante="5" goles_local="1" goles_visitante="2" fecha="2024-10-05"/>
-                <partido local="4" visitante="7" goles_local="2" goles_visitante="3" fecha="2024-10-10"/>
-                <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2024-10-12"/>
-                <partido local="10" visitante="1" goles_local="0" goles_visitante="2" fecha="2024-10-20"/>
-                <partido local="9" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-22"/>
-                <partido local="7" visitante="5" goles_local="2" goles_visitante="2" fecha="2024-10-25"/>
-            </partidos>
-        </temporada>
-
-        <temporada id="2025-2026" nombre="2025/2026" actual="si">
-            <equipos>
-                <equipo id="1">
-                    <nombre>Barça</nombre>
-                    <ciudad>Barcelona</ciudad>
-                    <estadio>Palau Blaugrana</estadio>
-                    <descripcion>Conjunto dominador, con mucha calidad tecnica y control del tempo.</descripcion>
-                    <escudo>../img/escudos/Barça.png</escudo>
-                    <jugadores>
-                        <jugador id="201"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="202"><nombre>Samuel Gil</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="213"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="214"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="232"><nombre>Carlos Gutiérrez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="2">
-                    <nombre>Córdoba Patrimonio Humanidad</nombre>
-                    <ciudad>Córdoba</ciudad>
-                    <estadio>Vista Alegre</estadio>
-                    <descripcion>Equipo compacto que compite cada tramo del partido con intensidad.</descripcion>
-                    <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
-                    <jugadores>
-                        <jugador id="203"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="215"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="216"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="233"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="234"><nombre>Oscar Nieto</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="3">
-                    <nombre>ElPozo Murcia Costa Cálida</nombre>
-                    <ciudad>Murcia</ciudad>
-                    <estadio>Palacio de los Deportes</estadio>
-                    <descripcion>Plantilla muy competitiva, con presion alta y finalizacion constante.</descripcion>
-                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="204"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="217"><nombre>Cristian Flores</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="218"><nombre>Diego Mendez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="235"><nombre>Samuel Gil</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="236"><nombre>Asier Hernandez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="4">
-                    <nombre>Industrias Santa Coloma</nombre>
-                    <ciudad>Santa Coloma</ciudad>
-                    <estadio>Pavelló Nou</estadio>
-                    <descripcion>Equipo atrevido, con buena lectura tactica y movilidad ofensiva.</descripcion>
-                    <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
-                    <jugadores>
-                        <jugador id="205"><nombre>Unai Garcia</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="219"><nombre>Mario Vega</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="220"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="237"><nombre>Alberto Romero</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="238"><nombre>Unai Garcia</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="5">
-                    <nombre>Islas Baleares Palma Futsal</nombre>
-                    <ciudad>Palma</ciudad>
-                    <estadio>Son Moix</estadio>
-                    <descripcion>Conjunto estable, preciso y con muchas variantes de finalizacion.</descripcion>
-                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
-                    <jugadores>
-                        <jugador id="206"><nombre>Pablo Ortega</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="221"><nombre>Javier Blanco</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="222"><nombre>Iker Navarro</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="239"><nombre>Borja Marin</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="240"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="6">
-                    <nombre>Jaen Paraiso Interior</nombre>
-                    <ciudad>Jaen</ciudad>
-                    <estadio>Olivo Arena</estadio>
-                    <descripcion>Equipo intenso, muy fuerte en casa y con gran trabajo colectivo.</descripcion>
-                    <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
-                    <jugadores>
-                        <jugador id="207"><nombre>Iñigo Sanchez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="223"><nombre>Sergio Rey</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="224"><nombre>Fernando Silva</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="241"><nombre>Xabi Molina</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="242"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="7">
-                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
-                    <ciudad>Cartagena</ciudad>
-                    <estadio>Palacio de los Deportes de Cartagena</estadio>
-                    <descripcion>Plantilla vertical, competitiva y con mucho peligro en transicion.</descripcion>
-                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="208"><nombre>Borja Marin</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="225"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="226"><nombre>Nicolas Benitez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="243"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="244"><nombre>Manuel Ramos</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="8">
-                    <nombre>Movistar Inter</nombre>
-                    <ciudad>Madrid</ciudad>
-                    <estadio>Jorge Garbajosa</estadio>
-                    <descripcion>Equipo experto, muy tactico y con gran capacidad para dominar contextos.</descripcion>
-                    <escudo>../img/escudos/Movistar Inter.png</escudo>
-                    <jugadores>
-                        <jugador id="209"><nombre>Ivan Prieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="227"><nombre>Alex Santos</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="228"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="245"><nombre>Julen Etxeberria</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="246"><nombre>Aitor Perez</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="9">
-                    <nombre>O Parrulo Ferrol</nombre>
-                    <ciudad>Ferrol</ciudad>
-                    <estadio>A Malata</estadio>
-                    <descripcion>Conjunto de mucho esfuerzo, rapido para correr y cerrar espacios.</descripcion>
-                    <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
-                    <jugadores>
-                        <jugador id="210"><nombre>Adrian Cruz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="229"><nombre>Gorka Alonso</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="230"><nombre>Lucas Cortes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="247"><nombre>Cristian Flores</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="248"><nombre>Diego Mendez</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="10">
-                    <nombre>Quesos Hidalgo Manzanares FS</nombre>
-                    <ciudad>Manzanares</ciudad>
-                    <estadio>Antonio Caba</estadio>
-                    <descripcion>Equipo practico, disciplinado y muy fiable en los partidos cerrados.</descripcion>
-                    <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
-                    <jugadores>
-                        <jugador id="211"><nombre>Xabi Molina</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="212"><nombre>Aimar Zubizarreta</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="231"><nombre>Ruben Pascual</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="249"><nombre>Mario Vega</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="250"><nombre>Ander Ruiz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-            </equipos>
-            <partidos>
-                <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11"/>
-                <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-13"/>
-                <partido local="5" visitante="6" goles_local="2" goles_visitante="2" fecha="2025-09-15"/>
-                <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2025-09-18"/>
-                <partido local="9" visitante="10" goles_local="0" goles_visitante="1" fecha="2025-09-20"/>
-                <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-09-28"/>
-                <partido local="2" visitante="5" goles_local="1" goles_visitante="3" fecha="2025-09-30"/>
-                <partido local="4" visitante="7" goles_local="2" goles_visitante="2" fecha="2025-10-04"/>
-                <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2025-10-09"/>
-                <partido local="10" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-10-14"/>
-                <partido local="2" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-10-20"/>
-                <partido local="9" visitante="4" goles_local="1" goles_visitante="0" fecha="2025-10-24"/>
-            </partidos>
-        </temporada>
-
-        <temporada id="2026-2027" nombre="2026/2027" actual="no">
-            <equipos>
-                <equipo id="1">
-                    <nombre>Barça</nombre>
-                    <ciudad>Barcelona</ciudad>
-                    <estadio>Palau Blaugrana</estadio>
-                    <descripcion>Bloque dominante, muy fiable en ataque posicional y con ritmo alto en pista rival.</descripcion>
-                    <escudo>../img/escudos/Barça.png</escudo>
-                    <jugadores>
-                        <jugador id="301"><nombre>Miguel Delope</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="302"><nombre>Marcos Castillo</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="303"><nombre>Hugo Fuentes</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="316"><nombre>Tomas Aguilar</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="317"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="3">
-                    <nombre>ElPozo Murcia Costa Cálida</nombre>
-                    <ciudad>Murcia</ciudad>
-                    <estadio>Palacio de los Deportes</estadio>
-                    <descripcion>Equipo muy agresivo en presion, con transiciones rapidas y mucho peso competitivo.</descripcion>
-                    <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="304"><nombre>Eneko Diaz</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="305"><nombre>Daniel Herrera</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                        <jugador id="306"><nombre>Cristian Flores</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador6.svg</foto></jugador>
-                        <jugador id="318"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="319"><nombre>Jon Martinez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="5">
-                    <nombre>Islas Baleares Palma Futsal</nombre>
-                    <ciudad>Palma</ciudad>
-                    <estadio>Son Moix</estadio>
-                    <descripcion>Conjunto equilibrado, muy preciso con balon y capaz de controlar diferentes ritmos.</descripcion>
-                    <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
-                    <jugadores>
-                        <jugador id="307"><nombre>Luis Fernández</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador7.svg</foto></jugador>
-                        <jugador id="308"><nombre>Pablo Ortega</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador8.svg</foto></jugador>
-                        <jugador id="309"><nombre>Javier Blanco</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador9.svg</foto></jugador>
-                        <jugador id="320"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="321"><nombre>Raul Iglesias</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="7">
-                    <nombre>Jimbee Cartagena Costa Cálida</nombre>
-                    <ciudad>Cartagena</ciudad>
-                    <estadio>Palacio de los Deportes de Cartagena</estadio>
-                    <descripcion>Plantilla vertical, potente en duelos y con mucha amenaza cuando acelera el juego.</descripcion>
-                    <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
-                    <jugadores>
-                        <jugador id="310"><nombre>Nacho Lara</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador10.svg</foto></jugador>
-                        <jugador id="311"><nombre>Borja Marin</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador11.svg</foto></jugador>
-                        <jugador id="312"><nombre>Mikel Lopez</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador12.svg</foto></jugador>
-                        <jugador id="322"><nombre>Carlos Gutiérrez</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="323"><nombre>Andres Morales</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-                <equipo id="8">
-                    <nombre>Movistar Inter</nombre>
-                    <ciudad>Madrid</ciudad>
-                    <estadio>Jorge Garbajosa</estadio>
-                    <descripcion>Equipo de gran oficio tactico, con muy buena gestion de partido y experiencia competitiva.</descripcion>
-                    <escudo>../img/escudos/Movistar Inter.png</escudo>
-                    <jugadores>
-                        <jugador id="313"><nombre>Artem Broz</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador1.svg</foto></jugador>
-                        <jugador id="314"><nombre>Ivan Prieto</nombre><posicion>Cierre</posicion><foto>../img/jugadores/jugador2.svg</foto></jugador>
-                        <jugador id="315"><nombre>Victor Campos</nombre><posicion>Portero</posicion><foto>../img/jugadores/jugador3.svg</foto></jugador>
-                        <jugador id="324"><nombre>Oscar Nieto</nombre><posicion>Ala</posicion><foto>../img/jugadores/jugador4.svg</foto></jugador>
-                        <jugador id="325"><nombre>Samuel Gil</nombre><posicion>Pivote</posicion><foto>../img/jugadores/jugador5.svg</foto></jugador>
-                    </jugadores>
-                </equipo>
-            </equipos>
-            <partidos>
-                <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2026-09-12"/>
-                <partido local="5" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-14"/>
-                <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-09-20"/>
-                <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2026-09-24"/>
-                <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2026-09-27"/>
-                <partido local="1" visitante="5" goles_local="4" goles_visitante="2" fecha="2026-10-03"/>
-                <partido local="3" visitante="7" goles_local="1" goles_visitante="1" fecha="2026-10-08"/>
-                <partido local="5" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-10-12"/>
-                <partido local="7" visitante="1" goles_local="0" goles_visitante="1" fecha="2026-10-18"/>
-                <partido local="8" visitante="3" goles_local="3" goles_visitante="2" fecha="2026-10-22"/>
-            </partidos>
-        </temporada>
-    </temporadas>
+  <temporadas>
+    <temporada id="2024-2025" nombre="2024/2025" actual="no">
+      <equipos>
+        <equipo id="1">
+          <nombre>Barça</nombre>
+          <ciudad>Barcelona</ciudad>
+          <estadio>Palau Blaugrana</estadio>
+          <descripcion>Conjunto tecnico con mucha posesion y ritmo alto en pista rival.</descripcion>
+          <escudo>../img/escudos/Barça.png</escudo>
+          <jugadores>
+            <jugador id="1001">
+              <nombre>Raúl</nombre>
+              <apellidos>Méndez Plaza</apellidos>
+              <fecha_nacimiento>1998-03-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.50</peso>
+              <altura>1.72</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1002">
+              <nombre>Samuel</nombre>
+              <apellidos>García Nieto</apellidos>
+              <fecha_nacimiento>1997-06-06</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>76.80</peso>
+              <altura>1.78</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="1003">
+              <nombre>Tomás</nombre>
+              <apellidos>Serna Ortiz</apellidos>
+              <fecha_nacimiento>1998-08-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="1004">
+              <nombre>Kevin</nombre>
+              <apellidos>Soto Ríos</apellidos>
+              <fecha_nacimiento>1998-11-03</fecha_nacimiento>
+              <nacionalidad>Mexicana</nacionalidad>
+              <peso>71.20</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="1005">
+              <nombre>Eric</nombre>
+              <apellidos>Font Miras</apellidos>
+              <fecha_nacimiento>1995-12-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.00</peso>
+              <altura>1.81</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="1006">
+              <nombre>Ramiro</nombre>
+              <apellidos>Sosa Pintos</apellidos>
+              <fecha_nacimiento>1999-01-20</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.80</peso>
+              <altura>1.70</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1007">
+              <nombre>Gabriel</nombre>
+              <apellidos>Morales Pinto</apellidos>
+              <fecha_nacimiento>1998-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1008">
+              <nombre>Thierry</nombre>
+              <apellidos>Dubois Lemaire</apellidos>
+              <fecha_nacimiento>2001-05-05</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.67</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="2">
+          <nombre>Córdoba Patrimonio Humanidad</nombre>
+          <ciudad>Córdoba</ciudad>
+          <estadio>Vista Alegre</estadio>
+          <descripcion>Bloque serio, ordenado y con salidas rapidas desde primera linea.</descripcion>
+          <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
+          <jugadores>
+            <jugador id="1101">
+              <nombre>Iván</nombre>
+              <apellidos>Torres Gil</apellidos>
+              <fecha_nacimiento>1997-07-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.20</peso>
+              <altura>1.68</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1102">
+              <nombre>Diego</nombre>
+              <apellidos>Marín Bravo</apellidos>
+              <fecha_nacimiento>2002-10-27</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="1103">
+              <nombre>Miguel</nombre>
+              <apellidos>Prats Luna</apellidos>
+              <fecha_nacimiento>1993-01-19</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="1104">
+              <nombre>David</nombre>
+              <apellidos>Olmo Crespo</apellidos>
+              <fecha_nacimiento>2001-01-25</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.80</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="1105">
+              <nombre>Manuel</nombre>
+              <apellidos>Díez Prado</apellidos>
+              <fecha_nacimiento>1994-04-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.60</peso>
+              <altura>1.67</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="1106">
+              <nombre>Fabián</nombre>
+              <apellidos>Cruz Elizalde</apellidos>
+              <fecha_nacimiento>2000-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="1107">
+              <nombre>Ramón</nombre>
+              <apellidos>Gil Navarro</apellidos>
+              <fecha_nacimiento>1995-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>81.00</peso>
+              <altura>1.83</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1108">
+              <nombre>Óliver</nombre>
+              <apellidos>Sanz Roca</apellidos>
+              <fecha_nacimiento>2002-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="3">
+          <nombre>ElPozo Murcia Costa Cálida</nombre>
+          <ciudad>Murcia</ciudad>
+          <estadio>Palacio de los Deportes</estadio>
+          <descripcion>Equipo intenso, agresivo en la presion y con mucho peso ofensivo.</descripcion>
+          <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="1201">
+              <nombre>Sergio</nombre>
+              <apellidos>Pardo Ruiz</apellidos>
+              <fecha_nacimiento>1995-11-02</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>74.10</peso>
+              <altura>1.75</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1202">
+              <nombre>Fernando</nombre>
+              <apellidos>Salas Gómez</apellidos>
+              <fecha_nacimiento>1996-02-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>77.10</peso>
+              <altura>1.80</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1203">
+              <nombre>Nicolás</nombre>
+              <apellidos>Pérez Andreu</apellidos>
+              <fecha_nacimiento>1996-06-26</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.60</peso>
+              <altura>1.77</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="1204">
+              <nombre>Iker</nombre>
+              <apellidos>Blasco Peña</apellidos>
+              <fecha_nacimiento>1997-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.79</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="1205">
+              <nombre>Rachid</nombre>
+              <apellidos>Ben Omar</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="1206">
+              <nombre>Nuno</nombre>
+              <apellidos>Oliveira Reis</apellidos>
+              <fecha_nacimiento>1996-12-12</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>73.10</peso>
+              <altura>1.74</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="1207">
+              <nombre>Lorenzo</nombre>
+              <apellidos>Costa Méndez</apellidos>
+              <fecha_nacimiento>1997-03-12</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>72.20</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1208">
+              <nombre>Carlos</nombre>
+              <apellidos>Rodríguez</apellidos>
+              <fecha_nacimiento>1999-05-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.50</peso>
+              <altura>1.82</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="4">
+          <nombre>Industrias Santa Coloma</nombre>
+          <ciudad>Santa Coloma</ciudad>
+          <estadio>Pavelló Nou</estadio>
+          <descripcion>Plantilla dinamica, valiente en ataque y con buena circulacion.</descripcion>
+          <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
+          <jugadores>
+            <jugador id="1301">
+              <nombre>Mario</nombre>
+              <apellidos>López Sanz</apellidos>
+              <fecha_nacimiento>2000-01-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="1302">
+              <nombre>Pablo</nombre>
+              <apellidos>Rivas León</apellidos>
+              <fecha_nacimiento>1998-04-22</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1303">
+              <nombre>Joel</nombre>
+              <apellidos>Martí Font</apellidos>
+              <fecha_nacimiento>2002-09-15</fecha_nacimiento>
+              <nacionalidad>Ecuatoriana</nacionalidad>
+              <peso>63.90</peso>
+              <altura>1.64</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="1304">
+              <nombre>Unai</nombre>
+              <apellidos>Prieto Zabala</apellidos>
+              <fecha_nacimiento>1993-03-16</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.40</peso>
+              <altura>1.73</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="1305">
+              <nombre>Saúl</nombre>
+              <apellidos>Crespo Gil</apellidos>
+              <fecha_nacimiento>2001-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.20</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="1306">
+              <nombre>Yeray</nombre>
+              <apellidos>Martín Gil</apellidos>
+              <fecha_nacimiento>1994-06-06</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="1307">
+              <nombre>Patrick</nombre>
+              <apellidos>Legrand Moreau</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="5">
+          <nombre>Islas Baleares Palma Futsal</nombre>
+          <ciudad>Palma</ciudad>
+          <estadio>Son Moix</estadio>
+          <descripcion>Juego coral, salida limpia y mucha amenaza a balon parado.</descripcion>
+          <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+          <jugadores>
+            <jugador id="1401">
+              <nombre>Hugo</nombre>
+              <apellidos>Beltrán Roca</apellidos>
+              <fecha_nacimiento>1996-09-30</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>72.60</peso>
+              <altura>1.74</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="1402">
+              <nombre>Andrés</nombre>
+              <apellidos>Cano Vega</apellidos>
+              <fecha_nacimiento>1995-09-17</fecha_nacimiento>
+              <nacionalidad>Colombiana</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.70</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1403">
+              <nombre>Marcos</nombre>
+              <apellidos>Esteve Roig</apellidos>
+              <fecha_nacimiento>1997-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1404">
+              <nombre>Matías</nombre>
+              <apellidos>Luna Ferreyra</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.71</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="1405">
+              <nombre>Gonzalo</nombre>
+              <apellidos>Mir Rey</apellidos>
+              <fecha_nacimiento>1993-02-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.40</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="1406">
+              <nombre>Rafael</nombre>
+              <apellidos>Dos Santos</apellidos>
+              <fecha_nacimiento>1998-09-09</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>80.00</peso>
+              <altura>1.81</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="1407">
+              <nombre>Arturo</nombre>
+              <apellidos>Peña Gil</apellidos>
+              <fecha_nacimiento>1994-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.66</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="6">
+          <nombre>Jaen Paraiso Interior</nombre>
+          <ciudad>Jaen</ciudad>
+          <estadio>Olivo Arena</estadio>
+          <descripcion>Conjunto competitivo, vertical y muy exigente en defensa.</descripcion>
+          <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
+          <jugadores>
+            <jugador id="1501">
+              <nombre>Adrián</nombre>
+              <apellidos>Suárez Costa</apellidos>
+              <fecha_nacimiento>1999-05-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.30</peso>
+              <altura>1.71</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="1502">
+              <nombre>Luis</nombre>
+              <apellidos>Delgado Pons</apellidos>
+              <fecha_nacimiento>1999-12-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.70</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="1503">
+              <nombre>Óscar</nombre>
+              <apellidos>Medina Soler</apellidos>
+              <fecha_nacimiento>1995-02-23</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>78.30</peso>
+              <altura>1.82</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1504">
+              <nombre>Aaron</nombre>
+              <apellidos>Costa Gil</apellidos>
+              <fecha_nacimiento>2002-02-02</fecha_nacimiento>
+              <nacionalidad>Italiana</nacionalidad>
+              <peso>64.70</peso>
+              <altura>1.66</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="1505">
+              <nombre>Esteban</nombre>
+              <apellidos>Molina Grau</apellidos>
+              <fecha_nacimiento>1998-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="1506">
+              <nombre>Lautaro</nombre>
+              <apellidos>Paz Gómez</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="1507">
+              <nombre>Eder</nombre>
+              <apellidos>Zabala Núñez</apellidos>
+              <fecha_nacimiento>2000-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.40</peso>
+              <altura>1.69</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="7">
+          <nombre>Jimbee Cartagena Costa Cálida</nombre>
+          <ciudad>Cartagena</ciudad>
+          <estadio>Palacio de los Deportes de Cartagena</estadio>
+          <descripcion>Equipo muy fuerte en duelos, transiciones y finalizacion.</descripcion>
+          <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="1601">
+              <nombre>Daniel</nombre>
+              <apellidos>Ortega Peña</apellidos>
+              <fecha_nacimiento>1994-12-25</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="1602">
+              <nombre>Ismael</nombre>
+              <apellidos>Duarte Silva</apellidos>
+              <fecha_nacimiento>1997-03-29</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>71.40</peso>
+              <altura>1.73</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="1603">
+              <nombre>Eneko</nombre>
+              <apellidos>Gómez Iribar</apellidos>
+              <fecha_nacimiento>1999-04-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.10</peso>
+              <altura>1.69</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1604">
+              <nombre>Pedro</nombre>
+              <apellidos>Valero Sanchis</apellidos>
+              <fecha_nacimiento>1996-06-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.30</peso>
+              <altura>1.75</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1605">
+              <nombre>Biel</nombre>
+              <apellidos>Serra Pons</apellidos>
+              <fecha_nacimiento>2000-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="1606">
+              <nombre>Ignacio</nombre>
+              <apellidos>Prado Roca</apellidos>
+              <fecha_nacimiento>1993-02-02</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.75</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="1607">
+              <nombre>Ricardo</nombre>
+              <apellidos>Alves Faria</apellidos>
+              <fecha_nacimiento>1996-06-06</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="8">
+          <nombre>Movistar Inter</nombre>
+          <ciudad>Madrid</ciudad>
+          <estadio>Jorge Garbajosa</estadio>
+          <descripcion>Referente tactico con mucha experiencia y control de los partidos.</descripcion>
+          <escudo>../img/escudos/Movistar Inter.png</escudo>
+          <jugadores>
+            <jugador id="1701">
+              <nombre>Álex</nombre>
+              <apellidos>Romero Vidal</apellidos>
+              <fecha_nacimiento>2001-04-09</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.20</peso>
+              <altura>1.73</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="1702">
+              <nombre>Rubén</nombre>
+              <apellidos>Arias Soto</apellidos>
+              <fecha_nacimiento>2001-07-13</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="1703">
+              <nombre>Gael</nombre>
+              <apellidos>Montero Paz</apellidos>
+              <fecha_nacimiento>2000-07-07</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>73.00</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="1704">
+              <nombre>Elías</nombre>
+              <apellidos>Ramos Cobo</apellidos>
+              <fecha_nacimiento>1998-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1705">
+              <nombre>Diego</nombre>
+              <apellidos>Andrade Mello</apellidos>
+              <fecha_nacimiento>2002-12-12</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>63.00</peso>
+              <altura>1.64</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="1706">
+              <nombre>Mikel</nombre>
+              <apellidos>Onaindia Ríos</apellidos>
+              <fecha_nacimiento>1999-11-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.50</peso>
+              <altura>1.68</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="1707">
+              <nombre>Mohamed</nombre>
+              <apellidos>El Amrani</apellidos>
+              <fecha_nacimiento>1998-02-02</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="9">
+          <nombre>O Parrulo Ferrol</nombre>
+          <ciudad>Ferrol</ciudad>
+          <estadio>A Malata</estadio>
+          <descripcion>Equipo de energia alta, fuerte en repliegue y salidas rapidas.</descripcion>
+          <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
+          <jugadores>
+            <jugador id="1801">
+              <nombre>Javier</nombre>
+              <apellidos>Navas Prieto</apellidos>
+              <fecha_nacimiento>1998-08-19</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>75.00</peso>
+              <altura>1.76</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="1802">
+              <nombre>Alberto</nombre>
+              <apellidos>Mora Cid</apellidos>
+              <fecha_nacimiento>1994-11-08</fecha_nacimiento>
+              <nacionalidad>Peruana</nacionalidad>
+              <peso>74.20</peso>
+              <altura>1.75</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="1803">
+              <nombre>Bruno</nombre>
+              <apellidos>Castro Lima</apellidos>
+              <fecha_nacimiento>1996-12-19</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>74.50</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="1804">
+              <nombre>Jon</nombre>
+              <apellidos>Etxeberria Lasa</apellidos>
+              <fecha_nacimiento>1997-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.10</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="1805">
+              <nombre>Alán</nombre>
+              <apellidos>Vega Santos</apellidos>
+              <fecha_nacimiento>1997-03-03</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="1806">
+              <nombre>Pol</nombre>
+              <apellidos>Miralles Cid</apellidos>
+              <fecha_nacimiento>2001-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.30</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="1807">
+              <nombre>Simón</nombre>
+              <apellidos>Rey Castro</apellidos>
+              <fecha_nacimiento>1993-12-12</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.78</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="10">
+          <nombre>Quesos Hidalgo Manzanares FS</nombre>
+          <ciudad>Manzanares</ciudad>
+          <estadio>Antonio Caba</estadio>
+          <descripcion>Conjunto ordenado, practico y con buena lectura de los ritmos.</descripcion>
+          <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+          <jugadores>
+            <jugador id="1901">
+              <nombre>Carlos</nombre>
+              <apellidos>Rey Molina</apellidos>
+              <fecha_nacimiento>1993-02-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.40</peso>
+              <altura>1.67</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="1902">
+              <nombre>Cristian</nombre>
+              <apellidos>Noa Ramos</apellidos>
+              <fecha_nacimiento>2000-05-21</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>67.30</peso>
+              <altura>1.68</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="1903">
+              <nombre>Víctor</nombre>
+              <apellidos>Roldán Moya</apellidos>
+              <fecha_nacimiento>1994-08-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="1904">
+              <nombre>Thiago</nombre>
+              <apellidos>Pereira Alves</apellidos>
+              <fecha_nacimiento>1999-03-03</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="1905">
+              <nombre>Cristóbal</nombre>
+              <apellidos>Nieto Mora</apellidos>
+              <fecha_nacimiento>1995-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.20</peso>
+              <altura>1.78</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="1906">
+              <nombre>Adam</nombre>
+              <apellidos>Boukari Omar</apellidos>
+              <fecha_nacimiento>2002-05-05</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.67</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="1907">
+              <nombre>Boris</nombre>
+              <apellidos>Kovacevic Milán</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Croata</nacionalidad>
+              <peso>82.50</peso>
+              <altura>1.84</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+      </equipos>
+      <partidos>
+        <partido local="1" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-09-12" />
+        <partido local="3" visitante="4" goles_local="2" goles_visitante="2" fecha="2024-09-14" />
+        <partido local="5" visitante="6" goles_local="4" goles_visitante="2" fecha="2024-09-18" />
+        <partido local="7" visitante="8" goles_local="1" goles_visitante="3" fecha="2024-09-20" />
+        <partido local="9" visitante="10" goles_local="2" goles_visitante="1" fecha="2024-09-22" />
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-10-02" />
+        <partido local="2" visitante="5" goles_local="1" goles_visitante="2" fecha="2024-10-05" />
+        <partido local="4" visitante="7" goles_local="2" goles_visitante="3" fecha="2024-10-10" />
+        <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2024-10-12" />
+        <partido local="10" visitante="1" goles_local="0" goles_visitante="2" fecha="2024-10-20" />
+        <partido local="9" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-22" />
+        <partido local="7" visitante="5" goles_local="2" goles_visitante="2" fecha="2024-10-25" />
+      </partidos>
+    </temporada>
+    <temporada id="2025-2026" nombre="2025/2026" actual="si">
+      <equipos>
+        <equipo id="1">
+          <nombre>Barça</nombre>
+          <ciudad>Barcelona</ciudad>
+          <estadio>Palau Blaugrana</estadio>
+          <descripcion>Conjunto dominador, con mucha calidad tecnica y control del tempo.</descripcion>
+          <escudo>../img/escudos/Barça.png</escudo>
+          <jugadores>
+            <jugador id="2001">
+              <nombre>Raúl</nombre>
+              <apellidos>Méndez Plaza</apellidos>
+              <fecha_nacimiento>1998-03-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.50</peso>
+              <altura>1.72</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2002">
+              <nombre>Samuel</nombre>
+              <apellidos>García Nieto</apellidos>
+              <fecha_nacimiento>1997-06-06</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>76.80</peso>
+              <altura>1.78</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2003">
+              <nombre>Tomás</nombre>
+              <apellidos>Serna Ortiz</apellidos>
+              <fecha_nacimiento>1998-08-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2004">
+              <nombre>Kevin</nombre>
+              <apellidos>Soto Ríos</apellidos>
+              <fecha_nacimiento>1998-11-03</fecha_nacimiento>
+              <nacionalidad>Mexicana</nacionalidad>
+              <peso>71.20</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2005">
+              <nombre>Eric</nombre>
+              <apellidos>Font Miras</apellidos>
+              <fecha_nacimiento>1995-12-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.00</peso>
+              <altura>1.81</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2006">
+              <nombre>Ramiro</nombre>
+              <apellidos>Sosa Pintos</apellidos>
+              <fecha_nacimiento>1999-01-20</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.80</peso>
+              <altura>1.70</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2007">
+              <nombre>Gabriel</nombre>
+              <apellidos>Morales Pinto</apellidos>
+              <fecha_nacimiento>1998-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2008">
+              <nombre>Thierry</nombre>
+              <apellidos>Dubois Lemaire</apellidos>
+              <fecha_nacimiento>2001-05-05</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.67</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="2">
+          <nombre>Córdoba Patrimonio Humanidad</nombre>
+          <ciudad>Córdoba</ciudad>
+          <estadio>Vista Alegre</estadio>
+          <descripcion>Equipo compacto que compite cada tramo del partido con intensidad.</descripcion>
+          <escudo>../img/escudos/Córdoba Patrimonio Humanidad.png</escudo>
+          <jugadores>
+            <jugador id="2101">
+              <nombre>Iván</nombre>
+              <apellidos>Torres Gil</apellidos>
+              <fecha_nacimiento>1997-07-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.20</peso>
+              <altura>1.68</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2102">
+              <nombre>Diego</nombre>
+              <apellidos>Marín Bravo</apellidos>
+              <fecha_nacimiento>2002-10-27</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2103">
+              <nombre>Miguel</nombre>
+              <apellidos>Prats Luna</apellidos>
+              <fecha_nacimiento>1993-01-19</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2104">
+              <nombre>David</nombre>
+              <apellidos>Olmo Crespo</apellidos>
+              <fecha_nacimiento>2001-01-25</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.80</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2105">
+              <nombre>Manuel</nombre>
+              <apellidos>Díez Prado</apellidos>
+              <fecha_nacimiento>1994-04-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.60</peso>
+              <altura>1.67</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2106">
+              <nombre>Fabián</nombre>
+              <apellidos>Cruz Elizalde</apellidos>
+              <fecha_nacimiento>2000-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2107">
+              <nombre>Ramón</nombre>
+              <apellidos>Gil Navarro</apellidos>
+              <fecha_nacimiento>1995-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>81.00</peso>
+              <altura>1.83</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2108">
+              <nombre>Óliver</nombre>
+              <apellidos>Sanz Roca</apellidos>
+              <fecha_nacimiento>2002-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="3">
+          <nombre>ElPozo Murcia Costa Cálida</nombre>
+          <ciudad>Murcia</ciudad>
+          <estadio>Palacio de los Deportes</estadio>
+          <descripcion>Plantilla muy competitiva, con presion alta y finalizacion constante.</descripcion>
+          <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="2201">
+              <nombre>Sergio</nombre>
+              <apellidos>Pardo Ruiz</apellidos>
+              <fecha_nacimiento>1995-11-02</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>74.10</peso>
+              <altura>1.75</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2202">
+              <nombre>Fernando</nombre>
+              <apellidos>Salas Gómez</apellidos>
+              <fecha_nacimiento>1996-02-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>77.10</peso>
+              <altura>1.80</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2203">
+              <nombre>Nicolás</nombre>
+              <apellidos>Pérez Andreu</apellidos>
+              <fecha_nacimiento>1996-06-26</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.60</peso>
+              <altura>1.77</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2204">
+              <nombre>Iker</nombre>
+              <apellidos>Blasco Peña</apellidos>
+              <fecha_nacimiento>1997-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.79</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2205">
+              <nombre>Rachid</nombre>
+              <apellidos>Ben Omar</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2206">
+              <nombre>Nuno</nombre>
+              <apellidos>Oliveira Reis</apellidos>
+              <fecha_nacimiento>1996-12-12</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>73.10</peso>
+              <altura>1.74</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2207">
+              <nombre>Lorenzo</nombre>
+              <apellidos>Costa Méndez</apellidos>
+              <fecha_nacimiento>1997-03-12</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>72.20</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2208">
+              <nombre>Carlos</nombre>
+              <apellidos>Rodríguez</apellidos>
+              <fecha_nacimiento>1999-05-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.50</peso>
+              <altura>1.82</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="4">
+          <nombre>Industrias Santa Coloma</nombre>
+          <ciudad>Santa Coloma</ciudad>
+          <estadio>Pavelló Nou</estadio>
+          <descripcion>Equipo atrevido, con buena lectura tactica y movilidad ofensiva.</descripcion>
+          <escudo>../img/escudos/Industrias Santa Coloma.png</escudo>
+          <jugadores>
+            <jugador id="2301">
+              <nombre>Mario</nombre>
+              <apellidos>López Sanz</apellidos>
+              <fecha_nacimiento>2000-01-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2302">
+              <nombre>Pablo</nombre>
+              <apellidos>Rivas León</apellidos>
+              <fecha_nacimiento>1998-04-22</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2303">
+              <nombre>Joel</nombre>
+              <apellidos>Martí Font</apellidos>
+              <fecha_nacimiento>2002-09-15</fecha_nacimiento>
+              <nacionalidad>Ecuatoriana</nacionalidad>
+              <peso>63.90</peso>
+              <altura>1.64</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2304">
+              <nombre>Unai</nombre>
+              <apellidos>Prieto Zabala</apellidos>
+              <fecha_nacimiento>1993-03-16</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.40</peso>
+              <altura>1.73</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2305">
+              <nombre>Saúl</nombre>
+              <apellidos>Crespo Gil</apellidos>
+              <fecha_nacimiento>2001-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.20</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2306">
+              <nombre>Yeray</nombre>
+              <apellidos>Martín Gil</apellidos>
+              <fecha_nacimiento>1994-06-06</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2307">
+              <nombre>Patrick</nombre>
+              <apellidos>Legrand Moreau</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="5">
+          <nombre>Islas Baleares Palma Futsal</nombre>
+          <ciudad>Palma</ciudad>
+          <estadio>Son Moix</estadio>
+          <descripcion>Conjunto estable, preciso y con muchas variantes de finalizacion.</descripcion>
+          <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+          <jugadores>
+            <jugador id="2401">
+              <nombre>Hugo</nombre>
+              <apellidos>Beltrán Roca</apellidos>
+              <fecha_nacimiento>1996-09-30</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>72.60</peso>
+              <altura>1.74</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2402">
+              <nombre>Andrés</nombre>
+              <apellidos>Cano Vega</apellidos>
+              <fecha_nacimiento>1995-09-17</fecha_nacimiento>
+              <nacionalidad>Colombiana</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.70</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2403">
+              <nombre>Marcos</nombre>
+              <apellidos>Esteve Roig</apellidos>
+              <fecha_nacimiento>1997-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2404">
+              <nombre>Matías</nombre>
+              <apellidos>Luna Ferreyra</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.71</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2405">
+              <nombre>Gonzalo</nombre>
+              <apellidos>Mir Rey</apellidos>
+              <fecha_nacimiento>1993-02-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.40</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2406">
+              <nombre>Rafael</nombre>
+              <apellidos>Dos Santos</apellidos>
+              <fecha_nacimiento>1998-09-09</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>80.00</peso>
+              <altura>1.81</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2407">
+              <nombre>Arturo</nombre>
+              <apellidos>Peña Gil</apellidos>
+              <fecha_nacimiento>1994-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.66</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="6">
+          <nombre>Jaen Paraiso Interior</nombre>
+          <ciudad>Jaen</ciudad>
+          <estadio>Olivo Arena</estadio>
+          <descripcion>Equipo intenso, muy fuerte en casa y con gran trabajo colectivo.</descripcion>
+          <escudo>../img/escudos/Jaen Paraiso Interior.png</escudo>
+          <jugadores>
+            <jugador id="2501">
+              <nombre>Adrián</nombre>
+              <apellidos>Suárez Costa</apellidos>
+              <fecha_nacimiento>1999-05-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.30</peso>
+              <altura>1.71</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2502">
+              <nombre>Luis</nombre>
+              <apellidos>Delgado Pons</apellidos>
+              <fecha_nacimiento>1999-12-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.70</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2503">
+              <nombre>Óscar</nombre>
+              <apellidos>Medina Soler</apellidos>
+              <fecha_nacimiento>1995-02-23</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>78.30</peso>
+              <altura>1.82</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2504">
+              <nombre>Aaron</nombre>
+              <apellidos>Costa Gil</apellidos>
+              <fecha_nacimiento>2002-02-02</fecha_nacimiento>
+              <nacionalidad>Italiana</nacionalidad>
+              <peso>64.70</peso>
+              <altura>1.66</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2505">
+              <nombre>Esteban</nombre>
+              <apellidos>Molina Grau</apellidos>
+              <fecha_nacimiento>1998-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2506">
+              <nombre>Lautaro</nombre>
+              <apellidos>Paz Gómez</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2507">
+              <nombre>Eder</nombre>
+              <apellidos>Zabala Núñez</apellidos>
+              <fecha_nacimiento>2000-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.40</peso>
+              <altura>1.69</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="7">
+          <nombre>Jimbee Cartagena Costa Cálida</nombre>
+          <ciudad>Cartagena</ciudad>
+          <estadio>Palacio de los Deportes de Cartagena</estadio>
+          <descripcion>Plantilla vertical, competitiva y con mucho peligro en transicion.</descripcion>
+          <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="2601">
+              <nombre>Daniel</nombre>
+              <apellidos>Ortega Peña</apellidos>
+              <fecha_nacimiento>1994-12-25</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2602">
+              <nombre>Ismael</nombre>
+              <apellidos>Duarte Silva</apellidos>
+              <fecha_nacimiento>1997-03-29</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>71.40</peso>
+              <altura>1.73</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2603">
+              <nombre>Eneko</nombre>
+              <apellidos>Gómez Iribar</apellidos>
+              <fecha_nacimiento>1999-04-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.10</peso>
+              <altura>1.69</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2604">
+              <nombre>Pedro</nombre>
+              <apellidos>Valero Sanchis</apellidos>
+              <fecha_nacimiento>1996-06-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.30</peso>
+              <altura>1.75</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2605">
+              <nombre>Biel</nombre>
+              <apellidos>Serra Pons</apellidos>
+              <fecha_nacimiento>2000-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2606">
+              <nombre>Ignacio</nombre>
+              <apellidos>Prado Roca</apellidos>
+              <fecha_nacimiento>1993-02-02</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.75</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2607">
+              <nombre>Ricardo</nombre>
+              <apellidos>Alves Faria</apellidos>
+              <fecha_nacimiento>1996-06-06</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="8">
+          <nombre>Movistar Inter</nombre>
+          <ciudad>Madrid</ciudad>
+          <estadio>Jorge Garbajosa</estadio>
+          <descripcion>Equipo experto, muy tactico y con gran capacidad para dominar contextos.</descripcion>
+          <escudo>../img/escudos/Movistar Inter.png</escudo>
+          <jugadores>
+            <jugador id="2701">
+              <nombre>Álex</nombre>
+              <apellidos>Romero Vidal</apellidos>
+              <fecha_nacimiento>2001-04-09</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.20</peso>
+              <altura>1.73</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2702">
+              <nombre>Rubén</nombre>
+              <apellidos>Arias Soto</apellidos>
+              <fecha_nacimiento>2001-07-13</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2703">
+              <nombre>Gael</nombre>
+              <apellidos>Montero Paz</apellidos>
+              <fecha_nacimiento>2000-07-07</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>73.00</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2704">
+              <nombre>Elías</nombre>
+              <apellidos>Ramos Cobo</apellidos>
+              <fecha_nacimiento>1998-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2705">
+              <nombre>Diego</nombre>
+              <apellidos>Andrade Mello</apellidos>
+              <fecha_nacimiento>2002-12-12</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>63.00</peso>
+              <altura>1.64</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2706">
+              <nombre>Mikel</nombre>
+              <apellidos>Onaindia Ríos</apellidos>
+              <fecha_nacimiento>1999-11-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.50</peso>
+              <altura>1.68</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2707">
+              <nombre>Mohamed</nombre>
+              <apellidos>El Amrani</apellidos>
+              <fecha_nacimiento>1998-02-02</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="9">
+          <nombre>O Parrulo Ferrol</nombre>
+          <ciudad>Ferrol</ciudad>
+          <estadio>A Malata</estadio>
+          <descripcion>Conjunto de mucho esfuerzo, rapido para correr y cerrar espacios.</descripcion>
+          <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
+          <jugadores>
+            <jugador id="2801">
+              <nombre>Javier</nombre>
+              <apellidos>Navas Prieto</apellidos>
+              <fecha_nacimiento>1998-08-19</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>75.00</peso>
+              <altura>1.76</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2802">
+              <nombre>Alberto</nombre>
+              <apellidos>Mora Cid</apellidos>
+              <fecha_nacimiento>1994-11-08</fecha_nacimiento>
+              <nacionalidad>Peruana</nacionalidad>
+              <peso>74.20</peso>
+              <altura>1.75</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2803">
+              <nombre>Bruno</nombre>
+              <apellidos>Castro Lima</apellidos>
+              <fecha_nacimiento>1996-12-19</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>74.50</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2804">
+              <nombre>Jon</nombre>
+              <apellidos>Etxeberria Lasa</apellidos>
+              <fecha_nacimiento>1997-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.10</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2805">
+              <nombre>Alán</nombre>
+              <apellidos>Vega Santos</apellidos>
+              <fecha_nacimiento>1997-03-03</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2806">
+              <nombre>Pol</nombre>
+              <apellidos>Miralles Cid</apellidos>
+              <fecha_nacimiento>2001-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.30</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2807">
+              <nombre>Simón</nombre>
+              <apellidos>Rey Castro</apellidos>
+              <fecha_nacimiento>1993-12-12</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.78</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="10">
+          <nombre>Quesos Hidalgo Manzanares FS</nombre>
+          <ciudad>Manzanares</ciudad>
+          <estadio>Antonio Caba</estadio>
+          <descripcion>Equipo practico, disciplinado y muy fiable en los partidos cerrados.</descripcion>
+          <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+          <jugadores>
+            <jugador id="2901">
+              <nombre>Carlos</nombre>
+              <apellidos>Rey Molina</apellidos>
+              <fecha_nacimiento>1993-02-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.40</peso>
+              <altura>1.67</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2902">
+              <nombre>Cristian</nombre>
+              <apellidos>Noa Ramos</apellidos>
+              <fecha_nacimiento>2000-05-21</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>67.30</peso>
+              <altura>1.68</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2903">
+              <nombre>Víctor</nombre>
+              <apellidos>Roldán Moya</apellidos>
+              <fecha_nacimiento>1994-08-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2904">
+              <nombre>Thiago</nombre>
+              <apellidos>Pereira Alves</apellidos>
+              <fecha_nacimiento>1999-03-03</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2905">
+              <nombre>Cristóbal</nombre>
+              <apellidos>Nieto Mora</apellidos>
+              <fecha_nacimiento>1995-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.20</peso>
+              <altura>1.78</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2906">
+              <nombre>Adam</nombre>
+              <apellidos>Boukari Omar</apellidos>
+              <fecha_nacimiento>2002-05-05</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.67</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2907">
+              <nombre>Boris</nombre>
+              <apellidos>Kovacevic Milán</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Croata</nacionalidad>
+              <peso>82.50</peso>
+              <altura>1.84</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+      </equipos>
+      <partidos>
+        <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11" />
+        <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-13" />
+        <partido local="5" visitante="6" goles_local="2" goles_visitante="2" fecha="2025-09-15" />
+        <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2025-09-18" />
+        <partido local="9" visitante="10" goles_local="0" goles_visitante="1" fecha="2025-09-20" />
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-09-28" />
+        <partido local="2" visitante="5" goles_local="1" goles_visitante="3" fecha="2025-09-30" />
+        <partido local="4" visitante="7" goles_local="2" goles_visitante="2" fecha="2025-10-04" />
+        <partido local="6" visitante="8" goles_local="1" goles_visitante="1" fecha="2025-10-09" />
+        <partido local="10" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-10-14" />
+        <partido local="2" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-10-20" />
+        <partido local="9" visitante="4" goles_local="1" goles_visitante="0" fecha="2025-10-24" />
+      </partidos>
+    </temporada>
+    <temporada id="2026-2027" nombre="2026/2027" actual="no">
+      <equipos>
+        <equipo id="1">
+          <nombre>Barça</nombre>
+          <ciudad>Barcelona</ciudad>
+          <estadio>Palau Blaugrana</estadio>
+          <descripcion>Bloque dominante, muy fiable en ataque posicional y con ritmo alto en pista rival.</descripcion>
+          <escudo>../img/escudos/Barça.png</escudo>
+          <jugadores>
+            <jugador id="2001">
+              <nombre>Raúl</nombre>
+              <apellidos>Méndez Plaza</apellidos>
+              <fecha_nacimiento>1998-03-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.50</peso>
+              <altura>1.72</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2002">
+              <nombre>Adrián</nombre>
+              <apellidos>Suárez Costa</apellidos>
+              <fecha_nacimiento>1999-05-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.30</peso>
+              <altura>1.71</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2003">
+              <nombre>Samuel</nombre>
+              <apellidos>García Nieto</apellidos>
+              <fecha_nacimiento>1997-06-06</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>76.80</peso>
+              <altura>1.78</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2004">
+              <nombre>Luis</nombre>
+              <apellidos>Delgado Pons</apellidos>
+              <fecha_nacimiento>1999-12-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.70</peso>
+              <altura>1.69</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2005">
+              <nombre>Tomás</nombre>
+              <apellidos>Serna Ortiz</apellidos>
+              <fecha_nacimiento>1998-08-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2006">
+              <nombre>Óscar</nombre>
+              <apellidos>Medina Soler</apellidos>
+              <fecha_nacimiento>1995-02-23</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>78.30</peso>
+              <altura>1.82</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2007">
+              <nombre>Kevin</nombre>
+              <apellidos>Soto Ríos</apellidos>
+              <fecha_nacimiento>1998-11-03</fecha_nacimiento>
+              <nacionalidad>Mexicana</nacionalidad>
+              <peso>71.20</peso>
+              <altura>1.72</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2008">
+              <nombre>Aaron</nombre>
+              <apellidos>Costa Gil</apellidos>
+              <fecha_nacimiento>2002-02-02</fecha_nacimiento>
+              <nacionalidad>Italiana</nacionalidad>
+              <peso>64.70</peso>
+              <altura>1.66</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2009">
+              <nombre>Eric</nombre>
+              <apellidos>Font Miras</apellidos>
+              <fecha_nacimiento>1995-12-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.00</peso>
+              <altura>1.81</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2010">
+              <nombre>Esteban</nombre>
+              <apellidos>Molina Grau</apellidos>
+              <fecha_nacimiento>1998-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2011">
+              <nombre>Ramiro</nombre>
+              <apellidos>Sosa Pintos</apellidos>
+              <fecha_nacimiento>1999-01-20</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.80</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2012">
+              <nombre>Lautaro</nombre>
+              <apellidos>Paz Gómez</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2013">
+              <nombre>Gabriel</nombre>
+              <apellidos>Morales Pinto</apellidos>
+              <fecha_nacimiento>1998-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.00</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2014">
+              <nombre>Eder</nombre>
+              <apellidos>Zabala Núñez</apellidos>
+              <fecha_nacimiento>2000-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.40</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2015">
+              <nombre>Thierry</nombre>
+              <apellidos>Dubois Lemaire</apellidos>
+              <fecha_nacimiento>2001-05-05</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.67</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="3">
+          <nombre>ElPozo Murcia Costa Cálida</nombre>
+          <ciudad>Murcia</ciudad>
+          <estadio>Palacio de los Deportes</estadio>
+          <descripcion>Equipo muy agresivo en presion, con transiciones rapidas y mucho peso competitivo.</descripcion>
+          <escudo>../img/escudos/ElPozo Murcia Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="2101">
+              <nombre>Iván</nombre>
+              <apellidos>Torres Gil</apellidos>
+              <fecha_nacimiento>1997-07-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.20</peso>
+              <altura>1.68</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2102">
+              <nombre>Daniel</nombre>
+              <apellidos>Ortega Peña</apellidos>
+              <fecha_nacimiento>1994-12-25</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2103">
+              <nombre>Diego</nombre>
+              <apellidos>Marín Bravo</apellidos>
+              <fecha_nacimiento>2002-10-27</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2104">
+              <nombre>Ismael</nombre>
+              <apellidos>Duarte Silva</apellidos>
+              <fecha_nacimiento>1997-03-29</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>71.40</peso>
+              <altura>1.73</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2105">
+              <nombre>Miguel</nombre>
+              <apellidos>Prats Luna</apellidos>
+              <fecha_nacimiento>1993-01-19</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2106">
+              <nombre>Eneko</nombre>
+              <apellidos>Gómez Iribar</apellidos>
+              <fecha_nacimiento>1999-04-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.10</peso>
+              <altura>1.69</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2107">
+              <nombre>David</nombre>
+              <apellidos>Olmo Crespo</apellidos>
+              <fecha_nacimiento>2001-01-25</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.80</peso>
+              <altura>1.68</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2108">
+              <nombre>Pedro</nombre>
+              <apellidos>Valero Sanchis</apellidos>
+              <fecha_nacimiento>1996-06-12</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.30</peso>
+              <altura>1.75</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2109">
+              <nombre>Manuel</nombre>
+              <apellidos>Díez Prado</apellidos>
+              <fecha_nacimiento>1994-04-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.60</peso>
+              <altura>1.67</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2110">
+              <nombre>Biel</nombre>
+              <apellidos>Serra Pons</apellidos>
+              <fecha_nacimiento>2000-08-08</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2111">
+              <nombre>Fabián</nombre>
+              <apellidos>Cruz Elizalde</apellidos>
+              <fecha_nacimiento>2000-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2112">
+              <nombre>Ignacio</nombre>
+              <apellidos>Prado Roca</apellidos>
+              <fecha_nacimiento>1993-02-02</fecha_nacimiento>
+              <nacionalidad>Chilena</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.75</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2113">
+              <nombre>Ramón</nombre>
+              <apellidos>Gil Navarro</apellidos>
+              <fecha_nacimiento>1995-04-04</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>81.00</peso>
+              <altura>1.83</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2114">
+              <nombre>Ricardo</nombre>
+              <apellidos>Alves Faria</apellidos>
+              <fecha_nacimiento>1996-06-06</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.72</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2115">
+              <nombre>Óliver</nombre>
+              <apellidos>Sanz Roca</apellidos>
+              <fecha_nacimiento>2002-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.00</peso>
+              <altura>1.65</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="5">
+          <nombre>Islas Baleares Palma Futsal</nombre>
+          <ciudad>Palma</ciudad>
+          <estadio>Son Moix</estadio>
+          <descripcion>Conjunto equilibrado, muy preciso con balon y capaz de controlar diferentes ritmos.</descripcion>
+          <escudo>../img/escudos/Islas Baleares Palma Futsal.png</escudo>
+          <jugadores>
+            <jugador id="2201">
+              <nombre>Sergio</nombre>
+              <apellidos>Pardo Ruiz</apellidos>
+              <fecha_nacimiento>1995-11-02</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>74.10</peso>
+              <altura>1.75</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2202">
+              <nombre>Álex</nombre>
+              <apellidos>Romero Vidal</apellidos>
+              <fecha_nacimiento>2001-04-09</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>73.20</peso>
+              <altura>1.73</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2203">
+              <nombre>Fernando</nombre>
+              <apellidos>Salas Gómez</apellidos>
+              <fecha_nacimiento>1996-02-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>77.10</peso>
+              <altura>1.80</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2204">
+              <nombre>Rubén</nombre>
+              <apellidos>Arias Soto</apellidos>
+              <fecha_nacimiento>2001-07-13</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>65.00</peso>
+              <altura>1.66</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2205">
+              <nombre>Nicolás</nombre>
+              <apellidos>Pérez Andreu</apellidos>
+              <fecha_nacimiento>1996-06-26</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.60</peso>
+              <altura>1.77</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2206">
+              <nombre>Gael</nombre>
+              <apellidos>Montero Paz</apellidos>
+              <fecha_nacimiento>2000-07-07</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>73.00</peso>
+              <altura>1.74</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2207">
+              <nombre>Iker</nombre>
+              <apellidos>Blasco Peña</apellidos>
+              <fecha_nacimiento>1997-05-05</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.79</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2208">
+              <nombre>Elías</nombre>
+              <apellidos>Ramos Cobo</apellidos>
+              <fecha_nacimiento>1998-09-21</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2209">
+              <nombre>Rachid</nombre>
+              <apellidos>Ben Omar</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2210">
+              <nombre>Diego</nombre>
+              <apellidos>Andrade Mello</apellidos>
+              <fecha_nacimiento>2002-12-12</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>63.00</peso>
+              <altura>1.64</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2211">
+              <nombre>Nuno</nombre>
+              <apellidos>Oliveira Reis</apellidos>
+              <fecha_nacimiento>1996-12-12</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>73.10</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2212">
+              <nombre>Mikel</nombre>
+              <apellidos>Onaindia Ríos</apellidos>
+              <fecha_nacimiento>1999-11-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>67.50</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2213">
+              <nombre>Lorenzo</nombre>
+              <apellidos>Costa Méndez</apellidos>
+              <fecha_nacimiento>1997-03-12</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>72.20</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2214">
+              <nombre>Mohamed</nombre>
+              <apellidos>El Amrani</apellidos>
+              <fecha_nacimiento>1998-02-02</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.70</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2215">
+              <nombre>Carlos</nombre>
+              <apellidos>Rodríguez</apellidos>
+              <fecha_nacimiento>1999-05-31</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>79.50</peso>
+              <altura>1.82</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="7">
+          <nombre>Jimbee Cartagena Costa Cálida</nombre>
+          <ciudad>Cartagena</ciudad>
+          <estadio>Palacio de los Deportes de Cartagena</estadio>
+          <descripcion>Plantilla vertical, potente en duelos y con mucha amenaza cuando acelera el juego.</descripcion>
+          <escudo>../img/escudos/Jimbee Cartagena Costa Cálida.png</escudo>
+          <jugadores>
+            <jugador id="2301">
+              <nombre>Mario</nombre>
+              <apellidos>López Sanz</apellidos>
+              <fecha_nacimiento>2000-01-18</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2302">
+              <nombre>Javier</nombre>
+              <apellidos>Navas Prieto</apellidos>
+              <fecha_nacimiento>1998-08-19</fecha_nacimiento>
+              <nacionalidad>Uruguaya</nacionalidad>
+              <peso>75.00</peso>
+              <altura>1.76</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2303">
+              <nombre>Pablo</nombre>
+              <apellidos>Rivas León</apellidos>
+              <fecha_nacimiento>1998-04-22</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.00</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2304">
+              <nombre>Alberto</nombre>
+              <apellidos>Mora Cid</apellidos>
+              <fecha_nacimiento>1994-11-08</fecha_nacimiento>
+              <nacionalidad>Peruana</nacionalidad>
+              <peso>74.20</peso>
+              <altura>1.75</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2305">
+              <nombre>Joel</nombre>
+              <apellidos>Martí Font</apellidos>
+              <fecha_nacimiento>2002-09-15</fecha_nacimiento>
+              <nacionalidad>Ecuatoriana</nacionalidad>
+              <peso>63.90</peso>
+              <altura>1.64</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2306">
+              <nombre>Bruno</nombre>
+              <apellidos>Castro Lima</apellidos>
+              <fecha_nacimiento>1996-12-19</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>74.50</peso>
+              <altura>1.76</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2307">
+              <nombre>Unai</nombre>
+              <apellidos>Prieto Zabala</apellidos>
+              <fecha_nacimiento>1993-03-16</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>72.40</peso>
+              <altura>1.73</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2308">
+              <nombre>Jon</nombre>
+              <apellidos>Etxeberria Lasa</apellidos>
+              <fecha_nacimiento>1997-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>70.10</peso>
+              <altura>1.72</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2309">
+              <nombre>Saúl</nombre>
+              <apellidos>Crespo Gil</apellidos>
+              <fecha_nacimiento>2001-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.20</peso>
+              <altura>1.70</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2310">
+              <nombre>Alán</nombre>
+              <apellidos>Vega Santos</apellidos>
+              <fecha_nacimiento>1997-03-03</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>71.00</peso>
+              <altura>1.73</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2311">
+              <nombre>Yeray</nombre>
+              <apellidos>Martín Gil</apellidos>
+              <fecha_nacimiento>1994-06-06</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>68.00</peso>
+              <altura>1.69</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2312">
+              <nombre>Pol</nombre>
+              <apellidos>Miralles Cid</apellidos>
+              <fecha_nacimiento>2001-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>64.30</peso>
+              <altura>1.65</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2313">
+              <nombre>Patrick</nombre>
+              <apellidos>Legrand Moreau</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Francesa</nacionalidad>
+              <peso>74.00</peso>
+              <altura>1.76</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2314">
+              <nombre>Simón</nombre>
+              <apellidos>Rey Castro</apellidos>
+              <fecha_nacimiento>1993-12-12</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>76.00</peso>
+              <altura>1.78</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+        <equipo id="8">
+          <nombre>Movistar Inter</nombre>
+          <ciudad>Madrid</ciudad>
+          <estadio>Jorge Garbajosa</estadio>
+          <descripcion>Equipo de gran oficio tactico, con muy buena gestion de partido y experiencia competitiva.</descripcion>
+          <escudo>../img/escudos/Movistar Inter.png</escudo>
+          <jugadores>
+            <jugador id="2401">
+              <nombre>Hugo</nombre>
+              <apellidos>Beltrán Roca</apellidos>
+              <fecha_nacimiento>1996-09-30</fecha_nacimiento>
+              <nacionalidad>Portuguesa</nacionalidad>
+              <peso>72.60</peso>
+              <altura>1.74</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2402">
+              <nombre>Carlos</nombre>
+              <apellidos>Rey Molina</apellidos>
+              <fecha_nacimiento>1993-02-11</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.40</peso>
+              <altura>1.67</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+            <jugador id="2403">
+              <nombre>Andrés</nombre>
+              <apellidos>Cano Vega</apellidos>
+              <fecha_nacimiento>1995-09-17</fecha_nacimiento>
+              <nacionalidad>Colombiana</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2404">
+              <nombre>Cristian</nombre>
+              <apellidos>Noa Ramos</apellidos>
+              <fecha_nacimiento>2000-05-21</fecha_nacimiento>
+              <nacionalidad>Paraguaya</nacionalidad>
+              <peso>67.30</peso>
+              <altura>1.68</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador8.svg</foto>
+            </jugador>
+            <jugador id="2405">
+              <nombre>Marcos</nombre>
+              <apellidos>Esteve Roig</apellidos>
+              <fecha_nacimiento>1997-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>69.00</peso>
+              <altura>1.70</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador1.svg</foto>
+            </jugador>
+            <jugador id="2406">
+              <nombre>Víctor</nombre>
+              <apellidos>Roldán Moya</apellidos>
+              <fecha_nacimiento>1994-08-30</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.65</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2407">
+              <nombre>Matías</nombre>
+              <apellidos>Luna Ferreyra</apellidos>
+              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
+              <nacionalidad>Argentina</nacionalidad>
+              <peso>69.50</peso>
+              <altura>1.71</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador11.svg</foto>
+            </jugador>
+            <jugador id="2408">
+              <nombre>Thiago</nombre>
+              <apellidos>Pereira Alves</apellidos>
+              <fecha_nacimiento>1999-03-03</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>67.90</peso>
+              <altura>1.69</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2409">
+              <nombre>Gonzalo</nombre>
+              <apellidos>Mir Rey</apellidos>
+              <fecha_nacimiento>1993-02-14</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>75.40</peso>
+              <altura>1.76</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador9.svg</foto>
+            </jugador>
+            <jugador id="2410">
+              <nombre>Cristóbal</nombre>
+              <apellidos>Nieto Mora</apellidos>
+              <fecha_nacimiento>1995-10-10</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>76.20</peso>
+              <altura>1.78</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador2.svg</foto>
+            </jugador>
+            <jugador id="2411">
+              <nombre>Rafael</nombre>
+              <apellidos>Dos Santos</apellidos>
+              <fecha_nacimiento>1998-09-09</fecha_nacimiento>
+              <nacionalidad>Brasileña</nacionalidad>
+              <peso>80.00</peso>
+              <altura>1.81</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador7.svg</foto>
+            </jugador>
+            <jugador id="2412">
+              <nombre>Adam</nombre>
+              <apellidos>Boukari Omar</apellidos>
+              <fecha_nacimiento>2002-05-05</fecha_nacimiento>
+              <nacionalidad>Marroquí</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.67</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador12.svg</foto>
+            </jugador>
+            <jugador id="2413">
+              <nombre>Arturo</nombre>
+              <apellidos>Peña Gil</apellidos>
+              <fecha_nacimiento>1994-01-01</fecha_nacimiento>
+              <nacionalidad>Española</nacionalidad>
+              <peso>66.00</peso>
+              <altura>1.66</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2414">
+              <nombre>Boris</nombre>
+              <apellidos>Kovacevic Milán</apellidos>
+              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
+              <nacionalidad>Croata</nacionalidad>
+              <peso>82.50</peso>
+              <altura>1.84</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador10.svg</foto>
+            </jugador>
+          </jugadores>
+        </equipo>
+      </equipos>
+      <partidos>
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2026-09-12" />
+        <partido local="5" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-14" />
+        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-09-20" />
+        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2026-09-24" />
+        <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2026-09-27" />
+        <partido local="1" visitante="5" goles_local="4" goles_visitante="2" fecha="2026-10-03" />
+        <partido local="3" visitante="7" goles_local="1" goles_visitante="1" fecha="2026-10-08" />
+        <partido local="5" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-10-12" />
+        <partido local="7" visitante="1" goles_local="0" goles_visitante="1" fecha="2026-10-18" />
+        <partido local="8" visitante="3" goles_local="3" goles_visitante="2" fecha="2026-10-22" />
+      </partidos>
+    </temporada>
+  </temporadas>
 </liga>
