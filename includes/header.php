@@ -86,7 +86,9 @@ $showLogoutLink = $showSessionChip;
                 </div>
                 <div class="main-nav-right">
                     <div class="header-access" aria-label="Acciones de sesion">
-                        <a href="<?php echo e($pagePrefix . 'login.php'); ?>">Acceso</a>
+                        <?php if (!$showLogoutLink): ?>
+                            <a href="<?php echo e($pagePrefix . 'login.php'); ?>">Acceso</a>
+                        <?php endif; ?>
                         <?php if ($showLogoutLink): ?>
                             <a href="<?php echo e($pagePrefix . 'logout.php'); ?>">Cerrar sesion</a>
                         <?php endif; ?>

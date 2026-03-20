@@ -388,6 +388,65 @@ function get_partidos_equipo(SimpleXMLElement $temporada, int $equipoId): array
             'fecha' => (string) $partido['fecha'],
             'local' => $equiposPorId[$localId] ?? 'N/D',
             'visitante' => $equiposPorId[$visitanteId] ?? 'N/D',
+            'goles_local' => (int) $partido['goles_local'],
+            'goles_visitante' => (int) $partido['goles_visitante'],
+            'marcador' => (string) $partido['goles_local'] . ' - ' . (string) $partido['goles_visitante'],
+        ];
+    }
+
+    return $partidos;
+}
+
+function get_jornadas_temporada(SimpleXMLElement $temporada): array
+{
+    $fechas = [];
+    foreach ($temporada->partidos->partido as $partido) {
+        $fecha = (string) $partido['fecha'];
+        if (!in_array($fecha, $fechas, true)) {
+            $fechas[] = $fecha;
+        }
+    }
+
+    sort($fechas);
+
+    $jornadas = [];
+    foreach ($fechas as $numJornada => $fecha) {
+        $jornadas[] = [
+            'numero' => $numJornada + 1,
+            'fecha' => $fecha,
+        ];
+    }
+
+    return $jornadas;
+}
+
+function get_partidos_jornada(SimpleXMLElement $temporada, int $numeroJornada): array
+{
+    $equiposPorId = [];
+    foreach ($temporada->equipos->equipo as $equipo) {
+        $equiposPorId[(int) $equipo['id']] = (string) $equipo->nombre;
+    }
+
+    $jornadas = get_jornadas_temporada($temporada);
+
+    if (!isset($jornadas[$numeroJornada - 1])) {
+        return [];
+    }
+
+    $fechaObjetivo = $jornadas[$numeroJornada - 1]['fecha'];
+
+    $partidos = [];
+    foreach ($temporada->partidos->partido as $partido) {
+        if ((string) $partido['fecha'] !== $fechaObjetivo) {
+            continue;
+        }
+
+        $partidos[] = [
+            'fecha' => (string) $partido['fecha'],
+            'local' => $equiposPorId[(int) $partido['local']] ?? 'N/D',
+            'visitante' => $equiposPorId[(int) $partido['visitante']] ?? 'N/D',
+            'goles_local' => (int) $partido['goles_local'],
+            'goles_visitante' => (int) $partido['goles_visitante'],
             'marcador' => (string) $partido['goles_local'] . ' - ' . (string) $partido['goles_visitante'],
         ];
     }

@@ -9,36 +9,44 @@ $pageTitle = 'Partidos | FEDERACIÓN FUTSAL';
 $error = null;
 $temporadaNombre = 'No disponible';
 $temporadas = [];
-$equipos = [];
+$jornadas = [];
 $partidos = [];
-$equipoSeleccionado = null;
+$jornadaSeleccionada = null;
 
-$equipoId = filter_input(INPUT_GET, 'equipo_id', FILTER_VALIDATE_INT);
+$jornadaId = filter_input(INPUT_GET, 'jornada_id', FILTER_VALIDATE_INT);
 
 try {
     $xml = load_liga_xml();
     $temporada = get_temporada_actual($xml);
     $temporadaNombre = (string) $temporada['nombre'];
     $temporadas = get_temporadas($xml);
-    $equipos = get_equipos_temporada($temporada);
+    $jornadas = get_jornadas_temporada($temporada);
 
-    if ($equipoId !== false && $equipoId !== null && $equipoId > 0) {
-        $equipo = find_equipo_by_id($temporada, (int) $equipoId);
-        if ($equipo === null) {
-            $error = 'El equipo indicado no existe en la temporada activa.';
-        } else {
-            $equipoSeleccionado = [
-                'id' => (int) $equipo['id'],
-                'nombre' => (string) $equipo->nombre,
-            ];
-            $partidos = get_partidos_equipo($temporada, (int) $equipoId);
+    if ($jornadaId !== false && $jornadaId !== null && $jornadaId > 0) {
+        $jornadaEncontrada = false;
+        foreach ($jornadas as $j) {
+            if ($j['numero'] === $jornadaId) {
+                $jornadaEncontrada = true;
+                $jornadaSeleccionada = [
+                    'numero' => $j['numero'],
+                    'fecha' => $j['fecha'],
+                ];
+                break;
+            }
         }
-    } elseif ($equipoId === false) {
-        $error = 'El filtro de equipo es invalido.';
+
+        if (!$jornadaEncontrada) {
+            $error = 'La jornada indicada no existe en la temporada activa.';
+        } else {
+            $partidos = get_partidos_jornada($temporada, (int) $jornadaId);
+        }
+    } elseif ($jornadaId === false) {
+        $error = 'El filtro de jornada es invalido.';
     }
 
-    if ($error === null && $equipoSeleccionado === null) {
-        $partidos = get_partidos_recientes($temporada);
+    if ($error === null && $jornadaSeleccionada === null && $jornadas !== []) {
+        $jornadaSeleccionada = $jornadas[0];
+        $partidos = get_partidos_jornada($temporada, $jornadaSeleccionada['numero']);
     }
 } catch (Throwable $ex) {
     $error = $ex->getMessage();
@@ -53,8 +61,8 @@ require __DIR__ . '/../includes/header.php';
             <h2>Partidos</h2>
             <p>
                 Temporada seleccionada: <strong><?php echo e($temporadaNombre); ?></strong>
-                <?php if ($equipoSeleccionado !== null): ?>
-                    | Equipo: <strong><?php echo e($equipoSeleccionado['nombre']); ?></strong>
+                <?php if ($jornadaSeleccionada !== null): ?>
+                    | Jornada: <strong><?php echo e((string) $jornadaSeleccionada['numero']); ?></strong>
                 <?php endif; ?>
             </p>
 
@@ -74,15 +82,14 @@ require __DIR__ . '/../includes/header.php';
             </form>
 
             <form class="season-form" method="get" action="partidos.php">
-                <label for="equipo_id">Filtrar por equipo</label>
-                <select id="equipo_id" name="equipo_id">
-                    <option value="">Todos</option>
-                    <?php foreach ($equipos as $equipoItem): ?>
+                <label for="jornada_id">Filtrar por jornada</label>
+                <select id="jornada_id" name="jornada_id">
+                    <?php foreach ($jornadas as $jornadaItem): ?>
                         <option
-                            value="<?php echo (int) $equipoItem['id']; ?>"
-                            <?php echo ($equipoSeleccionado !== null && $equipoSeleccionado['id'] === (int) $equipoItem['id']) ? 'selected' : ''; ?>
+                            value="<?php echo (int) $jornadaItem['numero']; ?>"
+                            <?php echo ($jornadaSeleccionada !== null && $jornadaSeleccionada['numero'] === (int) $jornadaItem['numero']) ? 'selected' : ''; ?>
                         >
-                            <?php echo e($equipoItem['nombre']); ?>
+                            Jornada <?php echo e((string) $jornadaItem['numero']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
