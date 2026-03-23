@@ -51,7 +51,7 @@
 
                                 <tr>
                                     <td><xsl:value-of select="position()"/></td>
-                                    <td>
+                                    <td class="tdNombreEquipo">
                                         <a class="team-link" href="equipo.php?id={@id}">
                                             <img src="{escudo}" alt="Escudo de {nombre}"/>
                                             <span><xsl:value-of select="nombre"/></span>

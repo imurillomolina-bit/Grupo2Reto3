@@ -34,15 +34,15 @@ require __DIR__ . '/../includes/header.php';
         <article class="panel-heading newsprint-header">
             <p class="newsprint-masthead">Marca Futsal</p>
             <h2>Normativa</h2>
-            <p class="newsprint-strap">Reglas basicas y formato general de FEDERACIÃ“N FUTSAL.</p>
+            <p class="newsprint-strap">Reglas basicas y formato general de FEDERACIÓN FUTSAL.</p>
             <p class="newsprint-edition">Edicion digital | <?php echo e($fechaEdicion); ?></p>
         </article>
 
         <article class="newsprint-layout" aria-label="Normativa de la liga">
             <section class="news-lead" aria-label="Resumen general de normativa">
                 <p class="news-kicker">Reglamento oficial</p>
-                <h3>Todo lo que necesitas para seguir la competicion</h3>
-                <p class="news-lead-text">Consulta aqui los criterios clave de puntuacion, orden de clasificacion y uso del portal para esta temporada.</p>
+                <h3>Todo lo que necesitas para seguir la competiciòn</h3>
+                <p class="news-lead-text">Consulta aqui los criterios clave de puntuación, orden de clasificación y uso del portal para esta temporada.</p>
             </section>
 
             <div class="news-columns" aria-label="Normas principales">
