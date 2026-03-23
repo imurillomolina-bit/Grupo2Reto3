@@ -2,24 +2,10 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Jugadores | FEDERACIÓN FUTSAL';
-
-$error = null;
-$temporadaNombre = 'No disponible';
-$jugadores = [];
-$temporadas = [];
-
-try {
-    $xml = load_liga_xml();
-    $temporada = get_temporada_actual($xml);
-    $temporadaNombre = (string) $temporada['nombre'];
-    $temporadas = get_temporadas($xml);
-    $jugadores = get_jugadores_temporada($temporada);
-} catch (Throwable $ex) {
-    $error = $ex->getMessage();
-}
+$pageTitle = 'Jugadores | FEDERACION FUTSAL';
+$temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -28,47 +14,226 @@ require __DIR__ . '/../includes/header.php';
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Jugadores</h2>
-            <p>Temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
-            <form class="season-form" action="set_temporada.php" method="post">
+            <form class="season-form" id="season_form" action="#" method="get">
                 <label for="temporada_id">Cambiar temporada</label>
-                <select id="temporada_id" name="temporada_id" required>
-                    <?php foreach ($temporadas as $temporadaItem): ?>
-                        <option
-                            value="<?php echo e($temporadaItem['id']); ?>"
-                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
-                        >
-                            <?php echo e($temporadaItem['nombre']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <select id="temporada_id" name="temporada_id" required></select>
                 <button type="submit">Cambiar</button>
             </form>
         </article>
 
-        <?php if ($error !== null): ?>
+        <article id="jugadores_render" aria-label="Listado de jugadores">
+            <p>Cargando jugadores...</p>
+        </article>
+
+        <article id="jugadores_error" class="panel-error" style="display:none;">
+            <p>No se pudo cargar el apartado de jugadores con XML/XSL.</p>
+        </article>
+
+        <noscript>
             <article class="panel-error">
-                <p><?php echo e($error); ?></p>
+                <p>Necesitas JavaScript activado para visualizar Jugadores en esta version.</p>
             </article>
-        <?php else: ?>
-            <article class="cards-grid player-spotlight-grid">
-                <?php foreach ($jugadores as $jugador): ?>
-                    <figure class="player-card spotlight-card">
-                        <a class="player-image-link" href="jugador.php?id=<?php echo (int) $jugador['id']; ?>" aria-label="Ver ficha de <?php echo e($jugador['nombre']); ?>">
-                            <img src="<?php echo e($jugador['foto']); ?>" alt="Foto de <?php echo e($jugador['nombre']); ?>">
-                        </a>
-                        <figcaption>
-                            <strong class="player-card-name"><?php echo e($jugador['nombre']); ?></strong>
-                            <span class="player-card-position"><?php echo e($jugador['posicion']); ?></span>
-                            <small>
-                                <a href="equipo.php?id=<?php echo (int) $jugador['equipo_id']; ?>"><?php echo e($jugador['equipo']); ?></a>
-                            </small>
-                        </figcaption>
-                    </figure>
-                <?php endforeach; ?>
-            </article>
-        <?php endif; ?>
+        </noscript>
     </section>
 </main>
+
+<script>
+(function () {
+    var xmlUrl = '../data/datos.xml';
+    var xslUrl = '../data/xsl/jugadores.xsl';
+    var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
+
+    var renderTarget = document.getElementById('jugadores_render');
+    var errorTarget = document.getElementById('jugadores_error');
+    var seasonName = document.getElementById('temporada_nombre');
+    var seasonSelect = document.getElementById('temporada_id');
+    var seasonForm = document.getElementById('season_form');
+
+    function parseXml(text) {
+        return new window.DOMParser().parseFromString(text, 'text/xml');
+    }
+
+    function hasXmlError(doc) {
+        return doc.getElementsByTagName('parsererror').length > 0;
+    }
+
+    function getTemporadas(xmlDoc) {
+        return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
+            return {
+                id: n.getAttribute('id') || '',
+                nombre: n.getAttribute('nombre') || '',
+                actual: (n.getAttribute('actual') || '') === 'si'
+            };
+        });
+    }
+
+    function getSelectedSeasonId(temporadas) {
+        var params = new URLSearchParams(window.location.search);
+        var byQuery = params.get('temporada_id');
+        if (byQuery && temporadas.some(function (t) { return t.id === byQuery; })) {
+            return byQuery;
+        }
+
+        if (temporadaSesion && temporadas.some(function (t) { return t.id === temporadaSesion; })) {
+            return temporadaSesion;
+        }
+
+        var actual = temporadas.find(function (t) { return t.actual; });
+        if (actual) {
+            return actual.id;
+        }
+
+        return temporadas.length > 0 ? temporadas[0].id : '';
+    }
+
+    function fillSeasonSelect(temporadas, selectedId) {
+        seasonSelect.innerHTML = '';
+        temporadas.forEach(function (temp) {
+            var option = document.createElement('option');
+            option.value = temp.id;
+            option.textContent = temp.nombre;
+            if (temp.id === selectedId) {
+                option.selected = true;
+            }
+            seasonSelect.appendChild(option);
+        });
+    }
+
+    function updateHeaderSeasonName(temporadas, selectedId) {
+        var found = temporadas.find(function (t) { return t.id === selectedId; });
+        seasonName.textContent = found ? found.nombre : 'No disponible';
+    }
+
+    function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
+        var processor = new window.XSLTProcessor();
+        processor.importStylesheet(xslDoc);
+        processor.setParameter(null, 'temporadaId', temporadaId);
+        processor.setParameter(null, 'jugadorId', '');
+
+        var fragment = processor.transformToFragment(xmlDoc, document);
+        renderTarget.innerHTML = '';
+        renderTarget.appendChild(fragment);
+    }
+
+    function applyPlayerImageFallback(root) {
+        var images = root.querySelectorAll('img');
+
+        function pad2(value) {
+            var n = String(value || '').trim();
+            if (n.length === 1) {
+                return '0' + n;
+            }
+            return n;
+        }
+
+        function unique(values) {
+            var out = [];
+            values.forEach(function (v) {
+                if (v && out.indexOf(v) === -1) {
+                    out.push(v);
+                }
+            });
+            return out;
+        }
+
+        images.forEach(function (img) {
+            var alt = (img.getAttribute('alt') || '').trim();
+            var nombre = alt.replace(/^Foto de\s+/i, '').trim();
+            var equipoId = (img.getAttribute('data-equipo-id') || '').trim();
+            var ordenJugador = pad2(img.getAttribute('data-orden-jugador') || '');
+
+            if (!nombre) {
+                nombre = img.getAttribute('data-nombre') || 'Jugador';
+            }
+
+            var currentSrc = (img.getAttribute('src') || '').trim();
+            var candidates = [];
+
+            if (currentSrc) {
+                candidates.push(currentSrc);
+            }
+
+            if (equipoId && ordenJugador) {
+                candidates.push('../img/Jugadores2024_2025/J' + equipoId + '00000' + ordenJugador + '.png');
+                candidates.push('../img/Jugadores2024_2025/J' + equipoId + '0000' + ordenJugador + '.png');
+            }
+
+            candidates = unique(candidates);
+
+            if (candidates.length === 0) {
+                img.src = 'avatar.php?nombre=' + encodeURIComponent(nombre);
+                return;
+            }
+
+            var idx = 0;
+            img.onerror = function () {
+                idx += 1;
+                if (idx < candidates.length) {
+                    this.src = candidates[idx];
+                    return;
+                }
+
+                this.onerror = null;
+                this.src = 'avatar.php?nombre=' + encodeURIComponent(nombre);
+            };
+
+            img.src = candidates[0];
+        });
+    }
+
+    Promise.all([
+        fetch(xmlUrl).then(function (r) { return r.text(); }),
+        fetch(xslUrl).then(function (r) { return r.text(); })
+    ]).then(function (payload) {
+        var xmlDoc = parseXml(payload[0]);
+        var xslDoc = parseXml(payload[1]);
+
+        if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
+            throw new Error('Error de parseo XML/XSL');
+        }
+
+        var temporadas = getTemporadas(xmlDoc);
+        var selectedSeasonId = getSelectedSeasonId(temporadas);
+
+        if (!selectedSeasonId) {
+            throw new Error('No hay temporadas disponibles');
+        }
+
+        fillSeasonSelect(temporadas, selectedSeasonId);
+        updateHeaderSeasonName(temporadas, selectedSeasonId);
+        renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
+        applyPlayerImageFallback(renderTarget);
+
+        seasonForm.addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            var nextSeasonId = seasonSelect.value;
+
+            renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
+            updateHeaderSeasonName(temporadas, nextSeasonId);
+            applyPlayerImageFallback(renderTarget);
+
+            var nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+            nextUrl.searchParams.delete('id');
+            window.history.replaceState({}, '', nextUrl.toString());
+        });
+    }).catch(function (err) {
+        renderTarget.style.display = 'none';
+        errorTarget.style.display = 'block';
+
+        var message = 'No se pudo cargar el apartado de jugadores con XML/XSL.';
+        if (err && err.message) {
+            message += ' ' + err.message;
+        }
+
+        var p = errorTarget.querySelector('p');
+        if (p) {
+            p.textContent = message;
+        }
+    });
+})();
+</script>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>

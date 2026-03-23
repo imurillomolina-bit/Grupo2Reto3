@@ -2,24 +2,10 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Clasificacion | FEDERACIÓN FUTSAL';
-
-$error = null;
-$temporadaNombre = 'No disponible';
-$clasificacion = [];
-$temporadas = [];
-
-try {
-    $xml = load_liga_xml();
-    $temporada = get_temporada_actual($xml);
-    $temporadaNombre = (string) $temporada['nombre'];
-    $temporadas = get_temporadas($xml);
-    $clasificacion = build_clasificacion($temporada);
-} catch (Throwable $ex) {
-    $error = $ex->getMessage();
-}
+$pageTitle = 'Clasificacion | FEDERACIÃ“N FUTSAL';
+$temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -30,69 +16,28 @@ require __DIR__ . '/../includes/header.php';
     <section id="clasificacion" class="panel standings-panel">
         <article class="panel-heading">
             <h2>Clasificación</h2>
-            <p>Temporada seleccionada: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <p>Temporada seleccionada: <strong id="temporada_nombre">Cargando...</strong></p>
 
-            <form class="season-form" action="set_temporada.php" method="post">
+            <form class="season-form" id="season_form" action="#" method="get">
                 <label for="temporada_id">Cambiar temporada</label>
-                <select id="temporada_id" name="temporada_id" required>
-                    <?php foreach ($temporadas as $temporadaItem): ?>
-                        <option
-                            value="<?php echo e($temporadaItem['id']); ?>"
-                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
-                        >
-                            <?php echo e($temporadaItem['nombre']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <select id="temporada_id" name="temporada_id" required></select>
                 <button type="submit">Cambiar</button>
             </form>
         </article>
 
-        <?php if ($error !== null): ?>
+        <article id="clasificacion_render" class="table-wrap" aria-label="Tabla de clasificacion">
+            <p>Cargando clasificaciÃ³n...</p>
+        </article>
+
+        <article id="clasificacion_error" class="panel-error" style="display:none;">
+            <p>No se pudo cargar la clasificaciÃ³n con XML/XSL.</p>
+        </article>
+
+        <noscript>
             <article class="panel-error">
-                <p><?php echo e($error); ?></p>
+                <p>Necesitas JavaScript activado para visualizar la clasificaciÃ³n en esta versiÃ³n.</p>
             </article>
-        <?php else: ?>
-            <article class="table-wrap" aria-label="Tabla de clasificacion">
-                <table class="standings-table">
-                    <thead>
-                    <tr>
-                        <th>Pos</th>
-                        <th>Equipo</th>
-                        <th>PJ</th>
-                        <th>PG</th>
-                        <th class="hide-mobile">PE</th>
-                        <th class="hide-mobile">PP</th>
-                        <th class="hide-mobile">GF</th>
-                        <th class="hide-mobile">GC</th>
-                        <th>DG</th>
-                        <th>PTS</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($clasificacion as $idx => $fila): ?>
-                        <tr>
-                            <td><?php echo (int) ($idx + 1); ?></td>
-                            <td>
-                                <a class="team-link" href="equipo.php?id=<?php echo (int) $fila['id']; ?>">
-                                    <img src="<?php echo e($fila['escudo']); ?>" alt="Escudo de <?php echo e($fila['nombre']); ?>">
-                                    <span><?php echo e($fila['nombre']); ?></span>
-                                </a>
-                            </td>
-                            <td><?php echo (int) $fila['pj']; ?></td>
-                            <td><?php echo (int) $fila['pg']; ?></td>
-                            <td class="hide-mobile"><?php echo (int) $fila['pe']; ?></td>
-                            <td class="hide-mobile"><?php echo (int) $fila['pp']; ?></td>
-                            <td class="hide-mobile"><?php echo (int) $fila['gf']; ?></td>
-                            <td class="hide-mobile"><?php echo (int) $fila['gc']; ?></td>
-                            <td><?php echo (int) $fila['dg']; ?></td>
-                            <td><strong><?php echo (int) $fila['pts']; ?></strong></td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </article>
-        <?php endif; ?>
+        </noscript>
     </section>
 
     <section class="home-sections" aria-label="Apartados principales">
@@ -133,4 +78,131 @@ require __DIR__ . '/../includes/header.php';
     </section>
 </main>
 
+<script>
+(function () {
+    var xmlUrl = '../data/datos.xml';
+    var xslUrl = '../data/xsl/clasificacion.xsl';
+    var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
+
+    var renderTarget = document.getElementById('clasificacion_render');
+    var errorTarget = document.getElementById('clasificacion_error');
+    var seasonName = document.getElementById('temporada_nombre');
+    var seasonSelect = document.getElementById('temporada_id');
+    var seasonForm = document.getElementById('season_form');
+
+    function parseXml(text) {
+        return new window.DOMParser().parseFromString(text, 'text/xml');
+    }
+
+    function hasXmlError(doc) {
+        return doc.getElementsByTagName('parsererror').length > 0;
+    }
+
+    function getTemporadas(xmlDoc) {
+        return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
+            return {
+                id: n.getAttribute('id') || '',
+                nombre: n.getAttribute('nombre') || '',
+                actual: (n.getAttribute('actual') || '') === 'si'
+            };
+        });
+    }
+
+    function getSelectedSeasonId(temporadas) {
+        var params = new URLSearchParams(window.location.search);
+        var byQuery = params.get('temporada_id');
+        if (byQuery && temporadas.some(function (t) { return t.id === byQuery; })) {
+            return byQuery;
+        }
+
+        if (temporadaSesion && temporadas.some(function (t) { return t.id === temporadaSesion; })) {
+            return temporadaSesion;
+        }
+
+        var actual = temporadas.find(function (t) { return t.actual; });
+        if (actual) {
+            return actual.id;
+        }
+
+        return temporadas.length > 0 ? temporadas[0].id : '';
+    }
+
+    function fillSeasonSelect(temporadas, selectedId) {
+        seasonSelect.innerHTML = '';
+        temporadas.forEach(function (temp) {
+            var option = document.createElement('option');
+            option.value = temp.id;
+            option.textContent = temp.nombre;
+            if (temp.id === selectedId) {
+                option.selected = true;
+            }
+            seasonSelect.appendChild(option);
+        });
+    }
+
+    function updateHeaderSeasonName(temporadas, selectedId) {
+        var found = temporadas.find(function (t) { return t.id === selectedId; });
+        seasonName.textContent = found ? found.nombre : 'No disponible';
+    }
+
+    function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
+        var processor = new window.XSLTProcessor();
+        processor.importStylesheet(xslDoc);
+        processor.setParameter(null, 'temporadaId', temporadaId);
+
+        var fragment = processor.transformToFragment(xmlDoc, document);
+        renderTarget.innerHTML = '';
+        renderTarget.appendChild(fragment);
+    }
+
+    Promise.all([
+        fetch(xmlUrl).then(function (r) { return r.text(); }),
+        fetch(xslUrl).then(function (r) { return r.text(); })
+    ]).then(function (payload) {
+        var xmlDoc = parseXml(payload[0]);
+        var xslDoc = parseXml(payload[1]);
+
+        if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
+            throw new Error('Error de parseo XML/XSL');
+        }
+
+        var temporadas = getTemporadas(xmlDoc);
+        var selectedSeasonId = getSelectedSeasonId(temporadas);
+
+        if (!selectedSeasonId) {
+            throw new Error('No hay temporadas disponibles');
+        }
+
+        fillSeasonSelect(temporadas, selectedSeasonId);
+        updateHeaderSeasonName(temporadas, selectedSeasonId);
+        renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
+
+        seasonForm.addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            var nextSeasonId = seasonSelect.value;
+            renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
+            updateHeaderSeasonName(temporadas, nextSeasonId);
+
+            var nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+            window.history.replaceState({}, '', nextUrl.toString());
+        });
+    }).catch(function (err) {
+        renderTarget.style.display = 'none';
+        errorTarget.style.display = 'block';
+
+        var message = 'No se pudo cargar la clasificaciÃ³n con XML/XSL.';
+        if (err && err.message) {
+            message += ' ' + err.message;
+        }
+
+        var p = errorTarget.querySelector('p');
+        if (p) {
+            p.textContent = message;
+        }
+    });
+})();
+</script>
+
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+

@@ -2,38 +2,12 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 $pageTitle = 'Detalle de equipo | FEDERACIÓN FUTSAL';
-
-$error = null;
-$equipos = [];
-$equipo = null;
-$temporadaNombre = 'No disponible';
-$temporadas = [];
-
-$equipoId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-try {
-    $xml = load_liga_xml();
-    $temporada = get_temporada_actual($xml);
-    $temporadaNombre = (string) $temporada['nombre'];
-    $temporadas = get_temporadas($xml);
-    $equipos = get_equipos_temporada($temporada);
-
-    if ($equipoId !== false && $equipoId !== null && $equipoId > 0) {
-        $equipo = find_equipo_by_id($temporada, (int) $equipoId);
-        if ($equipo === null) {
-            $error = 'No existe el equipo solicitado en la temporada activa.';
-        } else {
-            $pageTitle = (string) $equipo->nombre . ' | FEDERACIÓN FUTSAL';
-        }
-    } elseif ($equipoId === false) {
-        $error = 'El ID del equipo es invalido.';
-    }
-} catch (Throwable $ex) {
-    $error = $ex->getMessage();
-}
+$temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
+$equipoIdRaw = filter_input(INPUT_GET, 'id', FILTER_UNSAFE_RAW);
+$equipoId = is_string($equipoIdRaw) ? trim($equipoIdRaw) : '';
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -43,74 +17,181 @@ require __DIR__ . '/../includes/header.php';
     <!-- Section: Ficha principal -->
     <section class="panel team-panel">
         <article class="panel-heading">
-            <h2><?php echo ($equipo === null) ? 'Equipos' : 'Detalle de equipo'; ?></h2>
-            <p>Temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <h2 id="equipos_titulo">Equipos</h2>
+            <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
-            <form class="season-form" action="set_temporada.php" method="post">
+            <form class="season-form" id="season_form" action="#" method="get">
                 <label for="temporada_id">Cambiar temporada</label>
-                <select id="temporada_id" name="temporada_id" required>
-                    <?php foreach ($temporadas as $temporadaItem): ?>
-                        <option
-                            value="<?php echo e($temporadaItem['id']); ?>"
-                            <?php echo (($temporadaItem['id'] ?? '') === ($_SESSION['temporada_actual'] ?? '')) ? 'selected' : ''; ?>
-                        >
-                            <?php echo e($temporadaItem['nombre']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <select id="temporada_id" name="temporada_id" required></select>
                 <button type="submit">Cambiar</button>
             </form>
         </article>
 
-        <?php if ($error !== null): ?>
-            <article class="panel-error">
-                <h2>Error</h2>
-                <p><?php echo e($error); ?></p>
-                <p><a href="clasificacion.php">Volver a la clasificacion</a></p>
-            </article>
-        <?php elseif ($equipo === null): ?>
-            <article class="cards-grid team-summary-grid">
-                <?php foreach ($equipos as $equipoItem): ?>
-                    <a class="info-card team-summary-card" href="equipo.php?id=<?php echo (int) $equipoItem['id']; ?>">
-                        <img src="<?php echo e($equipoItem['escudo']); ?>" alt="Escudo de <?php echo e($equipoItem['nombre']); ?>">
-                        <div>
-                            <h3><?php echo e($equipoItem['nombre']); ?></h3>
-                            <p><?php echo e($equipoItem['descripcion']); ?></p>
-                            <span><?php echo e($equipoItem['ciudad']); ?> · <?php echo e($equipoItem['estadio']); ?> · <?php echo (int) $equipoItem['jugadores']; ?> jugadores</span>
-                        </div>
-                    </a>
-                <?php endforeach; ?>
-            </article>
-        <?php else: ?>
-            <article class="team-headline">
-                <img class="team-shield-large" src="<?php echo e((string) $equipo->escudo); ?>" alt="Escudo de <?php echo e((string) $equipo->nombre); ?>">
-                <div>
-                    <p class="meta">Temporada: <?php echo e($temporadaNombre); ?></p>
-                    <h2><?php echo e((string) $equipo->nombre); ?></h2>
-                    <p><?php echo e((string) $equipo->descripcion); ?></p>
-                    <p><strong>Estadio:</strong> <?php echo e((string) $equipo->estadio); ?></p>
-                    <p><strong>Ciudad:</strong> <?php echo e((string) $equipo->ciudad); ?></p>
-                    <p><a href="partidos.php?equipo_id=<?php echo (int) $equipo['id']; ?>">Ver partidos de este equipo</a></p>
-                </div>
-            </article>
+        <article id="equipos_render" class="cards-grid team-summary-grid" aria-label="Listado y detalle de equipos">
+            <p>Cargando equipos...</p>
+        </article>
 
-            <!-- Article: Galeria de jugadores -->
-            <article>
-                <h3>Plantilla de jugadores</h3>
-                <div class="player-grid">
-                    <?php foreach ($equipo->jugadores->jugador as $jugador): ?>
-                        <figure class="player-card">
-                            <img src="<?php echo e(build_jugador_avatar_url((string) $jugador->nombre)); ?>" alt="Foto de <?php echo e((string) $jugador->nombre); ?>">
-                            <figcaption>
-                                <strong><?php echo e((string) $jugador->nombre); ?></strong>
-                                <span><?php echo e((string) $jugador->posicion); ?></span>
-                            </figcaption>
-                        </figure>
-                    <?php endforeach; ?>
-                </div>
+        <article id="equipos_error" class="panel-error" style="display:none;">
+            <p>No se pudo cargar el apartado de equipos con XML/XSL.</p>
+        </article>
+
+        <noscript>
+            <article class="panel-error">
+                <p>Necesitas JavaScript activado para visualizar Equipos en esta versión.</p>
             </article>
-        <?php endif; ?>
+        </noscript>
     </section>
 </main>
 
+<script>
+(function () {
+    var xmlUrl = '../data/datos.xml';
+    var xslUrl = '../data/xsl/equipos.xsl';
+    var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
+    var equipoIdInicial = '<?php echo e($equipoId); ?>';
+
+    var renderTarget = document.getElementById('equipos_render');
+    var errorTarget = document.getElementById('equipos_error');
+    var titleTarget = document.getElementById('equipos_titulo');
+    var seasonName = document.getElementById('temporada_nombre');
+    var seasonSelect = document.getElementById('temporada_id');
+    var seasonForm = document.getElementById('season_form');
+
+    function parseXml(text) {
+        return new window.DOMParser().parseFromString(text, 'text/xml');
+    }
+
+    function hasXmlError(doc) {
+        return doc.getElementsByTagName('parsererror').length > 0;
+    }
+
+    function getTemporadas(xmlDoc) {
+        return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
+            return {
+                id: n.getAttribute('id') || '',
+                nombre: n.getAttribute('nombre') || '',
+                actual: (n.getAttribute('actual') || '') === 'si'
+            };
+        });
+    }
+
+    function getSelectedSeasonId(temporadas) {
+        var params = new URLSearchParams(window.location.search);
+        var byQuery = params.get('temporada_id');
+        if (byQuery && temporadas.some(function (t) { return t.id === byQuery; })) {
+            return byQuery;
+        }
+
+        if (temporadaSesion && temporadas.some(function (t) { return t.id === temporadaSesion; })) {
+            return temporadaSesion;
+        }
+
+        var actual = temporadas.find(function (t) { return t.actual; });
+        if (actual) {
+            return actual.id;
+        }
+
+        return temporadas.length > 0 ? temporadas[0].id : '';
+    }
+
+    function getSelectedTeamId() {
+        var params = new URLSearchParams(window.location.search);
+        var byQuery = params.get('id');
+        if (byQuery) {
+            return byQuery;
+        }
+        return equipoIdInicial;
+    }
+
+    function fillSeasonSelect(temporadas, selectedId) {
+        seasonSelect.innerHTML = '';
+        temporadas.forEach(function (temp) {
+            var option = document.createElement('option');
+            option.value = temp.id;
+            option.textContent = temp.nombre;
+            if (temp.id === selectedId) {
+                option.selected = true;
+            }
+            seasonSelect.appendChild(option);
+        });
+    }
+
+    function updateHeaderSeasonName(temporadas, selectedId) {
+        var found = temporadas.find(function (t) { return t.id === selectedId; });
+        seasonName.textContent = found ? found.nombre : 'No disponible';
+    }
+
+    function updateTitle(teamId) {
+        titleTarget.textContent = teamId ? 'Detalle de equipo' : 'Equipos';
+    }
+
+    function renderWithXsl(xmlDoc, xslDoc, temporadaId, equipoId) {
+        var processor = new window.XSLTProcessor();
+        processor.importStylesheet(xslDoc);
+        processor.setParameter(null, 'temporadaId', temporadaId);
+        processor.setParameter(null, 'equipoId', equipoId || '');
+
+        var fragment = processor.transformToFragment(xmlDoc, document);
+        renderTarget.innerHTML = '';
+        renderTarget.appendChild(fragment);
+    }
+
+    Promise.all([
+        fetch(xmlUrl).then(function (r) { return r.text(); }),
+        fetch(xslUrl).then(function (r) { return r.text(); })
+    ]).then(function (payload) {
+        var xmlDoc = parseXml(payload[0]);
+        var xslDoc = parseXml(payload[1]);
+
+        if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
+            throw new Error('Error de parseo XML/XSL');
+        }
+
+        var temporadas = getTemporadas(xmlDoc);
+        var selectedSeasonId = getSelectedSeasonId(temporadas);
+        var selectedTeamId = getSelectedTeamId();
+
+        if (!selectedSeasonId) {
+            throw new Error('No hay temporadas disponibles');
+        }
+
+        fillSeasonSelect(temporadas, selectedSeasonId);
+        updateHeaderSeasonName(temporadas, selectedSeasonId);
+        updateTitle(selectedTeamId);
+        renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedTeamId);
+
+        seasonForm.addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            var nextSeasonId = seasonSelect.value;
+            var currentTeamId = getSelectedTeamId();
+
+            renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentTeamId);
+            updateHeaderSeasonName(temporadas, nextSeasonId);
+            updateTitle(currentTeamId);
+
+            var nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+            if (currentTeamId) {
+                nextUrl.searchParams.set('id', currentTeamId);
+            }
+            window.history.replaceState({}, '', nextUrl.toString());
+        });
+    }).catch(function (err) {
+        renderTarget.style.display = 'none';
+        errorTarget.style.display = 'block';
+
+        var message = 'No se pudo cargar el apartado de equipos con XML/XSL.';
+        if (err && err.message) {
+            message += ' ' + err.message;
+        }
+
+        var p = errorTarget.querySelector('p');
+        if (p) {
+            p.textContent = message;
+        }
+    });
+})();
+</script>
+
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$currentPageTitle = $pageTitle ?? 'FEDERACIÓN FUTSAL';
+$currentPageTitle = $pageTitle ?? 'FEDERACIÃ“N FUTSAL';
 $flashError = $_SESSION['flash_error'] ?? null;
 $flashSuccess = $_SESSION['flash_success'] ?? null;
 unset($_SESSION['flash_error'], $_SESSION['flash_success']);
@@ -32,6 +32,7 @@ $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $isPhpPage = str_ends_with($scriptDir, '/php');
 $assetPrefix = $isPhpPage ? '../' : '';
 $pagePrefix = $isPhpPage ? '' : 'php/';
+$stylesVersion = (string) (@filemtime(__DIR__ . '/../css/styles.css') ?: time());
 $clasificacionPath = $isPhpPage ? 'clasificacion.php' : 'php/clasificacion.php';
 $sessionUser = trim((string) ($_SESSION['user'] ?? ''));
 $sessionRole = trim((string) ($_SESSION['rol'] ?? ''));
@@ -45,7 +46,7 @@ $showLogoutLink = $showSessionChip;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo e($currentPageTitle); ?></title>
-    <link rel="stylesheet" href="<?php echo e($assetPrefix . 'css/styles.css'); ?>">
+    <link rel="stylesheet" href="<?php echo e($assetPrefix . 'css/styles.css?v=' . $stylesVersion); ?>">
 </head>
 <body>
     <!-- Header: Identidad principal -->
@@ -68,7 +69,7 @@ $showLogoutLink = $showSessionChip;
 
         <!-- Nav: Navegacion principal -->
         <nav class="main-nav" aria-label="Navegacion principal" id="main-nav">
-            <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-collapse">
+            <button class="nav-toggle" aria-label="Abrir menÃº" aria-expanded="false" aria-controls="nav-collapse">
                 <span></span><span></span><span></span>
             </button>
 
@@ -80,6 +81,9 @@ $showLogoutLink = $showSessionChip;
                         <a href="<?php echo e($pagePrefix . 'equipo.php'); ?>">Equipos</a>
                         <a href="<?php echo e($pagePrefix . 'partidos.php'); ?>">Partidos</a>
                         <a href="<?php echo e($pagePrefix . 'jugadores.php'); ?>">Jugadores</a>
+                        <?php if (strcasecmp($sessionRole, 'Admin') === 0): ?>
+                            <a href="<?php echo e($pagePrefix . 'usuarios.php'); ?>">Usuarios</a>
+                        <?php endif; ?>
                         <a href="<?php echo e($pagePrefix . 'normativa.php'); ?>">Normativa</a>
                         <a href="<?php echo e($pagePrefix . 'noticias.php'); ?>">Noticias</a>
                     </div>
@@ -118,3 +122,4 @@ $showLogoutLink = $showSessionChip;
     <?php if ($flashSuccess): ?>
         <p class="flash flash-ok"><?php echo e((string) $flashSuccess); ?></p>
     <?php endif; ?>
+

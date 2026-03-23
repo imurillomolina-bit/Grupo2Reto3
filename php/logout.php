@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 $_SESSION = [];
 
@@ -26,3 +26,4 @@ $_SESSION['flash_success'] = 'Sesion cerrada correctamente.';
 
 header('Location: inicio.php');
 exit;
+

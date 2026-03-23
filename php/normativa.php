@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Normativa | FEDERACIÓN FUTSAL';
+$pageTitle = 'Normativa | FEDERACIÃ“N FUTSAL';
+$fechaEdicion = date('d/m/Y');
 
 $normas = [
     [
@@ -28,20 +29,39 @@ $normas = [
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<main class="page">
-    <section class="panel content-panel">
-        <article class="panel-heading">
+<main class="page news-page">
+    <section class="panel content-panel newsprint-panel">
+        <article class="panel-heading newsprint-header">
+            <p class="newsprint-masthead">Marca Futsal</p>
             <h2>Normativa</h2>
-            <p>Reglas basicas y formato general de FEDERACIÓN FUTSAL.</p>
+            <p class="newsprint-strap">Reglas basicas y formato general de FEDERACIÃ“N FUTSAL.</p>
+            <p class="newsprint-edition">Edicion digital | <?php echo e($fechaEdicion); ?></p>
         </article>
 
-        <article class="cards-grid news-grid">
-            <?php foreach ($normas as $norma): ?>
-                <div class="info-card rule-card">
-                    <h3><?php echo e($norma['titulo']); ?></h3>
-                    <p><?php echo e($norma['texto']); ?></p>
-                </div>
-            <?php endforeach; ?>
+        <article class="newsprint-layout" aria-label="Normativa de la liga">
+            <section class="news-lead" aria-label="Resumen general de normativa">
+                <p class="news-kicker">Reglamento oficial</p>
+                <h3>Todo lo que necesitas para seguir la competicion</h3>
+                <p class="news-lead-text">Consulta aqui los criterios clave de puntuacion, orden de clasificacion y uso del portal para esta temporada.</p>
+            </section>
+
+            <div class="news-columns" aria-label="Normas principales">
+                <?php foreach ($normas as $norma): ?>
+                    <article class="news-column-piece">
+                        <h4><?php echo e($norma['titulo']); ?></h4>
+                        <p><?php echo e($norma['texto']); ?></p>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+
+            <aside class="news-briefs" aria-label="Recordatorios rapidos">
+                <h4>Recordatorios</h4>
+                <ul>
+                    <li><strong>Victoria:</strong> 3 puntos por partido ganado.</li>
+                    <li><strong>Empate:</strong> 1 punto para cada equipo.</li>
+                    <li><strong>Desempate:</strong> diferencia de goles y goles a favor.</li>
+                </ul>
+            </aside>
         </article>
     </section>
 </main>

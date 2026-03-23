@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     header('Location: inicio.php');
@@ -14,5 +14,6 @@ $_SESSION['user'] = 'Visitante';
 $_SESSION['rol'] = 'Invitado';
 $_SESSION['flash_success'] = 'Sesion iniciada como invitado.';
 
-header('Location: clasificacion.php');
+header('Location: inicio.php');
 exit;
+

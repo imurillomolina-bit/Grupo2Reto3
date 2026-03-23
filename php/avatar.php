@@ -37,3 +37,4 @@ echo "<rect width='400' height='300' fill='url(#bg)'/>";
 echo "<circle cx='200' cy='120' r='54' fill='{$shirt}'/>";
 echo "<rect x='130' y='178' width='140' height='95' rx='18' fill='{$shirt}'/>";
 echo '</svg>';
+

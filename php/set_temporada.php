@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     header('Location: inicio.php');
@@ -49,3 +49,4 @@ if (is_string($referer) && $referer !== '') {
 
 header('Location: ' . $redirect);
 exit;
+

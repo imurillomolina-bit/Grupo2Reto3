@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Inicio | FEDERACIÓN FUTSAL';
+$pageTitle = 'Inicio | FEDERACIÃ“N FUTSAL';
 
 $error = null;
 $temporadaNombre = 'No disponible';
@@ -33,9 +33,9 @@ try {
 
     $apartados = [
         [
-            'titulo' => 'Clasificacion',
+            'titulo' => 'Clasificación',
             'texto' => 'Consulta la tabla completa de la temporada activa y el rendimiento de cada club.',
-            'detalle' => 'Lider actual: ' . $resumen['lider'] . '.',
+            'detalle' => 'Líder actual: ' . $resumen['lider'] . '.',
             'enlace' => 'clasificacion.php',
         ],
         [
@@ -93,7 +93,7 @@ require __DIR__ . '/../includes/header.php';
                     <span><?php echo (int) $resumen['noticias']; ?></span>
                 </div>
                 <div class="hero-stat">
-                    <strong>Lider</strong>
+                    <strong>Líder</strong>
                     <span><?php echo e($resumen['lider']); ?></span>
                 </div>
             </div>

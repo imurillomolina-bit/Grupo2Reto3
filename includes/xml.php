@@ -30,6 +30,25 @@ function build_jugador_avatar_url(string $nombre): string
     return $basePath . '?nombre=' . rawurlencode($nombre);
 }
 
+function build_jugador_foto_url(string $nombre, int $equipoId, int $ordenJugador): string
+{
+    // Solo usamos el lote original de fotos reales (equipos 1-6, dorsales 01-13).
+    // El resto se resuelve con avatar para evitar repeticiones visuales.
+    if ($equipoId < 1 || $equipoId > 6 || $ordenJugador < 1 || $ordenJugador > 13) {
+        return build_jugador_avatar_url($nombre);
+    }
+
+    $numeroJugador = str_pad((string) $ordenJugador, 2, '0', STR_PAD_LEFT);
+    $filename = 'J' . $equipoId . '00000' . $numeroJugador . '.png';
+    $diskPath = __DIR__ . '/../img/Jugadores2024_2025/' . $filename;
+
+    if (is_file($diskPath)) {
+        return normalize_public_path('../img/Jugadores2024_2025/' . $filename);
+    }
+
+    return build_jugador_avatar_url($nombre);
+}
+
 function load_liga_xml(): SimpleXMLElement
 {
     if (!is_file(DATA_XML_PATH)) {
@@ -214,8 +233,11 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
 
     foreach ($temporada->equipos->equipo as $equipo) {
         $nombreEquipo = (string) $equipo->nombre;
+        $equipoId = (int) $equipo['id'];
+        $ordenJugador = 0;
 
         foreach ($equipo->jugadores->jugador as $jugador) {
+            $ordenJugador++;
             $nombreCompleto = trim((string) $jugador->nombre);
             $nombrePartido = split_nombre_jugador($nombreCompleto);
             $nombreXml = trim((string) ($jugador->nombre ?? ''));
@@ -238,9 +260,9 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
                 'peso' => trim((string) ($jugador->peso ?? 'No disponible')),
                 'altura' => trim((string) ($jugador->altura ?? 'No disponible')),
                 'posicion' => (string) $jugador->posicion,
-                'foto' => build_jugador_avatar_url($nombreCompleto),
+                'foto' => build_jugador_foto_url($nombreCompleto, $equipoId, $ordenJugador),
                 'equipo' => $nombreEquipo,
-                'equipo_id' => (int) $equipo['id'],
+                'equipo_id' => $equipoId,
             ];
         }
     }
@@ -269,7 +291,10 @@ function split_nombre_jugador(string $nombreCompleto): array
 function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId): ?array
 {
     foreach ($temporada->equipos->equipo as $equipo) {
+        $equipoId = (int) $equipo['id'];
+        $ordenJugador = 0;
         foreach ($equipo->jugadores->jugador as $jugador) {
+            $ordenJugador++;
             if ((int) $jugador['id'] !== $jugadorId) {
                 continue;
             }
@@ -296,9 +321,9 @@ function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId):
                 'peso' => trim((string) ($jugador->peso ?? 'No disponible')),
                 'altura' => trim((string) ($jugador->altura ?? 'No disponible')),
                 'posicion' => trim((string) $jugador->posicion),
-                'foto' => build_jugador_avatar_url($nombreCompleto),
+                'foto' => build_jugador_foto_url($nombreCompleto, $equipoId, $ordenJugador),
                 'equipo' => trim((string) $equipo->nombre),
-                'equipo_id' => (int) $equipo['id'],
+                'equipo_id' => $equipoId,
                 'equipo_escudo' => normalize_public_path((string) $equipo->escudo),
             ];
         }
@@ -348,7 +373,23 @@ function build_noticias_temporada(SimpleXMLElement $temporada): array
         ];
     }
 
-    foreach (array_slice($partidosRecientes, 0, 3) as $partidoReciente) {
+    $segundo = $clasificacion[1] ?? null;
+    if ($segundo !== null) {
+        $noticias[] = [
+            'titulo' => 'Persecucion en la parte alta',
+            'texto' => $segundo['nombre'] . ' sigue en la pelea por el liderato con ' . $segundo['pts'] . ' puntos.',
+        ];
+    }
+
+    $tercero = $clasificacion[2] ?? null;
+    if ($tercero !== null) {
+        $noticias[] = [
+            'titulo' => 'Podio provisional',
+            'texto' => $tercero['nombre'] . ' cierra el top 3 de ' . $temporadaNombre . ' y mantiene su opcion de escalar posiciones.',
+        ];
+    }
+
+    foreach (array_slice($partidosRecientes, 0, 8) as $partidoReciente) {
         $noticias[] = [
             'titulo' => 'Marcador reciente',
             'texto' => $partidoReciente['local'] . ' y ' . $partidoReciente['visitante'] . ' cerraron su cruce con un ' . $partidoReciente['marcador'] . ' el ' . $partidoReciente['fecha'] . '.',
@@ -453,3 +494,4 @@ function get_partidos_jornada(SimpleXMLElement $temporada, int $numeroJornada): 
 
     return $partidos;
 }
+

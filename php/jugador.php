@@ -2,60 +2,12 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 $pageTitle = 'Ficha de jugador | FEDERACION FUTSAL';
-
-$error = null;
-$temporadaNombre = 'No disponible';
-$temporadas = [];
-$jugador = null;
-$caracteristicas = [];
-
-$jugadorId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-try {
-    $xml = load_liga_xml();
-    $temporada = get_temporada_actual($xml);
-    $temporadaNombre = (string) $temporada['nombre'];
-    $temporadas = get_temporadas($xml);
-
-    if ($jugadorId === false || $jugadorId === null || $jugadorId <= 0) {
-        $error = 'El ID del jugador es invalido.';
-    } else {
-        $jugador = get_jugador_detalle_by_id($temporada, (int) $jugadorId);
-        if ($jugador === null) {
-            $error = 'No existe el jugador solicitado en la temporada activa.';
-        } else {
-            $nombreMostrado = trim($jugador['nombre'] . ' ' . (($jugador['apellidos'] !== 'No disponible') ? $jugador['apellidos'] : ''));
-            $jugador['nombre_mostrado'] = $nombreMostrado !== '' ? $nombreMostrado : $jugador['nombre'];
-            $pageTitle = $jugador['nombre_mostrado'] . ' | FEDERACION FUTSAL';
-
-            $caracteristicasRaw = [
-                ['key' => 'nombre', 'label' => 'Nombre', 'value' => $jugador['nombre']],
-                ['key' => 'apellidos', 'label' => 'Apellidos', 'value' => $jugador['apellidos']],
-                ['key' => 'fecha_nacimiento', 'label' => 'Nacimiento', 'value' => $jugador['fecha_nacimiento']],
-                ['key' => 'peso', 'label' => 'Peso', 'value' => $jugador['peso'] !== 'No disponible' ? ($jugador['peso'] . ' kg') : 'No disponible'],
-                ['key' => 'altura', 'label' => 'Altura', 'value' => $jugador['altura'] !== 'No disponible' ? ($jugador['altura'] . ' m') : 'No disponible'],
-            ];
-
-            foreach ($caracteristicasRaw as $item) {
-                $valor = trim((string) $item['value']);
-                if ($valor === '' || mb_strtolower($valor) === 'no disponible') {
-                    $valor = '-';
-                }
-
-                $caracteristicas[] = [
-                    'key' => $item['key'],
-                    'label' => $item['label'],
-                    'value' => $valor,
-                ];
-            }
-        }
-    }
-} catch (Throwable $ex) {
-    $error = $ex->getMessage();
-}
+$temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
+$jugadorIdRaw = filter_input(INPUT_GET, 'id', FILTER_UNSAFE_RAW);
+$jugadorId = is_string($jugadorIdRaw) ? trim($jugadorIdRaw) : '';
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -64,37 +16,237 @@ require __DIR__ . '/../includes/header.php';
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Ficha de jugador</h2>
-            <p>Temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
+
+            <form class="season-form" id="season_form" action="#" method="get">
+                <label for="temporada_id">Cambiar temporada</label>
+                <select id="temporada_id" name="temporada_id" required></select>
+                <button type="submit">Cambiar</button>
+            </form>
         </article>
 
-        <?php if ($error !== null): ?>
-            <article class="panel-error">
-                <p><?php echo e($error); ?></p>
-                <p><a href="jugadores.php">Volver al listado de jugadores</a></p>
-            </article>
-        <?php else: ?>
-            <article class="player-basic-detail">
-                <div class="player-basic-layout">
-                    <aside class="player-basic-media">
-                        <img class="player-basic-photo" src="<?php echo e($jugador['foto']); ?>" alt="Foto de <?php echo e($jugador['nombre_mostrado']); ?>">
-                    </aside>
+        <article id="jugador_render" class="player-basic-detail" aria-label="Ficha de jugador">
+            <p>Cargando jugador...</p>
+        </article>
 
-                    <div class="player-basic-content">
-                        <h3 class="player-basic-title"><?php echo e($jugador['nombre_mostrado']); ?></h3>
-                        <div class="player-basic-grid">
-                            <?php foreach ($caracteristicas as $item): ?>
-                                <article class="player-basic-item">
-                                    <h4><?php echo e($item['label']); ?></h4>
-                                    <p><?php echo e($item['value']); ?></p>
-                                </article>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </div>
-                <p class="player-back-link"><a class="btn-outline-back" href="jugadores.php">Volver a jugadores</a></p>
+        <article id="jugador_error" class="panel-error" style="display:none;">
+            <p>No se pudo cargar la ficha de jugador con XML/XSL.</p>
+        </article>
+
+        <noscript>
+            <article class="panel-error">
+                <p>Necesitas JavaScript activado para visualizar la ficha del jugador en esta version.</p>
             </article>
-        <?php endif; ?>
+        </noscript>
     </section>
 </main>
 
+<script>
+(function () {
+    var xmlUrl = '../data/datos.xml';
+    var xslUrl = '../data/xsl/jugadores.xsl';
+    var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
+    var jugadorIdInicial = '<?php echo e($jugadorId); ?>';
+
+    var renderTarget = document.getElementById('jugador_render');
+    var errorTarget = document.getElementById('jugador_error');
+    var seasonName = document.getElementById('temporada_nombre');
+    var seasonSelect = document.getElementById('temporada_id');
+    var seasonForm = document.getElementById('season_form');
+
+    function parseXml(text) {
+        return new window.DOMParser().parseFromString(text, 'text/xml');
+    }
+
+    function hasXmlError(doc) {
+        return doc.getElementsByTagName('parsererror').length > 0;
+    }
+
+    function getTemporadas(xmlDoc) {
+        return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
+            return {
+                id: n.getAttribute('id') || '',
+                nombre: n.getAttribute('nombre') || '',
+                actual: (n.getAttribute('actual') || '') === 'si'
+            };
+        });
+    }
+
+    function getSelectedSeasonId(temporadas) {
+        var params = new URLSearchParams(window.location.search);
+        var byQuery = params.get('temporada_id');
+        if (byQuery && temporadas.some(function (t) { return t.id === byQuery; })) {
+            return byQuery;
+        }
+
+        if (temporadaSesion && temporadas.some(function (t) { return t.id === temporadaSesion; })) {
+            return temporadaSesion;
+        }
+
+        var actual = temporadas.find(function (t) { return t.actual; });
+        if (actual) {
+            return actual.id;
+        }
+
+        return temporadas.length > 0 ? temporadas[0].id : '';
+    }
+
+    function getSelectedPlayerId() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get('id') || jugadorIdInicial;
+    }
+
+    function fillSeasonSelect(temporadas, selectedId) {
+        seasonSelect.innerHTML = '';
+        temporadas.forEach(function (temp) {
+            var option = document.createElement('option');
+            option.value = temp.id;
+            option.textContent = temp.nombre;
+            if (temp.id === selectedId) {
+                option.selected = true;
+            }
+            seasonSelect.appendChild(option);
+        });
+    }
+
+    function updateHeaderSeasonName(temporadas, selectedId) {
+        var found = temporadas.find(function (t) { return t.id === selectedId; });
+        seasonName.textContent = found ? found.nombre : 'No disponible';
+    }
+
+    function renderWithXsl(xmlDoc, xslDoc, temporadaId, jugadorId) {
+        var processor = new window.XSLTProcessor();
+        processor.importStylesheet(xslDoc);
+        processor.setParameter(null, 'temporadaId', temporadaId);
+        processor.setParameter(null, 'jugadorId', jugadorId || '');
+
+        var fragment = processor.transformToFragment(xmlDoc, document);
+        renderTarget.innerHTML = '';
+        renderTarget.appendChild(fragment);
+    }
+
+    function applyPlayerImageFallback(root) {
+        var images = root.querySelectorAll('img');
+
+        function pad2(value) {
+            var n = String(value || '').trim();
+            if (n.length === 1) {
+                return '0' + n;
+            }
+            return n;
+        }
+
+        function unique(values) {
+            var out = [];
+            values.forEach(function (v) {
+                if (v && out.indexOf(v) === -1) {
+                    out.push(v);
+                }
+            });
+            return out;
+        }
+
+        images.forEach(function (img) {
+            var alt = (img.getAttribute('alt') || '').trim();
+            var nombre = alt.replace(/^Foto de\s+/i, '').trim();
+            var equipoId = (img.getAttribute('data-equipo-id') || '').trim();
+            var ordenJugador = pad2(img.getAttribute('data-orden-jugador') || '');
+
+            if (!nombre) {
+                nombre = img.getAttribute('data-nombre') || 'Jugador';
+            }
+
+            var currentSrc = (img.getAttribute('src') || '').trim();
+            var candidates = [];
+
+            if (currentSrc) {
+                candidates.push(currentSrc);
+            }
+
+            if (equipoId && ordenJugador) {
+                candidates.push('../img/Jugadores2024_2025/J' + equipoId + '00000' + ordenJugador + '.png');
+                candidates.push('../img/Jugadores2024_2025/J' + equipoId + '0000' + ordenJugador + '.png');
+            }
+
+            candidates = unique(candidates);
+
+            if (candidates.length === 0) {
+                img.src = 'avatar.php?nombre=' + encodeURIComponent(nombre);
+                return;
+            }
+
+            var idx = 0;
+            img.onerror = function () {
+                idx += 1;
+                if (idx < candidates.length) {
+                    this.src = candidates[idx];
+                    return;
+                }
+
+                this.onerror = null;
+                this.src = 'avatar.php?nombre=' + encodeURIComponent(nombre);
+            };
+
+            img.src = candidates[0];
+        });
+    }
+
+    Promise.all([
+        fetch(xmlUrl).then(function (r) { return r.text(); }),
+        fetch(xslUrl).then(function (r) { return r.text(); })
+    ]).then(function (payload) {
+        var xmlDoc = parseXml(payload[0]);
+        var xslDoc = parseXml(payload[1]);
+
+        if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
+            throw new Error('Error de parseo XML/XSL');
+        }
+
+        var temporadas = getTemporadas(xmlDoc);
+        var selectedSeasonId = getSelectedSeasonId(temporadas);
+        var selectedPlayerId = getSelectedPlayerId();
+
+        if (!selectedSeasonId) {
+            throw new Error('No hay temporadas disponibles');
+        }
+
+        fillSeasonSelect(temporadas, selectedSeasonId);
+        updateHeaderSeasonName(temporadas, selectedSeasonId);
+        renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedPlayerId);
+        applyPlayerImageFallback(renderTarget);
+
+        seasonForm.addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            var nextSeasonId = seasonSelect.value;
+            var currentPlayerId = getSelectedPlayerId();
+
+            renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentPlayerId);
+            updateHeaderSeasonName(temporadas, nextSeasonId);
+            applyPlayerImageFallback(renderTarget);
+
+            var nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+            if (currentPlayerId) {
+                nextUrl.searchParams.set('id', currentPlayerId);
+            }
+            window.history.replaceState({}, '', nextUrl.toString());
+        });
+    }).catch(function (err) {
+        renderTarget.style.display = 'none';
+        errorTarget.style.display = 'block';
+
+        var message = 'No se pudo cargar la ficha de jugador con XML/XSL.';
+        if (err && err.message) {
+            message += ' ' + err.message;
+        }
+
+        var p = errorTarget.querySelector('p');
+        if (p) {
+            p.textContent = message;
+        }
+    });
+})();
+</script>
+
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+

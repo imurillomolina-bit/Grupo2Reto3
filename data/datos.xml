@@ -825,96 +825,96 @@
         </equipo>
       </equipos>
       <partidos>
-        <partido local="1" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-09-12" />
-        <partido local="3" visitante="4" goles_local="2" goles_visitante="2" fecha="2024-09-12" />
-        <partido local="5" visitante="6" goles_local="4" goles_visitante="2" fecha="2024-09-12" />
-        <partido local="7" visitante="8" goles_local="1" goles_visitante="3" fecha="2024-09-12" />
-        <partido local="9" visitante="10" goles_local="2" goles_visitante="1" fecha="2024-09-12" />
-        <partido local="10" visitante="1" goles_local="0" goles_visitante="2" fecha="2024-09-19" />
-        <partido local="2" visitante="3" goles_local="1" goles_visitante="0" fecha="2024-09-19" />
-        <partido local="4" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-09-19" />
-        <partido local="6" visitante="7" goles_local="1" goles_visitante="1" fecha="2024-09-19" />
-        <partido local="8" visitante="9" goles_local="3" goles_visitante="2" fecha="2024-09-19" />
-        <partido local="1" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-09-26" />
-        <partido local="4" visitante="2" goles_local="1" goles_visitante="0" fecha="2024-09-26" />
-        <partido local="5" visitante="7" goles_local="3" goles_visitante="2" fecha="2024-09-26" />
-        <partido local="8" visitante="6" goles_local="2" goles_visitante="1" fecha="2024-09-26" />
-        <partido local="10" visitante="9" goles_local="1" goles_visitante="0" fecha="2024-09-26" />
-        <partido local="9" visitante="1" goles_local="1" goles_visitante="3" fecha="2024-10-03" />
-        <partido local="3" visitante="2" goles_local="2" goles_visitante="0" fecha="2024-10-03" />
-        <partido local="7" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-03" />
-        <partido local="6" visitante="5" goles_local="0" goles_visitante="2" fecha="2024-10-03" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-10-03" />
-        <partido local="1" visitante="4" goles_local="3" goles_visitante="1" fecha="2024-10-10" />
-        <partido local="2" visitante="5" goles_local="2" goles_visitante="2" fecha="2024-10-10" />
-        <partido local="6" visitante="3" goles_local="1" goles_visitante="1" fecha="2024-10-10" />
-        <partido local="7" visitante="9" goles_local="0" goles_visitante="2" fecha="2024-10-10" />
-        <partido local="8" visitante="10" goles_local="2" goles_visitante="0" fecha="2024-10-10" />
-        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2024-10-17" />
-        <partido local="4" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-10-17" />
-        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2024-10-17" />
-        <partido local="9" visitante="6" goles_local="1" goles_visitante="1" fecha="2024-10-17" />
-        <partido local="10" visitante="7" goles_local="2" goles_visitante="2" fecha="2024-10-17" />
-        <partido local="1" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-10-24" />
-        <partido local="6" visitante="2" goles_local="0" goles_visitante="3" fecha="2024-10-24" />
-        <partido local="7" visitante="3" goles_local="1" goles_visitante="2" fecha="2024-10-24" />
-        <partido local="4" visitante="8" goles_local="2" goles_visitante="2" fecha="2024-10-24" />
-        <partido local="9" visitante="10" goles_local="1" goles_visitante="0" fecha="2024-10-24" />
-        <partido local="7" visitante="1" goles_local="2" goles_visitante="3" fecha="2024-10-31" />
-        <partido local="5" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-10-31" />
-        <partido local="8" visitante="3" goles_local="0" goles_visitante="2" fecha="2024-10-31" />
-        <partido local="6" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-31" />
-        <partido local="10" visitante="9" goles_local="3" goles_visitante="2" fecha="2024-10-31" />
-        <partido local="1" visitante="6" goles_local="2" goles_visitante="0" fecha="2024-11-07" />
-        <partido local="7" visitante="2" goles_local="1" goles_visitante="2" fecha="2024-11-07" />
-        <partido local="3" visitante="9" goles_local="3" goles_visitante="1" fecha="2024-11-07" />
-        <partido local="8" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-11-07" />
-        <partido local="4" visitante="10" goles_local="1" goles_visitante="0" fecha="2024-11-07" />
-        <partido local="6" visitante="1" goles_local="1" goles_visitante="1" fecha="2024-11-14" />
-        <partido local="2" visitante="7" goles_local="2" goles_visitante="0" fecha="2024-11-14" />
-        <partido local="9" visitante="3" goles_local="2" goles_visitante="1" fecha="2024-11-14" />
-        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2024-11-14" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-11-14" />
-        <partido local="1" visitante="7" goles_local="3" goles_visitante="1" fecha="2024-11-21" />
-        <partido local="8" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-11-21" />
-        <partido local="4" visitante="3" goles_local="0" goles_visitante="2" fecha="2024-11-21" />
-        <partido local="9" visitante="5" goles_local="2" goles_visitante="0" fecha="2024-11-21" />
-        <partido local="6" visitante="10" goles_local="1" goles_visitante="2" fecha="2024-11-21" />
-        <partido local="5" visitante="1" goles_local="2" goles_visitante="3" fecha="2024-11-28" />
-        <partido local="7" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-11-28" />
-        <partido local="3" visitante="10" goles_local="2" goles_visitante="0" fecha="2024-11-28" />
-        <partido local="6" visitante="9" goles_local="0" goles_visitante="3" fecha="2024-11-28" />
-        <partido local="8" visitante="4" goles_local="3" goles_visitante="1" fecha="2024-11-28" />
-        <partido local="1" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-12-05" />
-        <partido local="9" visitante="2" goles_local="1" goles_visitante="2" fecha="2024-12-05" />
-        <partido local="4" visitante="7" goles_local="1" goles_visitante="1" fecha="2024-12-05" />
-        <partido local="5" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-12-05" />
-        <partido local="10" visitante="6" goles_local="3" goles_visitante="2" fecha="2024-12-05" />
-        <partido local="4" visitante="1" goles_local="2" goles_visitante="2" fecha="2024-12-12" />
-        <partido local="8" visitante="2" goles_local="0" goles_visitante="1" fecha="2024-12-12" />
-        <partido local="10" visitante="3" goles_local="1" goles_visitante="1" fecha="2024-12-12" />
-        <partido local="3" visitante="7" goles_local="2" goles_visitante="0" fecha="2024-12-12" />
-        <partido local="6" visitante="9" goles_local="1" goles_visitante="2" fecha="2024-12-12" />
-        <partido local="1" visitante="9" goles_local="3" goles_visitante="0" fecha="2024-12-19" />
-        <partido local="10" visitante="2" goles_local="2" goles_visitante="1" fecha="2024-12-19" />
-        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2024-12-19" />
-        <partido local="8" visitante="7" goles_local="1" goles_visitante="2" fecha="2024-12-19" />
-        <partido local="3" visitante="6" goles_local="0" goles_visitante="1" fecha="2024-12-19" />
-        <partido local="3" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-01-09" />
-        <partido local="9" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-01-09" />
-        <partido local="4" visitante="6" goles_local="3" goles_visitante="1" fecha="2025-01-09" />
-        <partido local="7" visitante="5" goles_local="1" goles_visitante="1" fecha="2025-01-09" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="2" fecha="2025-01-09" />
-        <partido local="1" visitante="10" goles_local="2" goles_visitante="1" fecha="2025-01-16" />
-        <partido local="2" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-01-16" />
-        <partido local="6" visitante="8" goles_local="0" goles_visitante="2" fecha="2025-01-16" />
-        <partido local="5" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-01-16" />
-        <partido local="3" visitante="7" goles_local="2" goles_visitante="1" fecha="2025-01-16" />
-        <partido local="2" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-01-23" />
-        <partido local="3" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-01-23" />
-        <partido local="5" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-01-23" />
-        <partido local="7" visitante="6" goles_local="2" goles_visitante="0" fecha="2025-01-23" />
-        <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-01-23" />
+        <partido local="1" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-09-12"/>
+        <partido local="3" visitante="4" goles_local="2" goles_visitante="2" fecha="2024-09-12"/>
+        <partido local="5" visitante="6" goles_local="4" goles_visitante="2" fecha="2024-09-12"/>
+        <partido local="7" visitante="8" goles_local="1" goles_visitante="3" fecha="2024-09-12"/>
+        <partido local="9" visitante="10" goles_local="2" goles_visitante="1" fecha="2024-09-12"/>
+        <partido local="10" visitante="1" goles_local="0" goles_visitante="2" fecha="2024-09-19"/>
+        <partido local="2" visitante="3" goles_local="1" goles_visitante="0" fecha="2024-09-19"/>
+        <partido local="4" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-09-19"/>
+        <partido local="6" visitante="7" goles_local="1" goles_visitante="1" fecha="2024-09-19"/>
+        <partido local="8" visitante="9" goles_local="3" goles_visitante="2" fecha="2024-09-19"/>
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-09-26"/>
+        <partido local="4" visitante="2" goles_local="1" goles_visitante="0" fecha="2024-09-26"/>
+        <partido local="5" visitante="7" goles_local="3" goles_visitante="2" fecha="2024-09-26"/>
+        <partido local="8" visitante="6" goles_local="2" goles_visitante="1" fecha="2024-09-26"/>
+        <partido local="10" visitante="9" goles_local="1" goles_visitante="0" fecha="2024-09-26"/>
+        <partido local="9" visitante="1" goles_local="1" goles_visitante="3" fecha="2024-10-03"/>
+        <partido local="3" visitante="2" goles_local="2" goles_visitante="0" fecha="2024-10-03"/>
+        <partido local="7" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-03"/>
+        <partido local="6" visitante="5" goles_local="0" goles_visitante="2" fecha="2024-10-03"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-10-03"/>
+        <partido local="1" visitante="4" goles_local="3" goles_visitante="1" fecha="2024-10-10"/>
+        <partido local="2" visitante="5" goles_local="2" goles_visitante="2" fecha="2024-10-10"/>
+        <partido local="6" visitante="3" goles_local="1" goles_visitante="1" fecha="2024-10-10"/>
+        <partido local="7" visitante="9" goles_local="0" goles_visitante="2" fecha="2024-10-10"/>
+        <partido local="8" visitante="10" goles_local="2" goles_visitante="0" fecha="2024-10-10"/>
+        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2024-10-17"/>
+        <partido local="4" visitante="2" goles_local="3" goles_visitante="1" fecha="2024-10-17"/>
+        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2024-10-17"/>
+        <partido local="9" visitante="6" goles_local="1" goles_visitante="1" fecha="2024-10-17"/>
+        <partido local="10" visitante="7" goles_local="2" goles_visitante="2" fecha="2024-10-17"/>
+        <partido local="1" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-10-24"/>
+        <partido local="6" visitante="2" goles_local="0" goles_visitante="3" fecha="2024-10-24"/>
+        <partido local="7" visitante="3" goles_local="1" goles_visitante="2" fecha="2024-10-24"/>
+        <partido local="4" visitante="8" goles_local="2" goles_visitante="2" fecha="2024-10-24"/>
+        <partido local="9" visitante="10" goles_local="1" goles_visitante="0" fecha="2024-10-24"/>
+        <partido local="7" visitante="1" goles_local="2" goles_visitante="3" fecha="2024-10-31"/>
+        <partido local="5" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-10-31"/>
+        <partido local="8" visitante="3" goles_local="0" goles_visitante="2" fecha="2024-10-31"/>
+        <partido local="6" visitante="4" goles_local="1" goles_visitante="1" fecha="2024-10-31"/>
+        <partido local="10" visitante="9" goles_local="3" goles_visitante="2" fecha="2024-10-31"/>
+        <partido local="1" visitante="6" goles_local="2" goles_visitante="0" fecha="2024-11-07"/>
+        <partido local="7" visitante="2" goles_local="1" goles_visitante="2" fecha="2024-11-07"/>
+        <partido local="3" visitante="9" goles_local="3" goles_visitante="1" fecha="2024-11-07"/>
+        <partido local="8" visitante="5" goles_local="2" goles_visitante="1" fecha="2024-11-07"/>
+        <partido local="4" visitante="10" goles_local="1" goles_visitante="0" fecha="2024-11-07"/>
+        <partido local="6" visitante="1" goles_local="1" goles_visitante="1" fecha="2024-11-14"/>
+        <partido local="2" visitante="7" goles_local="2" goles_visitante="0" fecha="2024-11-14"/>
+        <partido local="9" visitante="3" goles_local="2" goles_visitante="1" fecha="2024-11-14"/>
+        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2024-11-14"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-11-14"/>
+        <partido local="1" visitante="7" goles_local="3" goles_visitante="1" fecha="2024-11-21"/>
+        <partido local="8" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-11-21"/>
+        <partido local="4" visitante="3" goles_local="0" goles_visitante="2" fecha="2024-11-21"/>
+        <partido local="9" visitante="5" goles_local="2" goles_visitante="0" fecha="2024-11-21"/>
+        <partido local="6" visitante="10" goles_local="1" goles_visitante="2" fecha="2024-11-21"/>
+        <partido local="5" visitante="1" goles_local="2" goles_visitante="3" fecha="2024-11-28"/>
+        <partido local="7" visitante="2" goles_local="1" goles_visitante="1" fecha="2024-11-28"/>
+        <partido local="3" visitante="10" goles_local="2" goles_visitante="0" fecha="2024-11-28"/>
+        <partido local="6" visitante="9" goles_local="0" goles_visitante="3" fecha="2024-11-28"/>
+        <partido local="8" visitante="4" goles_local="3" goles_visitante="1" fecha="2024-11-28"/>
+        <partido local="1" visitante="8" goles_local="2" goles_visitante="1" fecha="2024-12-05"/>
+        <partido local="9" visitante="2" goles_local="1" goles_visitante="2" fecha="2024-12-05"/>
+        <partido local="4" visitante="7" goles_local="1" goles_visitante="1" fecha="2024-12-05"/>
+        <partido local="5" visitante="3" goles_local="2" goles_visitante="0" fecha="2024-12-05"/>
+        <partido local="10" visitante="6" goles_local="3" goles_visitante="2" fecha="2024-12-05"/>
+        <partido local="4" visitante="1" goles_local="2" goles_visitante="2" fecha="2024-12-12"/>
+        <partido local="8" visitante="2" goles_local="0" goles_visitante="1" fecha="2024-12-12"/>
+        <partido local="10" visitante="3" goles_local="1" goles_visitante="1" fecha="2024-12-12"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="0" fecha="2024-12-12"/>
+        <partido local="6" visitante="9" goles_local="1" goles_visitante="2" fecha="2024-12-12"/>
+        <partido local="1" visitante="9" goles_local="3" goles_visitante="0" fecha="2024-12-19"/>
+        <partido local="10" visitante="2" goles_local="2" goles_visitante="1" fecha="2024-12-19"/>
+        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2024-12-19"/>
+        <partido local="8" visitante="7" goles_local="1" goles_visitante="2" fecha="2024-12-19"/>
+        <partido local="3" visitante="6" goles_local="0" goles_visitante="1" fecha="2024-12-19"/>
+        <partido local="3" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-01-09"/>
+        <partido local="9" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-01-09"/>
+        <partido local="4" visitante="6" goles_local="3" goles_visitante="1" fecha="2025-01-09"/>
+        <partido local="7" visitante="5" goles_local="1" goles_visitante="1" fecha="2025-01-09"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="2" fecha="2025-01-09"/>
+        <partido local="1" visitante="10" goles_local="2" goles_visitante="1" fecha="2025-01-16"/>
+        <partido local="2" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-01-16"/>
+        <partido local="6" visitante="8" goles_local="0" goles_visitante="2" fecha="2025-01-16"/>
+        <partido local="5" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-01-16"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="1" fecha="2025-01-16"/>
+        <partido local="2" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-01-23"/>
+        <partido local="3" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-01-23"/>
+        <partido local="5" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-01-23"/>
+        <partido local="7" visitante="6" goles_local="2" goles_visitante="0" fecha="2025-01-23"/>
+        <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-01-23"/>
       </partidos>
     </temporada>
     <temporada id="2025-2026" nombre="2025/2026" actual="si">
@@ -1741,96 +1741,96 @@
         </equipo>
       </equipos>
       <partidos>
-        <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11" />
-        <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-11" />
-        <partido local="5" visitante="6" goles_local="2" goles_visitante="2" fecha="2025-09-11" />
-        <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2025-09-11" />
-        <partido local="9" visitante="10" goles_local="0" goles_visitante="1" fecha="2025-09-11" />
-        <partido local="10" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-09-18" />
-        <partido local="2" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-09-18" />
-        <partido local="4" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-09-18" />
-        <partido local="6" visitante="7" goles_local="1" goles_visitante="1" fecha="2025-09-18" />
-        <partido local="8" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-09-18" />
-        <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-09-25" />
-        <partido local="4" visitante="2" goles_local="1" goles_visitante="0" fecha="2025-09-25" />
-        <partido local="5" visitante="7" goles_local="3" goles_visitante="2" fecha="2025-09-25" />
-        <partido local="8" visitante="6" goles_local="2" goles_visitante="1" fecha="2025-09-25" />
-        <partido local="10" visitante="9" goles_local="1" goles_visitante="0" fecha="2025-09-25" />
-        <partido local="9" visitante="1" goles_local="1" goles_visitante="3" fecha="2025-10-02" />
-        <partido local="3" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-10-02" />
-        <partido local="7" visitante="4" goles_local="1" goles_visitante="1" fecha="2025-10-02" />
-        <partido local="6" visitante="5" goles_local="0" goles_visitante="2" fecha="2025-10-02" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-10-02" />
-        <partido local="1" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-10-09" />
-        <partido local="2" visitante="5" goles_local="2" goles_visitante="2" fecha="2025-10-09" />
-        <partido local="6" visitante="3" goles_local="1" goles_visitante="1" fecha="2025-10-09" />
-        <partido local="7" visitante="9" goles_local="0" goles_visitante="2" fecha="2025-10-09" />
-        <partido local="8" visitante="10" goles_local="2" goles_visitante="0" fecha="2025-10-09" />
-        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-10-16" />
-        <partido local="4" visitante="2" goles_local="3" goles_visitante="1" fecha="2025-10-16" />
-        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2025-10-16" />
-        <partido local="9" visitante="6" goles_local="1" goles_visitante="1" fecha="2025-10-16" />
-        <partido local="10" visitante="7" goles_local="2" goles_visitante="2" fecha="2025-10-16" />
-        <partido local="1" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-10-23" />
-        <partido local="6" visitante="2" goles_local="0" goles_visitante="3" fecha="2025-10-23" />
-        <partido local="7" visitante="3" goles_local="1" goles_visitante="2" fecha="2025-10-23" />
-        <partido local="4" visitante="8" goles_local="2" goles_visitante="2" fecha="2025-10-23" />
-        <partido local="9" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-10-23" />
-        <partido local="7" visitante="1" goles_local="2" goles_visitante="3" fecha="2025-10-30" />
-        <partido local="5" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-10-30" />
-        <partido local="8" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-10-30" />
-        <partido local="6" visitante="4" goles_local="1" goles_visitante="1" fecha="2025-10-30" />
-        <partido local="10" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-10-30" />
-        <partido local="1" visitante="6" goles_local="2" goles_visitante="0" fecha="2025-11-06" />
-        <partido local="7" visitante="2" goles_local="1" goles_visitante="2" fecha="2025-11-06" />
-        <partido local="3" visitante="9" goles_local="3" goles_visitante="1" fecha="2025-11-06" />
-        <partido local="8" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-11-06" />
-        <partido local="4" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-11-06" />
-        <partido local="6" visitante="1" goles_local="1" goles_visitante="1" fecha="2025-11-13" />
-        <partido local="2" visitante="7" goles_local="2" goles_visitante="0" fecha="2025-11-13" />
-        <partido local="9" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-11-13" />
-        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-11-13" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-11-13" />
-        <partido local="1" visitante="7" goles_local="3" goles_visitante="1" fecha="2025-11-20" />
-        <partido local="8" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-11-20" />
-        <partido local="4" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-11-20" />
-        <partido local="9" visitante="5" goles_local="2" goles_visitante="0" fecha="2025-11-20" />
-        <partido local="6" visitante="10" goles_local="1" goles_visitante="2" fecha="2025-11-20" />
-        <partido local="5" visitante="1" goles_local="2" goles_visitante="3" fecha="2025-11-27" />
-        <partido local="7" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-11-27" />
-        <partido local="3" visitante="10" goles_local="2" goles_visitante="0" fecha="2025-11-27" />
-        <partido local="6" visitante="9" goles_local="0" goles_visitante="3" fecha="2025-11-27" />
-        <partido local="8" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-11-27" />
-        <partido local="1" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-12-04" />
-        <partido local="9" visitante="2" goles_local="1" goles_visitante="2" fecha="2025-12-04" />
-        <partido local="4" visitante="7" goles_local="1" goles_visitante="1" fecha="2025-12-04" />
-        <partido local="5" visitante="3" goles_local="2" goles_visitante="0" fecha="2025-12-04" />
-        <partido local="10" visitante="6" goles_local="3" goles_visitante="2" fecha="2025-12-04" />
-        <partido local="4" visitante="1" goles_local="2" goles_visitante="2" fecha="2025-12-11" />
-        <partido local="8" visitante="2" goles_local="0" goles_visitante="1" fecha="2025-12-11" />
-        <partido local="10" visitante="3" goles_local="1" goles_visitante="1" fecha="2025-12-11" />
-        <partido local="3" visitante="7" goles_local="2" goles_visitante="0" fecha="2025-12-11" />
-        <partido local="6" visitante="9" goles_local="1" goles_visitante="2" fecha="2025-12-11" />
-        <partido local="1" visitante="9" goles_local="3" goles_visitante="0" fecha="2025-12-18" />
-        <partido local="10" visitante="2" goles_local="2" goles_visitante="1" fecha="2025-12-18" />
-        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-12-18" />
-        <partido local="8" visitante="7" goles_local="1" goles_visitante="2" fecha="2025-12-18" />
-        <partido local="3" visitante="6" goles_local="0" goles_visitante="1" fecha="2025-12-18" />
-        <partido local="3" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-01-08" />
-        <partido local="9" visitante="2" goles_local="2" goles_visitante="0" fecha="2026-01-08" />
-        <partido local="4" visitante="6" goles_local="3" goles_visitante="1" fecha="2026-01-08" />
-        <partido local="7" visitante="5" goles_local="1" goles_visitante="1" fecha="2026-01-08" />
-        <partido local="10" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-01-08" />
-        <partido local="1" visitante="10" goles_local="2" goles_visitante="1" fecha="2026-01-15" />
-        <partido local="2" visitante="4" goles_local="1" goles_visitante="2" fecha="2026-01-15" />
-        <partido local="6" visitante="8" goles_local="0" goles_visitante="2" fecha="2026-01-15" />
-        <partido local="5" visitante="9" goles_local="3" goles_visitante="2" fecha="2026-01-15" />
-        <partido local="3" visitante="7" goles_local="2" goles_visitante="1" fecha="2026-01-15" />
-        <partido local="2" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-01-22" />
-        <partido local="3" visitante="8" goles_local="2" goles_visitante="1" fecha="2026-01-22" />
-        <partido local="5" visitante="10" goles_local="1" goles_visitante="0" fecha="2026-01-22" />
-        <partido local="7" visitante="6" goles_local="2" goles_visitante="0" fecha="2026-01-22" />
-        <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2026-01-22" />
+        <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11"/>
+        <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-11"/>
+        <partido local="5" visitante="6" goles_local="2" goles_visitante="2" fecha="2025-09-11"/>
+        <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2025-09-11"/>
+        <partido local="9" visitante="10" goles_local="0" goles_visitante="1" fecha="2025-09-11"/>
+        <partido local="10" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-09-18"/>
+        <partido local="2" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-09-18"/>
+        <partido local="4" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-09-18"/>
+        <partido local="6" visitante="7" goles_local="1" goles_visitante="1" fecha="2025-09-18"/>
+        <partido local="8" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-09-18"/>
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-09-25"/>
+        <partido local="4" visitante="2" goles_local="1" goles_visitante="0" fecha="2025-09-25"/>
+        <partido local="5" visitante="7" goles_local="3" goles_visitante="2" fecha="2025-09-25"/>
+        <partido local="8" visitante="6" goles_local="2" goles_visitante="1" fecha="2025-09-25"/>
+        <partido local="10" visitante="9" goles_local="1" goles_visitante="0" fecha="2025-09-25"/>
+        <partido local="9" visitante="1" goles_local="1" goles_visitante="3" fecha="2025-10-02"/>
+        <partido local="3" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-10-02"/>
+        <partido local="7" visitante="4" goles_local="1" goles_visitante="1" fecha="2025-10-02"/>
+        <partido local="6" visitante="5" goles_local="0" goles_visitante="2" fecha="2025-10-02"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-10-02"/>
+        <partido local="1" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-10-09"/>
+        <partido local="2" visitante="5" goles_local="2" goles_visitante="2" fecha="2025-10-09"/>
+        <partido local="6" visitante="3" goles_local="1" goles_visitante="1" fecha="2025-10-09"/>
+        <partido local="7" visitante="9" goles_local="0" goles_visitante="2" fecha="2025-10-09"/>
+        <partido local="8" visitante="10" goles_local="2" goles_visitante="0" fecha="2025-10-09"/>
+        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2025-10-16"/>
+        <partido local="4" visitante="2" goles_local="3" goles_visitante="1" fecha="2025-10-16"/>
+        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2025-10-16"/>
+        <partido local="9" visitante="6" goles_local="1" goles_visitante="1" fecha="2025-10-16"/>
+        <partido local="10" visitante="7" goles_local="2" goles_visitante="2" fecha="2025-10-16"/>
+        <partido local="1" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-10-23"/>
+        <partido local="6" visitante="2" goles_local="0" goles_visitante="3" fecha="2025-10-23"/>
+        <partido local="7" visitante="3" goles_local="1" goles_visitante="2" fecha="2025-10-23"/>
+        <partido local="4" visitante="8" goles_local="2" goles_visitante="2" fecha="2025-10-23"/>
+        <partido local="9" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-10-23"/>
+        <partido local="7" visitante="1" goles_local="2" goles_visitante="3" fecha="2025-10-30"/>
+        <partido local="5" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-10-30"/>
+        <partido local="8" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-10-30"/>
+        <partido local="6" visitante="4" goles_local="1" goles_visitante="1" fecha="2025-10-30"/>
+        <partido local="10" visitante="9" goles_local="3" goles_visitante="2" fecha="2025-10-30"/>
+        <partido local="1" visitante="6" goles_local="2" goles_visitante="0" fecha="2025-11-06"/>
+        <partido local="7" visitante="2" goles_local="1" goles_visitante="2" fecha="2025-11-06"/>
+        <partido local="3" visitante="9" goles_local="3" goles_visitante="1" fecha="2025-11-06"/>
+        <partido local="8" visitante="5" goles_local="2" goles_visitante="1" fecha="2025-11-06"/>
+        <partido local="4" visitante="10" goles_local="1" goles_visitante="0" fecha="2025-11-06"/>
+        <partido local="6" visitante="1" goles_local="1" goles_visitante="1" fecha="2025-11-13"/>
+        <partido local="2" visitante="7" goles_local="2" goles_visitante="0" fecha="2025-11-13"/>
+        <partido local="9" visitante="3" goles_local="2" goles_visitante="1" fecha="2025-11-13"/>
+        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-11-13"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-11-13"/>
+        <partido local="1" visitante="7" goles_local="3" goles_visitante="1" fecha="2025-11-20"/>
+        <partido local="8" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-11-20"/>
+        <partido local="4" visitante="3" goles_local="0" goles_visitante="2" fecha="2025-11-20"/>
+        <partido local="9" visitante="5" goles_local="2" goles_visitante="0" fecha="2025-11-20"/>
+        <partido local="6" visitante="10" goles_local="1" goles_visitante="2" fecha="2025-11-20"/>
+        <partido local="5" visitante="1" goles_local="2" goles_visitante="3" fecha="2025-11-27"/>
+        <partido local="7" visitante="2" goles_local="1" goles_visitante="1" fecha="2025-11-27"/>
+        <partido local="3" visitante="10" goles_local="2" goles_visitante="0" fecha="2025-11-27"/>
+        <partido local="6" visitante="9" goles_local="0" goles_visitante="3" fecha="2025-11-27"/>
+        <partido local="8" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-11-27"/>
+        <partido local="1" visitante="8" goles_local="2" goles_visitante="1" fecha="2025-12-04"/>
+        <partido local="9" visitante="2" goles_local="1" goles_visitante="2" fecha="2025-12-04"/>
+        <partido local="4" visitante="7" goles_local="1" goles_visitante="1" fecha="2025-12-04"/>
+        <partido local="5" visitante="3" goles_local="2" goles_visitante="0" fecha="2025-12-04"/>
+        <partido local="10" visitante="6" goles_local="3" goles_visitante="2" fecha="2025-12-04"/>
+        <partido local="4" visitante="1" goles_local="2" goles_visitante="2" fecha="2025-12-11"/>
+        <partido local="8" visitante="2" goles_local="0" goles_visitante="1" fecha="2025-12-11"/>
+        <partido local="10" visitante="3" goles_local="1" goles_visitante="1" fecha="2025-12-11"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="0" fecha="2025-12-11"/>
+        <partido local="6" visitante="9" goles_local="1" goles_visitante="2" fecha="2025-12-11"/>
+        <partido local="1" visitante="9" goles_local="3" goles_visitante="0" fecha="2025-12-18"/>
+        <partido local="10" visitante="2" goles_local="2" goles_visitante="1" fecha="2025-12-18"/>
+        <partido local="5" visitante="4" goles_local="1" goles_visitante="2" fecha="2025-12-18"/>
+        <partido local="8" visitante="7" goles_local="1" goles_visitante="2" fecha="2025-12-18"/>
+        <partido local="3" visitante="6" goles_local="0" goles_visitante="1" fecha="2025-12-18"/>
+        <partido local="3" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-01-08"/>
+        <partido local="9" visitante="2" goles_local="2" goles_visitante="0" fecha="2026-01-08"/>
+        <partido local="4" visitante="6" goles_local="3" goles_visitante="1" fecha="2026-01-08"/>
+        <partido local="7" visitante="5" goles_local="1" goles_visitante="1" fecha="2026-01-08"/>
+        <partido local="10" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-01-08"/>
+        <partido local="1" visitante="10" goles_local="2" goles_visitante="1" fecha="2026-01-15"/>
+        <partido local="2" visitante="4" goles_local="1" goles_visitante="2" fecha="2026-01-15"/>
+        <partido local="6" visitante="8" goles_local="0" goles_visitante="2" fecha="2026-01-15"/>
+        <partido local="5" visitante="9" goles_local="3" goles_visitante="2" fecha="2026-01-15"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="1" fecha="2026-01-15"/>
+        <partido local="2" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-01-22"/>
+        <partido local="3" visitante="8" goles_local="2" goles_visitante="1" fecha="2026-01-22"/>
+        <partido local="5" visitante="10" goles_local="1" goles_visitante="0" fecha="2026-01-22"/>
+        <partido local="7" visitante="6" goles_local="2" goles_visitante="0" fecha="2026-01-22"/>
+        <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2026-01-22"/>
       </partidos>
     </temporada>
     <temporada id="2026-2027" nombre="2026/2027" actual="no">
@@ -1922,76 +1922,6 @@
               <posicion>Pivote</posicion>
               <foto>../img/jugadores/jugador12.svg</foto>
             </jugador>
-            <jugador id="2009">
-              <nombre>Eric</nombre>
-              <apellidos>Font Miras</apellidos>
-              <fecha_nacimiento>1995-12-30</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>79.00</peso>
-              <altura>1.81</altura>
-              <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
-            </jugador>
-            <jugador id="2010">
-              <nombre>Esteban</nombre>
-              <apellidos>Molina Grau</apellidos>
-              <fecha_nacimiento>1998-05-05</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>70.00</peso>
-              <altura>1.71</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
-            </jugador>
-            <jugador id="2011">
-              <nombre>Ramiro</nombre>
-              <apellidos>Sosa Pintos</apellidos>
-              <fecha_nacimiento>1999-01-20</fecha_nacimiento>
-              <nacionalidad>Argentina</nacionalidad>
-              <peso>69.80</peso>
-              <altura>1.70</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
-            </jugador>
-            <jugador id="2012">
-              <nombre>Lautaro</nombre>
-              <apellidos>Paz Gómez</apellidos>
-              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>70.00</peso>
-              <altura>1.72</altura>
-              <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
-            </jugador>
-            <jugador id="2013">
-              <nombre>Gabriel</nombre>
-              <apellidos>Morales Pinto</apellidos>
-              <fecha_nacimiento>1998-08-08</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>70.00</peso>
-              <altura>1.71</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
-            </jugador>
-            <jugador id="2014">
-              <nombre>Eder</nombre>
-              <apellidos>Zabala Núñez</apellidos>
-              <fecha_nacimiento>2000-10-10</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>68.40</peso>
-              <altura>1.69</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
-            </jugador>
-            <jugador id="2015">
-              <nombre>Thierry</nombre>
-              <apellidos>Dubois Lemaire</apellidos>
-              <fecha_nacimiento>2001-05-05</fecha_nacimiento>
-              <nacionalidad>Francesa</nacionalidad>
-              <peso>65.00</peso>
-              <altura>1.67</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
-            </jugador>
           </jugadores>
         </equipo>
         <equipo id="3">
@@ -2080,76 +2010,6 @@
               <altura>1.75</altura>
               <posicion>Pivote</posicion>
               <foto>../img/jugadores/jugador1.svg</foto>
-            </jugador>
-            <jugador id="2109">
-              <nombre>Manuel</nombre>
-              <apellidos>Díez Prado</apellidos>
-              <fecha_nacimiento>1994-04-18</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>66.60</peso>
-              <altura>1.67</altura>
-              <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
-            </jugador>
-            <jugador id="2110">
-              <nombre>Biel</nombre>
-              <apellidos>Serra Pons</apellidos>
-              <fecha_nacimiento>2000-08-08</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>65.00</peso>
-              <altura>1.65</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
-            </jugador>
-            <jugador id="2111">
-              <nombre>Fabián</nombre>
-              <apellidos>Cruz Elizalde</apellidos>
-              <fecha_nacimiento>2000-04-04</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>65.00</peso>
-              <altura>1.66</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
-            </jugador>
-            <jugador id="2112">
-              <nombre>Ignacio</nombre>
-              <apellidos>Prado Roca</apellidos>
-              <fecha_nacimiento>1993-02-02</fecha_nacimiento>
-              <nacionalidad>Chilena</nacionalidad>
-              <peso>74.00</peso>
-              <altura>1.75</altura>
-              <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
-            </jugador>
-            <jugador id="2113">
-              <nombre>Ramón</nombre>
-              <apellidos>Gil Navarro</apellidos>
-              <fecha_nacimiento>1995-04-04</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>81.00</peso>
-              <altura>1.83</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
-            </jugador>
-            <jugador id="2114">
-              <nombre>Ricardo</nombre>
-              <apellidos>Alves Faria</apellidos>
-              <fecha_nacimiento>1996-06-06</fecha_nacimiento>
-              <nacionalidad>Portuguesa</nacionalidad>
-              <peso>71.00</peso>
-              <altura>1.72</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
-            </jugador>
-            <jugador id="2115">
-              <nombre>Óliver</nombre>
-              <apellidos>Sanz Roca</apellidos>
-              <fecha_nacimiento>2002-09-21</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>64.00</peso>
-              <altura>1.65</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2240,76 +2100,6 @@
               <posicion>Pivote</posicion>
               <foto>../img/jugadores/jugador2.svg</foto>
             </jugador>
-            <jugador id="2209">
-              <nombre>Rachid</nombre>
-              <apellidos>Ben Omar</apellidos>
-              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
-              <nacionalidad>Marroquí</nacionalidad>
-              <peso>72.00</peso>
-              <altura>1.74</altura>
-              <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
-            </jugador>
-            <jugador id="2210">
-              <nombre>Diego</nombre>
-              <apellidos>Andrade Mello</apellidos>
-              <fecha_nacimiento>2002-12-12</fecha_nacimiento>
-              <nacionalidad>Brasileña</nacionalidad>
-              <peso>63.00</peso>
-              <altura>1.64</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
-            </jugador>
-            <jugador id="2211">
-              <nombre>Nuno</nombre>
-              <apellidos>Oliveira Reis</apellidos>
-              <fecha_nacimiento>1996-12-12</fecha_nacimiento>
-              <nacionalidad>Portuguesa</nacionalidad>
-              <peso>73.10</peso>
-              <altura>1.74</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
-            </jugador>
-            <jugador id="2212">
-              <nombre>Mikel</nombre>
-              <apellidos>Onaindia Ríos</apellidos>
-              <fecha_nacimiento>1999-11-11</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>67.50</peso>
-              <altura>1.68</altura>
-              <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
-            </jugador>
-            <jugador id="2213">
-              <nombre>Lorenzo</nombre>
-              <apellidos>Costa Méndez</apellidos>
-              <fecha_nacimiento>1997-03-12</fecha_nacimiento>
-              <nacionalidad>Uruguaya</nacionalidad>
-              <peso>72.20</peso>
-              <altura>1.73</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
-            </jugador>
-            <jugador id="2214">
-              <nombre>Mohamed</nombre>
-              <apellidos>El Amrani</apellidos>
-              <fecha_nacimiento>1998-02-02</fecha_nacimiento>
-              <nacionalidad>Marroquí</nacionalidad>
-              <peso>69.10</peso>
-              <altura>1.70</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
-            </jugador>
-            <jugador id="2215">
-              <nombre>Carlos</nombre>
-              <apellidos>Rodríguez</apellidos>
-              <fecha_nacimiento>1999-05-31</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>79.50</peso>
-              <altura>1.82</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
-            </jugador>
           </jugadores>
         </equipo>
         <equipo id="7">
@@ -2398,66 +2188,6 @@
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
               <foto>../img/jugadores/jugador3.svg</foto>
-            </jugador>
-            <jugador id="2309">
-              <nombre>Saúl</nombre>
-              <apellidos>Crespo Gil</apellidos>
-              <fecha_nacimiento>2001-10-10</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>69.20</peso>
-              <altura>1.70</altura>
-              <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
-            </jugador>
-            <jugador id="2310">
-              <nombre>Alán</nombre>
-              <apellidos>Vega Santos</apellidos>
-              <fecha_nacimiento>1997-03-03</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>71.00</peso>
-              <altura>1.73</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
-            </jugador>
-            <jugador id="2311">
-              <nombre>Yeray</nombre>
-              <apellidos>Martín Gil</apellidos>
-              <fecha_nacimiento>1994-06-06</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>68.00</peso>
-              <altura>1.69</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
-            </jugador>
-            <jugador id="2312">
-              <nombre>Pol</nombre>
-              <apellidos>Miralles Cid</apellidos>
-              <fecha_nacimiento>2001-01-01</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>64.30</peso>
-              <altura>1.65</altura>
-              <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
-            </jugador>
-            <jugador id="2313">
-              <nombre>Patrick</nombre>
-              <apellidos>Legrand Moreau</apellidos>
-              <fecha_nacimiento>1999-09-09</fecha_nacimiento>
-              <nacionalidad>Francesa</nacionalidad>
-              <peso>74.00</peso>
-              <altura>1.76</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
-            </jugador>
-            <jugador id="2314">
-              <nombre>Simón</nombre>
-              <apellidos>Rey Castro</apellidos>
-              <fecha_nacimiento>1993-12-12</fecha_nacimiento>
-              <nacionalidad>Paraguaya</nacionalidad>
-              <peso>76.00</peso>
-              <altura>1.78</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2548,80 +2278,129 @@
               <posicion>Pivote</posicion>
               <foto>../img/jugadores/jugador4.svg</foto>
             </jugador>
-            <jugador id="2409">
-              <nombre>Gonzalo</nombre>
-              <apellidos>Mir Rey</apellidos>
-              <fecha_nacimiento>1993-02-14</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>75.40</peso>
-              <altura>1.76</altura>
+          </jugadores>
+        </equipo>
+        <equipo id="11">
+          <nombre>Quesos Hidalgo Manzanares FS</nombre>
+          <ciudad>Manzanares</ciudad>
+          <estadio>Antonio Cabanas</estadio>
+          <descripcion>Equipo intenso y ordenado, con presion alta y transiciones verticales.</descripcion>
+          <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+          <jugadores>
+            <jugador id="2501">
+              <nombre>Carlos</nombre>
+              <apellidos>Nunez Vera</apellidos>
+              <fecha_nacimiento>1998-01-15</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>74.20</peso>
+              <altura>1.80</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>../img/jugadores/jugador1.svg</foto>
             </jugador>
-            <jugador id="2410">
-              <nombre>Cristóbal</nombre>
-              <apellidos>Nieto Mora</apellidos>
-              <fecha_nacimiento>1995-10-10</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>76.20</peso>
-              <altura>1.78</altura>
+            <jugador id="2502">
+              <nombre>Jorge</nombre>
+              <apellidos>Serrano Diaz</apellidos>
+              <fecha_nacimiento>1997-06-22</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>71.40</peso>
+              <altura>1.76</altura>
               <posicion>Cierre</posicion>
               <foto>../img/jugadores/jugador2.svg</foto>
             </jugador>
-            <jugador id="2411">
-              <nombre>Rafael</nombre>
-              <apellidos>Dos Santos</apellidos>
-              <fecha_nacimiento>1998-09-09</fecha_nacimiento>
-              <nacionalidad>Brasileña</nacionalidad>
-              <peso>80.00</peso>
-              <altura>1.81</altura>
+            <jugador id="2503">
+              <nombre>Alberto</nombre>
+              <apellidos>Campos Pardo</apellidos>
+              <fecha_nacimiento>2000-03-09</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>69.10</peso>
+              <altura>1.74</altura>
+              <posicion>Ala</posicion>
+              <foto>../img/jugadores/jugador3.svg</foto>
+            </jugador>
+            <jugador id="2504">
+              <nombre>Miguel</nombre>
+              <apellidos>Santos Rios</apellidos>
+              <fecha_nacimiento>1999-11-02</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>73.30</peso>
+              <altura>1.79</altura>
+              <posicion>Pivote</posicion>
+              <foto>../img/jugadores/jugador4.svg</foto>
+            </jugador>
+            <jugador id="2505">
+              <nombre>Ruben</nombre>
+              <apellidos>Molina Costa</apellidos>
+              <fecha_nacimiento>1996-08-18</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>75.00</peso>
+              <altura>1.82</altura>
+              <posicion>Portero</posicion>
+              <foto>../img/jugadores/jugador5.svg</foto>
+            </jugador>
+            <jugador id="2506">
+              <nombre>Diego</nombre>
+              <apellidos>Vega Torres</apellidos>
+              <fecha_nacimiento>2001-02-27</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>70.50</peso>
+              <altura>1.75</altura>
+              <posicion>Cierre</posicion>
+              <foto>../img/jugadores/jugador6.svg</foto>
+            </jugador>
+            <jugador id="2507">
+              <nombre>Pablo</nombre>
+              <apellidos>Lopez Mena</apellidos>
+              <fecha_nacimiento>1998-09-30</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>68.90</peso>
+              <altura>1.73</altura>
               <posicion>Ala</posicion>
               <foto>../img/jugadores/jugador7.svg</foto>
             </jugador>
-            <jugador id="2412">
-              <nombre>Adam</nombre>
-              <apellidos>Boukari Omar</apellidos>
-              <fecha_nacimiento>2002-05-05</fecha_nacimiento>
-              <nacionalidad>Marroquí</nacionalidad>
-              <peso>66.00</peso>
-              <altura>1.67</altura>
+            <jugador id="2508">
+              <nombre>Adrian</nombre>
+              <apellidos>Gil Roca</apellidos>
+              <fecha_nacimiento>2002-05-12</fecha_nacimiento>
+              <nacionalidad>Espanola</nacionalidad>
+              <peso>72.10</peso>
+              <altura>1.78</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
-            </jugador>
-            <jugador id="2413">
-              <nombre>Arturo</nombre>
-              <apellidos>Peña Gil</apellidos>
-              <fecha_nacimiento>1994-01-01</fecha_nacimiento>
-              <nacionalidad>Española</nacionalidad>
-              <peso>66.00</peso>
-              <altura>1.66</altura>
-              <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
-            </jugador>
-            <jugador id="2414">
-              <nombre>Boris</nombre>
-              <apellidos>Kovacevic Milán</apellidos>
-              <fecha_nacimiento>1997-07-07</fecha_nacimiento>
-              <nacionalidad>Croata</nacionalidad>
-              <peso>82.50</peso>
-              <altura>1.84</altura>
-              <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>../img/jugadores/jugador8.svg</foto>
             </jugador>
           </jugadores>
         </equipo>
       </equipos>
       <partidos>
-        <partido local="1" visitante="3" goles_local="2" goles_visitante="1" fecha="2026-09-12" />
-        <partido local="5" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-14" />
-        <partido local="8" visitante="1" goles_local="1" goles_visitante="2" fecha="2026-09-20" />
-        <partido local="3" visitante="5" goles_local="2" goles_visitante="0" fecha="2026-09-24" />
-        <partido local="7" visitante="8" goles_local="1" goles_visitante="2" fecha="2026-09-27" />
-        <partido local="1" visitante="5" goles_local="4" goles_visitante="2" fecha="2026-10-03" />
-        <partido local="3" visitante="7" goles_local="1" goles_visitante="1" fecha="2026-10-08" />
-        <partido local="5" visitante="8" goles_local="2" goles_visitante="2" fecha="2026-10-12" />
-        <partido local="7" visitante="1" goles_local="0" goles_visitante="1" fecha="2026-10-18" />
-        <partido local="8" visitante="3" goles_local="3" goles_visitante="2" fecha="2026-10-22" />
+        <partido local="1" visitante="11" goles_local="1" goles_visitante="3" fecha="2026-09-03"/>
+        <partido local="3" visitante="8" goles_local="4" goles_visitante="1" fecha="2026-09-03"/>
+        <partido local="5" visitante="7" goles_local="2" goles_visitante="1" fecha="2026-09-03"/>
+        <partido local="8" visitante="1" goles_local="4" goles_visitante="3" fecha="2026-09-10"/>
+        <partido local="7" visitante="11" goles_local="4" goles_visitante="2" fecha="2026-09-10"/>
+        <partido local="5" visitante="3" goles_local="3" goles_visitante="3" fecha="2026-09-10"/>
+        <partido local="1" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-17"/>
+        <partido local="8" visitante="5" goles_local="1" goles_visitante="2" fecha="2026-09-17"/>
+        <partido local="11" visitante="3" goles_local="0" goles_visitante="1" fecha="2026-09-17"/>
+        <partido local="5" visitante="1" goles_local="3" goles_visitante="3" fecha="2026-09-24"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="2" fecha="2026-09-24"/>
+        <partido local="11" visitante="8" goles_local="1" goles_visitante="0" fecha="2026-09-24"/>
+        <partido local="1" visitante="3" goles_local="0" goles_visitante="3" fecha="2026-10-01"/>
+        <partido local="5" visitante="11" goles_local="0" goles_visitante="0" fecha="2026-10-01"/>
+        <partido local="7" visitante="8" goles_local="3" goles_visitante="2" fecha="2026-10-01"/>
+        <partido local="11" visitante="1" goles_local="1" goles_visitante="3" fecha="2026-10-08"/>
+        <partido local="8" visitante="3" goles_local="4" goles_visitante="2" fecha="2026-10-08"/>
+        <partido local="7" visitante="5" goles_local="4" goles_visitante="1" fecha="2026-10-08"/>
+        <partido local="1" visitante="8" goles_local="2" goles_visitante="0" fecha="2026-10-15"/>
+        <partido local="11" visitante="7" goles_local="3" goles_visitante="0" fecha="2026-10-15"/>
+        <partido local="3" visitante="5" goles_local="1" goles_visitante="3" fecha="2026-10-15"/>
+        <partido local="7" visitante="1" goles_local="4" goles_visitante="3" fecha="2026-10-22"/>
+        <partido local="5" visitante="8" goles_local="3" goles_visitante="3" fecha="2026-10-22"/>
+        <partido local="3" visitante="11" goles_local="2" goles_visitante="3" fecha="2026-10-22"/>
+        <partido local="1" visitante="5" goles_local="4" goles_visitante="1" fecha="2026-10-29"/>
+        <partido local="7" visitante="3" goles_local="1" goles_visitante="0" fecha="2026-10-29"/>
+        <partido local="8" visitante="11" goles_local="3" goles_visitante="1" fecha="2026-10-29"/>
+        <partido local="3" visitante="1" goles_local="2" goles_visitante="3" fecha="2026-11-05"/>
+        <partido local="11" visitante="5" goles_local="1" goles_visitante="0" fecha="2026-11-05"/>
+        <partido local="8" visitante="7" goles_local="4" goles_visitante="3" fecha="2026-11-05"/>
       </partidos>
     </temporada>
   </temporadas>

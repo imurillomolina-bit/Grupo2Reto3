@@ -55,3 +55,4 @@ function set_guest_session(): void
         $_SESSION['rol'] = '';
     }
 }
+

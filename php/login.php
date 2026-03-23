@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Login | FEDERACIÓN FUTSAL';
+$pageTitle = 'Login | FEDERACIÃ“N FUTSAL';
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -37,3 +37,4 @@ require __DIR__ . '/../includes/header.php';
 </main>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Noticias | FEDERACIÓN FUTSAL';
+$pageTitle = 'Noticias | FEDERACIÃ“N FUTSAL';
 
 $error = null;
 $temporadaNombre = 'No disponible';
@@ -22,11 +22,13 @@ try {
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<main class="page">
-    <section class="panel content-panel">
-        <article class="panel-heading">
+<main class="page news-page">
+    <section class="panel content-panel newsprint-panel">
+        <article class="panel-heading newsprint-header">
+            <p class="newsprint-masthead">Marca Futsal</p>
             <h2>Noticias</h2>
-            <p>Actualidad generada con la temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <p class="newsprint-strap">Actualidad generada con la temporada activa: <strong><?php echo e($temporadaNombre); ?></strong></p>
+            <p class="newsprint-edition">Edicion digital | <?php echo e(date('d/m/Y')); ?></p>
         </article>
 
         <?php if ($error !== null): ?>
@@ -34,21 +36,50 @@ require __DIR__ . '/../includes/header.php';
                 <p><?php echo e($error); ?></p>
             </article>
         <?php else: ?>
-            <article class="cards-grid news-grid">
-                <?php if ($noticias === []): ?>
+            <?php if ($noticias === []): ?>
+                <article class="cards-grid news-grid">
                     <div class="info-card news-card">
                         <h3>Sin novedades</h3>
                         <p>No se pudieron generar noticias para la temporada actual.</p>
                     </div>
-                <?php else: ?>
-                    <?php foreach ($noticias as $noticia): ?>
-                        <div class="info-card news-card">
-                            <h3><?php echo e($noticia['titulo']); ?></h3>
-                            <p><?php echo e($noticia['texto']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </article>
+                </article>
+            <?php else: ?>
+                <?php
+                $titularPrincipal = $noticias[0];
+                $columnas = array_slice($noticias, 1, 4);
+                $breves = array_slice($noticias, 5);
+                ?>
+                <article class="newsprint-layout" aria-label="Portada de noticias">
+                    <section class="news-lead" aria-label="Titular principal">
+                        <p class="news-kicker">Portada</p>
+                        <h3><?php echo e($titularPrincipal['titulo']); ?></h3>
+                        <p class="news-lead-text"><?php echo e($titularPrincipal['texto']); ?></p>
+                    </section>
+
+                    <div class="news-columns" aria-label="Noticias destacadas">
+                        <?php foreach ($columnas as $noticia): ?>
+                            <article class="news-column-piece">
+                                <h4><?php echo e($noticia['titulo']); ?></h4>
+                                <p><?php echo e($noticia['texto']); ?></p>
+                            </article>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php if ($breves !== []): ?>
+                        <aside class="news-briefs" aria-label="Breves">
+                            <h4>Ultima hora</h4>
+                            <ul>
+                                <?php foreach ($breves as $breve): ?>
+                                    <li>
+                                        <strong><?php echo e($breve['titulo']); ?>:</strong>
+                                        <?php echo e($breve['texto']); ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </aside>
+                    <?php endif; ?>
+                </article>
+            <?php endif; ?>
         <?php endif; ?>
     </section>
 </main>

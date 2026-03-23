@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/app_init.php';
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     header('Location: login.php');
@@ -39,5 +39,15 @@ $_SESSION['user'] = $loginData['nombre'];
 $_SESSION['rol'] = $loginData['rol'];
 $_SESSION['flash_success'] = 'Sesion iniciada correctamente.';
 
-header('Location: inicio.php');
+$rol = trim((string) $loginData['rol']);
+$redirect = 'inicio.php';
+
+if (strcasecmp($rol, 'Admin') === 0) {
+    $redirect = 'usuarios.php';
+} elseif (strcasecmp($rol, 'Arbitro') === 0) {
+    $redirect = 'partidos.php';
+}
+
+header('Location: ' . $redirect);
 exit;
+

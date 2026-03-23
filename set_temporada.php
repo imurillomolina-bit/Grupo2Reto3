@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/app_init.php';
 
 // Solo permite cambios de temporada mediante formulario POST.
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -56,3 +56,4 @@ if (is_string($referer) && $referer !== '') {
 // Aplica redireccion final tras procesar la seleccion.
 header('Location: ' . $redirect);
 exit;
+
