@@ -10,7 +10,7 @@ $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<main class="page">
+<main class="page page-matches">
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Partidos</h2>
@@ -19,17 +19,19 @@ require __DIR__ . '/../includes/header.php';
                 | Jornada: <strong id="jornada_nombre">-</strong>
             </p>
 
-            <form class="season-form" id="season_form" action="#" method="get">
-                <label for="temporada_id">Cambiar temporada</label>
-                <select id="temporada_id" name="temporada_id" required></select>
-                <button type="submit">Cambiar</button>
-            </form>
+            <div class="matches-filters">
+                <form class="season-form" id="season_form" action="#" method="get">
+                    <label for="temporada_id">Cambiar temporada</label>
+                    <select id="temporada_id" name="temporada_id" required></select>
+                    <button type="submit">Cambiar</button>
+                </form>
 
-            <form class="season-form" id="jornada_form" action="#" method="get">
-                <label for="jornada_id">Filtrar por jornada</label>
-                <select id="jornada_id" name="jornada_id" required></select>
-                <button type="submit">Aplicar</button>
-            </form>
+                <form class="season-form" id="jornada_form" action="#" method="get">
+                    <label for="jornada_id">Filtrar por jornada</label>
+                    <select id="jornada_id" name="jornada_id" required></select>
+                    <button type="submit">Aplicar</button>
+                </form>
+            </div>
         </article>
 
         <article id="partidos_render" class="matches-wrap" aria-label="Listado de partidos">

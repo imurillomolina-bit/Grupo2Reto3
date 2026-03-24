@@ -49,7 +49,7 @@
                     <div class="player-grid">
                         <xsl:for-each select="$equipoSeleccionado/jugadores/jugador">
                             <figure class="player-card">
-                                <img src="{foto}" alt="Foto de {nombre}"/>
+                                <img src="../img/Jugadores2024_2025/J{$equipoSeleccionado/@id}00000{orden}.png" alt="Foto de {nombre}"/>
                                 <figcaption>
                                     <strong><xsl:value-of select="nombre"/></strong>
                                     <span><xsl:value-of select="posicion"/></span>
