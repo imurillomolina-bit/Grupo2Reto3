@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// Configura el contexto global de sesion y temporada activa para toda la app.
+
 // Garantiza un contexto minimo de visitante anonimo en sesion.
 set_guest_session();
 

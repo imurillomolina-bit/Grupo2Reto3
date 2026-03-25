@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// Genera un avatar SVG dinamico para un jugador a partir de su nombre.
+
 header('Content-Type: image/svg+xml; charset=UTF-8');
 header('Cache-Control: public, max-age=3600');
 

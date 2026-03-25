@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+// Vista de partidos con filtros por temporada y jornada seleccionadas.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
+// Temporada de sesion para iniciar filtros del lado cliente.
 $pageTitle = 'Partidos | FEDERACION FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
@@ -52,10 +55,12 @@ require __DIR__ . '/../includes/header.php';
 
 <script>
 (function () {
+    // Rutas de origen para transformar XML con plantilla XSL de partidos.
     var xmlUrl = '../data/datos.xml';
     var xslUrl = '../data/xsl/partidos.xsl';
     var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
 
+    // Referencias a elementos de interfaz y formularios de filtros.
     var renderTarget = document.getElementById('partidos_render');
     var errorTarget = document.getElementById('partidos_error');
     var seasonName = document.getElementById('temporada_nombre');
@@ -65,14 +70,17 @@ require __DIR__ . '/../includes/header.php';
     var seasonForm = document.getElementById('season_form');
     var jornadaForm = document.getElementById('jornada_form');
 
+    // Convierte texto XML/XSL en documento navegable.
     function parseXml(text) {
         return new window.DOMParser().parseFromString(text, 'text/xml');
     }
 
+    // Comprueba si el parser del navegador devolvio error.
     function hasXmlError(doc) {
         return doc.getElementsByTagName('parsererror').length > 0;
     }
 
+    // Extrae catalogo de temporadas para filtros y cabecera.
     function getTemporadas(xmlDoc) {
         return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
             return {
@@ -83,6 +91,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Obtiene nodo de temporada por id, con fallback de busqueda manual.
     function getTemporadaNode(xmlDoc, temporadaId) {
         return xmlDoc.querySelector('liga > temporadas > temporada[id="' + temporadaId + '"]') ||
             Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).find(function (n) {
@@ -91,6 +100,7 @@ require __DIR__ . '/../includes/header.php';
             null;
     }
 
+    // Construye jornadas a partir de fechas unicas de partidos.
     function getJornadas(temporadaNode) {
         if (!temporadaNode) {
             return [];
@@ -114,6 +124,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Prioridad de temporada: query string, sesion, actual y primera disponible.
     function getSelectedSeasonId(temporadas) {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('temporada_id');
@@ -133,6 +144,7 @@ require __DIR__ . '/../includes/header.php';
         return temporadas.length > 0 ? temporadas[0].id : '';
     }
 
+    // Resuelve jornada por query y valida que exista en la temporada actual.
     function getSelectedJornadaNumero(jornadas) {
         var params = new URLSearchParams(window.location.search);
         var byQueryRaw = params.get('jornada_id');
@@ -145,6 +157,7 @@ require __DIR__ . '/../includes/header.php';
         return jornadas.length > 0 ? jornadas[0].numero : 0;
     }
 
+    // Rellena selector de temporadas con la opcion activa marcada.
     function fillSeasonSelect(temporadas, selectedId) {
         seasonSelect.innerHTML = '';
         temporadas.forEach(function (temp) {
@@ -158,6 +171,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Rellena selector de jornadas segun la temporada seleccionada.
     function fillJornadaSelect(jornadas, selectedNumero) {
         jornadaSelect.innerHTML = '';
         jornadas.forEach(function (jornada) {
@@ -171,15 +185,18 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Refresca nombre de temporada mostrado en cabecera.
     function updateHeaderSeasonName(temporadas, selectedId) {
         var found = temporadas.find(function (t) { return t.id === selectedId; });
         seasonName.textContent = found ? found.nombre : 'No disponible';
     }
 
+    // Refresca etiqueta de jornada activa.
     function updateHeaderJornadaName(selectedNumero) {
         jornadaName.textContent = selectedNumero > 0 ? String(selectedNumero) : '-';
     }
 
+    // Renderiza partidos filtrados por temporada y fecha de jornada.
     function renderWithXsl(xmlDoc, xslDoc, temporadaId, fechaSeleccionada) {
         var processor = new window.XSLTProcessor();
         processor.importStylesheet(xslDoc);
@@ -191,6 +208,7 @@ require __DIR__ . '/../includes/header.php';
         renderTarget.appendChild(fragment);
     }
 
+    // Carga XML y XSL en paralelo para acelerar el primer render.
     Promise.all([
         fetch(xmlUrl).then(function (r) { return r.text(); }),
         fetch(xslUrl).then(function (r) { return r.text(); })
@@ -209,9 +227,7 @@ require __DIR__ . '/../includes/header.php';
             throw new Error('No hay temporadas disponibles');
         }
 
-        var temporadaNode = Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).find(function (node) {
-            return (node.getAttribute('id') || '') === selectedSeasonId;
-        }) || null;
+        var temporadaNode = getTemporadaNode(xmlDoc, selectedSeasonId);
 
         var jornadas = getJornadas(temporadaNode);
         var selectedJornadaNumero = getSelectedJornadaNumero(jornadas);
@@ -223,13 +239,12 @@ require __DIR__ . '/../includes/header.php';
         updateHeaderJornadaName(selectedJornadaNumero);
         renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedJornada ? selectedJornada.fecha : '');
 
+        // Cambio de temporada: recalcula jornadas y actualiza URL sin recargar.
         seasonForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
             var nextSeasonId = seasonSelect.value;
 
-            var nextTemporadaNode = Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).find(function (node) {
-                return (node.getAttribute('id') || '') === nextSeasonId;
-            }) || null;
+            var nextTemporadaNode = getTemporadaNode(xmlDoc, nextSeasonId);
 
             var nextJornadas = getJornadas(nextTemporadaNode);
             var nextSelectedJornadaNumero = nextJornadas.length > 0 ? nextJornadas[0].numero : 0;
@@ -252,13 +267,12 @@ require __DIR__ . '/../includes/header.php';
             window.history.replaceState({}, '', nextUrl.toString());
         });
 
+        // Cambio de jornada dentro de la temporada actualmente seleccionada.
         jornadaForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
 
             var currentSeasonId = seasonSelect.value;
-            var currentTemporadaNode = Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).find(function (node) {
-                return (node.getAttribute('id') || '') === currentSeasonId;
-            }) || null;
+            var currentTemporadaNode = getTemporadaNode(xmlDoc, currentSeasonId);
             var currentJornadas = getJornadas(currentTemporadaNode);
 
             var nextJornadaNumero = parseInt(jornadaSelect.value, 10);
@@ -284,6 +298,7 @@ require __DIR__ . '/../includes/header.php';
             window.history.replaceState({}, '', nextUrl.toString());
         });
     }).catch(function (err) {
+        // Estado de error: oculta contenido y muestra mensaje detallado.
         renderTarget.style.display = 'none';
         errorTarget.style.display = 'block';
 

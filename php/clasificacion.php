@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+// Vista de clasificacion: prepara la pagina y el estado de temporada activa.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
+// Se usa para sincronizar cliente con la temporada guardada en sesion.
 $pageTitle = 'Clasificacion | FEDERACIÃ“N FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
@@ -80,24 +83,29 @@ require __DIR__ . '/../includes/header.php';
 
 <script>
 (function () {
+    // Rutas de datos base para renderizar la clasificacion en cliente.
     var xmlUrl = '../data/datos.xml';
     var xslUrl = '../data/xsl/clasificacion.xsl';
     var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
 
+    // Referencias a nodos del DOM que se actualizan durante el flujo.
     var renderTarget = document.getElementById('clasificacion_render');
     var errorTarget = document.getElementById('clasificacion_error');
     var seasonName = document.getElementById('temporada_nombre');
     var seasonSelect = document.getElementById('temporada_id');
     var seasonForm = document.getElementById('season_form');
 
+    // Parseador XML para documentos de datos y de estilo.
     function parseXml(text) {
         return new window.DOMParser().parseFromString(text, 'text/xml');
     }
 
+    // Detecta errores de parseo generados por el navegador.
     function hasXmlError(doc) {
         return doc.getElementsByTagName('parsererror').length > 0;
     }
 
+    // Extrae temporadas disponibles desde el XML principal.
     function getTemporadas(xmlDoc) {
         return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
             return {
@@ -108,6 +116,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Prioridad de seleccion: query string, sesion y luego temporada actual del XML.
     function getSelectedSeasonId(temporadas) {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('temporada_id');
@@ -127,6 +136,7 @@ require __DIR__ . '/../includes/header.php';
         return temporadas.length > 0 ? temporadas[0].id : '';
     }
 
+    // Rellena el selector visual de temporadas en cabecera de panel.
     function fillSeasonSelect(temporadas, selectedId) {
         seasonSelect.innerHTML = '';
         temporadas.forEach(function (temp) {
@@ -140,11 +150,13 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Actualiza texto de temporada actualmente mostrada.
     function updateHeaderSeasonName(temporadas, selectedId) {
         var found = temporadas.find(function (t) { return t.id === selectedId; });
         seasonName.textContent = found ? found.nombre : 'No disponible';
     }
 
+    // Aplica XSLT con parametro de temporada y reemplaza el contenido renderizado.
     function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
         var processor = new window.XSLTProcessor();
         processor.importStylesheet(xslDoc);
@@ -155,6 +167,7 @@ require __DIR__ . '/../includes/header.php';
         renderTarget.appendChild(fragment);
     }
 
+    // Carga XML y XSL en paralelo para reducir tiempo de espera.
     Promise.all([
         fetch(xmlUrl).then(function (r) { return r.text(); }),
         fetch(xslUrl).then(function (r) { return r.text(); })
@@ -177,6 +190,7 @@ require __DIR__ . '/../includes/header.php';
         updateHeaderSeasonName(temporadas, selectedSeasonId);
         renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
 
+        // Cambio de temporada sin recargar pagina; solo rerender y URL.
         seasonForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
             var nextSeasonId = seasonSelect.value;
@@ -188,6 +202,7 @@ require __DIR__ . '/../includes/header.php';
             window.history.replaceState({}, '', nextUrl.toString());
         });
     }).catch(function (err) {
+        // Fallback de error: oculta tabla y muestra mensaje detallado.
         renderTarget.style.display = 'none';
         errorTarget.style.display = 'block';
 

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// Portada principal: calcula resumenes y destacados de la temporada activa.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
 $pageTitle = 'Inicio | FEDERACIÃ“N FUTSAL';
@@ -27,6 +29,7 @@ $ciudadesSede = [];
 $promedioJugadoresEquipo = 0.0;
 
 try {
+    // Carga de datos base de la temporada activa para construir la portada.
     $xml = load_liga_xml();
     $temporada = get_temporada_actual($xml);
     $temporadaNombre = (string) $temporada['nombre'];
@@ -41,18 +44,22 @@ try {
     $resumen['jugadores'] = count($jugadores);
     $resumen['noticias'] = count($noticias);
     $resumen['lider'] = $clasificacion[0]['nombre'] ?? 'Pendiente';
+    // Recortes para mostrar solo datos clave en widgets de inicio.
     $topClasificacion = array_slice($clasificacion, 0, 5);
     $ultimosMarcadores = array_slice($partidosRecientes, 0, 6);
     $promedioJugadoresEquipo = $resumen['equipos'] > 0 ? ($resumen['jugadores'] / $resumen['equipos']) : 0.0;
 
+    // Partido mas reciente para el bloque de foco narrativo.
     $dueloDestacado = $partidosRecientes[0] ?? null;
 
+    // Ranking auxiliar para identificar mejor ataque de la temporada.
     $ataques = $clasificacion;
     usort($ataques, static function (array $a, array $b): int {
         return [$b['gf'], $a['nombre']] <=> [$a['gf'], $b['nombre']];
     });
     $mejorAtaque = $ataques[0] ?? null;
 
+    // Ranking auxiliar para identificar defensa mas solida.
     $defensas = $clasificacion;
     usort($defensas, static function (array $a, array $b): int {
         return [$a['gc'], $a['nombre']] <=> [$b['gc'], $b['nombre']];
@@ -67,6 +74,7 @@ try {
         'Otros' => 0,
     ];
 
+    // Conteo de distribucion por posicion para el grafico de barras.
     foreach ($jugadores as $jugador) {
         $posicion = trim((string) ($jugador['posicion'] ?? ''));
         if (isset($conteoPosiciones[$posicion])) {
@@ -77,6 +85,7 @@ try {
         $conteoPosiciones['Otros']++;
     }
 
+    // Se calcula porcentaje por posicion respecto al total de plantilla.
     foreach ($conteoPosiciones as $posicion => $total) {
         if ($total <= 0) {
             continue;
@@ -89,10 +98,12 @@ try {
         ];
     }
 
+    // Orden visual descendente por numero de jugadores.
     usort($resumenPosiciones, static function (array $a, array $b): int {
         return [$b['total'], $a['nombre']] <=> [$a['total'], $b['nombre']];
     });
 
+    // Titulares cortos para lectura rapida en la tarjeta principal.
     if ($dueloDestacado !== null) {
         $microTitulares[] = $dueloDestacado['local'] . ' y ' . $dueloDestacado['visitante'] . ' firmaron el ' . $dueloDestacado['marcador'] . ' mas reciente.';
     }
@@ -113,6 +124,7 @@ try {
     $maxGolesPartido = -1;
     $partidoEspectaculo = null;
 
+    // Acumula metricas globales a partir de los partidos disponibles.
     foreach ($partidosRecientes as $partidoReciente) {
         $totalPartidos++;
         $golesLocal = (int) $partidoReciente['goles_local'];
@@ -134,6 +146,7 @@ try {
         }
     }
 
+    // Media con formato fijo para presentacion en UI.
     $mediaGoles = $totalPartidos > 0 ? number_format($totalGoles / $totalPartidos, 2, '.', '') : '0.00';
 
     if ($partidoEspectaculo !== null) {
@@ -142,6 +155,7 @@ try {
         $partidoShow = 'Sin datos';
     }
 
+    // Dataset final para la tarjeta de metricas de competicion.
     $metricasCompeticion = [
         ['etiqueta' => 'Partidos disputados', 'valor' => (string) $totalPartidos],
         ['etiqueta' => 'Goles totales', 'valor' => (string) $totalGoles],
@@ -152,6 +166,7 @@ try {
         ['etiqueta' => 'Partido mas abierto', 'valor' => $partidoShow],
     ];
 
+    // Conjunto unico de ciudades sede para pintarlas como etiquetas.
     $ciudadesIndexadas = [];
     foreach ($equipos as $equipo) {
         $ciudad = trim((string) ($equipo['ciudad'] ?? ''));
@@ -164,6 +179,7 @@ try {
     $ciudadesSede = array_keys($ciudadesIndexadas);
     sort($ciudadesSede);
 
+    // Accesos directos de portada con resumen contextual por modulo.
     $apartados = [
         [
             'titulo' => 'Clasificación',
@@ -197,12 +213,14 @@ try {
         ],
     ];
 } catch (Throwable $ex) {
+    // Se degrada la portada mostrando el error capturado.
     $error = $ex->getMessage();
 }
 
 require __DIR__ . '/../includes/header.php';
 ?>
 
+<!-- Main: Portada analitica con resumenes y paneles de contexto -->
 <main class="page page-start">
     <section class="panel hero-panel">
         <div>
@@ -212,6 +230,7 @@ require __DIR__ . '/../includes/header.php';
         </div>
 
         <?php if ($error === null): ?>
+            <!-- KPI iniciales para lectura rapida de estado de temporada -->
             <div class="hero-stats" aria-label="Resumen general">
                 <div class="hero-stat">
                     <strong>Equipos</strong>
@@ -234,12 +253,14 @@ require __DIR__ . '/../includes/header.php';
     </section>
 
     <?php if ($error !== null): ?>
+        <!-- Error de carga de XML o de construccion de datos de portada -->
         <section class="panel">
             <article class="panel-error">
                 <p><?php echo e($error); ?></p>
             </article>
         </section>
     <?php else: ?>
+        <!-- Seccion de insights: narrativa corta + distribucion por posiciones -->
         <section class="panel start-insights" aria-label="Radar de temporada">
             <article class="insight-card insight-card-spotlight">
                 <p class="insight-kicker">Radar competitivo</p>

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// Inicializacion comun: carga utilidades, arranca sesion y helpers compartidos.
+
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/xml.php';
 require_once __DIR__ . '/app_context.php';

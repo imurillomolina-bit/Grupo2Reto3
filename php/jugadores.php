@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+// Vista de listado de jugadores con soporte de cambio de temporada.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
+// Temporada de sesion para precargar la seleccion en cliente.
 $pageTitle = 'Jugadores | FEDERACION FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
@@ -41,24 +44,29 @@ require __DIR__ . '/../includes/header.php';
 
 <script>
 (function () {
+    // Fuentes de datos para transformar XML a HTML mediante XSLT.
     var xmlUrl = '../data/datos.xml';
     var xslUrl = '../data/xsl/jugadores.xsl';
     var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
 
+    // Referencias a nodos que se actualizan durante la carga/render.
     var renderTarget = document.getElementById('jugadores_render');
     var errorTarget = document.getElementById('jugadores_error');
     var seasonName = document.getElementById('temporada_nombre');
     var seasonSelect = document.getElementById('temporada_id');
     var seasonForm = document.getElementById('season_form');
 
+    // Convierte texto a documento XML/XSL.
     function parseXml(text) {
         return new window.DOMParser().parseFromString(text, 'text/xml');
     }
 
+    // Detecta parseos fallidos del navegador.
     function hasXmlError(doc) {
         return doc.getElementsByTagName('parsererror').length > 0;
     }
 
+    // Obtiene lista de temporadas para selector y cabecera.
     function getTemporadas(xmlDoc) {
         return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
             return {
@@ -69,6 +77,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Prioridad de temporada: query, sesion, marca actual y primera disponible.
     function getSelectedSeasonId(temporadas) {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('temporada_id');
@@ -88,6 +97,7 @@ require __DIR__ . '/../includes/header.php';
         return temporadas.length > 0 ? temporadas[0].id : '';
     }
 
+    // Construye opciones del select dejando marcada la temporada activa.
     function fillSeasonSelect(temporadas, selectedId) {
         seasonSelect.innerHTML = '';
         temporadas.forEach(function (temp) {
@@ -101,11 +111,13 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Actualiza etiqueta visible con el nombre de temporada seleccionada.
     function updateHeaderSeasonName(temporadas, selectedId) {
         var found = temporadas.find(function (t) { return t.id === selectedId; });
         seasonName.textContent = found ? found.nombre : 'No disponible';
     }
 
+    // Renderiza listado de jugadores aplicando plantilla XSL y parametros.
     function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
         var processor = new window.XSLTProcessor();
         processor.importStylesheet(xslDoc);
@@ -117,9 +129,11 @@ require __DIR__ . '/../includes/header.php';
         renderTarget.appendChild(fragment);
     }
 
+    // Estrategia de imagen: probar rutas candidatas y caer a avatar dinamico.
     function applyPlayerImageFallback(root) {
         var images = root.querySelectorAll('img');
 
+        // Normaliza orden a dos digitos para componer nombre de archivo.
         function pad2(value) {
             var n = String(value || '').trim();
             if (n.length === 1) {
@@ -128,6 +142,7 @@ require __DIR__ . '/../includes/header.php';
             return n;
         }
 
+        // Elimina candidatos repetidos para evitar peticiones redundantes.
         function unique(values) {
             var out = [];
             values.forEach(function (v) {
@@ -138,6 +153,7 @@ require __DIR__ . '/../includes/header.php';
             return out;
         }
 
+        // Intenta cada ruta en cadena y termina en avatar si fallan todas.
         images.forEach(function (img) {
             var alt = (img.getAttribute('alt') || '').trim();
             var nombre = alt.replace(/^Foto de\s+/i, '').trim();
@@ -169,6 +185,7 @@ require __DIR__ . '/../includes/header.php';
 
             var idx = 0;
             img.onerror = function () {
+                // Pasa al siguiente candidato o aplica fallback final.
                 idx += 1;
                 if (idx < candidates.length) {
                     this.src = candidates[idx];
@@ -183,6 +200,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Carga XML y XSL en paralelo para reducir latencia inicial.
     Promise.all([
         fetch(xmlUrl).then(function (r) { return r.text(); }),
         fetch(xslUrl).then(function (r) { return r.text(); })
@@ -206,6 +224,7 @@ require __DIR__ . '/../includes/header.php';
         renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
         applyPlayerImageFallback(renderTarget);
 
+        // Cambio de temporada en caliente, limpiando id de jugador en URL.
         seasonForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
             var nextSeasonId = seasonSelect.value;
@@ -220,6 +239,7 @@ require __DIR__ . '/../includes/header.php';
             window.history.replaceState({}, '', nextUrl.toString());
         });
     }).catch(function (err) {
+        // Muestra mensaje de error cuando falla carga o transformacion.
         renderTarget.style.display = 'none';
         errorTarget.style.display = 'block';
 

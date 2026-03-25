@@ -2,11 +2,15 @@
 
 declare(strict_types=1);
 
+// Plantilla de cabecera: titulo, mensajes flash y selector global de temporada.
+
 $currentPageTitle = $pageTitle ?? 'FEDERACIÃ“N FUTSAL';
+// Se leen mensajes flash de sesion y se consumen para no repetirlos.
 $flashError = $_SESSION['flash_error'] ?? null;
 $flashSuccess = $_SESSION['flash_success'] ?? null;
 unset($_SESSION['flash_error'], $_SESSION['flash_success']);
 
+// Carga de temporadas para mostrar la activa en cabecera.
 $temporadasHeader = [];
 try {
     $xmlHeader = load_liga_xml();
@@ -17,6 +21,7 @@ try {
 
 $temporadaActualNombre = 'No disponible';
 $temporadaActualId = (string) ($_SESSION['temporada_actual'] ?? '');
+// Busca el nombre legible de la temporada guardada en sesion.
 foreach ($temporadasHeader as $temporadaItem) {
     if (($temporadaItem['id'] ?? '') === $temporadaActualId) {
         $temporadaActualNombre = (string) ($temporadaItem['nombre'] ?? 'No disponible');
@@ -24,16 +29,19 @@ foreach ($temporadasHeader as $temporadaItem) {
     }
 }
 
+// Si no hay coincidencia, usa la primera temporada disponible como respaldo.
 if ($temporadaActualNombre === 'No disponible' && $temporadasHeader !== []) {
     $temporadaActualNombre = (string) ($temporadasHeader[0]['nombre'] ?? 'No disponible');
 }
 
+// Ajusta rutas relativas segun si estamos en /php o en la raiz del proyecto.
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $isPhpPage = str_ends_with($scriptDir, '/php');
 $assetPrefix = $isPhpPage ? '../' : '';
 $pagePrefix = $isPhpPage ? '' : 'php/';
 $stylesVersion = (string) (@filemtime(__DIR__ . '/../css/styles.css') ?: time());
 $clasificacionPath = $isPhpPage ? 'clasificacion.php' : 'php/clasificacion.php';
+// Estado de sesion para condicionar chips, rol y enlaces de acceso/salida.
 $sessionUser = trim((string) ($_SESSION['user'] ?? ''));
 $sessionRole = trim((string) ($_SESSION['rol'] ?? ''));
 $showSessionChip = $sessionUser !== '' || $sessionRole !== '';
@@ -105,6 +113,7 @@ $showLogoutLink = $showSessionChip;
 
     <script>
     (function () {
+        // Toggle basico para menu responsive en movil.
         var btn = document.querySelector('.nav-toggle');
         var nav = document.getElementById('main-nav');
         if (!btn || !nav) return;

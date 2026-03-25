@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+// Vista de detalle de equipo con datos filtrados por temporada seleccionada.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
+// Estado inicial recibido desde sesion y query para sincronizar la vista.
 $pageTitle = 'Detalle de equipo | FEDERACIÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 $equipoIdRaw = filter_input(INPUT_GET, 'id', FILTER_UNSAFE_RAW);
@@ -45,11 +48,13 @@ require __DIR__ . '/../includes/header.php';
 
 <script>
 (function () {
+    // Recursos fuente para renderizar equipos mediante XSLT en cliente.
     var xmlUrl = '../data/datos.xml';
     var xslUrl = '../data/xsl/equipos.xsl';
     var temporadaSesion = '<?php echo e($temporadaSesion); ?>';
     var equipoIdInicial = '<?php echo e($equipoId); ?>';
 
+    // Nodos del DOM que se actualizan durante la carga y filtrado.
     var renderTarget = document.getElementById('equipos_render');
     var errorTarget = document.getElementById('equipos_error');
     var titleTarget = document.getElementById('equipos_titulo');
@@ -57,14 +62,17 @@ require __DIR__ . '/../includes/header.php';
     var seasonSelect = document.getElementById('temporada_id');
     var seasonForm = document.getElementById('season_form');
 
+    // Parsea texto XML/XSL a documento DOM.
     function parseXml(text) {
         return new window.DOMParser().parseFromString(text, 'text/xml');
     }
 
+    // Detecta errores de parseo generados por el navegador.
     function hasXmlError(doc) {
         return doc.getElementsByTagName('parsererror').length > 0;
     }
 
+    // Lee temporadas desde el XML para selector y contexto visible.
     function getTemporadas(xmlDoc) {
         return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
             return {
@@ -75,6 +83,7 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Prioriza temporada por query, luego sesion y finalmente marcada como actual.
     function getSelectedSeasonId(temporadas) {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('temporada_id');
@@ -94,6 +103,7 @@ require __DIR__ . '/../includes/header.php';
         return temporadas.length > 0 ? temporadas[0].id : '';
     }
 
+    // Determina equipo objetivo por query y, si no existe, usa el inicial del servidor.
     function getSelectedTeamId() {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('id');
@@ -103,6 +113,7 @@ require __DIR__ . '/../includes/header.php';
         return equipoIdInicial;
     }
 
+    // Rellena el selector de temporada con la opcion activa seleccionada.
     function fillSeasonSelect(temporadas, selectedId) {
         seasonSelect.innerHTML = '';
         temporadas.forEach(function (temp) {
@@ -116,15 +127,18 @@ require __DIR__ . '/../includes/header.php';
         });
     }
 
+    // Refresca el nombre de temporada visible en cabecera del panel.
     function updateHeaderSeasonName(temporadas, selectedId) {
         var found = temporadas.find(function (t) { return t.id === selectedId; });
         seasonName.textContent = found ? found.nombre : 'No disponible';
     }
 
+    // Ajusta el titulo segun se muestre listado completo o ficha de un equipo.
     function updateTitle(teamId) {
         titleTarget.textContent = teamId ? 'Detalle de equipo' : 'Equipos';
     }
 
+    // Aplica la plantilla XSL con parametros de temporada y equipo.
     function renderWithXsl(xmlDoc, xslDoc, temporadaId, equipoId) {
         var processor = new window.XSLTProcessor();
         processor.importStylesheet(xslDoc);
@@ -136,6 +150,7 @@ require __DIR__ . '/../includes/header.php';
         renderTarget.appendChild(fragment);
     }
 
+    // Carga de archivos en paralelo para minimizar espera inicial.
     Promise.all([
         fetch(xmlUrl).then(function (r) { return r.text(); }),
         fetch(xslUrl).then(function (r) { return r.text(); })
@@ -160,6 +175,7 @@ require __DIR__ . '/../includes/header.php';
         updateTitle(selectedTeamId);
         renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedTeamId);
 
+        // Cambio de temporada sin recarga, conservando equipo si aplica.
         seasonForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
             var nextSeasonId = seasonSelect.value;
@@ -177,6 +193,7 @@ require __DIR__ . '/../includes/header.php';
             window.history.replaceState({}, '', nextUrl.toString());
         });
     }).catch(function (err) {
+        // Modo degradado cuando falla XML/XSL o su transformacion.
         renderTarget.style.display = 'none';
         errorTarget.style.display = 'block';
 

@@ -2,11 +2,15 @@
 
 declare(strict_types=1);
 
+// Pagina informativa con normas de uso y criterios de competicion.
+
 require_once __DIR__ . '/../includes/app_init.php';
 
+// Metadatos de la vista y fecha de edicion mostrada en cabecera.
 $pageTitle = 'Normativa | FEDERACIÃ“N FUTSAL';
 $fechaEdicion = date('d/m/Y');
 
+// Bloques de normas que se renderizan en columnas de contenido.
 $normas = [
     [
         'titulo' => 'Sistema de puntos',
@@ -29,6 +33,7 @@ $normas = [
 require __DIR__ . '/../includes/header.php';
 ?>
 
+<!-- Main: Pagina editorial con reglas y recordatorios de la competicion -->
 <main class="page news-page">
     <section class="panel content-panel newsprint-panel">
         <article class="panel-heading newsprint-header">
@@ -38,6 +43,7 @@ require __DIR__ . '/../includes/header.php';
             <p class="newsprint-edition">Edicion digital | <?php echo e($fechaEdicion); ?></p>
         </article>
 
+        <!-- Cuerpo principal: lead informativo, normas y bloque de apoyo -->
         <article class="newsprint-layout" aria-label="Normativa de la liga">
             <section class="news-lead" aria-label="Resumen general de normativa">
                 <p class="news-kicker">Reglamento oficial</p>
@@ -45,6 +51,7 @@ require __DIR__ . '/../includes/header.php';
                 <p class="news-lead-text">Consulta aqui los criterios clave de puntuación, orden de clasificación y uso del portal para esta temporada.</p>
             </section>
 
+            <!-- Lista dinamica de normas principales -->
             <div class="news-columns" aria-label="Normas principales">
                 <?php foreach ($normas as $norma): ?>
                     <article class="news-column-piece">
@@ -54,6 +61,7 @@ require __DIR__ . '/../includes/header.php';
                 <?php endforeach; ?>
             </div>
 
+            <!-- Resumen rapido de criterios de puntuacion y desempate -->
             <aside class="news-briefs" aria-label="Recordatorios rapidos">
                 <h4>Recordatorios</h4>
                 <ul>
