@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Metadatos de la vista y fecha de edicion mostrada en cabecera.
-$pageTitle = 'Normativa | FEDERACIÃ“N FUTSAL';
+$pageTitle = 'Normativa | FEDERACIAÓN FUTSAL';
 $fechaEdicion = date('d/m/Y');
 
 // Bloques de normas que se renderizan en columnas de contenido.

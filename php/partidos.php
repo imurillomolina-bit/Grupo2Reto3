@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Temporada de sesion para iniciar filtros del lado cliente.
-$pageTitle = 'Partidos | FEDERACION FUTSAL';
+$pageTitle = 'Partidos | FEDERACIAÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
 require __DIR__ . '/../includes/header.php';

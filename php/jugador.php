@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Estado inicial de temporada y jugador para hidratar el cliente.
-$pageTitle = 'Ficha de jugador | FEDERACION FUTSAL';
+$pageTitle = 'Ficha de jugador | FEDERACIAÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 $jugadorIdRaw = filter_input(INPUT_GET, 'id', FILTER_UNSAFE_RAW);
 $jugadorId = is_string($jugadorIdRaw) ? trim($jugadorIdRaw) : '';

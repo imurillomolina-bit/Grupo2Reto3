@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../includes/app_init.php';
 
-$pageTitle = 'Inicio | FEDERACIÃ“N FUTSAL';
+$pageTitle = 'Inicio | FEDERACIAÓN FUTSAL';
 
 $error = null;
 $temporadaNombre = 'No disponible';
