@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Se usa para sincronizar cliente con la temporada guardada en sesion.
-$pageTitle = 'Clasificacion | FEDERACIAÓN FUTSAL';
+$pageTitle = 'Clasificacion | FEDERACIÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
 require __DIR__ . '/../includes/header.php';

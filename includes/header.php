@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // Plantilla de cabecera: titulo, mensajes flash y selector global de temporada.
 
-$currentPageTitle = $pageTitle ?? 'FEDERACIÃ“N FUTSAL';
+$currentPageTitle = $pageTitle ?? 'FEDERACIÓN FUTSAL';
 // Se leen mensajes flash de sesion y se consumen para no repetirlos.
 $flashError = $_SESSION['flash_error'] ?? null;
 $flashSuccess = $_SESSION['flash_success'] ?? null;

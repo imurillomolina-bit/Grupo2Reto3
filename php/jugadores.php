@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Temporada de sesion para precargar la seleccion en cliente.
-$pageTitle = 'Jugadores | FEDERACIAÓN FUTSAL';
+$pageTitle = 'Jugadores | FEDERACIÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 
 require __DIR__ . '/../includes/header.php';

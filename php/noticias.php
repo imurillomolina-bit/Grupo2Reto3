@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/app_init.php';
 
 // Variables de estado para controlar carga y render de la portada de noticias.
-$pageTitle = 'Noticias | FEDERACIAÓN FUTSAL';
+$pageTitle = 'Noticias | FEDERACIÓN FUTSAL';
 
 $error = null;
 $temporadaNombre = 'No disponible';

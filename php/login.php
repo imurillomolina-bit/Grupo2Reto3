@@ -51,6 +51,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     // Redirecciones especificas segun perfil.
     if (strcasecmp($rol, 'Admin') === 0) {
         $redirect = 'usuarios.php';
+    } elseif (strcasecmp($rol, 'Manager') === 0) {
+        $redirect = 'inicio.php';
     } elseif (strcasecmp($rol, 'Arbitro') === 0) {
         $redirect = 'partidos.php';
     }
@@ -60,7 +62,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     exit;
 }
 
-$pageTitle = 'Login | FEDERACIÃ“N FUTSAL';
+$pageTitle = 'Login | FEDERACIÓN FUTSAL';
 
 require __DIR__ . '/../includes/header.php';
 ?>

@@ -15,7 +15,7 @@ if (strcasecmp($rolSesion, 'Admin') !== 0) {
 }
 
 // Datos base de la vista: titulo y listado de usuarios disponibles.
-$pageTitle = 'Usuarios | FEDERACIAÓN FUTSAL';
+$pageTitle = 'Usuarios | FEDERACIÓN FUTSAL';
 $users = get_users();
 
 require __DIR__ . '/../includes/header.php';
