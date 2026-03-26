@@ -33,8 +33,8 @@
                         <p class="meta">Temporada: <xsl:value-of select="$temporada/@nombre"/></p>
                         <h2><xsl:value-of select="$equipoSeleccionado/nombre"/></h2>
                         <p><xsl:value-of select="$equipoSeleccionado/descripcion"/></p>
-                        <p><strong>Estadio:</strong> <xsl:value-of select="$equipoSeleccionado/estadio"/></p>
-                        <p><strong>Ciudad:</strong> <xsl:value-of select="$equipoSeleccionado/ciudad"/></p>
+                        <p><strong>Estadio: </strong> <xsl:value-of select="$equipoSeleccionado/estadio"/></p>
+                        <p><strong>Ciudad: </strong> <xsl:value-of select="$equipoSeleccionado/ciudad"/></p>
                         <p>
                             <a href="partidos.php?equipo_id={$equipoSeleccionado/@id}">Ver partidos de este equipo</a>
                         </p>

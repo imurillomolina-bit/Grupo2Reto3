@@ -592,7 +592,7 @@ a {
 }
 
 .team-summary-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 
 .player-spotlight-grid {
@@ -1008,6 +1008,16 @@ table tr .tdNombreEquipo {
     margin: 0;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+}
+.team-headline p a {
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.team-headline p a:hover {
+    color: red;
+    font-weight: 700;
 }
 
 .meta {
