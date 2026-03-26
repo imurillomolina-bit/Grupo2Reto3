@@ -66,3 +66,70 @@ function set_guest_session(): void
     }
 }
 
+function get_login_log_path(): string
+{
+    return __DIR__ . '/../data/login_events.json';
+}
+
+function read_login_events(): array
+{
+    $logPath = get_login_log_path();
+    if (!is_file($logPath)) {
+        return [];
+    }
+
+    $raw = file_get_contents($logPath);
+    if ($raw === false || trim($raw) === '') {
+        return [];
+    }
+
+    $decoded = json_decode($raw, true);
+    if (!is_array($decoded)) {
+        return [];
+    }
+
+    $events = [];
+    foreach ($decoded as $item) {
+        if (!is_array($item)) {
+            continue;
+        }
+
+        $events[] = [
+            'usuario' => (string) ($item['usuario'] ?? ''),
+            'rol' => (string) ($item['rol'] ?? ''),
+            'fecha_hora' => (string) ($item['fecha_hora'] ?? ''),
+        ];
+    }
+
+    return $events;
+}
+
+function register_login_event(string $usuario, string $rol): void
+{
+    $usuario = trim($usuario);
+    $rol = trim($rol);
+    if ($usuario === '' || $rol === '') {
+        return;
+    }
+
+    $events = read_login_events();
+    $events[] = [
+        'usuario' => $usuario,
+        'rol' => $rol,
+        'fecha_hora' => date('Y-m-d H:i:s'),
+    ];
+
+    // Limita tamano para evitar crecimiento indefinido del archivo.
+    if (count($events) > 500) {
+        $events = array_slice($events, -500);
+    }
+
+    $logPath = get_login_log_path();
+    $json = json_encode($events, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    if ($json === false) {
+        return;
+    }
+
+    file_put_contents($logPath, $json, LOCK_EX);
+}
+

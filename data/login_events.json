@@ -1,0 +1,22 @@
+[
+    {
+        "usuario": "Manager",
+        "rol": "Manager",
+        "fecha_hora": "2026-03-26 09:40:06"
+    },
+    {
+        "usuario": "Visitante",
+        "rol": "Invitado",
+        "fecha_hora": "2026-03-26 09:40:13"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-03-26 09:40:27"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-03-26 12:41:51"
+    }
+]

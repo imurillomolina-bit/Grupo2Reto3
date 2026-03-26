@@ -15,6 +15,7 @@ $_SESSION['nombre_usuario'] = 'Visitante';
 $_SESSION['user'] = 'Visitante';
 $_SESSION['rol'] = 'Invitado';
 $_SESSION['flash_success'] = 'Sesion iniciada como invitado.';
+register_login_event('Visitante', 'Invitado');
 
 header('Location: inicio.php');
 exit;

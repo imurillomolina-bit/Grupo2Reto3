@@ -43,6 +43,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     $_SESSION['user'] = $loginData['nombre'];
     $_SESSION['rol'] = $loginData['rol'];
     $_SESSION['flash_success'] = 'Sesion iniciada correctamente.';
+    register_login_event((string) $loginData['nombre'], (string) $loginData['rol']);
 
     // Destino por defecto tras login correcto.
     $rol = trim((string) $loginData['rol']);

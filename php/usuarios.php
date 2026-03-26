@@ -17,6 +17,10 @@ if (strcasecmp($rolSesion, 'Admin') !== 0) {
 // Datos base de la vista: titulo y listado de usuarios disponibles.
 $pageTitle = 'Usuarios | FEDERACIÓN FUTSAL';
 $users = get_users();
+$loginEvents = read_login_events();
+if ($loginEvents !== []) {
+    $loginEvents = array_reverse($loginEvents);
+}
 
 require __DIR__ . '/../includes/header.php';
 ?>
@@ -49,6 +53,35 @@ require __DIR__ . '/../includes/header.php';
                 <?php endforeach; ?>
                 </tbody>
             </table>
+        </article>
+
+        <article class="panel-heading">
+            <h2>Ultimos inicios de sesion</h2>
+        </article>
+
+        <article class="matches-wrap" aria-label="Historial de inicios de sesion">
+            <?php if ($loginEvents === []): ?>
+                <p>No hay inicios de sesion registrados todavia.</p>
+            <?php else: ?>
+                <table class="matches-table">
+                    <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Fecha y hora</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($loginEvents as $event): ?>
+                        <tr>
+                            <td><?php echo e((string) ($event['usuario'] ?? 'N/D')); ?></td>
+                            <td><?php echo e((string) ($event['rol'] ?? 'N/D')); ?></td>
+                            <td><?php echo e((string) ($event['fecha_hora'] ?? 'N/D')); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
         </article>
     </section>
 </main>
