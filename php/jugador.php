@@ -21,11 +21,13 @@ require __DIR__ . '/../includes/header.php';
             <h2>Ficha de jugador</h2>
             <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
-            <form class="season-form" id="season_form" action="#" method="get">
-                <label for="temporada_id">Cambiar temporada</label>
-                <select id="temporada_id" name="temporada_id" required></select>
-                <button type="submit">Cambiar</button>
-            </form>
+            <?php if ($jugadorId === ''): ?>
+                <form class="season-form" id="season_form" action="#" method="get">
+                    <label for="temporada_id">Cambiar temporada</label>
+                    <select id="temporada_id" name="temporada_id" required></select>
+                    <button type="submit">Cambiar</button>
+                </form>
+            <?php endif; ?>
         </article>
 
         <article id="jugador_render" class="player-basic-detail" aria-label="Ficha de jugador">

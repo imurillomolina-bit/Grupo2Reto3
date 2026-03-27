@@ -286,22 +286,24 @@
             updateTitle(selectedTeamId);
             renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedTeamId);
 
-            seasonForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
-                var nextSeasonId = seasonSelect.value;
-                var currentTeamId = getSelectedTeamId();
+            if (seasonForm && seasonSelect) {
+                seasonForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+                    var nextSeasonId = seasonSelect.value;
+                    var currentTeamId = getSelectedTeamId();
 
-                renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentTeamId);
-                updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
-                updateTitle(currentTeamId);
+                    renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentTeamId);
+                    updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                    updateTitle(currentTeamId);
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                if (currentTeamId) {
-                    nextUrl.searchParams.set('id', currentTeamId);
-                }
-                window.history.replaceState({}, '', nextUrl.toString());
-            });
+                    var nextUrl = new URL(window.location.href);
+                    nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                    if (currentTeamId) {
+                        nextUrl.searchParams.set('id', currentTeamId);
+                    }
+                    window.history.replaceState({}, '', nextUrl.toString());
+                });
+            }
         }).catch(function (err) {
             renderTarget.style.display = 'none';
             errorTarget.style.display = 'block';
@@ -375,22 +377,24 @@
             renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedPlayerId);
             applyPlayerImageFallback(renderTarget);
 
-            seasonForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
-                var nextSeasonId = seasonSelect.value;
-                var currentPlayerId = getSelectedPlayerId();
+            if (seasonForm && seasonSelect) {
+                seasonForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+                    var nextSeasonId = seasonSelect.value;
+                    var currentPlayerId = getSelectedPlayerId();
 
-                renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentPlayerId);
-                updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
-                applyPlayerImageFallback(renderTarget);
+                    renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentPlayerId);
+                    updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                    applyPlayerImageFallback(renderTarget);
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                if (currentPlayerId) {
-                    nextUrl.searchParams.set('id', currentPlayerId);
-                }
-                window.history.replaceState({}, '', nextUrl.toString());
-            });
+                    var nextUrl = new URL(window.location.href);
+                    nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                    if (currentPlayerId) {
+                        nextUrl.searchParams.set('id', currentPlayerId);
+                    }
+                    window.history.replaceState({}, '', nextUrl.toString());
+                });
+            }
         }).catch(function (err) {
             renderTarget.style.display = 'none';
             errorTarget.style.display = 'block';
