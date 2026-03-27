@@ -370,9 +370,13 @@ a {
 .start-insights {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1.35fr 1fr;
+    grid-template-columns: 1fr;
     padding: 1rem;
     background: linear-gradient(155deg, rgba(255, 255, 255, 0.97), rgba(230, 242, 255, 0.92));
+}
+
+.insight-card-spotlight {
+    min-height: 260px;
 }
 
 .insight-card {
@@ -1029,7 +1033,7 @@ table tr .tdNombreEquipo {
 .player-grid {
     display: grid;
     gap: 0.9rem;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .player-card {
@@ -1057,7 +1061,6 @@ table tr .tdNombreEquipo {
 
 .player-card img {
     width: 100%;
-    aspect-ratio: 4 / 3;
     object-fit: cover;
     background: #dfeeff;
 }

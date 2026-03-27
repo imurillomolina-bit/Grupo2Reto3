@@ -268,7 +268,7 @@ require __DIR__ . '/../includes/header.php';
 
                 <?php if ($dueloDestacado !== null): ?>
                     <p class="insight-highlight">
-                        Duelo mas reciente: <strong><?php echo e($dueloDestacado['local']); ?></strong>
+                        Partido mas reciente: <strong><?php echo e($dueloDestacado['local']); ?></strong>
                         <span><?php echo e($dueloDestacado['marcador']); ?></span>
                         <strong><?php echo e($dueloDestacado['visitante']); ?></strong>
                     </p>
@@ -283,32 +283,12 @@ require __DIR__ . '/../includes/header.php';
                 <?php endif; ?>
             </article>
 
-            <article class="insight-card insight-card-positions">
-                <p class="insight-kicker">Mapa de plantilla</p>
-                <h3>Reparto por posicion</h3>
-
-                <?php if ($resumenPosiciones === []): ?>
-                    <p>No hay datos de posiciones para esta temporada.</p>
-                <?php else: ?>
-                    <div class="position-bars">
-                        <?php foreach ($resumenPosiciones as $posicion): ?>
-                            <div class="position-row">
-                                <span class="position-name"><?php echo e($posicion['nombre']); ?></span>
-                                <div class="position-track" aria-hidden="true">
-                                    <span style="width: <?php echo (int) $posicion['porcentaje']; ?>%;"></span>
-                                </div>
-                                <span class="position-count"><?php echo (int) $posicion['total']; ?></span>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-            </article>
         </section>
 
         <section class="panel start-data-grid" aria-label="Datos competitivos ampliados">
             <article class="data-card">
                 <p class="insight-kicker">Zona alta</p>
-                <h3>Top 5 de clasificacion</h3>
+                <h3>Top 5 de clasificación</h3>
 
                 <?php if ($topClasificacion === []): ?>
                     <p>No hay tabla disponible para esta temporada.</p>
@@ -362,7 +342,6 @@ require __DIR__ . '/../includes/header.php';
                     <ul class="score-list">
                         <?php foreach ($ultimosMarcadores as $marcador): ?>
                             <li>
-                                <span><?php echo e($marcador['fecha']); ?></span>
                                 <strong><?php echo e($marcador['local']); ?> <?php echo e($marcador['marcador']); ?> <?php echo e($marcador['visitante']); ?></strong>
                             </li>
                         <?php endforeach; ?>
@@ -371,19 +350,26 @@ require __DIR__ . '/../includes/header.php';
             </article>
 
             <article class="data-card">
-                <p class="insight-kicker">Mapa de sedes</p>
-                <h3>Territorios y densidad de plantilla</h3>
-                <p>Promedio de jugadores por equipo: <strong><?php echo number_format($promedioJugadoresEquipo, 1, '.', ''); ?></strong></p>
-
-                <?php if ($ciudadesSede === []): ?>
-                    <p>No hay ciudades registradas.</p>
-                <?php else: ?>
-                    <div class="city-tags" aria-label="Ciudades con equipos">
-                        <?php foreach ($ciudadesSede as $ciudad): ?>
-                            <span><?php echo e($ciudad); ?></span>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+                <p class="insight-kicker">Resumen rapido</p>
+                <h3>Datos clave de temporada</h3>
+                <ul class="metric-list">
+                    <li>
+                        <span>Temporada</span>
+                        <strong><?php echo e($temporadaNombre); ?></strong>
+                    </li>
+                    <li>
+                        <span>Equipos registrados</span>
+                        <strong><?php echo (int) $resumen['equipos']; ?></strong>
+                    </li>
+                    <li>
+                        <span>Jugadores registrados</span>
+                        <strong><?php echo (int) $resumen['jugadores']; ?></strong>
+                    </li>
+                    <li>
+                        <span>Promedio por equipo</span>
+                        <strong><?php echo number_format($promedioJugadoresEquipo, 1, '.', ''); ?></strong>
+                    </li>
+                </ul>
             </article>
         </section>
 

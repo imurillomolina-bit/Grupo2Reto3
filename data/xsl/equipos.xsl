@@ -7,6 +7,12 @@
     <xsl:template match="/">
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
         <xsl:variable name="equipoSeleccionado" select="$temporada/equipos/equipo[@id=$equipoId]"/>
+        <xsl:variable name="rutaFotos">
+            <xsl:choose>
+                <xsl:when test="$temporadaId = '2026-2027'">../img/Jugadores2026_2027</xsl:when>
+                <xsl:otherwise>../img/Jugadores2024_2025</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
         <xsl:choose>
             <xsl:when test="not($temporada)">
@@ -49,7 +55,7 @@
                     <div class="player-grid">
                         <xsl:for-each select="$equipoSeleccionado/jugadores/jugador">
                             <figure class="player-card">
-                                <img src="../img/Jugadores2024_2025/J{$equipoSeleccionado/@id}00000{orden}.png" alt="Foto de {nombre}"/>
+                                <img src="{$rutaFotos}/{foto}" alt="Foto de {nombre}"/>
                                 <figcaption>
                                     <strong><xsl:value-of select="nombre"/></strong>
                                     <span><xsl:value-of select="posicion"/></span>

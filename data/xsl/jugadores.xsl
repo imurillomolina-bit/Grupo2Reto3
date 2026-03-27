@@ -19,6 +19,12 @@
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
         <xsl:variable name="jugadorSeleccionado" select="$temporada/equipos/equipo/jugadores/jugador[@id=$jugadorId]"/>
         <xsl:variable name="equipoJugador" select="$temporada/equipos/equipo[jugadores/jugador[@id=$jugadorId]]"/>
+        <xsl:variable name="rutaFotos">
+            <xsl:choose>
+                <xsl:when test="$temporadaId = '2026-2027'">../img/Jugadores2026_2027</xsl:when>
+                <xsl:otherwise>../img/Jugadores2024_2025</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
         <xsl:choose>
             <xsl:when test="not($temporada)">
@@ -41,7 +47,7 @@
                 <article class="player-basic-detail">
                     <div class="player-basic-layout">
                         <aside class="player-basic-media">
-                            <img class="player-basic-photo" src="{$jugadorSeleccionado/foto}" alt="Foto de {$jugadorSeleccionado/nombre}" data-equipo-id="{$equipoJugador/@id}" data-orden-jugador="{$ordenJugador}"/>
+                            <img class="player-basic-photo" src="{$rutaFotos}/{$jugadorSeleccionado/foto}" alt="Foto de {$jugadorSeleccionado/nombre}" data-equipo-id="{$equipoJugador/@id}" data-orden-jugador="{$ordenJugador}"/>
                         </aside>
 
                         <div class="player-basic-content">
@@ -125,7 +131,7 @@
                         <xsl:for-each select="jugadores/jugador">
                             <figure class="player-card spotlight-card">
                                 <a class="player-image-link" href="jugador.php?id={@id}&amp;temporada_id={$temporadaId}" aria-label="Ver ficha de {nombre}">
-                                    <img src="{foto}" alt="Foto de {nombre}" data-equipo-id="{$equipoId}" data-orden-jugador="{position()}"/>
+                                    <img src="{$rutaFotos}/{foto}" alt="Foto de {nombre}" data-equipo-id="{$equipoId}" data-orden-jugador="{position()}"/>
                                 </a>
                                 <figcaption>
                                     <strong class="player-card-name">

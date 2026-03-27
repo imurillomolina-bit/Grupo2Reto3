@@ -18,7 +18,7 @@
               <peso>70.50</peso>
               <altura>1.72</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J10000001.png</foto>
             </jugador>
             <jugador id="1002">
               <nombre>Samuel</nombre>
@@ -28,7 +28,7 @@
               <peso>76.80</peso>
               <altura>1.78</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J10000002.png</foto>
             </jugador>
             <jugador id="1003">
               <nombre>Tomás</nombre>
@@ -38,7 +38,7 @@
               <peso>70.00</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J10000003.png</foto>
             </jugador>
             <jugador id="1004">
               <nombre>Kevin</nombre>
@@ -48,7 +48,7 @@
               <peso>71.20</peso>
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J10000004.png</foto>
             </jugador>
             <jugador id="1005">
               <nombre>Eric</nombre>
@@ -58,7 +58,7 @@
               <peso>79.00</peso>
               <altura>1.81</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J10000005.png</foto>
             </jugador>
             <jugador id="1006">
               <nombre>Ramiro</nombre>
@@ -68,7 +68,7 @@
               <peso>69.80</peso>
               <altura>1.70</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J10000006.png</foto>
             </jugador>
             <jugador id="1007">
               <nombre>Gabriel</nombre>
@@ -78,7 +78,7 @@
               <peso>70.00</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J10000007.png</foto>
             </jugador>
             <jugador id="1008">
               <nombre>Thierry</nombre>
@@ -88,7 +88,7 @@
               <peso>65.00</peso>
               <altura>1.67</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J10000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -107,7 +107,7 @@
               <peso>68.20</peso>
               <altura>1.68</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J20000001.png</foto>
             </jugador>
             <jugador id="1102">
               <nombre>Diego</nombre>
@@ -117,7 +117,7 @@
               <peso>64.00</peso>
               <altura>1.65</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J20000002.png</foto>
             </jugador>
             <jugador id="1103">
               <nombre>Miguel</nombre>
@@ -127,7 +127,7 @@
               <peso>69.10</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J20000003.png</foto>
             </jugador>
             <jugador id="1104">
               <nombre>David</nombre>
@@ -137,7 +137,7 @@
               <peso>67.80</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J20000004.png</foto>
             </jugador>
             <jugador id="1105">
               <nombre>Manuel</nombre>
@@ -147,7 +147,7 @@
               <peso>66.60</peso>
               <altura>1.67</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J20000005.png</foto>
             </jugador>
             <jugador id="1106">
               <nombre>Fabián</nombre>
@@ -157,7 +157,7 @@
               <peso>65.00</peso>
               <altura>1.66</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J20000006.png</foto>
             </jugador>
             <jugador id="1107">
               <nombre>Ramón</nombre>
@@ -167,7 +167,7 @@
               <peso>81.00</peso>
               <altura>1.83</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J20000007.png</foto>
             </jugador>
             <jugador id="1108">
               <nombre>Óliver</nombre>
@@ -177,7 +177,7 @@
               <peso>64.00</peso>
               <altura>1.65</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J20000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -196,7 +196,7 @@
               <peso>74.10</peso>
               <altura>1.75</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J30000001.png</foto>
             </jugador>
             <jugador id="1202">
               <nombre>Fernando</nombre>
@@ -206,7 +206,7 @@
               <peso>77.10</peso>
               <altura>1.80</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J30000002.png</foto>
             </jugador>
             <jugador id="1203">
               <nombre>Nicolás</nombre>
@@ -216,7 +216,7 @@
               <peso>75.60</peso>
               <altura>1.77</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J30000003.png</foto>
             </jugador>
             <jugador id="1204">
               <nombre>Iker</nombre>
@@ -226,7 +226,7 @@
               <peso>76.00</peso>
               <altura>1.79</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J30000004.png</foto>
             </jugador>
             <jugador id="1205">
               <nombre>Rachid</nombre>
@@ -236,7 +236,7 @@
               <peso>72.00</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J30000005.png</foto>
             </jugador>
             <jugador id="1206">
               <nombre>Nuno</nombre>
@@ -246,7 +246,7 @@
               <peso>73.10</peso>
               <altura>1.74</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J30000006.png</foto>
             </jugador>
             <jugador id="1207">
               <nombre>Lorenzo</nombre>
@@ -256,7 +256,7 @@
               <peso>72.20</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J30000007.png</foto>
             </jugador>
             <jugador id="1208">
               <nombre>Carlos</nombre>
@@ -266,7 +266,7 @@
               <peso>79.50</peso>
               <altura>1.82</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J30000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -285,7 +285,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J40000001.png</foto>
             </jugador>
             <jugador id="1302">
               <nombre>Pablo</nombre>
@@ -295,7 +295,7 @@
               <peso>72.00</peso>
               <altura>1.74</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J40000002.png</foto>
             </jugador>
             <jugador id="1303">
               <nombre>Joel</nombre>
@@ -305,7 +305,7 @@
               <peso>63.90</peso>
               <altura>1.64</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J40000003.png</foto>
             </jugador>
             <jugador id="1304">
               <nombre>Unai</nombre>
@@ -315,7 +315,7 @@
               <peso>72.40</peso>
               <altura>1.73</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J40000004.png</foto>
             </jugador>
             <jugador id="1305">
               <nombre>Saúl</nombre>
@@ -325,7 +325,7 @@
               <peso>69.20</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J40000005.png</foto>
             </jugador>
             <jugador id="1306">
               <nombre>Yeray</nombre>
@@ -335,7 +335,7 @@
               <peso>68.00</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J40000006.png</foto>
             </jugador>
             <jugador id="1307">
               <nombre>Patrick</nombre>
@@ -345,7 +345,7 @@
               <peso>74.00</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J40000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -364,7 +364,7 @@
               <peso>72.60</peso>
               <altura>1.74</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J50000001.png</foto>
             </jugador>
             <jugador id="1402">
               <nombre>Andrés</nombre>
@@ -374,7 +374,7 @@
               <peso>69.50</peso>
               <altura>1.70</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J50000002.png</foto>
             </jugador>
             <jugador id="1403">
               <nombre>Marcos</nombre>
@@ -384,7 +384,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J50000003.png</foto>
             </jugador>
             <jugador id="1404">
               <nombre>Matías</nombre>
@@ -394,7 +394,7 @@
               <peso>69.50</peso>
               <altura>1.71</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J50000004.png</foto>
             </jugador>
             <jugador id="1405">
               <nombre>Gonzalo</nombre>
@@ -404,7 +404,7 @@
               <peso>75.40</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J50000005.png</foto>
             </jugador>
             <jugador id="1406">
               <nombre>Rafael</nombre>
@@ -414,7 +414,7 @@
               <peso>80.00</peso>
               <altura>1.81</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J50000006.png</foto>
             </jugador>
             <jugador id="1407">
               <nombre>Arturo</nombre>
@@ -424,7 +424,7 @@
               <peso>66.00</peso>
               <altura>1.66</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J50000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -443,7 +443,7 @@
               <peso>71.30</peso>
               <altura>1.71</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J60000001.png</foto>
             </jugador>
             <jugador id="1502">
               <nombre>Luis</nombre>
@@ -453,7 +453,7 @@
               <peso>68.70</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J60000002.png</foto>
             </jugador>
             <jugador id="1503">
               <nombre>Óscar</nombre>
@@ -463,7 +463,7 @@
               <peso>78.30</peso>
               <altura>1.82</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J60000003.png</foto>
             </jugador>
             <jugador id="1504">
               <nombre>Aaron</nombre>
@@ -473,7 +473,7 @@
               <peso>64.70</peso>
               <altura>1.66</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J60000004.png</foto>
             </jugador>
             <jugador id="1505">
               <nombre>Esteban</nombre>
@@ -483,7 +483,7 @@
               <peso>70.00</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J60000005.png</foto>
             </jugador>
             <jugador id="1506">
               <nombre>Lautaro</nombre>
@@ -493,7 +493,7 @@
               <peso>70.00</peso>
               <altura>1.72</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J60000006.png</foto>
             </jugador>
             <jugador id="1507">
               <nombre>Eder</nombre>
@@ -503,7 +503,7 @@
               <peso>68.40</peso>
               <altura>1.69</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J60000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -522,7 +522,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J70000001.png</foto>
             </jugador>
             <jugador id="1602">
               <nombre>Ismael</nombre>
@@ -532,7 +532,7 @@
               <peso>71.40</peso>
               <altura>1.73</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J70000002.png</foto>
             </jugador>
             <jugador id="1603">
               <nombre>Eneko</nombre>
@@ -542,7 +542,7 @@
               <peso>68.10</peso>
               <altura>1.69</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J70000003.png</foto>
             </jugador>
             <jugador id="1604">
               <nombre>Pedro</nombre>
@@ -552,7 +552,7 @@
               <peso>73.30</peso>
               <altura>1.75</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J70000004.png</foto>
             </jugador>
             <jugador id="1605">
               <nombre>Biel</nombre>
@@ -562,7 +562,7 @@
               <peso>65.00</peso>
               <altura>1.65</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J70000005.png</foto>
             </jugador>
             <jugador id="1606">
               <nombre>Ignacio</nombre>
@@ -572,7 +572,7 @@
               <peso>74.00</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J70000006.png</foto>
             </jugador>
             <jugador id="1607">
               <nombre>Ricardo</nombre>
@@ -582,7 +582,7 @@
               <peso>71.00</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J70000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -601,7 +601,7 @@
               <peso>73.20</peso>
               <altura>1.73</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J80000001.png</foto>
             </jugador>
             <jugador id="1702">
               <nombre>Rubén</nombre>
@@ -611,7 +611,7 @@
               <peso>65.00</peso>
               <altura>1.66</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J80000002.png</foto>
             </jugador>
             <jugador id="1703">
               <nombre>Gael</nombre>
@@ -621,7 +621,7 @@
               <peso>73.00</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J80000003.png</foto>
             </jugador>
             <jugador id="1704">
               <nombre>Elías</nombre>
@@ -631,7 +631,7 @@
               <peso>68.00</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J80000004.png</foto>
             </jugador>
             <jugador id="1705">
               <nombre>Diego</nombre>
@@ -641,7 +641,7 @@
               <peso>63.00</peso>
               <altura>1.64</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J80000005.png</foto>
             </jugador>
             <jugador id="1706">
               <nombre>Mikel</nombre>
@@ -651,7 +651,7 @@
               <peso>67.50</peso>
               <altura>1.68</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J80000006.png</foto>
             </jugador>
             <jugador id="1707">
               <nombre>Mohamed</nombre>
@@ -661,7 +661,7 @@
               <peso>69.10</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J80000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -680,7 +680,7 @@
               <peso>75.00</peso>
               <altura>1.76</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J90000001.png</foto>
             </jugador>
             <jugador id="1802">
               <nombre>Alberto</nombre>
@@ -690,7 +690,7 @@
               <peso>74.20</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J90000002.png</foto>
             </jugador>
             <jugador id="1803">
               <nombre>Bruno</nombre>
@@ -700,7 +700,7 @@
               <peso>74.50</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J90000003.png</foto>
             </jugador>
             <jugador id="1804">
               <nombre>Jon</nombre>
@@ -710,7 +710,7 @@
               <peso>70.10</peso>
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J90000004.png</foto>
             </jugador>
             <jugador id="1805">
               <nombre>Alán</nombre>
@@ -720,7 +720,7 @@
               <peso>71.00</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J90000005.png</foto>
             </jugador>
             <jugador id="1806">
               <nombre>Pol</nombre>
@@ -730,7 +730,7 @@
               <peso>64.30</peso>
               <altura>1.65</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J90000006.png</foto>
             </jugador>
             <jugador id="1807">
               <nombre>Simón</nombre>
@@ -740,7 +740,7 @@
               <peso>76.00</peso>
               <altura>1.78</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J90000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -759,7 +759,7 @@
               <peso>66.40</peso>
               <altura>1.67</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J100000001.png</foto>
             </jugador>
             <jugador id="1902">
               <nombre>Cristian</nombre>
@@ -769,7 +769,7 @@
               <peso>67.30</peso>
               <altura>1.68</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J100000002.png</foto>
             </jugador>
             <jugador id="1903">
               <nombre>Víctor</nombre>
@@ -779,7 +779,7 @@
               <peso>66.00</peso>
               <altura>1.65</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J100000003.png</foto>
             </jugador>
             <jugador id="1904">
               <nombre>Thiago</nombre>
@@ -789,7 +789,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J100000004.png</foto>
             </jugador>
             <jugador id="1905">
               <nombre>Cristóbal</nombre>
@@ -799,7 +799,7 @@
               <peso>76.20</peso>
               <altura>1.78</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J100000005.png</foto>
             </jugador>
             <jugador id="1906">
               <nombre>Adam</nombre>
@@ -809,7 +809,7 @@
               <peso>66.00</peso>
               <altura>1.67</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J100000006.png</foto>
             </jugador>
             <jugador id="1907">
               <nombre>Boris</nombre>
@@ -819,7 +819,7 @@
               <peso>82.50</peso>
               <altura>1.84</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J100000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -934,7 +934,7 @@
               <peso>70.50</peso>
               <altura>1.72</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J10000001.png</foto>
             </jugador>
             <jugador id="2002">
               <nombre>Samuel</nombre>
@@ -944,7 +944,7 @@
               <peso>76.80</peso>
               <altura>1.78</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J10000002.png</foto>
             </jugador>
             <jugador id="2003">
               <nombre>Tomás</nombre>
@@ -954,7 +954,7 @@
               <peso>70.00</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J10000003.png</foto>
             </jugador>
             <jugador id="2004">
               <nombre>Kevin</nombre>
@@ -964,7 +964,7 @@
               <peso>71.20</peso>
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J10000004.png</foto>
             </jugador>
             <jugador id="2005">
               <nombre>Eric</nombre>
@@ -974,7 +974,7 @@
               <peso>79.00</peso>
               <altura>1.81</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J10000005.png</foto>
             </jugador>
             <jugador id="2006">
               <nombre>Ramiro</nombre>
@@ -984,7 +984,7 @@
               <peso>69.80</peso>
               <altura>1.70</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J10000006.png</foto>
             </jugador>
             <jugador id="2007">
               <nombre>Gabriel</nombre>
@@ -994,7 +994,7 @@
               <peso>70.00</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J10000007.png</foto>
             </jugador>
             <jugador id="2008">
               <nombre>Thierry</nombre>
@@ -1004,7 +1004,7 @@
               <peso>65.00</peso>
               <altura>1.67</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J10000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1023,7 +1023,7 @@
               <peso>68.20</peso>
               <altura>1.68</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J20000001.png</foto>
             </jugador>
             <jugador id="2102">
               <nombre>Diego</nombre>
@@ -1033,7 +1033,7 @@
               <peso>64.00</peso>
               <altura>1.65</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J20000002.png</foto>
             </jugador>
             <jugador id="2103">
               <nombre>Miguel</nombre>
@@ -1043,7 +1043,7 @@
               <peso>69.10</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J20000003.png</foto>
             </jugador>
             <jugador id="2104">
               <nombre>David</nombre>
@@ -1053,7 +1053,7 @@
               <peso>67.80</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J20000004.png</foto>
             </jugador>
             <jugador id="2105">
               <nombre>Manuel</nombre>
@@ -1063,7 +1063,7 @@
               <peso>66.60</peso>
               <altura>1.67</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J20000005.png</foto>
             </jugador>
             <jugador id="2106">
               <nombre>Fabián</nombre>
@@ -1073,7 +1073,7 @@
               <peso>65.00</peso>
               <altura>1.66</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J20000006.png</foto>
             </jugador>
             <jugador id="2107">
               <nombre>Ramón</nombre>
@@ -1083,7 +1083,7 @@
               <peso>81.00</peso>
               <altura>1.83</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J20000007.png</foto>
             </jugador>
             <jugador id="2108">
               <nombre>Óliver</nombre>
@@ -1093,7 +1093,7 @@
               <peso>64.00</peso>
               <altura>1.65</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J20000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1112,7 +1112,7 @@
               <peso>74.10</peso>
               <altura>1.75</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J30000001.png</foto>
             </jugador>
             <jugador id="2202">
               <nombre>Fernando</nombre>
@@ -1122,7 +1122,7 @@
               <peso>77.10</peso>
               <altura>1.80</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J30000002.png</foto>
             </jugador>
             <jugador id="2203">
               <nombre>Nicolás</nombre>
@@ -1132,7 +1132,7 @@
               <peso>75.60</peso>
               <altura>1.77</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J30000003.png</foto>
             </jugador>
             <jugador id="2204">
               <nombre>Iker</nombre>
@@ -1142,7 +1142,7 @@
               <peso>76.00</peso>
               <altura>1.79</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J30000004.png</foto>
             </jugador>
             <jugador id="2205">
               <nombre>Rachid</nombre>
@@ -1152,7 +1152,7 @@
               <peso>72.00</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J30000005.png</foto>
             </jugador>
             <jugador id="2206">
               <nombre>Nuno</nombre>
@@ -1162,7 +1162,7 @@
               <peso>73.10</peso>
               <altura>1.74</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J30000006.png</foto>
             </jugador>
             <jugador id="2207">
               <nombre>Lorenzo</nombre>
@@ -1172,7 +1172,7 @@
               <peso>72.20</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J30000007.png</foto>
             </jugador>
             <jugador id="2208">
               <nombre>Carlos</nombre>
@@ -1182,7 +1182,7 @@
               <peso>79.50</peso>
               <altura>1.82</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J30000008.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1201,7 +1201,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J40000001.png</foto>
             </jugador>
             <jugador id="2302">
               <nombre>Pablo</nombre>
@@ -1211,7 +1211,7 @@
               <peso>72.00</peso>
               <altura>1.74</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J40000002.png</foto>
             </jugador>
             <jugador id="2303">
               <nombre>Joel</nombre>
@@ -1221,7 +1221,7 @@
               <peso>63.90</peso>
               <altura>1.64</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J40000003.png</foto>
             </jugador>
             <jugador id="2304">
               <nombre>Unai</nombre>
@@ -1231,7 +1231,7 @@
               <peso>72.40</peso>
               <altura>1.73</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J40000004.png</foto>
             </jugador>
             <jugador id="2305">
               <nombre>Saúl</nombre>
@@ -1241,7 +1241,7 @@
               <peso>69.20</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J40000005.png</foto>
             </jugador>
             <jugador id="2306">
               <nombre>Yeray</nombre>
@@ -1251,7 +1251,7 @@
               <peso>68.00</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J40000006.png</foto>
             </jugador>
             <jugador id="2307">
               <nombre>Patrick</nombre>
@@ -1261,7 +1261,7 @@
               <peso>74.00</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J40000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1280,7 +1280,7 @@
               <peso>72.60</peso>
               <altura>1.74</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J50000001.png</foto>
             </jugador>
             <jugador id="2402">
               <nombre>Andrés</nombre>
@@ -1290,7 +1290,7 @@
               <peso>69.50</peso>
               <altura>1.70</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J50000002.png</foto>
             </jugador>
             <jugador id="2403">
               <nombre>Marcos</nombre>
@@ -1300,7 +1300,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J50000003.png</foto>
             </jugador>
             <jugador id="2404">
               <nombre>Matías</nombre>
@@ -1310,7 +1310,7 @@
               <peso>69.50</peso>
               <altura>1.71</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J50000004.png</foto>
             </jugador>
             <jugador id="2405">
               <nombre>Gonzalo</nombre>
@@ -1320,7 +1320,7 @@
               <peso>75.40</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J50000005.png</foto>
             </jugador>
             <jugador id="2406">
               <nombre>Rafael</nombre>
@@ -1330,7 +1330,7 @@
               <peso>80.00</peso>
               <altura>1.81</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J50000006.png</foto>
             </jugador>
             <jugador id="2407">
               <nombre>Arturo</nombre>
@@ -1340,7 +1340,7 @@
               <peso>66.00</peso>
               <altura>1.66</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J50000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1359,7 +1359,7 @@
               <peso>71.30</peso>
               <altura>1.71</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J60000001.png</foto>
             </jugador>
             <jugador id="2502">
               <nombre>Luis</nombre>
@@ -1369,7 +1369,7 @@
               <peso>68.70</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J60000002.png</foto>
             </jugador>
             <jugador id="2503">
               <nombre>Óscar</nombre>
@@ -1379,7 +1379,7 @@
               <peso>78.30</peso>
               <altura>1.82</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J60000003.png</foto>
             </jugador>
             <jugador id="2504">
               <nombre>Aaron</nombre>
@@ -1389,7 +1389,7 @@
               <peso>64.70</peso>
               <altura>1.66</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J60000004.png</foto>
             </jugador>
             <jugador id="2505">
               <nombre>Esteban</nombre>
@@ -1399,7 +1399,7 @@
               <peso>70.00</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J60000005.png</foto>
             </jugador>
             <jugador id="2506">
               <nombre>Lautaro</nombre>
@@ -1409,7 +1409,7 @@
               <peso>70.00</peso>
               <altura>1.72</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J60000006.png</foto>
             </jugador>
             <jugador id="2507">
               <nombre>Eder</nombre>
@@ -1419,7 +1419,7 @@
               <peso>68.40</peso>
               <altura>1.69</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J60000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1438,7 +1438,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J70000001.png</foto>
             </jugador>
             <jugador id="2602">
               <nombre>Ismael</nombre>
@@ -1448,7 +1448,7 @@
               <peso>71.40</peso>
               <altura>1.73</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J70000002.png</foto>
             </jugador>
             <jugador id="2603">
               <nombre>Eneko</nombre>
@@ -1458,7 +1458,7 @@
               <peso>68.10</peso>
               <altura>1.69</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J70000003.png</foto>
             </jugador>
             <jugador id="2604">
               <nombre>Pedro</nombre>
@@ -1468,7 +1468,7 @@
               <peso>73.30</peso>
               <altura>1.75</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J70000004.png</foto>
             </jugador>
             <jugador id="2605">
               <nombre>Biel</nombre>
@@ -1478,7 +1478,7 @@
               <peso>65.00</peso>
               <altura>1.65</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J70000005.png</foto>
             </jugador>
             <jugador id="2606">
               <nombre>Ignacio</nombre>
@@ -1488,7 +1488,7 @@
               <peso>74.00</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J70000006.png</foto>
             </jugador>
             <jugador id="2607">
               <nombre>Ricardo</nombre>
@@ -1498,7 +1498,7 @@
               <peso>71.00</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J70000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1517,7 +1517,7 @@
               <peso>73.20</peso>
               <altura>1.73</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J80000001.png</foto>
             </jugador>
             <jugador id="2702">
               <nombre>Rubén</nombre>
@@ -1527,7 +1527,7 @@
               <peso>65.00</peso>
               <altura>1.66</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J80000002.png</foto>
             </jugador>
             <jugador id="2703">
               <nombre>Gael</nombre>
@@ -1537,7 +1537,7 @@
               <peso>73.00</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J80000003.png</foto>
             </jugador>
             <jugador id="2704">
               <nombre>Elías</nombre>
@@ -1547,7 +1547,7 @@
               <peso>68.00</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J80000004.png</foto>
             </jugador>
             <jugador id="2705">
               <nombre>Diego</nombre>
@@ -1557,7 +1557,7 @@
               <peso>63.00</peso>
               <altura>1.64</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J80000005.png</foto>
             </jugador>
             <jugador id="2706">
               <nombre>Mikel</nombre>
@@ -1567,7 +1567,7 @@
               <peso>67.50</peso>
               <altura>1.68</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J80000006.png</foto>
             </jugador>
             <jugador id="2707">
               <nombre>Mohamed</nombre>
@@ -1577,7 +1577,7 @@
               <peso>69.10</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J80000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1596,7 +1596,7 @@
               <peso>75.00</peso>
               <altura>1.76</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J90000001.png</foto>
             </jugador>
             <jugador id="2802">
               <nombre>Alberto</nombre>
@@ -1606,7 +1606,7 @@
               <peso>74.20</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>J90000002.png</foto>
             </jugador>
             <jugador id="2803">
               <nombre>Bruno</nombre>
@@ -1616,7 +1616,7 @@
               <peso>74.50</peso>
               <altura>1.76</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>J90000003.png</foto>
             </jugador>
             <jugador id="2804">
               <nombre>Jon</nombre>
@@ -1626,7 +1626,7 @@
               <peso>70.10</peso>
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>J90000004.png</foto>
             </jugador>
             <jugador id="2805">
               <nombre>Alán</nombre>
@@ -1636,7 +1636,7 @@
               <peso>71.00</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>J90000005.png</foto>
             </jugador>
             <jugador id="2806">
               <nombre>Pol</nombre>
@@ -1646,7 +1646,7 @@
               <peso>64.30</peso>
               <altura>1.65</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>J90000006.png</foto>
             </jugador>
             <jugador id="2807">
               <nombre>Simón</nombre>
@@ -1656,7 +1656,7 @@
               <peso>76.00</peso>
               <altura>1.78</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>J90000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1675,7 +1675,7 @@
               <peso>66.40</peso>
               <altura>1.67</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J100000001.png</foto>
             </jugador>
             <jugador id="2902">
               <nombre>Cristian</nombre>
@@ -1685,7 +1685,7 @@
               <peso>67.30</peso>
               <altura>1.68</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>J100000002.png</foto>
             </jugador>
             <jugador id="2903">
               <nombre>Víctor</nombre>
@@ -1695,7 +1695,7 @@
               <peso>66.00</peso>
               <altura>1.65</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>J100000003.png</foto>
             </jugador>
             <jugador id="2904">
               <nombre>Thiago</nombre>
@@ -1705,7 +1705,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>J100000004.png</foto>
             </jugador>
             <jugador id="2905">
               <nombre>Cristóbal</nombre>
@@ -1715,7 +1715,7 @@
               <peso>76.20</peso>
               <altura>1.78</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>J100000005.png</foto>
             </jugador>
             <jugador id="2906">
               <nombre>Adam</nombre>
@@ -1725,7 +1725,7 @@
               <peso>66.00</peso>
               <altura>1.67</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>J100000006.png</foto>
             </jugador>
             <jugador id="2907">
               <nombre>Boris</nombre>
@@ -1735,7 +1735,7 @@
               <peso>82.50</peso>
               <altura>1.84</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>J100000007.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1850,7 +1850,7 @@
               <peso>70.50</peso>
               <altura>1.72</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>1.png</foto>
             </jugador>
             <jugador id="2002">
               <nombre>Adrián</nombre>
@@ -1860,7 +1860,7 @@
               <peso>71.30</peso>
               <altura>1.71</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>2.png</foto>
             </jugador>
             <jugador id="2003">
               <nombre>Samuel</nombre>
@@ -1870,7 +1870,7 @@
               <peso>76.80</peso>
               <altura>1.78</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>3.png</foto>
             </jugador>
             <jugador id="2004">
               <nombre>Luis</nombre>
@@ -1880,7 +1880,7 @@
               <peso>68.70</peso>
               <altura>1.69</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>4.png</foto>
             </jugador>
             <jugador id="2005">
               <nombre>Tomás</nombre>
@@ -1890,7 +1890,7 @@
               <peso>70.00</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>5.png</foto>
             </jugador>
             <jugador id="2006">
               <nombre>Óscar</nombre>
@@ -1900,7 +1900,7 @@
               <peso>78.30</peso>
               <altura>1.82</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>6.png</foto>
             </jugador>
             <jugador id="2007">
               <nombre>Kevin</nombre>
@@ -1910,7 +1910,7 @@
               <peso>71.20</peso>
               <altura>1.72</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>7.png</foto>
             </jugador>
             <jugador id="2008">
               <nombre>Aaron</nombre>
@@ -1920,7 +1920,7 @@
               <peso>64.70</peso>
               <altura>1.66</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>8.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -1939,7 +1939,7 @@
               <peso>68.20</peso>
               <altura>1.68</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>9.png</foto>
             </jugador>
             <jugador id="2102">
               <nombre>Daniel</nombre>
@@ -1949,7 +1949,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>10.png</foto>
             </jugador>
             <jugador id="2103">
               <nombre>Diego</nombre>
@@ -1959,7 +1959,7 @@
               <peso>64.00</peso>
               <altura>1.65</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>11.png</foto>
             </jugador>
             <jugador id="2104">
               <nombre>Ismael</nombre>
@@ -1969,7 +1969,7 @@
               <peso>71.40</peso>
               <altura>1.73</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>12.png</foto>
             </jugador>
             <jugador id="2105">
               <nombre>Miguel</nombre>
@@ -1979,7 +1979,7 @@
               <peso>69.10</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>13.png</foto>
             </jugador>
             <jugador id="2106">
               <nombre>Eneko</nombre>
@@ -1989,7 +1989,7 @@
               <peso>68.10</peso>
               <altura>1.69</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>14.png</foto>
             </jugador>
             <jugador id="2107">
               <nombre>David</nombre>
@@ -1999,7 +1999,7 @@
               <peso>67.80</peso>
               <altura>1.68</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>15.png</foto>
             </jugador>
             <jugador id="2108">
               <nombre>Pedro</nombre>
@@ -2009,7 +2009,7 @@
               <peso>73.30</peso>
               <altura>1.75</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>16.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2028,7 +2028,7 @@
               <peso>74.10</peso>
               <altura>1.75</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>17.png</foto>
             </jugador>
             <jugador id="2202">
               <nombre>Álex</nombre>
@@ -2038,7 +2038,7 @@
               <peso>73.20</peso>
               <altura>1.73</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>18.png</foto>
             </jugador>
             <jugador id="2203">
               <nombre>Fernando</nombre>
@@ -2048,7 +2048,7 @@
               <peso>77.10</peso>
               <altura>1.80</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>19.png</foto>
             </jugador>
             <jugador id="2204">
               <nombre>Rubén</nombre>
@@ -2058,7 +2058,7 @@
               <peso>65.00</peso>
               <altura>1.66</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>20.png</foto>
             </jugador>
             <jugador id="2205">
               <nombre>Nicolás</nombre>
@@ -2068,7 +2068,7 @@
               <peso>75.60</peso>
               <altura>1.77</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>21.png</foto>
             </jugador>
             <jugador id="2206">
               <nombre>Gael</nombre>
@@ -2078,7 +2078,7 @@
               <peso>73.00</peso>
               <altura>1.74</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>22.png</foto>
             </jugador>
             <jugador id="2207">
               <nombre>Iker</nombre>
@@ -2088,7 +2088,7 @@
               <peso>76.00</peso>
               <altura>1.79</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>23.png</foto>
             </jugador>
             <jugador id="2208">
               <nombre>Elías</nombre>
@@ -2098,7 +2098,7 @@
               <peso>68.00</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>24.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2117,7 +2117,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>25.png</foto>
             </jugador>
             <jugador id="2302">
               <nombre>Javier</nombre>
@@ -2127,7 +2127,7 @@
               <peso>75.00</peso>
               <altura>1.76</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador9.svg</foto>
+              <foto>26.png</foto>
             </jugador>
             <jugador id="2303">
               <nombre>Pablo</nombre>
@@ -2137,7 +2137,7 @@
               <peso>72.00</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>27.png</foto>
             </jugador>
             <jugador id="2304">
               <nombre>Alberto</nombre>
@@ -2147,7 +2147,7 @@
               <peso>74.20</peso>
               <altura>1.75</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>28.png</foto>
             </jugador>
             <jugador id="2305">
               <nombre>Joel</nombre>
@@ -2157,7 +2157,7 @@
               <peso>63.90</peso>
               <altura>1.64</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador12.svg</foto>
+              <foto>29.png</foto>
             </jugador>
             <jugador id="2306">
               <nombre>Bruno</nombre>
@@ -2167,7 +2167,7 @@
               <peso>74.50</peso>
               <altura>1.76</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>30.png</foto>
             </jugador>
             <jugador id="2307">
               <nombre>Unai</nombre>
@@ -2177,7 +2177,7 @@
               <peso>72.40</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>31.png</foto>
             </jugador>
             <jugador id="2308">
               <nombre>Jon</nombre>
@@ -2187,7 +2187,7 @@
               <peso>70.10</peso>
               <altura>1.72</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>32.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2206,7 +2206,7 @@
               <peso>72.60</peso>
               <altura>1.74</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>33.png</foto>
             </jugador>
             <jugador id="2402">
               <nombre>Carlos</nombre>
@@ -2216,7 +2216,7 @@
               <peso>66.40</peso>
               <altura>1.67</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador10.svg</foto>
+              <foto>34.png</foto>
             </jugador>
             <jugador id="2403">
               <nombre>Andrés</nombre>
@@ -2226,7 +2226,7 @@
               <peso>69.50</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>35.png</foto>
             </jugador>
             <jugador id="2404">
               <nombre>Cristian</nombre>
@@ -2236,7 +2236,7 @@
               <peso>67.30</peso>
               <altura>1.68</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>36.png</foto>
             </jugador>
             <jugador id="2405">
               <nombre>Marcos</nombre>
@@ -2246,7 +2246,7 @@
               <peso>69.00</peso>
               <altura>1.70</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>37.png</foto>
             </jugador>
             <jugador id="2406">
               <nombre>Víctor</nombre>
@@ -2256,7 +2256,7 @@
               <peso>66.00</peso>
               <altura>1.65</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>38.png</foto>
             </jugador>
             <jugador id="2407">
               <nombre>Matías</nombre>
@@ -2266,7 +2266,7 @@
               <peso>69.50</peso>
               <altura>1.71</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador11.svg</foto>
+              <foto>39.png</foto>
             </jugador>
             <jugador id="2408">
               <nombre>Thiago</nombre>
@@ -2276,7 +2276,7 @@
               <peso>67.90</peso>
               <altura>1.69</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>40.png</foto>
             </jugador>
           </jugadores>
         </equipo>
@@ -2295,7 +2295,7 @@
               <peso>74.20</peso>
               <altura>1.80</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador1.svg</foto>
+              <foto>41.png</foto>
             </jugador>
             <jugador id="2502">
               <nombre>Jorge</nombre>
@@ -2305,7 +2305,7 @@
               <peso>71.40</peso>
               <altura>1.76</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador2.svg</foto>
+              <foto>42.png</foto>
             </jugador>
             <jugador id="2503">
               <nombre>Alberto</nombre>
@@ -2315,7 +2315,7 @@
               <peso>69.10</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador3.svg</foto>
+              <foto>43.png</foto>
             </jugador>
             <jugador id="2504">
               <nombre>Miguel</nombre>
@@ -2325,7 +2325,7 @@
               <peso>73.30</peso>
               <altura>1.79</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador4.svg</foto>
+              <foto>44.png</foto>
             </jugador>
             <jugador id="2505">
               <nombre>Ruben</nombre>
@@ -2335,7 +2335,7 @@
               <peso>75.00</peso>
               <altura>1.82</altura>
               <posicion>Portero</posicion>
-              <foto>../img/jugadores/jugador5.svg</foto>
+              <foto>45.png</foto>
             </jugador>
             <jugador id="2506">
               <nombre>Diego</nombre>
@@ -2345,7 +2345,7 @@
               <peso>70.50</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
-              <foto>../img/jugadores/jugador6.svg</foto>
+              <foto>46.png</foto>
             </jugador>
             <jugador id="2507">
               <nombre>Pablo</nombre>
@@ -2355,7 +2355,7 @@
               <peso>68.90</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
-              <foto>../img/jugadores/jugador7.svg</foto>
+              <foto>47.png</foto>
             </jugador>
             <jugador id="2508">
               <nombre>Adrian</nombre>
@@ -2365,7 +2365,7 @@
               <peso>72.10</peso>
               <altura>1.78</altura>
               <posicion>Pivote</posicion>
-              <foto>../img/jugadores/jugador8.svg</foto>
+              <foto>48.png</foto>
             </jugador>
           </jugadores>
         </equipo>
