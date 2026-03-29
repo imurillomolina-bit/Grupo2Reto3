@@ -24,7 +24,7 @@ require __DIR__ . '/../includes/header.php';
             <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
             <?php if ($equipoId === ''): ?>
-                <form class="season-form" id="season_form" action="#" method="get">
+                <form class="season-form" id="season_form" action="set_temporada.php" method="post">
                     <label for="temporada_id">Cambiar temporada</label>
                     <select id="temporada_id" name="temporada_id" required></select>
                     <button type="submit">Cambiar</button>

@@ -56,12 +56,45 @@
     }
 
     function updateHeaderSeasonName(seasonName, temporadas, selectedId) {
-        if (!seasonName) {
-            return;
+        var found = temporadas.find(function (t) { return t.id === selectedId; });
+        var selectedName = found ? found.nombre : 'No disponible';
+
+        if (seasonName) {
+            seasonName.textContent = selectedName;
         }
 
-        var found = temporadas.find(function (t) { return t.id === selectedId; });
-        seasonName.textContent = found ? found.nombre : 'No disponible';
+        var globalSeasonIndicator = document.querySelector('.season-indicator');
+        if (globalSeasonIndicator) {
+            globalSeasonIndicator.textContent = 'Temporada: ' + selectedName;
+        }
+    }
+
+    function getSeasonEndpoint() {
+        var normalizedPath = (window.location.pathname || '').replace(/\\/g, '/');
+        return normalizedPath.indexOf('/php/') !== -1 ? 'set_temporada.php' : 'php/set_temporada.php';
+    }
+
+    function persistSeasonInSession(temporadaId) {
+        if (!temporadaId) {
+            return Promise.resolve();
+        }
+
+        var formData = new URLSearchParams();
+        formData.set('temporada_id', temporadaId);
+
+        return fetch(getSeasonEndpoint(), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+            credentials: 'same-origin',
+            body: formData.toString()
+        }).then(function () {
+            return undefined;
+        }).catch(function () {
+            // Si falla la persistencia remota, se mantiene el render local.
+            return undefined;
+        });
     }
 
     function unique(values) {
@@ -197,6 +230,7 @@
             seasonForm.addEventListener('submit', function (ev) {
                 ev.preventDefault();
                 var nextSeasonId = seasonSelect.value;
+                persistSeasonInSession(nextSeasonId);
                 renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
                 updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
 
@@ -291,6 +325,7 @@
                     ev.preventDefault();
                     var nextSeasonId = seasonSelect.value;
                     var currentTeamId = getSelectedTeamId();
+                    persistSeasonInSession(nextSeasonId);
 
                     renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentTeamId);
                     updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
@@ -382,6 +417,7 @@
                     ev.preventDefault();
                     var nextSeasonId = seasonSelect.value;
                     var currentPlayerId = getSelectedPlayerId();
+                    persistSeasonInSession(nextSeasonId);
 
                     renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentPlayerId);
                     updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
@@ -464,6 +500,7 @@
             seasonForm.addEventListener('submit', function (ev) {
                 ev.preventDefault();
                 var nextSeasonId = seasonSelect.value;
+                persistSeasonInSession(nextSeasonId);
 
                 renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
                 updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
@@ -612,6 +649,7 @@
             seasonForm.addEventListener('submit', function (ev) {
                 ev.preventDefault();
                 var nextSeasonId = seasonSelect.value;
+                persistSeasonInSession(nextSeasonId);
 
                 var nextTemporadaNode = getTemporadaNode(xmlDoc, nextSeasonId);
                 var nextJornadas = getJornadas(nextTemporadaNode);
