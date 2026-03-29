@@ -1444,10 +1444,65 @@ table tr .tdNombreEquipo {
 .site-footer {
     margin-top: auto;
     text-align: center;
-    padding: 1rem;
+    padding: 1.25rem 1rem;
     color: var(--white);
     background: linear-gradient(120deg, var(--blue-900), #001126);
     border-top: 4px solid var(--yellow-500);
+}
+
+.site-footer-shell {
+    width: min(1120px, 94vw);
+    margin: 0 auto;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.site-footer-title {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--yellow-300);
+}
+
+.site-footer-grid {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.site-footer-block {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem;
+}
+
+.site-footer-block h2 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--yellow-300);
+}
+
+.site-footer-block p {
+    margin: 0.35rem 0 0;
+    line-height: 1.45;
+    opacity: 0.96;
+}
+
+.site-footer-note {
+    margin: 0;
+    font-size: 0.92rem;
+    opacity: 0.86;
+}
+
+@media (min-width: 860px) {
+    .site-footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 710px) {
@@ -1490,6 +1545,10 @@ table tr .tdNombreEquipo {
 
     .main-nav.nav-open .nav-toggle span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .site-footer-title {
+        font-size: 1.08rem;
     }
 }
 
