@@ -1364,18 +1364,18 @@
             </jugador>
           </jugadores>
         </equipo>
-        <equipo id="11">
-          <nombre>Quesos Hidalgo Manzanares FS</nombre>
-          <ciudad>Manzanares</ciudad>
-          <estadio>Antonio Cabanas</estadio>
-          <descripcion>Equipo intenso y ordenado, con presion alta y transiciones verticales.</descripcion>
-          <escudo>../img/escudos/Quesos Hidalgo Manzanares FS.png</escudo>
+        <equipo id="9">
+          <nombre>O Parrulo Ferrol</nombre>
+          <ciudad>Ferrol</ciudad>
+          <estadio>A Malata</estadio>
+          <descripcion>Conjunto de mucho esfuerzo, rapido para correr y cerrar espacios.</descripcion>
+          <escudo>../img/escudos/O Parrulo Ferrol.png</escudo>
           <jugadores>
             <jugador id="2501">
               <nombre>Carlos</nombre>
               <apellidos>Nunez Vera</apellidos>
               <fecha_nacimiento>1998-01-15</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>74.20</peso>
               <altura>1.80</altura>
               <posicion>Portero</posicion>
@@ -1385,7 +1385,7 @@
               <nombre>Jorge</nombre>
               <apellidos>Serrano Diaz</apellidos>
               <fecha_nacimiento>1997-06-22</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>71.40</peso>
               <altura>1.76</altura>
               <posicion>Cierre</posicion>
@@ -1395,7 +1395,7 @@
               <nombre>Alberto</nombre>
               <apellidos>Campos Pardo</apellidos>
               <fecha_nacimiento>2000-03-09</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>69.10</peso>
               <altura>1.74</altura>
               <posicion>Ala</posicion>
@@ -1405,7 +1405,7 @@
               <nombre>Miguel</nombre>
               <apellidos>Santos Rios</apellidos>
               <fecha_nacimiento>1999-11-02</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>73.30</peso>
               <altura>1.79</altura>
               <posicion>Pivote</posicion>
@@ -1415,7 +1415,7 @@
               <nombre>Ruben</nombre>
               <apellidos>Molina Costa</apellidos>
               <fecha_nacimiento>1996-08-18</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>75.00</peso>
               <altura>1.82</altura>
               <posicion>Portero</posicion>
@@ -1425,7 +1425,7 @@
               <nombre>Diego</nombre>
               <apellidos>Vega Torres</apellidos>
               <fecha_nacimiento>2001-02-27</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>70.50</peso>
               <altura>1.75</altura>
               <posicion>Cierre</posicion>
@@ -1435,7 +1435,7 @@
               <nombre>Pablo</nombre>
               <apellidos>Lopez Mena</apellidos>
               <fecha_nacimiento>1998-09-30</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>68.90</peso>
               <altura>1.73</altura>
               <posicion>Ala</posicion>
@@ -1445,7 +1445,7 @@
               <nombre>Adrian</nombre>
               <apellidos>Gil Roca</apellidos>
               <fecha_nacimiento>2002-05-12</fecha_nacimiento>
-              <nacionalidad>Espanola</nacionalidad>
+              <nacionalidad>Española</nacionalidad>
               <peso>72.10</peso>
               <altura>1.78</altura>
               <posicion>Pivote</posicion>
@@ -1455,35 +1455,35 @@
         </equipo>
       </equipos>
       <partidos>
-        <partido local="1" visitante="11" goles_local="1" goles_visitante="3" fecha="2026-09-03"/>
+        <partido local="1" visitante="9" goles_local="1" goles_visitante="3" fecha="2026-09-03"/>
         <partido local="3" visitante="8" goles_local="4" goles_visitante="1" fecha="2026-09-03"/>
         <partido local="5" visitante="7" goles_local="2" goles_visitante="1" fecha="2026-09-03"/>
         <partido local="8" visitante="1" goles_local="4" goles_visitante="3" fecha="2026-09-10"/>
-        <partido local="7" visitante="11" goles_local="4" goles_visitante="2" fecha="2026-09-10"/>
+        <partido local="7" visitante="9" goles_local="4" goles_visitante="2" fecha="2026-09-10"/>
         <partido local="5" visitante="3" goles_local="3" goles_visitante="3" fecha="2026-09-10"/>
         <partido local="1" visitante="7" goles_local="3" goles_visitante="3" fecha="2026-09-17"/>
         <partido local="8" visitante="5" goles_local="1" goles_visitante="2" fecha="2026-09-17"/>
-        <partido local="11" visitante="3" goles_local="0" goles_visitante="1" fecha="2026-09-17"/>
+        <partido local="9" visitante="3" goles_local="0" goles_visitante="1" fecha="2026-09-17"/>
         <partido local="5" visitante="1" goles_local="3" goles_visitante="3" fecha="2026-09-24"/>
         <partido local="3" visitante="7" goles_local="2" goles_visitante="2" fecha="2026-09-24"/>
-        <partido local="11" visitante="8" goles_local="1" goles_visitante="0" fecha="2026-09-24"/>
+        <partido local="9" visitante="8" goles_local="1" goles_visitante="0" fecha="2026-09-24"/>
         <partido local="1" visitante="3" goles_local="0" goles_visitante="3" fecha="2026-10-01"/>
-        <partido local="5" visitante="11" goles_local="0" goles_visitante="0" fecha="2026-10-01"/>
+        <partido local="5" visitante="9" goles_local="0" goles_visitante="0" fecha="2026-10-01"/>
         <partido local="7" visitante="8" goles_local="3" goles_visitante="2" fecha="2026-10-01"/>
-        <partido local="11" visitante="1" goles_local="1" goles_visitante="3" fecha="2026-10-08"/>
+        <partido local="9" visitante="1" goles_local="1" goles_visitante="3" fecha="2026-10-08"/>
         <partido local="8" visitante="3" goles_local="4" goles_visitante="2" fecha="2026-10-08"/>
         <partido local="7" visitante="5" goles_local="4" goles_visitante="1" fecha="2026-10-08"/>
         <partido local="1" visitante="8" goles_local="2" goles_visitante="0" fecha="2026-10-15"/>
-        <partido local="11" visitante="7" goles_local="3" goles_visitante="0" fecha="2026-10-15"/>
+        <partido local="9" visitante="7" goles_local="3" goles_visitante="0" fecha="2026-10-15"/>
         <partido local="3" visitante="5" goles_local="1" goles_visitante="3" fecha="2026-10-15"/>
         <partido local="7" visitante="1" goles_local="4" goles_visitante="3" fecha="2026-10-22"/>
         <partido local="5" visitante="8" goles_local="3" goles_visitante="3" fecha="2026-10-22"/>
-        <partido local="3" visitante="11" goles_local="2" goles_visitante="3" fecha="2026-10-22"/>
+        <partido local="3" visitante="9" goles_local="2" goles_visitante="3" fecha="2026-10-22"/>
         <partido local="1" visitante="5" goles_local="4" goles_visitante="1" fecha="2026-10-29"/>
         <partido local="7" visitante="3" goles_local="1" goles_visitante="0" fecha="2026-10-29"/>
-        <partido local="8" visitante="11" goles_local="3" goles_visitante="1" fecha="2026-10-29"/>
+        <partido local="8" visitante="9" goles_local="3" goles_visitante="1" fecha="2026-10-29"/>
         <partido local="3" visitante="1" goles_local="2" goles_visitante="3" fecha="2026-11-05"/>
-        <partido local="11" visitante="5" goles_local="1" goles_visitante="0" fecha="2026-11-05"/>
+        <partido local="9" visitante="5" goles_local="1" goles_visitante="0" fecha="2026-11-05"/>
         <partido local="8" visitante="7" goles_local="4" goles_visitante="3" fecha="2026-11-05"/>
       </partidos>
     </temporada>

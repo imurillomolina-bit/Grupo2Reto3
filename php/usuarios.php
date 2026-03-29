@@ -22,6 +22,42 @@ if ($loginEvents !== []) {
     $loginEvents = array_reverse($loginEvents);
 }
 
+// Filtro de historial para evitar listados excesivamente largos.
+$loginRangeRaw = filter_input(INPUT_GET, 'rango', FILTER_UNSAFE_RAW);
+$loginRange = is_string($loginRangeRaw) ? trim($loginRangeRaw) : '';
+$allowedRanges = ['24h', '7d', '30d'];
+if (!in_array($loginRange, $allowedRanges, true)) {
+    $loginRange = '24h';
+}
+
+$now = new DateTimeImmutable('now');
+$rangeSeconds = match ($loginRange) {
+    '24h' => 24 * 60 * 60,
+    '7d' => 7 * 24 * 60 * 60,
+    '30d' => 30 * 24 * 60 * 60,
+    default => 24 * 60 * 60,
+};
+
+$filteredLoginEvents = [];
+foreach ($loginEvents as $event) {
+    $rawDate = (string) ($event['fecha_hora'] ?? '');
+    $eventDate = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $rawDate);
+    if ($eventDate === false) {
+        continue;
+    }
+
+    $diff = $now->getTimestamp() - $eventDate->getTimestamp();
+    if ($diff >= 0 && $diff <= $rangeSeconds) {
+        $filteredLoginEvents[] = $event;
+    }
+}
+
+$rangeLabels = [
+    '24h' => 'Ultimas 24 horas',
+    '7d' => 'Ultima semana',
+    '30d' => 'Ultimo mes',
+];
+
 require __DIR__ . '/../includes/header.php';
 ?>
 
@@ -57,11 +93,21 @@ require __DIR__ . '/../includes/header.php';
 
         <article class="panel-heading">
             <h2>Ultimos inicios de sesion</h2>
+            <form class="season-form" method="get" action="usuarios.php" aria-label="Filtro de historial de inicios de sesion">
+                <label for="rango">Mostrar</label>
+                <select id="rango" name="rango">
+                    <option value="24h" <?php echo $loginRange === '24h' ? 'selected' : ''; ?>>Ultimas 24 horas</option>
+                    <option value="7d" <?php echo $loginRange === '7d' ? 'selected' : ''; ?>>Ultima semana</option>
+                    <option value="30d" <?php echo $loginRange === '30d' ? 'selected' : ''; ?>>Ultimo mes</option>
+                </select>
+                <button type="submit">Aplicar</button>
+            </form>
+            <p>Rango activo: <strong><?php echo e($rangeLabels[$loginRange]); ?></strong></p>
         </article>
 
         <article class="matches-wrap" aria-label="Historial de inicios de sesion">
-            <?php if ($loginEvents === []): ?>
-                <p>No hay inicios de sesion registrados todavia.</p>
+            <?php if ($filteredLoginEvents === []): ?>
+                <p>No hay inicios de sesion en el rango seleccionado.</p>
             <?php else: ?>
                 <table class="matches-table">
                     <thead>
@@ -72,7 +118,7 @@ require __DIR__ . '/../includes/header.php';
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($loginEvents as $event): ?>
+                    <?php foreach ($filteredLoginEvents as $event): ?>
                         <tr>
                             <td><?php echo e((string) ($event['usuario'] ?? 'N/D')); ?></td>
                             <td><?php echo e((string) ($event['rol'] ?? 'N/D')); ?></td>
