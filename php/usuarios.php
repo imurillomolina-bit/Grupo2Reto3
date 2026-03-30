@@ -18,6 +18,8 @@ if (strcasecmp($rolSesion, 'Admin') !== 0) {
 $pageTitle = 'Usuarios | FEDERACIÓN FUTSAL';
 $users = get_users();
 $loginEvents = read_login_events();
+
+// Se invierte para mostrar primero los accesos mas recientes.
 if ($loginEvents !== []) {
     $loginEvents = array_reverse($loginEvents);
 }
@@ -37,16 +39,21 @@ $availableRoles = array_keys($availableRoles);
 $loginRangeRaw = filter_input(INPUT_GET, 'rango', FILTER_UNSAFE_RAW);
 $loginRange = is_string($loginRangeRaw) ? trim($loginRangeRaw) : '';
 $allowedRanges = ['24h', '7d', '30d'];
+
+// Fallback defensivo cuando llega un valor invalido por URL.
 if (!in_array($loginRange, $allowedRanges, true)) {
     $loginRange = '24h';
 }
 
 $loginRoleRaw = filter_input(INPUT_GET, 'rol', FILTER_UNSAFE_RAW);
 $loginRole = is_string($loginRoleRaw) ? trim($loginRoleRaw) : '';
+
+// Por defecto se muestran todos los roles para no ocultar datos al cargar.
 if ($loginRole === '') {
     $loginRole = 'todos';
 }
 
+// Solo se acepta "todos" o roles existentes en el sistema.
 $allowedRoles = array_merge(['todos'], $availableRoles);
 if (!in_array($loginRole, $allowedRoles, true)) {
     $loginRole = 'todos';
@@ -62,14 +69,17 @@ $rangeSeconds = match ($loginRange) {
 
 $filteredLoginEvents = [];
 foreach ($loginEvents as $event) {
+    // Normaliza y valida la fecha del evento antes de compararla por rango.
     $rawDate = (string) ($event['fecha_hora'] ?? '');
     $eventDate = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $rawDate);
     if ($eventDate === false) {
         continue;
     }
 
+    // Solo se incluyen eventos pasados dentro del rango temporal elegido.
     $diff = $now->getTimestamp() - $eventDate->getTimestamp();
     if ($diff >= 0 && $diff <= $rangeSeconds) {
+        // Filtro secundario por rol cuando no se ha seleccionado "todos".
         $eventRole = trim((string) ($event['rol'] ?? ''));
         if ($loginRole !== 'todos' && strcasecmp($eventRole, $loginRole) !== 0) {
             continue;
@@ -85,6 +95,7 @@ $rangeLabels = [
     '30d' => 'Ultimo mes',
 ];
 
+// Texto visible del rol activo para el resumen encima de la tabla.
 $roleLabel = $loginRole === 'todos' ? 'Todos' : $loginRole;
 
 require __DIR__ . '/../includes/header.php';
@@ -122,6 +133,7 @@ require __DIR__ . '/../includes/header.php';
 
         <article class="panel-heading">
             <h2>Ultimos inicios de sesión</h2>
+            <!-- Filtros combinados: rango temporal + rol -->
             <form class="season-form" method="get" action="usuarios.php" aria-label="Filtro de historial de inicios de sesion">
                 <label for="rango">Mostrar</label>
                 <select id="rango" name="rango">
@@ -138,6 +150,7 @@ require __DIR__ . '/../includes/header.php';
                 </select>
                 <button type="submit">Aplicar</button>
             </form>
+            <!-- Resumen rapido para confirmar el estado de filtros aplicado -->
             <p>Rango activo: <strong><?php echo e($rangeLabels[$loginRange]); ?></strong> | Rol activo: <strong><?php echo e($roleLabel); ?></strong></p>
         </article>
 

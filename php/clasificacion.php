@@ -43,42 +43,6 @@ require __DIR__ . '/../includes/header.php';
         </noscript>
     </section>
 
-    <section class="home-sections" aria-label="Apartados principales">
-        <a class="panel quick-link-panel" href="equipo.php">
-            <div class="panel-heading">
-                <h2>Equipo</h2>
-                <p>Ve todos los clubes participantes y entra a cada ficha completa.</p>
-            </div>
-        </a>
-
-        <a class="panel quick-link-panel" href="jugadores.php">
-            <div class="panel-heading">
-                <h2>Jugadores</h2>
-                <p>Consulta la plantilla completa de la temporada activa.</p>
-            </div>
-        </a>
-
-        <a class="panel quick-link-panel" href="partidos.php">
-            <div class="panel-heading">
-                <h2>Partidos</h2>
-                <p>Consulta todos los resultados y filtra por equipo.</p>
-            </div>
-        </a>
-
-        <a class="panel quick-link-panel" href="normativa.php">
-            <div class="panel-heading">
-                <h2>Normativa</h2>
-                <p>Revisa las reglas basicas y el formato de la competicion.</p>
-            </div>
-        </a>
-
-        <a class="panel quick-link-panel" href="noticias.php">
-            <div class="panel-heading">
-                <h2>Noticias</h2>
-                <p>Lee los titulares generados a partir de los resultados recientes.</p>
-            </div>
-        </a>
-    </section>
 </main>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
