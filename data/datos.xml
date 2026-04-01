@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Dataset principal de la liga: temporadas, equipos, plantillas y resultados. -->
 <liga nombre="FEDERACIÓN FUTSAL">
   <temporadas>
+    <!-- Temporada marcada como actual por defecto en la aplicacion. -->
     <temporada id="2025-2026" nombre="2025/2026" actual="si">
+      <!-- Bloque de equipos con sus datos de identidad y jugadores. -->
       <equipos>
         <equipo id="1">
           <nombre>Barça</nombre>
@@ -824,6 +827,7 @@
           </jugadores>
         </equipo>
       </equipos>
+      <!-- Calendario y marcadores de la temporada 2025-2026. -->
       <partidos>
         <partido local="1" visitante="2" goles_local="2" goles_visitante="0" fecha="2025-09-11"/>
         <partido local="3" visitante="4" goles_local="3" goles_visitante="1" fecha="2025-09-11"/>
@@ -917,7 +921,9 @@
         <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2026-01-22"/>
       </partidos>
     </temporada>
+    <!-- Temporada historica/alternativa para comparar comportamiento de la app. -->
     <temporada id="2026-2027" nombre="2026/2027" actual="no">
+      <!-- Bloque de equipos con plantillas para 2026-2027. -->
       <equipos>
         <equipo id="1">
           <nombre>Barça</nombre>
@@ -1454,6 +1460,7 @@
           </jugadores>
         </equipo>
       </equipos>
+      <!-- Calendario y marcadores de la temporada 2026-2027. -->
       <partidos>
         <partido local="1" visitante="9" goles_local="1" goles_visitante="3" fecha="2026-09-03"/>
         <partido local="3" visitante="8" goles_local="4" goles_visitante="1" fecha="2026-09-03"/>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" omit-xml-declaration="yes"/>
+    <!-- Parametros de entrada: temporada activa y jugador opcional para ficha. -->
     <xsl:param name="temporadaId"/>
     <xsl:param name="jugadorId"/>
 
+    <!-- Normaliza valores vacios o "no disponible" para salida amigable. -->
     <xsl:template name="safe-value">
         <xsl:param name="value"/>
         <xsl:choose>
@@ -16,9 +18,11 @@
     </xsl:template>
 
     <xsl:template match="/">
+        <!-- Nodos base para decidir entre listado general o ficha individual. -->
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
         <xsl:variable name="jugadorSeleccionado" select="$temporada/equipos/equipo/jugadores/jugador[@id=$jugadorId]"/>
         <xsl:variable name="equipoJugador" select="$temporada/equipos/equipo[jugadores/jugador[@id=$jugadorId]]"/>
+        <!-- Ruta de fotos dependiente de temporada. -->
         <xsl:variable name="rutaFotos">
             <xsl:choose>
                 <xsl:when test="$temporadaId = '2026-2027'">../img/Jugadores2026_2027</xsl:when>
@@ -43,6 +47,7 @@
             </xsl:when>
 
             <xsl:when test="string-length(normalize-space($jugadorId)) &gt; 0">
+                <!-- Se calcula posicion del jugador para ayudar al fallback de imagen en JS. -->
                 <xsl:variable name="ordenJugador" select="count($jugadorSeleccionado/preceding-sibling::jugador) + 1"/>
                 <article class="player-basic-detail">
                     <div class="player-basic-layout">
@@ -122,6 +127,7 @@
             </xsl:when>
 
             <xsl:otherwise>
+                <!-- Listado completo de jugadores agrupado por equipo. -->
                 <article class="cards-grid player-spotlight-grid">
                     <xsl:for-each select="$temporada/equipos/equipo">
                         <xsl:sort select="nombre" data-type="text" order="ascending"/>

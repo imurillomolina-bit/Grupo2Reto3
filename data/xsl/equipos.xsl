@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" omit-xml-declaration="yes"/>
+    <!-- Parametros de entrada controlados por la pagina de equipos. -->
     <xsl:param name="temporadaId"/>
     <xsl:param name="equipoId"/>
 
     <xsl:template match="/">
+        <!-- Recupera temporada y equipo para decidir si renderiza listado o detalle. -->
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
         <xsl:variable name="equipoSeleccionado" select="$temporada/equipos/equipo[@id=$equipoId]"/>
+        <!-- Cambia el directorio de fotos segun la temporada seleccionada. -->
         <xsl:variable name="rutaFotos">
             <xsl:choose>
                 <xsl:when test="$temporadaId = '2026-2027'">../img/Jugadores2026_2027</xsl:when>
@@ -33,6 +36,7 @@
             </xsl:when>
 
             <xsl:when test="string-length(normalize-space($equipoId)) &gt; 0">
+                <!-- Vista de detalle para un equipo concreto. -->
                 <article class="team-headline">
                     <img class="team-shield-large" src="{$equipoSeleccionado/escudo}" alt="Escudo de {$equipoSeleccionado/nombre}"/>
                     <div>
@@ -53,6 +57,7 @@
                 <article>
                     <h3>Plantilla de jugadores</h3>
                     <div class="player-grid">
+                        <!-- Muestra jugadores de la plantilla del equipo elegido. -->
                         <xsl:for-each select="$equipoSeleccionado/jugadores/jugador">
                             <figure class="player-card">
                                 <img src="{$rutaFotos}/{foto}" alt="Foto de {nombre}"/>
@@ -67,6 +72,7 @@
             </xsl:when>
 
             <xsl:otherwise>
+                <!-- Vista general en formato tarjetas para todos los equipos. -->
                 <article class="cards-grid team-summary-grid">
                     <xsl:for-each select="$temporada/equipos/equipo">
                         <a class="info-card team-summary-card" href="equipo.php?id={@id}&amp;temporada_id={$temporadaId}">

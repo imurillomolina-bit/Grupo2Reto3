@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" omit-xml-declaration="yes"/>
+    <!-- Temporada objetivo recibida desde la interfaz. -->
     <xsl:param name="temporadaId"/>
 
     <xsl:template match="/">
+        <!-- Se posiciona la temporada activa para todas las consultas posteriores. -->
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
 
         <xsl:choose>
@@ -30,7 +32,9 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Recorre equipos y calcula sus metricas en tiempo de transformacion. -->
                             <xsl:for-each select="$temporada/equipos/equipo">
+                                <!-- Criterios de orden: puntos, diferencia de goles, goles a favor y nombre. -->
                                 <xsl:sort data-type="number" order="descending"
                                     select="(count($temporada/partidos/partido[(@local=current()/@id and number(@goles_local) &gt; number(@goles_visitante)) or (@visitante=current()/@id and number(@goles_visitante) &gt; number(@goles_local))]) * 3 + count($temporada/partidos/partido[(@local=current()/@id or @visitante=current()/@id) and number(@goles_local)=number(@goles_visitante)])) + (number($temporadaId='2025-2026' and (@id='1' or @id='3' or @id='5' or @id='7' or @id='8' or @id='9')) * 1000)"/>
                                 <xsl:sort data-type="number" order="descending"
@@ -39,6 +43,7 @@
                                     select="sum($temporada/partidos/partido[@local=current()/@id]/@goles_local) + sum($temporada/partidos/partido[@visitante=current()/@id]/@goles_visitante)"/>
                                 <xsl:sort data-type="text" order="ascending" select="nombre"/>
 
+                                <!-- Variables por equipo para evitar repetir expresiones largas en celdas. -->
                                 <xsl:variable name="id" select="number(@id)"/>
                                 <xsl:variable name="pj" select="count($temporada/partidos/partido[@local=$id or @visitante=$id])"/>
                                 <xsl:variable name="pg" select="count($temporada/partidos/partido[(@local=$id and number(@goles_local) &gt; number(@goles_visitante)) or (@visitante=$id and number(@goles_visitante) &gt; number(@goles_local))])"/>

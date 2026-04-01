@@ -22,6 +22,7 @@ require __DIR__ . '/../includes/header.php';
                 | Jornada: <strong id="jornada_nombre">-</strong>
             </p>
 
+            <!-- Filtros de temporada y jornada para recalcular la tabla de partidos. -->
             <div class="matches-filters">
                 <form class="season-form" id="season_form" action="set_temporada.php" method="post">
                     <label for="temporada_id">Cambiar temporada</label>
@@ -37,6 +38,7 @@ require __DIR__ . '/../includes/header.php';
             </div>
         </article>
 
+        <!-- Contenedor de resultados de la transformacion XSL de partidos. -->
         <article id="partidos_render" class="matches-wrap" aria-label="Listado de partidos">
             <p>Cargando partidos...</p>
         </article>

@@ -7,6 +7,7 @@ declare(strict_types=1);
 header('Content-Type: image/svg+xml; charset=UTF-8');
 header('Cache-Control: public, max-age=3600');
 
+// Lee el nombre enviado por query string para personalizar el avatar.
 $nombreRaw = filter_input(INPUT_GET, 'nombre', FILTER_UNSAFE_RAW);
 $nombre = is_string($nombreRaw) ? trim($nombreRaw) : '';
 
@@ -14,9 +15,11 @@ if ($nombre === '') {
     $nombre = 'Jugador';
 }
 
+// Normaliza espacios y limita longitud para evitar textos demasiado largos.
 $nombre = preg_replace('/\s+/', ' ', $nombre) ?? 'Jugador';
 $nombre = mb_substr($nombre, 0, 24);
 
+// Paletas predefinidas para dar variedad visual sin depender de recursos externos.
 $paletas = [
     ['#0a3d7a', '#1261c9', '#ffd232'],
     ['#2b2d42', '#3f5aa9', '#f7b801'],
@@ -26,10 +29,12 @@ $paletas = [
     ['#7a1026', '#c1264b', '#ffd166'],
 ];
 
+// Hash estable: mismo nombre produce siempre el mismo avatar y misma paleta.
 $hash = abs(crc32(mb_strtolower($nombre, 'UTF-8')));
 $palette = $paletas[$hash % count($paletas)];
 [$bgFrom, $bgTo, $shirt] = $palette;
 
+// SVG minimalista para carga rapida incluso con conexiones lentas.
 echo "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'>";
 echo "<defs><linearGradient id='bg' x1='0' x2='1' y1='0' y2='1'>";
 echo "<stop offset='0%' stop-color='{$bgFrom}'/>";

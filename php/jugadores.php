@@ -13,12 +13,14 @@ $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
 require __DIR__ . '/../includes/header.php';
 ?>
 
+<!-- Main: Vista de catalogo completo de jugadores -->
 <main class="page page-players" data-temporada-sesion="<?php echo e($temporadaSesion); ?>">
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Jugadores</h2>
             <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
+            <!-- Selector global de temporada para regenerar listado con XSL. -->
             <form class="season-form" id="season_form" action="set_temporada.php" method="post">
                 <label for="temporada_id">Cambiar temporada</label>
                 <select id="temporada_id" name="temporada_id" required></select>
@@ -26,6 +28,7 @@ require __DIR__ . '/../includes/header.php';
             </form>
         </article>
 
+        <!-- Zona principal de tarjetas de jugadores (render cliente). -->
         <article id="jugadores_render" aria-label="Listado de jugadores">
             <p>Cargando jugadores...</p>
         </article>

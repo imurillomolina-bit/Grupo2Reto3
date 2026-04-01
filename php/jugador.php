@@ -15,6 +15,7 @@ $jugadorId = is_string($jugadorIdRaw) ? trim($jugadorIdRaw) : '';
 require __DIR__ . '/../includes/header.php';
 ?>
 
+<!-- Main: Vista de ficha individual renderizada por XSL -->
 <main class="page page-player-detail" data-temporada-sesion="<?php echo e($temporadaSesion); ?>" data-jugador-id="<?php echo e($jugadorId); ?>">
     <section class="panel content-panel">
         <article class="panel-heading">
@@ -22,6 +23,7 @@ require __DIR__ . '/../includes/header.php';
             <p>Temporada activa: <strong id="temporada_nombre">Cargando...</strong></p>
 
             <?php if ($jugadorId === ''): ?>
+                <!-- Si no hay jugador concreto, se permite cambiar temporada para el listado/filtro. -->
                 <form class="season-form" id="season_form" action="set_temporada.php" method="post">
                     <label for="temporada_id">Cambiar temporada</label>
                     <select id="temporada_id" name="temporada_id" required></select>
@@ -30,6 +32,7 @@ require __DIR__ . '/../includes/header.php';
             <?php endif; ?>
         </article>
 
+        <!-- Contenedor de render: se rellena con la transformacion XSL de jugadores. -->
         <article id="jugador_render" class="player-basic-detail" aria-label="Ficha de jugador">
             <p>Cargando jugador...</p>
         </article>

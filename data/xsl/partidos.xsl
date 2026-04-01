@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" omit-xml-declaration="yes"/>
+    <!-- Parametros enviados desde la vista: temporada y fecha/jornada activa. -->
     <xsl:param name="temporadaId"/>
     <xsl:param name="fechaSeleccionada"/>
 
     <xsl:template match="/">
+        <!-- Nodo de temporada sobre el que se aplica el filtro de fecha. -->
         <xsl:variable name="temporada" select="liga/temporadas/temporada[@id=$temporadaId]"/>
 
         <xsl:choose>
@@ -27,12 +29,14 @@
                         </thead>
                         <tbody>
                             <xsl:choose>
+                                <!-- Mensaje amigable cuando la jornada no tiene partidos. -->
                                 <xsl:when test="count($temporada/partidos/partido[@fecha=$fechaSeleccionada]) = 0">
                                     <tr>
                                         <td colspan="4">No hay partidos disponibles para este filtro.</td>
                                     </tr>
                                 </xsl:when>
                                 <xsl:otherwise>
+                                    <!-- Render fila por partido para la fecha seleccionada. -->
                                     <xsl:for-each select="$temporada/partidos/partido[@fecha=$fechaSeleccionada]">
                                         <tr>
                                             <td class="team-name-col">

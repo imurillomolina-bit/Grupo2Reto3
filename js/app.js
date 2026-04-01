@@ -1,14 +1,18 @@
+// Logica cliente para cargar XML/XSL, renderizar vistas y sincronizar filtros.
 (function () {
     'use strict';
 
+    // Convierte texto en un documento XML utilizable por el navegador.
     function parseXml(text) {
         return new window.DOMParser().parseFromString(text, 'text/xml');
     }
 
+    // Detecta errores de parseo en documentos XML o XSL.
     function hasXmlError(doc) {
         return doc.getElementsByTagName('parsererror').length > 0;
     }
 
+    // Extrae del XML la lista de temporadas y su metadato de temporada actual.
     function getTemporadas(xmlDoc) {
         return Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).map(function (n) {
             return {
@@ -19,6 +23,7 @@
         });
     }
 
+    // Resuelve que temporada usar con prioridad: URL, sesion, actual y fallback.
     function getSelectedSeasonId(temporadas, temporadaSesion) {
         var params = new URLSearchParams(window.location.search);
         var byQuery = params.get('temporada_id');
@@ -38,6 +43,7 @@
         return temporadas.length > 0 ? temporadas[0].id : '';
     }
 
+    // Rellena el selector de temporadas con las opciones disponibles.
     function fillSeasonSelect(seasonSelect, temporadas, selectedId) {
         if (!seasonSelect) {
             return;
@@ -55,6 +61,7 @@
         });
     }
 
+    // Actualiza el nombre de temporada en la vista local y en la cabecera global.
     function updateHeaderSeasonName(seasonName, temporadas, selectedId) {
         var found = temporadas.find(function (t) { return t.id === selectedId; });
         var selectedName = found ? found.nombre : 'No disponible';
@@ -69,11 +76,13 @@
         }
     }
 
+    // Calcula la ruta correcta del endpoint segun la pagina actual.
     function getSeasonEndpoint() {
         var normalizedPath = (window.location.pathname || '').replace(/\\/g, '/');
         return normalizedPath.indexOf('/php/') !== -1 ? 'set_temporada.php' : 'php/set_temporada.php';
     }
 
+    // Persiste la temporada elegida en sesion para mantener consistencia entre paginas.
     function persistSeasonInSession(temporadaId) {
         if (!temporadaId) {
             return Promise.resolve();
@@ -97,6 +106,7 @@
         });
     }
 
+    // Elimina duplicados conservando orden de aparicion.
     function unique(values) {
         var out = [];
         values.forEach(function (v) {
@@ -107,6 +117,7 @@
         return out;
     }
 
+    // Normaliza un valor numerico a dos digitos para nombres de imagen.
     function pad2(value) {
         var n = String(value || '').trim();
         if (n.length === 1) {
@@ -115,6 +126,7 @@
         return n;
     }
 
+    // Intenta distintas rutas de imagen y recurre a avatar dinamico si no existe foto.
     function applyPlayerImageFallback(root) {
         if (!root) {
             return;
@@ -166,6 +178,7 @@
         });
     }
 
+    // Activa el boton hamburguesa para navegacion responsive.
     function initNavToggle() {
         var btn = document.querySelector('.nav-toggle');
         var nav = document.getElementById('main-nav');
@@ -179,6 +192,7 @@
         });
     }
 
+    // Inicializa carga XML/XSL y render de la pagina de clasificacion.
     function initClasificacion() {
         var page = document.querySelector('main.page-home');
         if (!page) {
@@ -195,6 +209,7 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
+        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
         function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
             var processor = new window.XSLTProcessor();
             processor.importStylesheet(xslDoc);
@@ -254,6 +269,7 @@
         });
     }
 
+    // Inicializa vista de equipos y detalle de equipo seleccionado.
     function initEquipo() {
         var page = document.querySelector('main.page-team');
         if (!page) {
@@ -272,6 +288,7 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
+        // Obtiene el id del equipo desde URL o desde el valor inicial de la pagina.
         function getSelectedTeamId() {
             var params = new URLSearchParams(window.location.search);
             var byQuery = params.get('id');
@@ -281,10 +298,12 @@
             return equipoIdInicial;
         }
 
+        // Ajusta el titulo de la seccion segun se muestre listado o detalle.
         function updateTitle(teamId) {
             titleTarget.textContent = teamId ? 'Detalle de equipo' : 'Equipos';
         }
 
+        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
         function renderWithXsl(xmlDoc, xslDoc, temporadaId, equipoId) {
             var processor = new window.XSLTProcessor();
             processor.importStylesheet(xslDoc);
@@ -355,6 +374,7 @@
         });
     }
 
+    // Inicializa la ficha individual de jugador con transformacion XSL.
     function initJugador() {
         var page = document.querySelector('main.page-player-detail');
         if (!page) {
@@ -372,11 +392,13 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
+        // Obtiene el id de jugador desde URL o desde el estado inicial.
         function getSelectedPlayerId() {
             var params = new URLSearchParams(window.location.search);
             return params.get('id') || jugadorIdInicial;
         }
 
+        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
         function renderWithXsl(xmlDoc, xslDoc, temporadaId, jugadorId) {
             var processor = new window.XSLTProcessor();
             processor.importStylesheet(xslDoc);
@@ -447,6 +469,7 @@
         });
     }
 
+    // Inicializa el listado general de jugadores por temporada.
     function initJugadores() {
         var page = document.querySelector('main.page-players');
         if (!page) {
@@ -463,6 +486,7 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
+        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
         function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
             var processor = new window.XSLTProcessor();
             processor.importStylesheet(xslDoc);
@@ -527,6 +551,7 @@
         });
     }
 
+    // Inicializa listado de partidos y filtro por jornada.
     function initPartidos() {
         var page = document.querySelector('main.page-matches');
         if (!page) {
@@ -546,6 +571,7 @@
         var seasonForm = document.getElementById('season_form');
         var jornadaForm = document.getElementById('jornada_form');
 
+        // Localiza en el XML el nodo de la temporada activa.
         function getTemporadaNode(xmlDoc, temporadaId) {
             return xmlDoc.querySelector('liga > temporadas > temporada[id="' + temporadaId + '"]') ||
                 Array.from(xmlDoc.querySelectorAll('liga > temporadas > temporada')).find(function (n) {
@@ -554,6 +580,7 @@
                 null;
         }
 
+        // Construye jornadas a partir de fechas unicas de partidos.
         function getJornadas(temporadaNode) {
             if (!temporadaNode) {
                 return [];
@@ -577,6 +604,7 @@
             });
         }
 
+        // Resuelve la jornada activa desde URL con fallback seguro.
         function getSelectedJornadaNumero(jornadas) {
             var params = new URLSearchParams(window.location.search);
             var byQueryRaw = params.get('jornada_id');
@@ -589,6 +617,7 @@
             return jornadas.length > 0 ? jornadas[0].numero : 0;
         }
 
+        // Rellena el selector de jornadas segun las jornadas disponibles.
         function fillJornadaSelect(jornadas, selectedNumero) {
             jornadaSelect.innerHTML = '';
             jornadas.forEach(function (jornada) {
@@ -602,10 +631,12 @@
             });
         }
 
+        // Actualiza en cabecera el numero de jornada visible.
         function updateHeaderJornadaName(selectedNumero) {
             jornadaName.textContent = selectedNumero > 0 ? String(selectedNumero) : '-';
         }
 
+        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
         function renderWithXsl(xmlDoc, xslDoc, temporadaId, fechaSeleccionada) {
             var processor = new window.XSLTProcessor();
             processor.importStylesheet(xslDoc);
@@ -718,6 +749,7 @@
         });
     }
 
+    // Arranque de todos los modulos: cada init se activa solo en su pagina correspondiente.
     initNavToggle();
     initClasificacion();
     initEquipo();

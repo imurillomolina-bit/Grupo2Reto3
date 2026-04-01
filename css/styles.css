@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Rajdhani:wght@400;600;700&display=swap');
 
+/* Hoja principal: organiza layout, componentes y responsive de toda la web. */
+
+/* Paleta, radios y sombras globales del diseño. */
 :root {
     --blue-900: #041833;
     --blue-700: #0a3d7a;
@@ -15,10 +18,12 @@
     --radius: 16px;
 }
 
+/* Reset base de caja para layout consistente. */
 * {
     box-sizing: border-box;
 }
 
+/* Lienzo principal y fondo atmosferico de toda la app. */
 body {
     margin: 0;
     min-height: 100vh;
@@ -36,6 +41,7 @@ a {
     color: inherit;
 }
 
+/* Cabecera superior con identidad visual de liga. */
 .site-header {
     padding: 1rem;
     background: linear-gradient(130deg, var(--blue-900), var(--blue-700));
@@ -98,6 +104,7 @@ a {
     display: contents;
 }
 
+/* Navegacion principal y distribucion de accesos. */
 .main-nav {
     display: flex;
     flex-wrap: wrap;
@@ -189,6 +196,7 @@ a {
     font-weight: 600;
 }
 
+/* Formularios reutilizables para cambio de temporada y filtros. */
 .season-form {
     display: flex;
     flex-wrap: wrap;
@@ -238,6 +246,7 @@ a {
     margin: 0;
 }
 
+/* Contenedor general de paginas con ancho fluido. */
 .page {
     width: min(1120px, 94vw);
     margin: 1rem auto 1.25rem;
@@ -255,6 +264,7 @@ a {
     gap: 1.2rem;
 }
 
+/* Animacion de entrada para suavizar el render inicial. */
 @keyframes reveal {
     from {
         opacity: 0;
@@ -266,6 +276,7 @@ a {
     }
 }
 
+/* Componente base de tarjetas/paneles del sistema. */
 .panel {
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid #d9e8fb;
@@ -316,6 +327,7 @@ a {
     align-content: center;
 }
 
+/* Cabecera de portada con metricas destacadas. */
 .hero-panel {
     display: grid;
     gap: 1rem;
@@ -361,12 +373,14 @@ a {
     color: var(--yellow-300);
 }
 
+/* Rejilla adaptable de tarjetas resumen. */
 .summary-grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+/* Bloque de insights y microanalitica de temporada. */
 .start-insights {
     display: grid;
     gap: 1rem;
@@ -432,6 +446,7 @@ a {
     gap: 0.45rem;
 }
 
+/* Barras visuales para distribucion por posiciones. */
 .position-bars {
     display: grid;
     gap: 0.55rem;
@@ -589,6 +604,7 @@ a {
     font-weight: 700;
 }
 
+/* Grid reutilizable para equipos, jugadores y noticias. */
 .cards-grid {
     display: grid;
     gap: 1rem;
@@ -894,6 +910,7 @@ a {
     color: #1f2937;
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (min-width: 900px) {
     .newsprint-layout {
         grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
@@ -910,6 +927,7 @@ a {
     }
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 700px) {
     .newsprint-masthead,
     .newsprint-edition {
@@ -921,6 +939,7 @@ a {
     }
 }
 
+/* Pie de pagina con informacion institucional. */
 .site-footer {
     margin-top: auto;
     padding: 1rem;
@@ -931,11 +950,13 @@ a {
 }
 
 .table-wrap,
+/* Marco visual del modulo de partidos. */
 .matches-wrap {
     overflow-x: auto;
 }
 
 .standings-table,
+/* Tabla de resultados y jornadas. */
 .matches-table {
     width: 100%;
     border-collapse: collapse;
@@ -996,6 +1017,7 @@ table tr .tdNombreEquipo {
     gap: 1rem;
 }
 
+/* Encabezado de detalle del equipo seleccionado. */
 .team-headline {
     display: grid;
     gap: 1rem;
@@ -1036,6 +1058,7 @@ table tr .tdNombreEquipo {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
+/* Tarjeta visual para jugadores en listados. */
 .player-card {
     margin: 0;
     border: 1px solid #d6e5f9;
@@ -1316,6 +1339,7 @@ table tr .tdNombreEquipo {
     margin-inline: auto;
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 720px) {
     .hide-mobile {
         display: none;
@@ -1407,6 +1431,7 @@ table tr .tdNombreEquipo {
     }
 }
 
+/* Estilos del formulario de autenticacion. */
 .login-form {
     padding: 1rem;
     display: grid;
@@ -1499,12 +1524,14 @@ table tr .tdNombreEquipo {
     opacity: 0.86;
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (min-width: 860px) {
     .site-footer-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 710px) {
     .nav-toggle {
         display: flex;
@@ -1552,6 +1579,7 @@ table tr .tdNombreEquipo {
     }
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 720px) {
     .hide-mobile {
         display: none;
@@ -1572,6 +1600,7 @@ table tr .tdNombreEquipo {
     }
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (min-width: 860px) {
     .header-top {
         grid-template-columns: minmax(280px, 1fr) auto;
@@ -1599,7 +1628,7 @@ table tr .tdNombreEquipo {
     }
 }
 
-/* Rediseño visual jugadores + ficha tecnica */
+/* Rediseno visual jugadores + ficha tecnica */
 .page-players .content-panel,
 .page-player-detail .content-panel {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 255, 0.92));
@@ -1796,6 +1825,7 @@ table tr .tdNombreEquipo {
     color: #ffffff;
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 720px) {
     .page-player-detail .player-hero {
         grid-template-columns: 1fr;
@@ -1912,6 +1942,7 @@ table tr .tdNombreEquipo {
     border-width: 1px;
 }
 
+/* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 780px) {
     .player-basic-layout {
         grid-template-columns: 1fr;
