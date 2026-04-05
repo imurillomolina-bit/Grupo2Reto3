@@ -82,6 +82,40 @@
         return normalizedPath.indexOf('/php/') !== -1 ? 'set_temporada.php' : 'php/set_temporada.php';
     }
 
+    // Calcula la ruta del endpoint central que valida y transforma XML/XSL en PHP.
+    function getContentEndpoint() {
+        var normalizedPath = (window.location.pathname || '').replace(/\\/g, '/');
+        return normalizedPath.indexOf('/php/') !== -1 ? 'cargar_contenido.php' : 'php/cargar_contenido.php';
+    }
+
+    // Solicita HTML ya transformado por el servidor para una vista concreta.
+    function fetchTransformedHtml(page, params) {
+        var query = new URLSearchParams();
+        query.set('page', page);
+
+        Object.keys(params || {}).forEach(function (key) {
+            var value = params[key];
+            if (value !== undefined && value !== null && String(value).trim() !== '') {
+                query.set(key, String(value));
+            }
+        });
+
+        return fetch(getContentEndpoint() + '?' + query.toString(), {
+            credentials: 'same-origin',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }).then(function (response) {
+            return response.text().then(function (text) {
+                if (!response.ok) {
+                    throw new Error(text || ('HTTP ' + response.status));
+                }
+
+                return text;
+            });
+        });
+    }
+
     // Persiste la temporada elegida en sesion para mantener consistencia entre paginas.
     function persistSeasonInSession(temporadaId) {
         if (!temporadaId) {
@@ -200,7 +234,6 @@
         }
 
         var xmlUrl = '../data/datos.xml';
-        var xslUrl = '../data/xsl/clasificacion.xsl';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
 
         var renderTarget = document.getElementById('clasificacion_render');
@@ -209,26 +242,22 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
-        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
-        function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
-            var processor = new window.XSLTProcessor();
-            processor.importStylesheet(xslDoc);
-            processor.setParameter(null, 'temporadaId', temporadaId);
-
-            var fragment = processor.transformToFragment(xmlDoc, document);
-            renderTarget.innerHTML = '';
-            renderTarget.appendChild(fragment);
+        // Pide al servidor el HTML de clasificacion ya transformado con XSL.
+        function renderFromServer(temporadaId) {
+            return fetchTransformedHtml('clasificacion', {
+                temporada_id: temporadaId
+            }).then(function (html) {
+                renderTarget.innerHTML = html;
+            });
         }
 
         Promise.all([
-            fetch(xmlUrl).then(function (r) { return r.text(); }),
-            fetch(xslUrl).then(function (r) { return r.text(); })
+            fetch(xmlUrl).then(function (r) { return r.text(); })
         ]).then(function (payload) {
             var xmlDoc = parseXml(payload[0]);
-            var xslDoc = parseXml(payload[1]);
 
-            if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
-                throw new Error('Error de parseo XML/XSL');
+            if (hasXmlError(xmlDoc)) {
+                throw new Error('Error de parseo XML');
             }
 
             var temporadas = getTemporadas(xmlDoc);
@@ -240,18 +269,33 @@
 
             fillSeasonSelect(seasonSelect, temporadas, selectedSeasonId);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
-            renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
+            return renderFromServer(selectedSeasonId).then(function () {
+                seasonForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+                    var nextSeasonId = seasonSelect.value;
+                    persistSeasonInSession(nextSeasonId);
 
-            seasonForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
-                var nextSeasonId = seasonSelect.value;
-                persistSeasonInSession(nextSeasonId);
-                renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
-                updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                    renderFromServer(nextSeasonId).then(function () {
+                        updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                window.history.replaceState({}, '', nextUrl.toString());
+                        var nextUrl = new URL(window.location.href);
+                        nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                        window.history.replaceState({}, '', nextUrl.toString());
+                    }).catch(function (err) {
+                        renderTarget.style.display = 'none';
+                        errorTarget.style.display = 'block';
+
+                        var message = 'No se pudo cargar la clasificacion con XML/XSL.';
+                        if (err && err.message) {
+                            message += ' ' + err.message;
+                        }
+
+                        var p = errorTarget.querySelector('p');
+                        if (p) {
+                            p.textContent = message;
+                        }
+                    });
+                });
             });
         }).catch(function (err) {
             renderTarget.style.display = 'none';
@@ -277,7 +321,6 @@
         }
 
         var xmlUrl = '../data/datos.xml';
-        var xslUrl = '../data/xsl/equipos.xsl';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
         var equipoIdInicial = page.getAttribute('data-equipo-id') || '';
 
@@ -303,27 +346,24 @@
             titleTarget.textContent = teamId ? 'Detalle de equipo' : 'Equipos';
         }
 
-        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
-        function renderWithXsl(xmlDoc, xslDoc, temporadaId, equipoId) {
-            var processor = new window.XSLTProcessor();
-            processor.importStylesheet(xslDoc);
-            processor.setParameter(null, 'temporadaId', temporadaId);
-            processor.setParameter(null, 'equipoId', equipoId || '');
-
-            var fragment = processor.transformToFragment(xmlDoc, document);
-            renderTarget.innerHTML = '';
-            renderTarget.appendChild(fragment);
+        // Solicita al servidor listado o detalle de equipos en HTML.
+        function renderFromServer(temporadaId, equipoId) {
+            var pageType = equipoId ? 'equipo_detalle' : 'equipos';
+            return fetchTransformedHtml(pageType, {
+                temporada_id: temporadaId,
+                id: equipoId || ''
+            }).then(function (html) {
+                renderTarget.innerHTML = html;
+            });
         }
 
         Promise.all([
-            fetch(xmlUrl).then(function (r) { return r.text(); }),
-            fetch(xslUrl).then(function (r) { return r.text(); })
+            fetch(xmlUrl).then(function (r) { return r.text(); })
         ]).then(function (payload) {
             var xmlDoc = parseXml(payload[0]);
-            var xslDoc = parseXml(payload[1]);
 
-            if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
-                throw new Error('Error de parseo XML/XSL');
+            if (hasXmlError(xmlDoc)) {
+                throw new Error('Error de parseo XML');
             }
 
             var temporadas = getTemporadas(xmlDoc);
@@ -337,27 +377,41 @@
             fillSeasonSelect(seasonSelect, temporadas, selectedSeasonId);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
             updateTitle(selectedTeamId);
-            renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedTeamId);
+            return renderFromServer(selectedSeasonId, selectedTeamId).then(function () {
+                if (seasonForm && seasonSelect) {
+                    seasonForm.addEventListener('submit', function (ev) {
+                        ev.preventDefault();
+                        var nextSeasonId = seasonSelect.value;
+                        var currentTeamId = getSelectedTeamId();
+                        persistSeasonInSession(nextSeasonId);
 
-            if (seasonForm && seasonSelect) {
-                seasonForm.addEventListener('submit', function (ev) {
-                    ev.preventDefault();
-                    var nextSeasonId = seasonSelect.value;
-                    var currentTeamId = getSelectedTeamId();
-                    persistSeasonInSession(nextSeasonId);
+                        renderFromServer(nextSeasonId, currentTeamId).then(function () {
+                            updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                            updateTitle(currentTeamId);
 
-                    renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentTeamId);
-                    updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
-                    updateTitle(currentTeamId);
+                            var nextUrl = new URL(window.location.href);
+                            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                            if (currentTeamId) {
+                                nextUrl.searchParams.set('id', currentTeamId);
+                            }
+                            window.history.replaceState({}, '', nextUrl.toString());
+                        }).catch(function (err) {
+                            renderTarget.style.display = 'none';
+                            errorTarget.style.display = 'block';
 
-                    var nextUrl = new URL(window.location.href);
-                    nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                    if (currentTeamId) {
-                        nextUrl.searchParams.set('id', currentTeamId);
-                    }
-                    window.history.replaceState({}, '', nextUrl.toString());
-                });
-            }
+                            var message = 'No se pudo cargar el apartado de equipos con XML/XSL.';
+                            if (err && err.message) {
+                                message += ' ' + err.message;
+                            }
+
+                            var p = errorTarget.querySelector('p');
+                            if (p) {
+                                p.textContent = message;
+                            }
+                        });
+                    });
+                }
+            });
         }).catch(function (err) {
             renderTarget.style.display = 'none';
             errorTarget.style.display = 'block';
@@ -382,7 +436,6 @@
         }
 
         var xmlUrl = '../data/datos.xml';
-        var xslUrl = '../data/xsl/jugadores.xsl';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
         var jugadorIdInicial = page.getAttribute('data-jugador-id') || '';
 
@@ -398,27 +451,24 @@
             return params.get('id') || jugadorIdInicial;
         }
 
-        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
-        function renderWithXsl(xmlDoc, xslDoc, temporadaId, jugadorId) {
-            var processor = new window.XSLTProcessor();
-            processor.importStylesheet(xslDoc);
-            processor.setParameter(null, 'temporadaId', temporadaId);
-            processor.setParameter(null, 'jugadorId', jugadorId || '');
-
-            var fragment = processor.transformToFragment(xmlDoc, document);
-            renderTarget.innerHTML = '';
-            renderTarget.appendChild(fragment);
+        // Solicita al servidor la ficha/listado de jugador ya transformada.
+        function renderFromServer(temporadaId, jugadorId) {
+            var pageType = jugadorId ? 'jugador_detalle' : 'jugadores';
+            return fetchTransformedHtml(pageType, {
+                temporada_id: temporadaId,
+                id: jugadorId || ''
+            }).then(function (html) {
+                renderTarget.innerHTML = html;
+            });
         }
 
         Promise.all([
-            fetch(xmlUrl).then(function (r) { return r.text(); }),
-            fetch(xslUrl).then(function (r) { return r.text(); })
+            fetch(xmlUrl).then(function (r) { return r.text(); })
         ]).then(function (payload) {
             var xmlDoc = parseXml(payload[0]);
-            var xslDoc = parseXml(payload[1]);
 
-            if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
-                throw new Error('Error de parseo XML/XSL');
+            if (hasXmlError(xmlDoc)) {
+                throw new Error('Error de parseo XML');
             }
 
             var temporadas = getTemporadas(xmlDoc);
@@ -431,28 +481,43 @@
 
             fillSeasonSelect(seasonSelect, temporadas, selectedSeasonId);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
-            renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedPlayerId);
-            applyPlayerImageFallback(renderTarget);
+            return renderFromServer(selectedSeasonId, selectedPlayerId).then(function () {
+                applyPlayerImageFallback(renderTarget);
 
-            if (seasonForm && seasonSelect) {
-                seasonForm.addEventListener('submit', function (ev) {
-                    ev.preventDefault();
-                    var nextSeasonId = seasonSelect.value;
-                    var currentPlayerId = getSelectedPlayerId();
-                    persistSeasonInSession(nextSeasonId);
+                if (seasonForm && seasonSelect) {
+                    seasonForm.addEventListener('submit', function (ev) {
+                        ev.preventDefault();
+                        var nextSeasonId = seasonSelect.value;
+                        var currentPlayerId = getSelectedPlayerId();
+                        persistSeasonInSession(nextSeasonId);
 
-                    renderWithXsl(xmlDoc, xslDoc, nextSeasonId, currentPlayerId);
-                    updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
-                    applyPlayerImageFallback(renderTarget);
+                        renderFromServer(nextSeasonId, currentPlayerId).then(function () {
+                            updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                            applyPlayerImageFallback(renderTarget);
 
-                    var nextUrl = new URL(window.location.href);
-                    nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                    if (currentPlayerId) {
-                        nextUrl.searchParams.set('id', currentPlayerId);
-                    }
-                    window.history.replaceState({}, '', nextUrl.toString());
-                });
-            }
+                            var nextUrl = new URL(window.location.href);
+                            nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                            if (currentPlayerId) {
+                                nextUrl.searchParams.set('id', currentPlayerId);
+                            }
+                            window.history.replaceState({}, '', nextUrl.toString());
+                        }).catch(function (err) {
+                            renderTarget.style.display = 'none';
+                            errorTarget.style.display = 'block';
+
+                            var message = 'No se pudo cargar la ficha de jugador con XML/XSL.';
+                            if (err && err.message) {
+                                message += ' ' + err.message;
+                            }
+
+                            var p = errorTarget.querySelector('p');
+                            if (p) {
+                                p.textContent = message;
+                            }
+                        });
+                    });
+                }
+            });
         }).catch(function (err) {
             renderTarget.style.display = 'none';
             errorTarget.style.display = 'block';
@@ -477,7 +542,6 @@
         }
 
         var xmlUrl = '../data/datos.xml';
-        var xslUrl = '../data/xsl/jugadores.xsl';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
 
         var renderTarget = document.getElementById('jugadores_render');
@@ -486,27 +550,22 @@
         var seasonSelect = document.getElementById('temporada_id');
         var seasonForm = document.getElementById('season_form');
 
-        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
-        function renderWithXsl(xmlDoc, xslDoc, temporadaId) {
-            var processor = new window.XSLTProcessor();
-            processor.importStylesheet(xslDoc);
-            processor.setParameter(null, 'temporadaId', temporadaId);
-            processor.setParameter(null, 'jugadorId', '');
-
-            var fragment = processor.transformToFragment(xmlDoc, document);
-            renderTarget.innerHTML = '';
-            renderTarget.appendChild(fragment);
+        // Solicita al servidor el listado de jugadores ya transformado con XSL.
+        function renderFromServer(temporadaId) {
+            return fetchTransformedHtml('jugadores', {
+                temporada_id: temporadaId
+            }).then(function (html) {
+                renderTarget.innerHTML = html;
+            });
         }
 
         Promise.all([
-            fetch(xmlUrl).then(function (r) { return r.text(); }),
-            fetch(xslUrl).then(function (r) { return r.text(); })
+            fetch(xmlUrl).then(function (r) { return r.text(); })
         ]).then(function (payload) {
             var xmlDoc = parseXml(payload[0]);
-            var xslDoc = parseXml(payload[1]);
 
-            if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
-                throw new Error('Error de parseo XML/XSL');
+            if (hasXmlError(xmlDoc)) {
+                throw new Error('Error de parseo XML');
             }
 
             var temporadas = getTemporadas(xmlDoc);
@@ -518,22 +577,37 @@
 
             fillSeasonSelect(seasonSelect, temporadas, selectedSeasonId);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
-            renderWithXsl(xmlDoc, xslDoc, selectedSeasonId);
-            applyPlayerImageFallback(renderTarget);
-
-            seasonForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
-                var nextSeasonId = seasonSelect.value;
-                persistSeasonInSession(nextSeasonId);
-
-                renderWithXsl(xmlDoc, xslDoc, nextSeasonId);
-                updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+            return renderFromServer(selectedSeasonId).then(function () {
                 applyPlayerImageFallback(renderTarget);
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                nextUrl.searchParams.delete('id');
-                window.history.replaceState({}, '', nextUrl.toString());
+                seasonForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+                    var nextSeasonId = seasonSelect.value;
+                    persistSeasonInSession(nextSeasonId);
+
+                    renderFromServer(nextSeasonId).then(function () {
+                        updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                        applyPlayerImageFallback(renderTarget);
+
+                        var nextUrl = new URL(window.location.href);
+                        nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                        nextUrl.searchParams.delete('id');
+                        window.history.replaceState({}, '', nextUrl.toString());
+                    }).catch(function (err) {
+                        renderTarget.style.display = 'none';
+                        errorTarget.style.display = 'block';
+
+                        var message = 'No se pudo cargar el apartado de jugadores con XML/XSL.';
+                        if (err && err.message) {
+                            message += ' ' + err.message;
+                        }
+
+                        var p = errorTarget.querySelector('p');
+                        if (p) {
+                            p.textContent = message;
+                        }
+                    });
+                });
             });
         }).catch(function (err) {
             renderTarget.style.display = 'none';
@@ -559,7 +633,6 @@
         }
 
         var xmlUrl = '../data/datos.xml';
-        var xslUrl = '../data/xsl/partidos.xsl';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
 
         var renderTarget = document.getElementById('partidos_render');
@@ -636,27 +709,23 @@
             jornadaName.textContent = selectedNumero > 0 ? String(selectedNumero) : '-';
         }
 
-        // Transforma XML con XSL y vuelca el resultado en el contenedor de la vista.
-        function renderWithXsl(xmlDoc, xslDoc, temporadaId, fechaSeleccionada) {
-            var processor = new window.XSLTProcessor();
-            processor.importStylesheet(xslDoc);
-            processor.setParameter(null, 'temporadaId', temporadaId);
-            processor.setParameter(null, 'fechaSeleccionada', fechaSeleccionada || '');
-
-            var fragment = processor.transformToFragment(xmlDoc, document);
-            renderTarget.innerHTML = '';
-            renderTarget.appendChild(fragment);
+        // Solicita al servidor los partidos filtrados por temporada y fecha.
+        function renderFromServer(temporadaId, fechaSeleccionada) {
+            return fetchTransformedHtml('partidos', {
+                temporada_id: temporadaId,
+                fecha_seleccionada: fechaSeleccionada || ''
+            }).then(function (html) {
+                renderTarget.innerHTML = html;
+            });
         }
 
         Promise.all([
-            fetch(xmlUrl).then(function (r) { return r.text(); }),
-            fetch(xslUrl).then(function (r) { return r.text(); })
+            fetch(xmlUrl).then(function (r) { return r.text(); })
         ]).then(function (payload) {
             var xmlDoc = parseXml(payload[0]);
-            var xslDoc = parseXml(payload[1]);
 
-            if (hasXmlError(xmlDoc) || hasXmlError(xslDoc)) {
-                throw new Error('Error de parseo XML/XSL');
+            if (hasXmlError(xmlDoc)) {
+                throw new Error('Error de parseo XML');
             }
 
             var temporadas = getTemporadas(xmlDoc);
@@ -675,63 +744,90 @@
             fillJornadaSelect(jornadas, selectedJornadaNumero);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
             updateHeaderJornadaName(selectedJornadaNumero);
-            renderWithXsl(xmlDoc, xslDoc, selectedSeasonId, selectedJornada ? selectedJornada.fecha : '');
+            return renderFromServer(selectedSeasonId, selectedJornada ? selectedJornada.fecha : '').then(function () {
+                seasonForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
+                    var nextSeasonId = seasonSelect.value;
+                    persistSeasonInSession(nextSeasonId);
 
-            seasonForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
-                var nextSeasonId = seasonSelect.value;
-                persistSeasonInSession(nextSeasonId);
+                    var nextTemporadaNode = getTemporadaNode(xmlDoc, nextSeasonId);
+                    var nextJornadas = getJornadas(nextTemporadaNode);
+                    var nextSelectedJornadaNumero = nextJornadas.length > 0 ? nextJornadas[0].numero : 0;
+                    var nextSelectedJornada = nextJornadas.find(function (j) {
+                        return j.numero === nextSelectedJornadaNumero;
+                    }) || null;
 
-                var nextTemporadaNode = getTemporadaNode(xmlDoc, nextSeasonId);
-                var nextJornadas = getJornadas(nextTemporadaNode);
-                var nextSelectedJornadaNumero = nextJornadas.length > 0 ? nextJornadas[0].numero : 0;
-                var nextSelectedJornada = nextJornadas.find(function (j) {
-                    return j.numero === nextSelectedJornadaNumero;
-                }) || null;
+                    fillJornadaSelect(nextJornadas, nextSelectedJornadaNumero);
+                    updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
+                    updateHeaderJornadaName(nextSelectedJornadaNumero);
 
-                fillJornadaSelect(nextJornadas, nextSelectedJornadaNumero);
-                updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
-                updateHeaderJornadaName(nextSelectedJornadaNumero);
-                renderWithXsl(xmlDoc, xslDoc, nextSeasonId, nextSelectedJornada ? nextSelectedJornada.fecha : '');
+                    renderFromServer(nextSeasonId, nextSelectedJornada ? nextSelectedJornada.fecha : '').then(function () {
+                        var nextUrl = new URL(window.location.href);
+                        nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                        if (nextSelectedJornadaNumero > 0) {
+                            nextUrl.searchParams.set('jornada_id', String(nextSelectedJornadaNumero));
+                        } else {
+                            nextUrl.searchParams.delete('jornada_id');
+                        }
+                        window.history.replaceState({}, '', nextUrl.toString());
+                    }).catch(function (err) {
+                        renderTarget.style.display = 'none';
+                        errorTarget.style.display = 'block';
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', nextSeasonId);
-                if (nextSelectedJornadaNumero > 0) {
-                    nextUrl.searchParams.set('jornada_id', String(nextSelectedJornadaNumero));
-                } else {
-                    nextUrl.searchParams.delete('jornada_id');
-                }
-                window.history.replaceState({}, '', nextUrl.toString());
-            });
+                        var message = 'No se pudo cargar el apartado de partidos con XML/XSL.';
+                        if (err && err.message) {
+                            message += ' ' + err.message;
+                        }
 
-            jornadaForm.addEventListener('submit', function (ev) {
-                ev.preventDefault();
+                        var p = errorTarget.querySelector('p');
+                        if (p) {
+                            p.textContent = message;
+                        }
+                    });
+                });
 
-                var currentSeasonId = seasonSelect.value;
-                var currentTemporadaNode = getTemporadaNode(xmlDoc, currentSeasonId);
-                var currentJornadas = getJornadas(currentTemporadaNode);
+                jornadaForm.addEventListener('submit', function (ev) {
+                    ev.preventDefault();
 
-                var nextJornadaNumero = parseInt(jornadaSelect.value, 10);
-                if (Number.isNaN(nextJornadaNumero)) {
-                    nextJornadaNumero = currentJornadas.length > 0 ? currentJornadas[0].numero : 0;
-                }
+                    var currentSeasonId = seasonSelect.value;
+                    var currentTemporadaNode = getTemporadaNode(xmlDoc, currentSeasonId);
+                    var currentJornadas = getJornadas(currentTemporadaNode);
 
-                var nextJornada = currentJornadas.find(function (j) {
-                    return j.numero === nextJornadaNumero;
-                }) || null;
+                    var nextJornadaNumero = parseInt(jornadaSelect.value, 10);
+                    if (Number.isNaN(nextJornadaNumero)) {
+                        nextJornadaNumero = currentJornadas.length > 0 ? currentJornadas[0].numero : 0;
+                    }
 
-                updateHeaderSeasonName(seasonName, temporadas, currentSeasonId);
-                updateHeaderJornadaName(nextJornadaNumero);
-                renderWithXsl(xmlDoc, xslDoc, currentSeasonId, nextJornada ? nextJornada.fecha : '');
+                    var nextJornada = currentJornadas.find(function (j) {
+                        return j.numero === nextJornadaNumero;
+                    }) || null;
 
-                var nextUrl = new URL(window.location.href);
-                nextUrl.searchParams.set('temporada_id', currentSeasonId);
-                if (nextJornadaNumero > 0) {
-                    nextUrl.searchParams.set('jornada_id', String(nextJornadaNumero));
-                } else {
-                    nextUrl.searchParams.delete('jornada_id');
-                }
-                window.history.replaceState({}, '', nextUrl.toString());
+                    updateHeaderSeasonName(seasonName, temporadas, currentSeasonId);
+                    updateHeaderJornadaName(nextJornadaNumero);
+                    renderFromServer(currentSeasonId, nextJornada ? nextJornada.fecha : '').then(function () {
+                        var nextUrl = new URL(window.location.href);
+                        nextUrl.searchParams.set('temporada_id', currentSeasonId);
+                        if (nextJornadaNumero > 0) {
+                            nextUrl.searchParams.set('jornada_id', String(nextJornadaNumero));
+                        } else {
+                            nextUrl.searchParams.delete('jornada_id');
+                        }
+                        window.history.replaceState({}, '', nextUrl.toString());
+                    }).catch(function (err) {
+                        renderTarget.style.display = 'none';
+                        errorTarget.style.display = 'block';
+
+                        var message = 'No se pudo cargar el apartado de partidos con XML/XSL.';
+                        if (err && err.message) {
+                            message += ' ' + err.message;
+                        }
+
+                        var p = errorTarget.querySelector('p');
+                        if (p) {
+                            p.textContent = message;
+                        }
+                    });
+                });
             });
         }).catch(function (err) {
             renderTarget.style.display = 'none';

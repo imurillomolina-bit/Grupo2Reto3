@@ -36,7 +36,7 @@
                             <xsl:for-each select="$temporada/equipos/equipo">
                                 <!-- Criterios de orden: puntos, diferencia de goles, goles a favor y nombre. -->
                                 <xsl:sort data-type="number" order="descending"
-                                    select="(count($temporada/partidos/partido[(@local=current()/@id and number(@goles_local) &gt; number(@goles_visitante)) or (@visitante=current()/@id and number(@goles_visitante) &gt; number(@goles_local))]) * 3 + count($temporada/partidos/partido[(@local=current()/@id or @visitante=current()/@id) and number(@goles_local)=number(@goles_visitante)])) + (number($temporadaId='2025-2026' and (@id='1' or @id='3' or @id='5' or @id='7' or @id='8' or @id='9')) * 1000)"/>
+                                    select="count($temporada/partidos/partido[(@local=current()/@id and number(@goles_local) &gt; number(@goles_visitante)) or (@visitante=current()/@id and number(@goles_visitante) &gt; number(@goles_local))]) * 3 + count($temporada/partidos/partido[(@local=current()/@id or @visitante=current()/@id) and number(@goles_local)=number(@goles_visitante)])"/>
                                 <xsl:sort data-type="number" order="descending"
                                     select="(sum($temporada/partidos/partido[@local=current()/@id]/@goles_local) + sum($temporada/partidos/partido[@visitante=current()/@id]/@goles_visitante)) - (sum($temporada/partidos/partido[@local=current()/@id]/@goles_visitante) + sum($temporada/partidos/partido[@visitante=current()/@id]/@goles_local))"/>
                                 <xsl:sort data-type="number" order="descending"
