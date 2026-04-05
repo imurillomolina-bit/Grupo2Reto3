@@ -10,9 +10,9 @@ require_once __DIR__ . '/../includes/app_init.php';
 const PAGE_XSL_MAP = [
     'clasificacion' => __DIR__ . '/../data/xsl/clasificacion.xsl',
     'equipos' => __DIR__ . '/../data/xsl/equipos.xsl',
-    'equipo_detalle' => __DIR__ . '/../data/xsl/equipos.xsl',
+    'equipo_detalle' => __DIR__ . '/../data/xsl/equipo.xsl',
     'jugadores' => __DIR__ . '/../data/xsl/jugadores.xsl',
-    'jugador_detalle' => __DIR__ . '/../data/xsl/jugadores.xsl',
+    'jugador_detalle' => __DIR__ . '/../data/xsl/jugador.xsl',
     'partidos' => __DIR__ . '/../data/xsl/partidos.xsl',
     'jornadas' => __DIR__ . '/../data/xsl/partidos.xsl',
 ];
