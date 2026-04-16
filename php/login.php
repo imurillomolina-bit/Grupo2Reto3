@@ -53,7 +53,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     if (strcasecmp($rol, 'Admin') === 0) {
         $redirect = 'usuarios.php';
     } elseif (strcasecmp($rol, 'Manager') === 0) {
-        $redirect = 'inicio.php';
+        $redirect = 'panel.php';
     } elseif (strcasecmp($rol, 'Arbitro') === 0) {
         $redirect = 'partidos.php';
     }

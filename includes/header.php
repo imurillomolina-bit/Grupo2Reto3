@@ -89,6 +89,9 @@ $showLogoutLink = $showSessionChip;
                         <a href="<?php echo e($pagePrefix . 'equipo.php'); ?>">Equipos</a>
                         <a href="<?php echo e($pagePrefix . 'partidos.php'); ?>">Partidos</a>
                         <a href="<?php echo e($pagePrefix . 'jugadores.php'); ?>">Jugadores</a>
+                        <?php if (strcasecmp($sessionRole, 'Admin') === 0 || strcasecmp($sessionRole, 'Manager') === 0): ?>
+                            <a href="<?php echo e($pagePrefix . 'panel.php'); ?>">Panel</a>
+                        <?php endif; ?>
                         <?php if (strcasecmp($sessionRole, 'Admin') === 0): ?>
                             <a href="<?php echo e($pagePrefix . 'usuarios.php'); ?>">Usuarios</a>
                         <?php endif; ?>
