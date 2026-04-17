@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-// Panel operativo: resumen de temporada para roles Manager y Admin.
+// Panel operativo: resumen de temporada para los roles Manager y Admin.
 
 require_once __DIR__ . '/../includes/app_init.php';
 
-// Control de acceso: solo Manager o Admin pueden entrar.
+// Control de acceso: solo Manager o Admin pueden entrar al panel.
 $rolSesion = trim((string) ($_SESSION['rol'] ?? ''));
 if (strcasecmp($rolSesion, 'Admin') !== 0 && strcasecmp($rolSesion, 'Manager') !== 0) {
     $_SESSION['flash_error'] = 'No tienes permisos para acceder al Panel.';
@@ -17,6 +17,7 @@ if (strcasecmp($rolSesion, 'Admin') !== 0 && strcasecmp($rolSesion, 'Manager') !
 $pageTitle = 'Panel | FEDERACIÓN FUTSAL';
 
 $error = null;
+// Variables base que alimentan los indicadores y listados de la vista.
 $temporadaNombre = 'No disponible';
 $numEquipos = 0;
 $numJugadores = 0;
@@ -27,21 +28,23 @@ $top3 = [];
 $ultimosPartidos = [];
 
 try {
-    // Carga de XML y datos de temporada activa para construir el panel.
+    // Se carga el XML principal y se extrae la temporada activa para construir el panel.
     $xml = load_liga_xml();
     $temporada = get_temporada_actual($xml);
     $temporadaNombre = (string) $temporada['nombre'];
 
+    // Se recopilan los datos necesarios para los KPI y las secciones principales.
     $equipos = get_equipos_temporada($temporada);
     $jugadores = get_jugadores_temporada($temporada);
     $clasificacion = build_clasificacion($temporada);
     $partidos = get_partidos_recientes($temporada);
 
+    // Conteos generales de la temporada activa.
     $numEquipos = count($equipos);
     $numJugadores = count($jugadores);
     $numPartidos = count($partidos);
 
-    // Calculo de goles totales y media por partido.
+    // Cálculo de goles totales y media por partido.
     foreach ($partidos as $partido) {
         $totalGoles += (int) $partido['goles_local'] + (int) $partido['goles_visitante'];
     }
@@ -60,10 +63,10 @@ $esAdmin = strcasecmp($rolSesion, 'Admin') === 0;
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<!-- Main: Panel operativo para Manager y Admin -->
+<!-- Contenido principal del panel operativo -->
 <main class="page page-panel">
 
-    <!-- Section: Cabecera del panel -->
+    <!-- Cabecera con el contexto general de la temporada -->
     <section class="panel hero-panel">
         <div>
             <h2>Panel operativo</h2>
@@ -81,7 +84,7 @@ require __DIR__ . '/../includes/header.php';
         </section>
     <?php else: ?>
 
-        <!-- Section: KPIs de la temporada -->
+        <!-- Bloque de indicadores clave de la temporada -->
         <section class="panel start-data-grid" aria-label="Indicadores clave de la temporada">
             <article class="data-card">
                 <p class="insight-kicker">Resumen operativo</p>
@@ -110,7 +113,7 @@ require __DIR__ . '/../includes/header.php';
                 </ul>
             </article>
 
-            <!-- Top 3 de clasificacion -->
+            <!-- Top 3 de clasificación con el estado de la zona alta -->
             <article class="data-card">
                 <p class="insight-kicker">Zona alta</p>
                 <h3>Top 3 de clasificación</h3>
@@ -135,7 +138,7 @@ require __DIR__ . '/../includes/header.php';
             </article>
         </section>
 
-        <!-- Section: Ultimos resultados -->
+        <!-- Últimos resultados disponibles para consulta rápida -->
         <section class="panel content-panel" aria-label="Últimos resultados">
             <article class="panel-heading">
                 <h3>Últimos resultados</h3>
@@ -170,7 +173,7 @@ require __DIR__ . '/../includes/header.php';
 
     <?php endif; ?>
 
-    <!-- Section: Accesos rapidos -->
+    <!-- Accesos rápidos a las secciones principales del portal -->
     <section class="panel start-data-grid" aria-label="Accesos rápidos">
         <a class="panel quick-link-panel" href="clasificacion.php">
             <article class="panel-heading">
