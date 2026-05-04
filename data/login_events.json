@@ -118,5 +118,10 @@
         "usuario": "Manager",
         "rol": "Manager",
         "fecha_hora": "2026-04-16 13:04:31"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-05-04 10:08:28"
     }
 ]
