@@ -29,16 +29,16 @@ require __DIR__ . '/../includes/header.php';
         </article>
 
         <article id="clasificacion_render" class="table-wrap" aria-label="Tabla de clasificacion">
-            <p>Cargando clasificaciÃ³n...</p>
+            <p>Cargando clasificacion...</p>
         </article>
 
         <article id="clasificacion_error" class="panel-error" style="display:none;">
-            <p>No se pudo cargar la clasificaciÃ³n con XML/XSL.</p>
+            <p>No se pudo cargar la clasificacion con XML/XSL.</p>
         </article>
 
         <noscript>
             <article class="panel-error">
-                <p>Necesitas JavaScript activado para visualizar la clasificaciÃ³n en esta versiÃ³n.</p>
+                <p>Necesitas JavaScript activado para visualizar la clasificacion en esta version.</p>
             </article>
         </noscript>
     </section>
