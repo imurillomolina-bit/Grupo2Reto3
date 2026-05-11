@@ -1483,8 +1483,8 @@ table tr .tdNombreEquipo {
     gap: 0.5rem;
 }
 
-.site-footer-header {
-}
+/*.site-footer-header {
+}*/
 
 .site-footer-title {
     margin: 0;
@@ -1664,7 +1664,7 @@ table tr .tdNombreEquipo {
 
 /* Ajustes responsive para adaptar la interfaz al ancho disponible. */
     }
-}
+
 
 /* Ajustes responsive para adaptar la interfaz al ancho disponible. */
 @media (max-width: 710px) {
