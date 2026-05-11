@@ -249,7 +249,7 @@ a {
 /* Contenedor general de paginas con ancho fluido. */
 .page {
     width: min(1120px, 94vw);
-    margin: 1rem auto 1.25rem;
+    margin: 1.5rem auto 1.5rem;
     flex: 1 0 auto;
     animation: reveal 0.5s ease both;
 }
@@ -283,6 +283,7 @@ a {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
+    margin-bottom: 1.5rem;
 }
 
 .panel-heading {
@@ -483,6 +484,7 @@ a {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 1.5rem;
     padding: 1rem;
 }
 
