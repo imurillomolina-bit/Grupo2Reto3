@@ -101,8 +101,15 @@ if ($temporada === null) {
 $idRaw = filter_input(INPUT_GET, 'id', FILTER_UNSAFE_RAW);
 $id = is_string($idRaw) ? trim($idRaw) : '';
 
+$equipoIdRaw = filter_input(INPUT_GET, 'equipo_id', FILTER_UNSAFE_RAW);
+$equipoId = is_string($equipoIdRaw) ? trim($equipoIdRaw) : '';
+
 if ($id !== '' && !preg_match('/^[0-9]+$/', $id)) {
     html_error(400, 'Identificador invalido.');
+}
+
+if ($equipoId !== '' && !preg_match('/^[0-9]+$/', $equipoId)) {
+    html_error(400, 'Identificador de equipo invalido.');
 }
 
 if ($page === 'equipo_detalle') {
@@ -122,6 +129,12 @@ if ($page === 'jugador_detalle') {
 
     if (!exists_player_in_season($temporada, $id)) {
         html_error(404, 'No existe el jugador solicitado en la temporada activa.');
+    }
+}
+
+if (($page === 'partidos' || $page === 'jornadas') && $equipoId !== '') {
+    if (!exists_team_in_season($temporada, $equipoId)) {
+        html_error(404, 'No existe el equipo solicitado en la temporada activa.');
     }
 }
 
@@ -177,6 +190,7 @@ if ($page === 'jugador_detalle' || ($page === 'jugadores' && $id !== '')) {
 
 if ($page === 'partidos' || $page === 'jornadas') {
     $processor->setParameter('', 'fechaSeleccionada', $fechaSeleccionada);
+    $processor->setParameter('', 'equipoId', $equipoId);
 }
 
 $output = $processor->transformToXML($xmlDom);

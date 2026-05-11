@@ -9,11 +9,13 @@ require_once __DIR__ . '/../includes/app_init.php';
 // Temporada de sesion para iniciar filtros del lado cliente.
 $pageTitle = 'Partidos | FEDERACIÓN FUTSAL';
 $temporadaSesion = trim((string) ($_SESSION['temporada_actual'] ?? ''));
+$equipoIdRaw = filter_input(INPUT_GET, 'equipo_id', FILTER_UNSAFE_RAW);
+$equipoId = is_string($equipoIdRaw) ? trim($equipoIdRaw) : '';
 
 require __DIR__ . '/../includes/header.php';
 ?>
 
-<main class="page page-matches" data-temporada-sesion="<?php echo e($temporadaSesion); ?>">
+<main class="page page-matches" data-temporada-sesion="<?php echo e($temporadaSesion); ?>" data-equipo-id="<?php echo e($equipoId); ?>">
     <section class="panel content-panel">
         <article class="panel-heading">
             <h2>Partidos</h2>

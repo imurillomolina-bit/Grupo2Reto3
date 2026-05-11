@@ -235,6 +235,7 @@
 
         var xmlUrl = '../data/datos.xml';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
+        var equipoId = page.getAttribute('data-equipo-id') || '';
 
         var renderTarget = document.getElementById('clasificacion_render');
         var errorTarget = document.getElementById('clasificacion_error');
@@ -634,6 +635,7 @@
 
         var xmlUrl = '../data/datos.xml';
         var temporadaSesion = page.getAttribute('data-temporada-sesion') || '';
+        var equipoId = page.getAttribute('data-equipo-id') || '';
 
         var renderTarget = document.getElementById('partidos_render');
         var errorTarget = document.getElementById('partidos_error');
@@ -654,13 +656,21 @@
         }
 
         // Construye jornadas a partir de fechas unicas de partidos.
-        function getJornadas(temporadaNode) {
+        function getJornadas(temporadaNode, teamId) {
             if (!temporadaNode) {
                 return [];
             }
 
             var fechasUnicas = [];
             Array.from(temporadaNode.querySelectorAll('partidos > partido')).forEach(function (partido) {
+                if (teamId) {
+                    var localId = partido.getAttribute('local') || '';
+                    var visitanteId = partido.getAttribute('visitante') || '';
+                    if (localId !== teamId && visitanteId !== teamId) {
+                        return;
+                    }
+                }
+
                 var fecha = partido.getAttribute('fecha') || '';
                 if (fecha && fechasUnicas.indexOf(fecha) === -1) {
                     fechasUnicas.push(fecha);
@@ -710,10 +720,11 @@
         }
 
         // Solicita al servidor los partidos filtrados por temporada y fecha.
-        function renderFromServer(temporadaId, fechaSeleccionada) {
+        function renderFromServer(temporadaId, fechaSeleccionada, teamId) {
             return fetchTransformedHtml('partidos', {
                 temporada_id: temporadaId,
-                fecha_seleccionada: fechaSeleccionada || ''
+                fecha_seleccionada: fechaSeleccionada || '',
+                equipo_id: teamId || ''
             }).then(function (html) {
                 renderTarget.innerHTML = html;
             });
@@ -736,7 +747,7 @@
             }
 
             var temporadaNode = getTemporadaNode(xmlDoc, selectedSeasonId);
-            var jornadas = getJornadas(temporadaNode);
+            var jornadas = getJornadas(temporadaNode, equipoId);
             var selectedJornadaNumero = getSelectedJornadaNumero(jornadas);
             var selectedJornada = jornadas.find(function (j) { return j.numero === selectedJornadaNumero; }) || null;
 
@@ -744,14 +755,14 @@
             fillJornadaSelect(jornadas, selectedJornadaNumero);
             updateHeaderSeasonName(seasonName, temporadas, selectedSeasonId);
             updateHeaderJornadaName(selectedJornadaNumero);
-            return renderFromServer(selectedSeasonId, selectedJornada ? selectedJornada.fecha : '').then(function () {
+            return renderFromServer(selectedSeasonId, selectedJornada ? selectedJornada.fecha : '', equipoId).then(function () {
                 seasonForm.addEventListener('submit', function (ev) {
                     ev.preventDefault();
                     var nextSeasonId = seasonSelect.value;
                     persistSeasonInSession(nextSeasonId);
 
                     var nextTemporadaNode = getTemporadaNode(xmlDoc, nextSeasonId);
-                    var nextJornadas = getJornadas(nextTemporadaNode);
+                    var nextJornadas = getJornadas(nextTemporadaNode, equipoId);
                     var nextSelectedJornadaNumero = nextJornadas.length > 0 ? nextJornadas[0].numero : 0;
                     var nextSelectedJornada = nextJornadas.find(function (j) {
                         return j.numero === nextSelectedJornadaNumero;
@@ -761,9 +772,14 @@
                     updateHeaderSeasonName(seasonName, temporadas, nextSeasonId);
                     updateHeaderJornadaName(nextSelectedJornadaNumero);
 
-                    renderFromServer(nextSeasonId, nextSelectedJornada ? nextSelectedJornada.fecha : '').then(function () {
+                    renderFromServer(nextSeasonId, nextSelectedJornada ? nextSelectedJornada.fecha : '', equipoId).then(function () {
                         var nextUrl = new URL(window.location.href);
                         nextUrl.searchParams.set('temporada_id', nextSeasonId);
+                        if (equipoId) {
+                            nextUrl.searchParams.set('equipo_id', equipoId);
+                        } else {
+                            nextUrl.searchParams.delete('equipo_id');
+                        }
                         if (nextSelectedJornadaNumero > 0) {
                             nextUrl.searchParams.set('jornada_id', String(nextSelectedJornadaNumero));
                         } else {
@@ -791,7 +807,7 @@
 
                     var currentSeasonId = seasonSelect.value;
                     var currentTemporadaNode = getTemporadaNode(xmlDoc, currentSeasonId);
-                    var currentJornadas = getJornadas(currentTemporadaNode);
+                    var currentJornadas = getJornadas(currentTemporadaNode, equipoId);
 
                     var nextJornadaNumero = parseInt(jornadaSelect.value, 10);
                     if (Number.isNaN(nextJornadaNumero)) {
@@ -804,9 +820,14 @@
 
                     updateHeaderSeasonName(seasonName, temporadas, currentSeasonId);
                     updateHeaderJornadaName(nextJornadaNumero);
-                    renderFromServer(currentSeasonId, nextJornada ? nextJornada.fecha : '').then(function () {
+                    renderFromServer(currentSeasonId, nextJornada ? nextJornada.fecha : '', equipoId).then(function () {
                         var nextUrl = new URL(window.location.href);
                         nextUrl.searchParams.set('temporada_id', currentSeasonId);
+                        if (equipoId) {
+                            nextUrl.searchParams.set('equipo_id', equipoId);
+                        } else {
+                            nextUrl.searchParams.delete('equipo_id');
+                        }
                         if (nextJornadaNumero > 0) {
                             nextUrl.searchParams.set('jornada_id', String(nextJornadaNumero));
                         } else {
