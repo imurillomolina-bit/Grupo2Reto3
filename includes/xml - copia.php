@@ -7,9 +7,6 @@ declare(strict_types=1);
 const DATA_XML_PATH = __DIR__ . '/../data/datos.xml';
 const DATA_XSD_PATH = __DIR__ . '/../data/datos.xsd';
 
-// --- RUTA ABSOLUTA PARA LAS VISTAS DE CLASIFICACIÓN ---
-const VISTAS_XML_PATH = 'C:/Users/439994C/Documents/Github/Grupo_2/resources/'; 
-
 function normalize_public_path(string $path): string
 {
     // Ajusta rutas para que funcionen tanto desde /php como desde la raiz.
@@ -159,34 +156,7 @@ function get_temporada_actual(SimpleXMLElement $xml): SimpleXMLElement
 
 function build_clasificacion(SimpleXMLElement $temporada): array
 {
-    // --- PRIORIDAD 1: CARGAR DESDE VISTA XML EN RUTA ABSOLUTA ---
-    $temporadaId = (string) $temporada['id'];
-    $rutaVista = VISTAS_XML_PATH . "Clasificacion_T{$temporadaId}.xml";
-
-    if (is_file($rutaVista)) {
-        $xmlVista = simplexml_load_file($rutaVista);
-        if ($xmlVista !== false) {
-            $tablaVista = [];
-            foreach ($xmlVista->fila as $fila) {
-                $tablaVista[] = [
-                    'id'     => (int) ($fila->id_equipo ?? 0),
-                    'nombre' => (string) $fila->nombre_equipo,
-                    'escudo' => normalize_public_path((string) ($fila->escudo ?? '')),
-                    'pj'     => (int) $fila->pj,
-                    'pg'     => (int) $fila->pg,
-                    'pe'     => (int) $fila->pe,
-                    'pp'     => (int) $fila->pp,
-                    'gf'     => (int) $fila->gf,
-                    'gc'     => (int) $fila->gc,
-                    'dg'     => (int) ($fila->dg ?? ((int)$fila->gf - (int)$fila->gc)),
-                    'pts'    => (int) $fila->puntos,
-                ];
-            }
-            return $tablaVista;
-        }
-    }
-
-    // --- PRIORIDAD 2: CÁLCULO MANUAL (FALLBACK) ---
+    // Inicializa tabla base por equipo con estadisticas en cero.
     $tabla = [];
     foreach ($temporada->equipos->equipo as $equipo) {
         $id = (int) $equipo['id'];
@@ -205,6 +175,7 @@ function build_clasificacion(SimpleXMLElement $temporada): array
         ];
     }
 
+    // Recorre partidos para acumular puntos, goles y resultados.
     foreach ($temporada->partidos->partido as $partido) {
         $localId = (int) $partido['local'];
         $visitanteId = (int) $partido['visitante'];
@@ -217,25 +188,35 @@ function build_clasificacion(SimpleXMLElement $temporada): array
 
         $tabla[$localId]['pj']++;
         $tabla[$visitanteId]['pj']++;
+
         $tabla[$localId]['gf'] += $golesLocal;
         $tabla[$localId]['gc'] += $golesVisitante;
         $tabla[$visitanteId]['gf'] += $golesVisitante;
         $tabla[$visitanteId]['gc'] += $golesLocal;
 
         if ($golesLocal > $golesVisitante) {
-            $tabla[$localId]['pg']++; $tabla[$visitanteId]['pp']++; $tabla[$localId]['pts'] += 3;
+            $tabla[$localId]['pg']++;
+            $tabla[$visitanteId]['pp']++;
+            $tabla[$localId]['pts'] += 3;
         } elseif ($golesLocal < $golesVisitante) {
-            $tabla[$visitanteId]['pg']++; $tabla[$localId]['pp']++; $tabla[$visitanteId]['pts'] += 3;
+            $tabla[$visitanteId]['pg']++;
+            $tabla[$localId]['pp']++;
+            $tabla[$visitanteId]['pts'] += 3;
         } else {
-            $tabla[$localId]['pe']++; $tabla[$visitanteId]['pe']++; $tabla[$localId]['pts']++; $tabla[$visitanteId]['pts']++;
+            $tabla[$localId]['pe']++;
+            $tabla[$visitanteId]['pe']++;
+            $tabla[$localId]['pts']++;
+            $tabla[$visitanteId]['pts']++;
         }
     }
 
+    // Calcula diferencia de goles para el criterio de desempate.
     foreach ($tabla as &$fila) {
         $fila['dg'] = $fila['gf'] - $fila['gc'];
     }
     unset($fila);
 
+    // Orden oficial: puntos, diferencia de goles, goles a favor y nombre.
     usort($tabla, static function (array $a, array $b): int {
         return [$b['pts'], $b['dg'], $b['gf'], $a['nombre']] <=> [$a['pts'], $a['dg'], $a['gf'], $b['nombre']];
     });
@@ -245,7 +226,9 @@ function build_clasificacion(SimpleXMLElement $temporada): array
 
 function get_equipos_temporada(SimpleXMLElement $temporada): array
 {
+    // Construye una lista plana de equipos para vistas y tarjetas.
     $equipos = [];
+
     foreach ($temporada->equipos->equipo as $equipo) {
         $equipos[] = [
             'id' => (int) $equipo['id'],
@@ -257,12 +240,15 @@ function get_equipos_temporada(SimpleXMLElement $temporada): array
             'jugadores' => isset($equipo->jugadores->jugador) ? count($equipo->jugadores->jugador) : 0,
         ];
     }
+
     return $equipos;
 }
 
 function get_jugadores_temporada(SimpleXMLElement $temporada): array
 {
+    // Recorre equipos y jugadores para devolver un listado unificado.
     $jugadores = [];
+
     foreach ($temporada->equipos->equipo as $equipo) {
         $nombreEquipo = (string) $equipo->nombre;
         $equipoId = (int) $equipo['id'];
@@ -279,6 +265,7 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
             $apellidos = $nombrePartido['apellidos'];
 
             if ($apellidosXml !== '') {
+                // Si el XML separa nombre/apellidos, prioriza esos campos.
                 $nombre = $nombreXml !== '' ? $nombreXml : $nombrePartido['nombre'];
                 $apellidos = $apellidosXml;
             }
@@ -298,14 +285,22 @@ function get_jugadores_temporada(SimpleXMLElement $temporada): array
             ];
         }
     }
+
     return $jugadores;
 }
 
 function split_nombre_jugador(string $nombreCompleto): array
 {
+    // Divide nombre completo en nombre y apellidos para pintado uniforme.
     $partes = preg_split('/\s+/', trim($nombreCompleto)) ?: [];
-    if ($partes === []) return ['nombre' => 'No disponible', 'apellidos' => 'No disponible'];
-    if (count($partes) === 1) return ['nombre' => $partes[0], 'apellidos' => 'No disponible'];
+
+    if ($partes === []) {
+        return ['nombre' => 'No disponible', 'apellidos' => 'No disponible'];
+    }
+
+    if (count($partes) === 1) {
+        return ['nombre' => $partes[0], 'apellidos' => 'No disponible'];
+    }
 
     return [
         'nombre' => (string) array_shift($partes),
@@ -315,12 +310,15 @@ function split_nombre_jugador(string $nombreCompleto): array
 
 function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId): ?array
 {
+    // Busca de forma secuencial hasta encontrar el jugador solicitado.
     foreach ($temporada->equipos->equipo as $equipo) {
         $equipoId = (int) $equipo['id'];
         $ordenJugador = 0;
         foreach ($equipo->jugadores->jugador as $jugador) {
             $ordenJugador++;
-            if ((int) $jugador['id'] !== $jugadorId) continue;
+            if ((int) $jugador['id'] !== $jugadorId) {
+                continue;
+            }
 
             $nombreCompleto = trim((string) $jugador->nombre);
             $nombrePartido = split_nombre_jugador($nombreCompleto);
@@ -331,6 +329,7 @@ function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId):
             $apellidos = $nombrePartido['apellidos'];
 
             if ($apellidosXml !== '') {
+                // Respeta separacion explicita si viene informada en el XML.
                 $nombre = $nombreXml !== '' ? $nombreXml : $nombrePartido['nombre'];
                 $apellidos = $apellidosXml;
             }
@@ -351,11 +350,13 @@ function get_jugador_detalle_by_id(SimpleXMLElement $temporada, int $jugadorId):
             ];
         }
     }
+
     return null;
 }
 
 function get_partidos_recientes(SimpleXMLElement $temporada): array
 {
+    // Mapa auxiliar para resolver ids de equipo a nombres legibles.
     $equiposPorId = [];
     foreach ($temporada->equipos->equipo as $equipo) {
         $equiposPorId[(int) $equipo['id']] = (string) $equipo->nombre;
@@ -373,6 +374,7 @@ function get_partidos_recientes(SimpleXMLElement $temporada): array
         ];
     }
 
+    // Orden descendente por fecha para mostrar primero lo mas reciente.
     usort($partidos, static function (array $a, array $b): int {
         return strcmp($b['fecha'], $a['fecha']);
     });
@@ -382,6 +384,7 @@ function get_partidos_recientes(SimpleXMLElement $temporada): array
 
 function build_noticias_temporada(SimpleXMLElement $temporada): array
 {
+    // Genera titulares simples combinando clasificacion y ultimos resultados.
     $clasificacion = build_clasificacion($temporada);
     $partidosRecientes = get_partidos_recientes($temporada);
     $temporadaNombre = (string) $temporada['nombre'];
@@ -391,14 +394,30 @@ function build_noticias_temporada(SimpleXMLElement $temporada): array
     if ($liderActual !== null) {
         $noticias[] = [
             'titulo' => 'Liderato en juego',
-            'texto' => $liderActual['nombre'] . ' manda en la tabla de ' . $temporadaNombre . ' con ' . $liderActual['pts'] . ' puntos.',
+            'texto' => $liderActual['nombre'] . ' manda en la tabla de ' . $temporadaNombre . ' con ' . $liderActual['pts'] . ' puntos y una diferencia de ' . $liderActual['dg'] . '.',
+        ];
+    }
+
+    $segundo = $clasificacion[1] ?? null;
+    if ($segundo !== null) {
+        $noticias[] = [
+            'titulo' => 'Persecucion en la parte alta',
+            'texto' => $segundo['nombre'] . ' sigue en la pelea por el liderato con ' . $segundo['pts'] . ' puntos.',
+        ];
+    }
+
+    $tercero = $clasificacion[2] ?? null;
+    if ($tercero !== null) {
+        $noticias[] = [
+            'titulo' => 'Podio provisional',
+            'texto' => $tercero['nombre'] . ' cierra el top 3 de ' . $temporadaNombre . ' y mantiene su opcion de escalar posiciones.',
         ];
     }
 
     foreach (array_slice($partidosRecientes, 0, 8) as $partidoReciente) {
         $noticias[] = [
             'titulo' => 'Marcador reciente',
-            'texto' => $partidoReciente['local'] . ' y ' . $partidoReciente['visitante'] . ' cerraron con un ' . $partidoReciente['marcador'] . '.',
+            'texto' => $partidoReciente['local'] . ' y ' . $partidoReciente['visitante'] . ' cerraron su cruce con un ' . $partidoReciente['marcador'] . ' el ' . $partidoReciente['fecha'] . '.',
         ];
     }
 
@@ -407,14 +426,19 @@ function build_noticias_temporada(SimpleXMLElement $temporada): array
 
 function find_equipo_by_id(SimpleXMLElement $temporada, int $equipoId): ?SimpleXMLElement
 {
+    // Devuelve el nodo XML de equipo para acceder a todos sus subcampos.
     foreach ($temporada->equipos->equipo as $equipo) {
-        if ((int) $equipo['id'] === $equipoId) return $equipo;
+        if ((int) $equipo['id'] === $equipoId) {
+            return $equipo;
+        }
     }
+
     return null;
 }
 
 function get_partidos_equipo(SimpleXMLElement $temporada, int $equipoId): array
 {
+    // Filtra partidos donde el equipo actua como local o visitante.
     $equiposPorId = [];
     foreach ($temporada->equipos->equipo as $equipo) {
         $equiposPorId[(int) $equipo['id']] = (string) $equipo->nombre;
@@ -424,7 +448,9 @@ function get_partidos_equipo(SimpleXMLElement $temporada, int $equipoId): array
     foreach ($temporada->partidos->partido as $partido) {
         $localId = (int) $partido['local'];
         $visitanteId = (int) $partido['visitante'];
-        if ($localId !== $equipoId && $visitanteId !== $equipoId) continue;
+        if ($localId !== $equipoId && $visitanteId !== $equipoId) {
+            continue;
+        }
 
         $partidos[] = [
             'fecha' => (string) $partido['fecha'],
@@ -435,39 +461,55 @@ function get_partidos_equipo(SimpleXMLElement $temporada, int $equipoId): array
             'marcador' => (string) $partido['goles_local'] . ' - ' . (string) $partido['goles_visitante'],
         ];
     }
+
     return $partidos;
 }
 
 function get_jornadas_temporada(SimpleXMLElement $temporada): array
 {
+    // Agrupa por fechas unicas y asigna numero de jornada secuencial.
     $fechas = [];
     foreach ($temporada->partidos->partido as $partido) {
         $fecha = (string) $partido['fecha'];
-        if (!in_array($fecha, $fechas, true)) $fechas[] = $fecha;
+        if (!in_array($fecha, $fechas, true)) {
+            $fechas[] = $fecha;
+        }
     }
+
     sort($fechas);
 
     $jornadas = [];
     foreach ($fechas as $numJornada => $fecha) {
-        $jornadas[] = ['numero' => $numJornada + 1, 'fecha' => $fecha];
+        $jornadas[] = [
+            'numero' => $numJornada + 1,
+            'fecha' => $fecha,
+        ];
     }
+
     return $jornadas;
 }
 
 function get_partidos_jornada(SimpleXMLElement $temporada, int $numeroJornada): array
 {
+    // Resuelve la fecha asociada a la jornada pedida y devuelve sus partidos.
     $equiposPorId = [];
     foreach ($temporada->equipos->equipo as $equipo) {
         $equiposPorId[(int) $equipo['id']] = (string) $equipo->nombre;
     }
 
     $jornadas = get_jornadas_temporada($temporada);
-    if (!isset($jornadas[$numeroJornada - 1])) return [];
+
+    if (!isset($jornadas[$numeroJornada - 1])) {
+        return [];
+    }
 
     $fechaObjetivo = $jornadas[$numeroJornada - 1]['fecha'];
+
     $partidos = [];
     foreach ($temporada->partidos->partido as $partido) {
-        if ((string) $partido['fecha'] !== $fechaObjetivo) continue;
+        if ((string) $partido['fecha'] !== $fechaObjetivo) {
+            continue;
+        }
 
         $partidos[] = [
             'fecha' => (string) $partido['fecha'],
@@ -478,5 +520,7 @@ function get_partidos_jornada(SimpleXMLElement $temporada, int $numeroJornada): 
             'marcador' => (string) $partido['goles_local'] . ' - ' . (string) $partido['goles_visitante'],
         ];
     }
+
     return $partidos;
 }
+
