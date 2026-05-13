@@ -133,5 +133,10 @@
         "usuario": "Admin",
         "rol": "Admin",
         "fecha_hora": "2026-05-11 10:25:30"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-05-13 10:25:06"
     }
 ]
