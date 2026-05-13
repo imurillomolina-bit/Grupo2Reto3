@@ -35,8 +35,10 @@ require __DIR__ . '/../includes/header.php';
                 <form class="season-form" id="jornada_form" action="#" method="get">
                     <label for="jornada_id">Filtrar por jornada</label>
                     <select id="jornada_id" name="jornada_id" required></select>
-                    <button type="submit">Aplicar</button>
+
+                    <button type="submit">Filtrar</button>
                 </form>
+
             </div>
         </article>
 

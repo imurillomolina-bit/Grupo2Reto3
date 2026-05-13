@@ -919,6 +919,31 @@
         <partido local="5" visitante="10" goles_local="1" goles_visitante="0" fecha="2026-01-22"/>
         <partido local="7" visitante="6" goles_local="2" goles_visitante="0" fecha="2026-01-22"/>
         <partido local="9" visitante="4" goles_local="3" goles_visitante="1" fecha="2026-01-22"/>
+        <partido local="2" visitante="1" goles_local="2" goles_visitante="1" fecha="2026-01-29"/>
+        <partido local="4" visitante="3" goles_local="1" goles_visitante="2" fecha="2026-01-29"/>
+        <partido local="6" visitante="5" goles_local="3" goles_visitante="2" fecha="2026-01-29"/>
+        <partido local="8" visitante="7" goles_local="2" goles_visitante="2" fecha="2026-01-29"/>
+        <partido local="10" visitante="9" goles_local="1" goles_visitante="3" fecha="2026-01-29"/>
+        <partido local="1" visitante="3" goles_local="2" goles_visitante="2" fecha="2026-02-05"/>
+        <partido local="2" visitante="4" goles_local="0" goles_visitante="1" fecha="2026-02-05"/>
+        <partido local="5" visitante="7" goles_local="1" goles_visitante="2" fecha="2026-02-05"/>
+        <partido local="6" visitante="8" goles_local="2" goles_visitante="1" fecha="2026-02-05"/>
+        <partido local="9" visitante="10" goles_local="2" goles_visitante="2" fecha="2026-02-05"/>
+        <partido local="4" visitante="1" goles_local="2" goles_visitante="3" fecha="2026-02-12"/>
+        <partido local="5" visitante="2" goles_local="1" goles_visitante="1" fecha="2026-02-12"/>
+        <partido local="3" visitante="6" goles_local="3" goles_visitante="0" fecha="2026-02-12"/>
+        <partido local="9" visitante="7" goles_local="1" goles_visitante="2" fecha="2026-02-12"/>
+        <partido local="10" visitante="8" goles_local="0" goles_visitante="1" fecha="2026-02-12"/>
+        <partido local="5" visitante="1" goles_local="2" goles_visitante="1" fecha="2026-02-19"/>
+        <partido local="2" visitante="6" goles_local="1" goles_visitante="3" fecha="2026-02-19"/>
+        <partido local="3" visitante="7" goles_local="2" goles_visitante="2" fecha="2026-02-19"/>
+        <partido local="8" visitante="4" goles_local="3" goles_visitante="1" fecha="2026-02-19"/>
+        <partido local="10" visitante="9" goles_local="1" goles_visitante="0" fecha="2026-02-19"/>
+        <partido local="6" visitante="1" goles_local="0" goles_visitante="2" fecha="2026-02-26"/>
+        <partido local="2" visitante="7" goles_local="2" goles_visitante="1" fecha="2026-02-26"/>
+        <partido local="9" visitante="3" goles_local="1" goles_visitante="1" fecha="2026-02-26"/>
+        <partido local="4" visitante="5" goles_local="2" goles_visitante="0" fecha="2026-02-26"/>
+        <partido local="8" visitante="10" goles_local="2" goles_visitante="2" fecha="2026-02-26"/>
       </partidos>
     </temporada>
     <!-- Temporada historica/alternativa para comparar comportamiento de la app. -->
@@ -1492,9 +1517,19 @@
         <partido local="3" visitante="1" goles_local="2" goles_visitante="3" fecha="2026-11-05"/>
         <partido local="9" visitante="5" goles_local="1" goles_visitante="0" fecha="2026-11-05"/>
         <partido local="8" visitante="7" goles_local="4" goles_visitante="3" fecha="2026-11-05"/>
+        <partido local="9" visitante="1" goles_local="2" goles_visitante="3" fecha="2026-11-12"/>
+        <partido local="8" visitante="3" goles_local="3" goles_visitante="1" fecha="2026-11-12"/>
+        <partido local="7" visitante="5" goles_local="2" goles_visitante="2" fecha="2026-11-12"/>
+        <partido local="1" visitante="8" goles_local="1" goles_visitante="0" fecha="2026-11-19"/>
+        <partido local="9" visitante="7" goles_local="1" goles_visitante="2" fecha="2026-11-19"/>
+        <partido local="3" visitante="5" goles_local="3" goles_visitante="2" fecha="2026-11-19"/>
+        <partido local="3" visitante="1" goles_local="2" goles_visitante="1" fecha="2026-11-26"/>
+        <partido local="5" visitante="9" goles_local="0" goles_visitante="0" fecha="2026-11-26"/>
+        <partido local="7" visitante="8" goles_local="2" goles_visitante="3" fecha="2026-11-26"/>
+        <partido local="1" visitante="7" goles_local="4" goles_visitante="2" fecha="2026-12-03"/>
+        <partido local="5" visitante="8" goles_local="1" goles_visitante="2" fecha="2026-12-03"/>
+        <partido local="9" visitante="3" goles_local="2" goles_visitante="2" fecha="2026-12-03"/>
       </partidos>
     </temporada>
   </temporadas>
 </liga>
-
-

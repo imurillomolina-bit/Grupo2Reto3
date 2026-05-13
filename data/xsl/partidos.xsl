@@ -41,10 +41,14 @@
                                     <xsl:for-each select="$temporada/partidos/partido[@fecha=$fechaSeleccionada and (string-length(normalize-space($equipoId)) = 0 or @local=$equipoId or @visitante=$equipoId)]">
                                         <tr>
                                             <td class="team-name-col">
-                                                <xsl:value-of select="$temporada/equipos/equipo[@id=current()/@local]/nombre"/>
+                                                <a class="team-link" href="equipo.php?id={@local}&amp;temporada_id={$temporadaId}">
+                                                    <xsl:value-of select="$temporada/equipos/equipo[@id=current()/@local]/nombre"/>
+                                                </a>
                                             </td>
                                             <td class="team-name-col">
-                                                <xsl:value-of select="$temporada/equipos/equipo[@id=current()/@visitante]/nombre"/>
+                                                <a class="team-link" href="equipo.php?id={@visitante}&amp;temporada_id={$temporadaId}">
+                                                    <xsl:value-of select="$temporada/equipos/equipo[@id=current()/@visitante]/nombre"/>
+                                                </a>
                                             </td>
                                             <td>
                                                 <strong>
