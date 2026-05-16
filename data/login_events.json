@@ -138,5 +138,20 @@
         "usuario": "Admin",
         "rol": "Admin",
         "fecha_hora": "2026-05-13 10:25:06"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-05-16 13:02:15"
+    },
+    {
+        "usuario": "Manager",
+        "rol": "Manager",
+        "fecha_hora": "2026-05-16 13:04:15"
+    },
+    {
+        "usuario": "Arbitro",
+        "rol": "Arbitro",
+        "fecha_hora": "2026-05-16 13:04:40"
     }
 ]
