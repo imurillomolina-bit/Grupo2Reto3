@@ -163,5 +163,10 @@
         "usuario": "Arbitro",
         "rol": "Arbitro",
         "fecha_hora": "2026-05-18 10:04:42"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-05-18 10:32:06"
     }
 ]

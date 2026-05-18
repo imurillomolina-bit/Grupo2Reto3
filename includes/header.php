@@ -66,12 +66,25 @@ $showLogoutLink = $showSessionChip;
                 <p class="subtitle">Pasión, velocidad y estrategia en cada jornada.</p>
             </div>
 
-            <div class="header-tools">
-                <?php if ($showSessionChip): ?>
-                    <p class="session-chip">
-                        <?php echo e($sessionUser); ?><?php if ($showSessionRole): ?> [<?php echo e($sessionRole); ?>]<?php endif; ?>
-                    </p>
-                <?php endif; ?>
+            <div class="header-actions-row">
+                <div class="header-tools">
+                    <?php if ($showSessionChip): ?>
+                        <p class="session-chip">
+                            <?php echo e($sessionUser); ?><?php if ($showSessionRole): ?> [<?php echo e($sessionRole); ?>]<?php endif; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+
+                <div class="header-access" aria-label="Acciones de sesion">
+                    <?php if (!$showLogoutLink): ?>
+                        <a href="<?php echo e($pagePrefix . 'login.php'); ?>">Acceso</a>
+                    <?php endif; ?>
+                    <?php if ($showLogoutLink): ?>
+                        <a href="<?php echo e($pagePrefix . 'logout.php'); ?>">Cerrar sesion</a>
+                    <?php endif; ?>
+                </div>
+
+                <p class="season-indicator">Temporada: <?php echo e($temporadaActualNombre); ?></p>
             </div>
         </div>
 
@@ -99,17 +112,7 @@ $showLogoutLink = $showSessionChip;
                         <a href="<?php echo e($pagePrefix . 'noticias.php'); ?>">Noticias</a>
                     </div>
                 </div>
-                <div class="main-nav-right">
-                    <div class="header-access" aria-label="Acciones de sesion">
-                        <?php if (!$showLogoutLink): ?>
-                            <a href="<?php echo e($pagePrefix . 'login.php'); ?>">Acceso</a>
-                        <?php endif; ?>
-                        <?php if ($showLogoutLink): ?>
-                            <a href="<?php echo e($pagePrefix . 'logout.php'); ?>">Cerrar sesion</a>
-                        <?php endif; ?>
-                    </div>
-                    <p class="season-indicator">Temporada: <?php echo e($temporadaActualNombre); ?></p>
-                </div>
+                <!-- main-nav-right eliminado: acciones y temporada se muestran junto al título -->
             </div>
         </nav>
     </header>

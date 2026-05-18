@@ -53,7 +53,9 @@ a {
 }
 
 .header-top {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 0.9rem;
 }
 
@@ -182,8 +184,16 @@ a {
 }
 
 .header-actions-row {
-    display: grid;
-    gap: 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.header-actions-row .header-access {
+    margin-left: 0.5rem;
+}
+.header-actions-row .season-indicator {
+    margin: 0 0 0 0.65rem;
+    text-align: right;
 }
 
 .session-chip {
