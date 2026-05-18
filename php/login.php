@@ -88,9 +88,7 @@ require __DIR__ . '/../includes/header.php';
                 <button type="submit">Iniciar sesion</button>
             </form>
  
-            <form class="login-form" action="entrar_invitado.php" method="post">
-                <button class="login-guest-button" type="submit">Entrar como invitado</button>
-            </form>
+            <!-- Botón de acceso rápido para invitados eliminado según petición del usuario -->
         </article>
     </section>
 </main>

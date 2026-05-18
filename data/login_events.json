@@ -138,5 +138,30 @@
         "usuario": "Admin",
         "rol": "Admin",
         "fecha_hora": "2026-05-13 10:25:06"
+    },
+    {
+        "usuario": "Visitante",
+        "rol": "Invitado",
+        "fecha_hora": "2026-05-18 09:41:02"
+    },
+    {
+        "usuario": "Visitante",
+        "rol": "Invitado",
+        "fecha_hora": "2026-05-18 09:43:26"
+    },
+    {
+        "usuario": "Admin",
+        "rol": "Admin",
+        "fecha_hora": "2026-05-18 10:02:08"
+    },
+    {
+        "usuario": "Manager",
+        "rol": "Manager",
+        "fecha_hora": "2026-05-18 10:04:14"
+    },
+    {
+        "usuario": "Arbitro",
+        "rol": "Arbitro",
+        "fecha_hora": "2026-05-18 10:04:42"
     }
 ]
