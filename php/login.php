@@ -74,7 +74,7 @@ require __DIR__ . '/../includes/header.php';
     <section class="panel login-panel">
         <article class="panel-heading">
             <h2>Ingreso de usuarios</h2>
-            <p>Prueba con admin/admin123, manager/manager123 o arbitro/arbitro123.</p>
+            <!-- <p>Prueba con admin/admin123, manager/manager123 o arbitro/arbitro123.</p> -->
         </article>
  
         <article>
