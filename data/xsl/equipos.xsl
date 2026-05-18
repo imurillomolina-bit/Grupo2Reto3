@@ -46,10 +46,10 @@
                         <p><strong>Estadio: </strong> <xsl:value-of select="$equipoSeleccionado/estadio"/></p>
                         <p><strong>Ciudad: </strong> <xsl:value-of select="$equipoSeleccionado/ciudad"/></p>
                         <p>
-                            <a href="partidos.php?equipo_id={$equipoSeleccionado/@id}&amp;temporada_id={$temporadaId}">Ver partidos de este equipo</a>
+                            <a class="team-cta-link" href="partidos.php?equipo_id={$equipoSeleccionado/@id}&amp;temporada_id={$temporadaId}">Ver partidos de este equipo</a>
                         </p>
                         <p>
-                            <a href="equipo.php?temporada_id={$temporadaId}">Volver al listado</a>
+                            <a class="team-cta-link" href="equipo.php?temporada_id={$temporadaId}">Volver al listado</a>
                         </p>
                     </div>
                 </article>
