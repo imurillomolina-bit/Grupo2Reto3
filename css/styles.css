@@ -1036,6 +1036,17 @@ table tr .tdNombreEquipo {
     align-items: center;
 }
 
+/* Enlaces destacados dentro de la ficha de equipo: ponerlos en rojo para mayor visibilidad */
+.team-headline a {
+    color: var(--blue-700);
+    text-decoration: underline;
+    font-weight: 700;
+    transition: color 0.15s ease;
+}
+.team-headline a:hover {
+    color: var(--blue-900);
+}
+
 .team-shield-large {
     width: min(230px, 70vw);
     aspect-ratio: 1 / 1;
@@ -1051,10 +1062,11 @@ table tr .tdNombreEquipo {
     text-decoration: none;
     font-style: italic;
     font-weight: 700;
+    color: var(--blue-700);
 }
 
 .team-headline p a:hover {
-    color: red;
+    color: var(--blue-900);
     font-weight: 700;
 }
 
